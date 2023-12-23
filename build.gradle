@@ -1,33 +1,70 @@
+/**
+ * It is advised that you do not edit anything in the build.gradle; unless you are sure of what you are doing
+ */
+import com.gtnewhorizons.retrofuturagradle.mcp.InjectTagsTask
 import org.jetbrains.gradle.ext.Gradle
+
+import java.time.LocalDate
 
 plugins {
     id 'java'
     id 'java-library'
     id 'maven-publish'
+    id 'com.diffplug.spotless' version '6.19.0' apply false
     id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.7'
-    id 'eclipse'
-    id 'com.gtnewhorizons.retrofuturagradle' version '1.3.16'
-    id 'com.matthewprenger.cursegradle' version '1.4.0'
+    id 'com.gtnewhorizons.retrofuturagradle' version '1.3.24'
+    id 'com.matthewprenger.cursegradle' version '1.4.0' apply false
+    id 'com.modrinth.minotaur' version '2.+' apply false
+    id 'org.jetbrains.changelog' version '2.2.0'
 }
 
-version = project.mod_version
-group = project.maven_group
-archivesBaseName = project.archives_base_name
+apply from: 'gradle/scripts/helpers.gradle'
 
-// Set the toolchain version to decouple the Java we run Gradle with from the Java used to compile and run the mod
+// Early Assertions
+assertProperty 'mod_version'
+assertProperty 'root_package'
+assertProperty 'mod_id'
+assertProperty 'mod_name'
+
+assertSubProperties 'use_tags', 'tag_class_name'
+assertSubProperties 'use_access_transformer', 'access_transformer_locations'
+assertSubProperties 'use_mixins', 'mixin_booter_version', 'mixin_refmap'
+assertSubProperties 'is_coremod', 'coremod_includes_mod', 'coremod_plugin_class_name'
+assertSubProperties 'use_asset_mover', 'asset_mover_version'
+
+setDefaultProperty 'use_modern_java_syntax', false, false
+setDefaultProperty 'spotless', false, false
+setDefaultProperty 'generate_sources_jar', true, false
+setDefaultProperty 'generate_javadocs_jar', true, false
+setDefaultProperty 'mapping_channel', true, 'stable'
+setDefaultProperty 'mapping_version', true, '39'
+setDefaultProperty 'use_dependency_at_files', true, true
+setDefaultProperty 'minecraft_username', true, 'Developer'
+setDefaultProperty 'extra_jvm_args', false, ''
+setDefaultProperty 'extra_tweak_classes', false, ''
+setDefaultProperty 'change_minecraft_sources', false, false
+
+version = propertyString('mod_version')
+group = propertyString('root_package')
+
+base {
+    archivesName.set(propertyString('mod_id'))
+}
+
+tasks.decompressDecompiledSources.enabled !propertyBool('change_minecraft_sources')
+
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
+        languageVersion.set(JavaLanguageVersion.of(propertyBool('use_modern_java_syntax') ? 16 : 8))
         // Azul covers the most platforms for Java 8 toolchains, crucially including MacOS arm64
-        vendor.set(org.gradle.jvm.toolchain.JvmVendorSpec.AZUL)
+        vendor.set(JvmVendorSpec.AZUL)
     }
-    // Generate sources and javadocs jars when building and publishing
-    withSourcesJar()
-    // withJavadocJar()
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+    if (propertyBool('generate_sources_jar')) {
+        withSourcesJar()
+    }
+    if (propertyBool('generate_javadocs_jar')) {
+        withJavadocJar()
+    }
 }
 
 configurations {
@@ -36,44 +73,39 @@ configurations {
 }
 
 minecraft {
-    mcVersion = '1.12.2'
+    mcVersion.set('1.12.2')
 
-    // MCP Mappings
-    mcpMappingChannel = 'stable'
-    mcpMappingVersion = '39'
-    
-    // Set username here, the UUID will be looked up automatically
-    username = 'Developer'
+    mcpMappingChannel.set(propertyString('mapping_channel'))
+    mcpMappingVersion.set(propertyString('mapping_version'))
+
+    useDependencyAccessTransformers.set(propertyBool('use_dependency_at_files'))
+
+    username.set(propertyString('minecraft_username'))
     
     // Add any additional tweaker classes here
-    // extraTweakClasses.add('org.spongepowered.asm.launch.MixinTweaker')
-    
+    extraTweakClasses.addAll(propertyStringList('extra_tweak_classes'))
+
     // Add various JVM arguments here for runtime
-    def args = ["-ea:${project.group}"]
-    if (project.use_coremod.toBoolean()) {
-        args << '-Dfml.coreMods.load=' + coremod_plugin_class_name
+    def args = ['-ea:' + group]
+    if (propertyBool('is_coremod')) {
+        args << '-Dfml.coreMods.load=' + propertyString('coremod_plugin_class_name')
     }
-    if (project.use_mixins.toBoolean()) {
+    if (propertyBool('use_mixins')) {
         args << '-Dmixin.hotSwap=true'
         args << '-Dmixin.checks.interfaces=true'
         args << '-Dmixin.debug.export=true'
     }
     extraRunJvmArguments.addAll(args)
+    extraRunJvmArguments.addAll(propertyStringList('extra_jvm_args'))
 
-    // Include and use dependencies' Access Transformer files
-    useDependencyAccessTransformers = true
-    
-    // Add any properties you want to swap out for a dynamic value at build time here
-    // Any properties here will be added to a class at build time, the name can be configured below
-    // Example:
-    // injectedTags.put('VERSION', project.version)
-    // injectedTags.put('MOD_ID', project.archives_base_name)
-}
-
-// Generate a group.archives_base_name.Tags class
-tasks.injectTags.configure {
-    // Change Tags class' name here:
-    outputClassName.set("${project.group}.${project.archives_base_name}.Tags")
+    if (propertyBool('use_tags')) {
+        if (file('tags.properties').exists()) {
+            Properties props = new Properties().tap {  it.load(file('tags.properties').newInputStream()); it }
+            if (!props.isEmpty()) {
+                injectedTags.set(props.collectEntries { k, v -> [(k): interpolate(v)] })
+            }
+        }
+    }
 }
 
 repositories {
@@ -82,33 +114,32 @@ repositories {
         url 'https://maven.cleanroommc.com'
     }
     maven {
-        name 'SpongePowered Maven'
-        url 'https://repo.spongepowered.org/maven'
+        name 'BlameJared Maven'
+        url 'https://maven.blamejared.com'
     }
-    maven {
-        name 'CurseMaven'
-        url 'https://cursemaven.com'
-        content {
-            includeGroup 'curse.maven'
-        }
-    }
-    mavenLocal() // Must be last for caching to work
 }
 
 dependencies {
-    if (project.use_assetmover.toBoolean()) {
-        implementation 'com.cleanroommc:assetmover:2.5'
+    if (propertyBool('use_modern_java_syntax')) {
+        annotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:1.0.0'
+        // Workaround for https://github.com/bsideup/jabel/issues/174
+        annotationProcessor 'net.java.dev.jna:jna-platform:5.13.0'
+        compileOnly ('com.github.bsideup.jabel:jabel-javac-plugin:1.0.0') {
+            transitive = false
+        }
+        // Allow jdk.unsupported classes like sun.misc.Unsafe, workaround for JDK-8206937 and fixes crashes in tests
+        patchedMinecraft 'me.eigenraven.java8unsupported:java-8-unsupported-shim:1.0.0'
+        // Include for tests
+        testAnnotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:1.0.0'
+        testCompileOnly('com.github.bsideup.jabel:jabel-javac-plugin:1.0.0') {
+            transitive = false // We only care about the 1 annotation class
+        }
     }
-    if (project.use_mixins.toBoolean()) {
-        implementation 'zone.rong:mixinbooter:7.1'
+    if (propertyBool('use_asset_mover')) {
+        implementation "com.cleanroommc:assetmover:${propertyString('asset_mover_version')}"
     }
-
-    // Example of deobfuscating a dependency
-    // implementation rfg.deobf('curse.maven:had-enough-items-557549:4543375')
-
-    if (project.use_mixins.toBoolean()) {
-        // Change your mixin refmap name here:
-        String mixin = modUtils.enableMixins('org.spongepowered:mixin:0.8.3', "mixins.${project.archives_base_name}.refmap.json")
+    if (propertyBool('use_mixins')) {
+        String mixin = modUtils.enableMixins("zone.rong:mixinbooter:${propertyString('mixin_booter_version')}", propertyString('mixin_refmap'))
         api (mixin) {
             transitive = false
         }
@@ -120,49 +151,77 @@ dependencies {
         }
     }
 
+    //APIs-2.8.3
+    implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848")
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4951281")
+    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
+    implementation rfg.deobf("curse.maven:gregtech-food-option-477021:4716101")
+    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
+
+    implementation rfg.deobf("curse.maven:artisan-worktables-284351:3205284")
+    runtimeOnly 'curse.maven:athenaeum-284350:4633750'
+
+    implementation 'mezz.jei:jei_1.12.2:4.16.1.302'
+    runtimeOnly 'curse.maven:top-245211:2667280'
+
+    compileOnly(rfg.deobf('CraftTweaker2:CraftTweaker2-API:4.1.20.684'))
+    compileOnly(rfg.deobf("curse.maven:ctm-267602:2915363"))
 }
 
+apply from: 'gradle/scripts/dependencies.gradle'
+
 // Adds Access Transformer files to tasks
-if (project.use_access_transformer.toBoolean()) {
-    for (File at : sourceSets.getByName("main").resources.files) {
-        if (at.name.toLowerCase().endsWith("_at.cfg")) {
-            tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from(at)
-            tasks.srgifyBinpatchedJar.accessTransformerFiles.from(at)
+if (propertyBool('use_access_transformer')) {
+    for (def location : propertyStringList('access_transformer_locations')) {
+        def fileLocation = file("${projectDir}/src/main/resources/${location}")
+        if (fileLocation.exists()) {
+            tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from("${projectDir}/src/main/resources/${location}")
+            tasks.srgifyBinpatchedJar.accessTransformerFiles.from("${projectDir}/src/main/resources/${location}")
+        } else {
+           // throw new GradleException("Access Transformer file [$fileLocation] does not exist!")
         }
     }
 }
 
 processResources {
-    // This will ensure that this task is redone when the versions change
-    inputs.property 'version', project.version
-    inputs.property 'mcversion', project.minecraft.version
-    
-    // Replace various properties in mcmod.info and pack.mcmeta if applicable
-    filesMatching(['mcmod.info', 'pack.mcmeta']) { fcd ->
-        // Replace version and mcversion
-        fcd.expand (
-                'version': project.version,
-                'mcversion': project.minecraft.version
+    filesMatching(['mcmod.info', 'pack.mcmeta', 'mixins.*(?!refmap).*\\.json']) {
+        def authors = propertyString('mod_authors').split(',').collect { """\"${ it.trim() }\"""" }.join(', ')
+        expand(
+                'mod_id': propertyString('mod_id'),
+                'mod_name': propertyString('mod_name'),
+                'mod_version': propertyString('mod_version'),
+                'mod_description': propertyString('mod_description'),
+                'mod_authors': "[${authors}]",
+                'mod_credits': propertyString('mod_credits'),
+                'mod_url': propertyString('mod_url'),
+                'mod_update_json': propertyString('mod_update_json'),
+                'mod_logo_path': propertyString('mod_logo_path'),
+                'mixin_refmap': propertyString('mixin_refmap'),
+                'mixin_package': propertyString('mixin_package')
         )
     }
     
-    if (project.use_access_transformer.toBoolean()) {
-        rename '(.+_at.cfg)', 'META-INF/$1' // Make sure Access Transformer files are in META-INF folder
+    if (propertyBool('use_access_transformer')) {
+        rename '(.+_at.cfg)', 'META-INF/$1'
     }
+
 }
 
 jar {
     manifest {
         def attribute_map = [:]
-        if (project.use_coremod.toBoolean()) {
-            attribute_map['FMLCorePlugin'] = project.coremod_plugin_class_name
-            if (project.include_mod.toBoolean()) {
+        if (propertyBool('is_coremod')) {
+            attribute_map['FMLCorePlugin'] = propertyString('coremod_plugin_class_name')
+            if (propertyBool('coremod_includes_mod')) {
                 attribute_map['FMLCorePluginContainsFMLMod'] = true
-                attribute_map['ForceLoadAsMod'] = project.gradle.startParameter.taskNames[0] == "build"
+                def currentTasks = gradle.startParameter.taskNames
+                if (currentTasks[0] == 'build' || currentTasks[0] == 'prepareObfModsFolder' || currentTasks[0] == 'runObfClient') {
+                    attribute_map['ForceLoadAsMod'] = true
+                }
             }
         }
-        if (project.use_access_transformer.toBoolean()) {
-            attribute_map['FMLAT'] = project.archives_base_name + '_at.cfg'
+        if (propertyBool('use_access_transformer')) {
+            attribute_map['FMLAT'] = propertyString('access_transformer_locations')
         }
         attributes(attribute_map)
     }
@@ -202,6 +261,108 @@ idea {
     }
 }
 
-tasks.named("processIdeaSettings").configure {
-    dependsOn("injectTags")
+compileTestJava {
+    sourceCompatibility = targetCompatibility = 8
 }
+
+test {
+    javaLauncher.set(javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(8)
+    })
+}
+
+changelog {
+    header.set("[${propertyString('mod_version')}] - ${LocalDate.now().format("yyyy-MM-dd")}")
+    headerParserRegex.set(~/(\d+\.\d+)/)
+}
+
+if (propertyBool('spotless')) {
+    apply plugin: 'com.diffplug.spotless'
+    // noinspection GroovyAssignabilityCheck
+    spotless {
+        encoding 'UTF-8'
+        format 'misc', {
+            target '.gitignore'
+
+            endWithNewline()
+            indentWithSpaces()
+            trimTrailingWhitespace()
+        }
+        java {
+            target 'src/main/java/**/*.java', 'src/test/java/**/*.java'
+
+            endWithNewline()
+            formatAnnotations()
+            importOrder()
+            indentWithSpaces()
+            removeUnusedImports()
+            toggleOffOn()
+            trimTrailingWhitespace()
+
+            if (propertyBool('cleanthat')) {
+                cleanthat().sourceCompatibility('1.8')
+            }
+        }
+        json {
+            target 'src/main/resources/**/*.json', 'src/test/resources/**/*.json'
+
+            simple().indentWithSpaces(6)
+        }
+    }
+}
+
+tasks.register('generateMixinJson') {
+    group 'cleanroom helpers'
+    onlyIf {
+        if (propertyBool('use_mixins') && propertyBool('generate_mixins_json')) {
+            return !file("src/main/resources/mixins.${propertyString('mod_id')}_early.json").exists()
+        }
+        return false
+    }
+    doLast {
+        def file = file("src/main/resources/mixins.${propertyString('mod_id')}_early.json")
+        file << """{\n\t"package": "\${mixin_package}",\n\t"required": true,\n\t"refmap": "\${mixin_refmap}",\n\t"target": "@env(DEFAULT)",\n\t"minVersion": "0.8.5",\n\t"compatibilityLevel": "JAVA_8",\n\t"mixins": [],\n\t"server": [],\n\t"client": []\n}"""
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    if (propertyBool('use_modern_java_syntax')) {
+        if (it.name in ['compileMcLauncherJava', 'compilePatchedMcJava']) {
+            return
+        }
+        sourceCompatibility = 17
+        options.release.set(8)
+        javaCompiler.set(javaToolchains.compilerFor {
+            languageVersion.set(JavaLanguageVersion.of(16))
+            vendor.set(JvmVendorSpec.AZUL)
+        })
+    }
+}
+
+tasks.register('cleanroomAfterSync') {
+    group 'cleanroom helpers'
+    dependsOn 'injectTags', 'generateMixinJson'
+}
+
+if (propertyBool('use_modern_java_syntax')) {
+    tasks.withType(Javadoc).configureEach {
+        sourceCompatibility = 17
+    }
+}
+
+tasks.named('injectTags', InjectTagsTask).configure {
+    onlyIf {
+        return propertyBool('use_tags') && !it.getTags().get().isEmpty()
+    }
+    it.outputClassName.set(propertyString('tag_class_name'))
+}
+
+idea.project.settings {
+    taskTriggers {
+        afterSync 'cleanroomAfterSync'
+    }
+}
+
+apply from: 'gradle/scripts/publishing.gradle'
+apply from: 'gradle/scripts/extra.gradle'
