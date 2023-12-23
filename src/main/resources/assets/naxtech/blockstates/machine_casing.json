@@ -1,0 +1,111 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant=iridium_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/iridium_casing"
+      }
+    },
+    "variant=advanced_invar_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/advanced_invar_casing"
+      }
+    },
+    "variant=advanced_aluminium_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/advanced_aluminium_casing"
+      }
+    },
+    "variant=precise_assembler_casing_mk1": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/precise_assembler_casing_mk1"
+      }
+    },
+    "variant=precise_assembler_casing_mk2": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/precise_assembler_casing_mk2"
+      }
+    },
+    "variant=precise_assembler_casing_mk3": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/precise_assembler_casing_mk3"
+      }
+    },
+    "variant=substrate_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/machine_casing/substrate_top",
+        "side": "naxtech:blocks/casings/machine_casing/substrate_side",
+        "bottom": "#side"
+      }
+    },
+    "variant=advanced_substrate_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/machine_casing/advanced_substrate_top",
+        "side": "naxtech:blocks/casings/machine_casing/substrate_side",
+        "bottom": "#side"
+      }
+    },
+    "variant=vacuum_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/machine_casing/vacuum_casing",
+        "side": "naxtech:blocks/casings/machine_casing/vacuum_casing_side",
+        "bottom": "naxtech:blocks/casings/machine_casing/vacuum_casing"
+      }
+    },
+    "variant=drill_head": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/gearbox/machine_casing_gearbox_steel",
+        "side": "gregtech:blocks/casings/machine_casing/machine_casing_solid_steel",
+        "bottom": "naxtech:blocks/casings/machine_casing/drill_head_bottom"
+      }
+    },
+    "variant=naquadria_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/naquadria_casing"
+      }
+    },
+    "variant=hyper_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/hyper_casing"
+      }
+    },
+    "variant=talonite_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/talonite_casing"
+      }
+    },
+    "variant=farm_pipe_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "naxtech:blocks/casings/machine_casing/farm_pipe_casing",
+        "side": "naxtech:blocks/casings/machine_casing/farm_pipe_side_casing",
+        "bottom": "naxtech:blocks/casings/machine_casing/farm_casing"
+      }
+    },
+    "variant=farm_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/farm_casing"
+      }
+    },
+    "variant=breeding_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/machine_casing/breeding_casing"
+      }
+    }
+  }
+}

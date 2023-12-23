@@ -1,0 +1,1079 @@
+
+
+
+itemGroup.NaxTech=NaxTech(NT)
+item.material.oreprefix.plateCurved=Curved %s Plate
+item.material.oreprefix.milled=Milled %s Dust
+metaitem.milled.tooltip.flotation=Further processing requires §6Industrial Flotation Factory§7.
+item.material.oreprefix.nanites=%s
+item.material.oreprefix.wrap=%s
+
+
+#  Mill Balls
+metaitem.mill.grindball_soapstone.name=Soapstone Grindball
+metaitem.mill.grindball_aluminium.name=Aluminium Grindball
+
+# Circuits
+# Gooware
+metaitem.circuit.gooware_processor.name=Gooware Processor
+metaitem.circuit.gooware_processor.tooltip=Reaction-Diffusion Computation/n§2ZPM-tier Circuit
+metaitem.circuit.gooware_assembly.name=Gooware Assembly
+metaitem.circuit.gooware_assembly.tooltip=Cyclic Concentration/n§2UV-tier Circuit
+metaitem.circuit.gooware_computer.name=Gooware Supercomputer
+metaitem.circuit.gooware_computer.tooltip=Complex Wave Phenomena!/n§2UHV-tier Circuit
+metaitem.circuit.gooware_mainframe.name=Gooware Mainframe
+metaitem.circuit.gooware_mainframe.tooltip=Spiraling Colored Waves!/n§2UEV-tier Circuit
+
+# Optical
+metaitem.circuit.optical_processor.name=Optical Processor
+metaitem.circuit.optical_processor.tooltip=Lightspeed Computing/n§6UV-tier Circuit
+metaitem.circuit.optical_assembly.name=Optical Assembly
+metaitem.circuit.optical_assembly.tooltip=With the Power of Lasers!/n§6UHV-tier Circuit
+metaitem.circuit.optical_computer.name=Optical Supercomputer
+metaitem.circuit.optical_computer.tooltip=In the Blink of an Eye/n§6UEV-tier Circuit
+metaitem.circuit.optical_mainframe.name=Optical Mainframe
+metaitem.circuit.optical_mainframe.tooltip=Could Anything be faster?/n§6UIV-tier Circuit
+
+# Spintronic
+metaitem.circuit.spintronic_processor.name=Spintronic Processor
+metaitem.circuit.spintronic_processor.tooltip=Spinning Electrons/n§5UHV-tier Circuit
+metaitem.circuit.spintronic_assembly.name=Spintronic Assembly
+metaitem.circuit.spintronic_assembly.tooltip=Discrete Quantum Walks/n§5UEV-tier Circuit
+metaitem.circuit.spintronic_computer.name=Spintronic Supercomputer
+metaitem.circuit.spintronic_computer.tooltip=Ballistic Spin Filtration/n§5UIV-tier Circuit
+metaitem.circuit.spintronic_mainframe.name=Spintronic Mainframe
+metaitem.circuit.spintronic_mainframe.tooltip=Spin-Wave Logic!/n§5UXV-tier Circuit
+
+
+# Cosmic
+metaitem.circuit.cosmic_processor.name=Cosmic Processor
+metaitem.circuit.cosmic_processor.tooltip=Phenomenal cosmic powers!/n§8UEV-tier Circuit
+metaitem.circuit.cosmic_assembly.name=Cosmic Assembly
+metaitem.circuit.cosmic_assembly.tooltip=Phenomenal cosmic powers!/n§8UIV-tier Circuit
+metaitem.circuit.cosmic_computer.name=Cosmic Supercomputer
+metaitem.circuit.cosmic_computer.tooltip=Phenomenal cosmic powers!/n§8UXV-tier Circuit
+metaitem.circuit.cosmic_mainframe.name=Cosmic Mainframe
+metaitem.circuit.cosmic_mainframe.tooltip=Phenomenal cosmic powers!/n§8OpV-tier Circuit
+
+# Supracausal
+metaitem.circuit.supracausal_processor.name=Supra-Causal Processor
+metaitem.circuit.supracausal_processor.tooltip=With the Power of Black Holes/n§fUIV-tier Circuit
+metaitem.circuit.supracausal_assembly.name=Supra-Causal Assembly
+metaitem.circuit.supracausal_assembly.tooltip=Singularities on an Epic scale/n§fUXV-tier Circuit
+metaitem.circuit.supracausal_computer.name=Supra-Causal Supercomputer
+metaitem.circuit.supracausal_computer.tooltip=Using Wormholes to our Advantage/n§fOpV-tier Circuit
+metaitem.circuit.supracausal_mainframe.name=Supra-Causal Mainframe
+metaitem.circuit.supracausal_mainframe.tooltip=Answers before questions/n§fMAX-tier Circuit
+
+# Suprachronal
+metaitem.circuit.suprachronal.ulv.name=Supra-Chronal Circuit (ULV)
+metaitem.circuit.suprachronal.ulv.tooltip=Full control over spacetime/n§fULV-tier Circuit
+metaitem.circuit.suprachronal.lv.name=Supra-Chronal Circuit (LV)
+metaitem.circuit.suprachronal.lv.tooltip=Full control over spacetime/n§fLV-tier Circuit
+metaitem.circuit.suprachronal.mv.name=Supra-Chronal Circuit (MV)
+metaitem.circuit.suprachronal.mv.tooltip=Full control over spacetime/n§fMV-tier Circuit
+metaitem.circuit.suprachronal.hv.name=Supra-Chronal Circuit (HV)
+metaitem.circuit.suprachronal.hv.tooltip=Full control over spacetime/n§fHV-tier Circuit
+metaitem.circuit.suprachronal.ev.name=Supra-Chronal Circuit (EV)
+metaitem.circuit.suprachronal.ev.tooltip=Full control over spacetime/n§fEV-tier Circuit
+metaitem.circuit.suprachronal.iv.name=Supra-Chronal Circuit (IV)
+metaitem.circuit.suprachronal.iv.tooltip=Full control over spacetime/n§fIV-tier Circuit
+metaitem.circuit.suprachronal.luv.name=Supra-Chronal Circuit (LuV)
+metaitem.circuit.suprachronal.luv.tooltip=Full control over spacetime/n§fLuV-tier Circuit
+metaitem.circuit.suprachronal.zpm.name=Supra-Chronal Circuit (ZPM)
+metaitem.circuit.suprachronal.zpm.tooltip=Full control over spacetime/n§fZPM-tier Circuit
+metaitem.circuit.suprachronal.uv.name=Supra-Chronal Circuit (UV)
+metaitem.circuit.suprachronal.uv.tooltip=Full control over spacetime/n§fUV-tier Circuit
+metaitem.circuit.suprachronal.uhv.name=Supra-Chronal Circuit (UHV)
+metaitem.circuit.suprachronal.uhv.tooltip=Full control over spacetime/n§fUHV-tier Circuit
+metaitem.circuit.suprachronal.uev.name=Supra-Chronal Circuit (UEV)
+metaitem.circuit.suprachronal.uev.tooltip=Full control over spacetime/n§fUEV-tier Circuit
+metaitem.circuit.suprachronal.uiv.name=Supra-Chronal Circuit (UIV)
+metaitem.circuit.suprachronal.uiv.tooltip=Full control over spacetime/n§fUIV-tier
+metaitem.circuit.suprachronal.uxv.name=Supra-Chronal Circuit (UXV)
+metaitem.circuit.suprachronal.uxv.tooltip=Full control over spacetime/n§fUXV-tier Circuit
+metaitem.circuit.suprachronal.opv.name=Supra-Chronal Circuit (OpV)
+metaitem.circuit.suprachronal.opv.tooltip=Full control over spacetime/n§fOpV-tier Circuit
+metaitem.circuit.suprachronal.max.name=Supra-Chronal Circuit (MAX)
+metaitem.circuit.suprachronal.max.tooltip=Full control over spacetime/n§fMAX-tier Circuit
+
+
+#Glasses
+tile.glasses_casing.ti_boron_silicate_glass_block.name=Ti Boron Silicate GLASS
+tile.glasses_casing.w_boron_silicate_glass_block.name=W Boron Silicate GLASS
+tile.glasses_casing.cr_boron_silicate_glass_block.name=CR Boron Silicate GLASS
+tile.glasses_casing.thy_boron_silicate_glass_block.name=ThYBoron Silicate GLASS
+tile.glasses_casing.ir_boron_silicate_glass_block.name=IR Boron Silicate GLASS
+tile.glasses_casing.os_boron_silicate_glass_block.name=OS Boron Silicate GLASS
+tile.glasses_casing.ne_boron_silicate_glass_block.name=NE Boron Silicate GLASS
+tile.glasses_casing.sne_boron_silicate_glass_block.name=SpaceNE Boron Silicate GLASS
+tile.glasses_casing.ava_boron_silicate_glass_block.name=AVA Boron Silicate GLASS
+tile.glasses_casing.tl_boron_silicate_glass_block.name=TL Boron Silicate GLASS
+
+naxtech.glass_tier.tooltip=
+naxtech.optical_glass_tier.tooltip.0=
+naxtech.optical_glass_tier.tooltip.1=
+naxtech.optical_glass_tier.tooltip.2=
+naxtech.optical_glass_tier.tooltip.3=
+naxtech.optical_glass_tier.tooltip.4=
+naxtech.optical_glass_tier.tooltip.5=
+
+naxtech.multiblock.pattern.error.glasses=
+
+#Wrap Circuit
+metaitem.wrapcircuit.ulv.name=
+metaitem.wrapcircuit.ulv.tooltip=
+metaitem.wrapcircuit.lv.name=
+metaitem.wrapcircuit.lv.tooltip=
+metaitem.wrapcircuit.mv.name=
+metaitem.wrapcircuit.mv.tooltip=
+metaitem.wrapcircuit.hv.name=
+metaitem.wrapcircuit.hv.tooltip=
+metaitem.wrapcircuit.ev.name=
+metaitem.wrapcircuit.ev.tooltip=
+metaitem.wrapcircuit.iv.name=
+metaitem.wrapcircuit.iv.tooltip=
+metaitem.wrapcircuit.luv.name=
+metaitem.wrapcircuit.luv.tooltip=
+metaitem.wrapcircuit.zpm.name=
+metaitem.wrapcircuit.zpm.tooltip=
+metaitem.wrapcircuit.uv.name=
+metaitem.wrapcircuit.uv.tooltip=
+metaitem.wrapcircuit.uhv.name=
+metaitem.wrapcircuit.uhv.tooltip=
+metaitem.wrapcircuit.uev.name=
+metaitem.wrapcircuit.uev.tooltip=
+metaitem.wrapcircuit.uiv.name=
+metaitem.wrapcircuit.uiv.tooltip=
+metaitem.wrapcircuit.uxv.name=
+metaitem.wrapcircuit.uxv.tooltip=
+metaitem.wrapcircuit.opv.name=
+metaitem.wrapcircuit.opv.tooltip=
+metaitem.wrapcircuit.nax.name=
+metaitem.wrapcircuit.nax.tooltip=
+
+#
+#Wrap
+metaitem.wrap.coated_board.name=
+metaitem.wrap.coated_board.tooltip=
+metaitem.wrap.phenolic_board.name=
+metaitem.wrap.phenolic_board.tooltip=
+metaitem.wrap.plastic_board.name=
+metaitem.wrap.plastic_board.tooltip=
+metaitem.wrap.epoxy_board.name=
+metaitem.wrap.epoxy_board.tooltip=
+metaitem.wrap.fiber_board.name=
+metaitem.wrap.fiber_board.tooltip=
+metaitem.wrap.multilayer_fiber_board.name=
+metaitem.wrap.multilayer_fiber_board.tooltip=
+metaitem.wrap.wetware_board.name=
+metaitem.wrap.wetware_board.tooltip=
+
+metaitem.wrap.basic_circuit_board.name=
+metaitem.wrap.basic_circuit_board.tooltip=
+metaitem.wrap.good_circuit_board.name=
+metaitem.wrap.good_circuit_board.tooltip=
+metaitem.wrap.plastic_circuit_board.name=
+metaitem.wrap.plastic_circuit_board.tooltip=
+metaitem.wrap.advanced_circuit_board.name=
+metaitem.wrap.advanced_circuit_board.tooltip=
+metaitem.wrap.extreme_circuit_board.name=
+metaitem.wrap.extreme_circuit_board.tooltip=
+metaitem.wrap.elite_circuit_board.name=
+metaitem.wrap.elite_circuit_board.tooltip=
+metaitem.wrap.wetware_circuit_board.name=
+metaitem.wrap.wetware_circuit_board.tooltip=
+metaitem.wrap.crystal_system_on_chip.name=
+metaitem.wrap.crystal_system_on_chip.tooltip=
+
+metaitem.wrap.smd_capacitor.name=
+metaitem.wrap.smd_capacitor.tooltip=
+metaitem.wrap.smd_diode.name=
+metaitem.wrap.smd_diode.tooltip=
+metaitem.wrap.smd_resistor.name=
+metaitem.wrap.smd_resistor.tooltip=
+metaitem.wrap.smd_transistor.name=
+metaitem.wrap.smd_transistor.tooltip=
+metaitem.wrap.smd_inductor.name=
+metaitem.wrap.smd_inductor.tooltip=
+metaitem.wrap.advanced_smd_capacitor.name=
+metaitem.wrap.advanced_smd_capacitor.tooltip=
+metaitem.wrap.advanced_smd_diode.name=
+metaitem.wrap.advanced_smd_diode.tooltip=
+metaitem.wrap.advanced_smd_resistor.name=
+metaitem.wrap.advanced_smd_resistor.tooltip=
+metaitem.wrap.advanced_smd_transistor.name=
+metaitem.wrap.advanced_smd_transistor.tooltip=
+metaitem.wrap.advanced_smd_inductor.name=
+metaitem.wrap.advanced_smd_inductor.tooltip=
+
+metaitem.wrap.neuro_processor.name=
+metaitem.wrap.neuro_processor.tooltip=
+metaitem.wrap.stem_cells.name=
+metaitem.wrap.stem_cells.tooltip=
+metaitem.wrap.engraved_lapotron_chip.name=
+metaitem.wrap.engraved_lapotron_chip.tooltip=
+metaitem.wrap.engraved_crystal_chip.name=
+metaitem.wrap.engraved_crystal_chip.tooltip=
+metaitem.wrap.crystal_central_processing_unit.name=
+metaitem.wrap.crystal_central_processing_unit.tooltip=
+
+metaitem.wrap.central_processing_unit.name=
+metaitem.wrap.central_processing_unit.tooltip=
+metaitem.wrap.random_access_memory.name=
+metaitem.wrap.random_access_memory.tooltip=
+metaitem.wrap.integrated_logic_circuit.name=
+metaitem.wrap.integrated_logic_circuit.tooltip=
+metaitem.wrap.nano_central_processing_unit.name=
+metaitem.wrap.nano_central_processing_unit.tooltip=
+metaitem.wrap.qubit_central_processing_unit.name=
+metaitem.wrap.qubit_central_processing_unit.tooltip=
+metaitem.wrap.simple_system_on_chip.name=
+metaitem.wrap.simple_system_on_chip.tooltip=
+metaitem.wrap.system_on_chip.name=
+metaitem.wrap.system_on_chip.tooltip=
+metaitem.wrap.advanced_system_on_chip.name=
+metaitem.wrap.advanced_system_on_chip.tooltip=
+metaitem.wrap.highly_advanced_system_on_chip.name=
+metaitem.wrap.highly_advanced_system_on_chip.tooltip=
+metaitem.wrap.nand_memory_chip.name=
+metaitem.wrap.nand_memory_chip.tooltip=
+metaitem.wrap.nor_memory_chip.name=
+metaitem.wrap.nor_memory_chip.tooltip=
+metaitem.wrap.ultra_low_pic.name=
+metaitem.wrap.ultra_low_pic.tooltip=
+metaitem.wrap.low_pic.name=
+metaitem.wrap.low_pic.tooltip=
+metaitem.wrap.pic.name=
+metaitem.wrap.pic.tooltip=
+metaitem.wrap.high_pic.name=
+metaitem.wrap.high_pic.tooltip=
+metaitem.wrap.ultra_high_pic.name=
+metaitem.wrap.ultra_high_pic.tooltip=
+
+metaitem.wrap.nano_pic.name=
+metaitem.wrap.nano_pic.tooltip=
+metaitem.wrap.pico_pic.name=
+metaitem.wrap.pico_pic.tooltip=
+metaitem.wrap.femto_pic.name=
+metaitem.wrap.femto_pic.tooltip=
+
+metaitem.wrap.optically_compatible_memory.name=
+metaitem.wrap.optically_compatible_memory.tooltip=
+metaitem.wrap.optically_perfected_cpu.name=
+metaitem.wrap.optically_perfected_cpu.tooltip=
+metaitem.wrap.raw_exposed_optical_chip.name=
+metaitem.wrap.raw_exposed_optical_chip.tooltip=
+metaitem.wrap.optical_cpu_containment_housing.name=
+metaitem.wrap.optical_cpu_containment_housing.tooltip=
+metaitem.wrap.optical_circuit_board.name=
+metaitem.wrap.optical_circuit_board.tooltip=
+metaitem.wrap.optical_smd.capacitor.name=
+metaitem.wrap.optical_smd.capacitor.tooltip=
+metaitem.wrap.optical_smd.diode.name=
+metaitem.wrap.optical_smd.diode.tooltip=
+metaitem.wrap.optical_smd.inductor.name=
+metaitem.wrap.optical_smd.inductor.tooltip=
+metaitem.wrap.optical_smd.resistor.name=
+metaitem.wrap.optical_smd.resistor.tooltip=
+metaitem.wrap.optical_smd.transistor.name=
+metaitem.wrap.optical_smd.transistor.tooltip=
+
+metaitem.wrap.living_crystal_chip.name=
+metaitem.wrap.living_crystal_chip.tooltip=
+metaitem.wrap.gooware.living_bio_chip.name=
+metaitem.wrap.gooware.living_bio_chip.tooltip=
+metaitem.wrap.gooware.biocells.name=
+metaitem.wrap.gooware.biocells.tooltip=
+metaitem.wrap.board.gooware.name=
+metaitem.wrap.board.gooware.tooltip=
+metaitem.wrap.circuit_board.gooware.name=
+metaitem.wrap.circuit_board.gooware.tooltip=
+metaitem.wrap.raw_advanced_crystal_chip.name=
+metaitem.wrap.raw_advanced_crystal_chip.tooltip=
+
+metaitem.wrap.spintronic_smd.capacitor.name=
+metaitem.wrap.spintronic_smd.capacitor.tooltip=
+metaitem.wrap.spintronic_smd.diode.name=
+metaitem.wrap.spintronic_smd.diode.tooltip=
+metaitem.wrap.spintronic_smd.inductor.name=
+metaitem.wrap.spintronic_smd.inductor.tooltip=
+metaitem.wrap.spintronic_smd.resistor.name=
+metaitem.wrap.spintronic_smd.resistor.tooltip=
+metaitem.wrap.spintronic_smd.transistor.name=
+metaitem.wrap.spintronic_smd.transistor.tooltip=
+metaitem.wrap.cosmic.information_module.name=
+metaitem.wrap.cosmic.information_module.tooltip=
+metaitem.wrap.cosmic.holographic_imc.name=
+metaitem.wrap.cosmic.holographic_imc.tooltip=
+metaitem.wrap.supracausal.spacetime_condenser.name=
+metaitem.wrap.supracausal.spacetime_condenser.tooltip=
+metaitem.wrap.supracausal.light_cone_module.name=
+metaitem.wrap.supracausal.light_cone_module.tooltip=
+
+metaitem.wrap.cosmic_smd.transistor.name=
+metaitem.wrap.cosmic_smd.transistor.tooltip=
+metaitem.wrap.cosmic_smd.resistor.name=
+metaitem.wrap.cosmic_smd.resistor.tooltip=
+metaitem.wrap.cosmic_smd.capacitor.name=
+metaitem.wrap.cosmic_smd.capacitor.tooltip=
+metaitem.wrap.cosmic_smd.diode.name=
+metaitem.wrap.cosmic_smd.diode.tooltip=
+metaitem.wrap.cosmic_smd.inductor.name=
+metaitem.wrap.cosmic_smd.inductor.tooltip=
+
+metaitem.wrap.supracausal_smd.transistor.name=
+metaitem.wrap.supracausal_smd.transistor.tooltip=
+metaitem.wrap.supracausal_smd.resistor.name=
+metaitem.wrap.supracausal_smd.resistor.tooltip=
+metaitem.wrap.supracausal_smd.capacitor.name=
+metaitem.wrap.supracausal_smd.capacitor.tooltip=
+metaitem.wrap.supracausal_smd.diode.name=
+metaitem.wrap.supracausal_smd.diode.tooltip=
+metaitem.wrap.supracausal_smd.inductor.name=
+metaitem.wrap.supracausal_smd.inductor.tooltip=
+
+metaitem.wrap.atto_pic.name=
+metaitem.wrap.atto_pic.tooltip=
+metaitem.wrap.zepto_pic.name=
+metaitem.wrap.zepto_pic.tooltip=
+metaitem.wrap.uhasoc.name=
+metaitem.wrap.uhasoc.tooltip=
+metaitem.wrap.phase_change_memory.name=
+metaitem.wrap.phase_change_memory.tooltip=
+metaitem.wrap.optical_nor_memory_chip.name=
+metaitem.wrap.optical_nor_memory_chip.tooltip=
+metaitem.wrap.spin_transfer_torque_memory.name=
+metaitem.wrap.spin_transfer_torque_memory.tooltip=
+metaitem.wrap.spintronic_nand_memory_chip.name=
+metaitem.wrap.spintronic_nand_memory_chip.tooltip=
+
+metaitem.wrap.board.optical.name=
+metaitem.wrap.board.optical.tooltip=
+metaitem.wrap.circuit_board.optical.name=
+metaitem.wrap.circuit_board.optical.tooltip=
+metaitem.wrap.board.spintronic.name=
+metaitem.wrap.board.spintronic.tooltip=
+metaitem.wrap.circuit_board.spintronic.name=
+metaitem.wrap.circuit_board.spintronic.tooltip=
+
+
+# Supra-Chronal Stuff
+metaitem.eigenfolded.kerr.manifold.name=Eigenfolded Kerr Manifold
+metaitem.hyperdimensional.drone.name=Hyperdimensional Drone
+metaitem.dimension.quantum_anomaly.name=Quantum Anomaly
+metaitem.dimension.quantum_anomaly.tooltip=
+
+
+metaitem.null.name=
+metaitem.null.tooltip=§b§o
+
+metaitem.dimension.raw_tesseract.name=Raw Tesseract
+metaitem.dimension.raw_tesseract.tooltip=Probably should shoot it with lasers
+metaitem.dimension.energised_tesseract.name=Energised Tesseract
+metaitem.dimension.energised_tesseract.tooltip=Higher dimensional engineering
+metaitem.dimension.black_body_naquadria_supersolid.name=Black Body Naquadria Supersolid
+metaitem.dimension.black_body_naquadria_supersolid.tooltip=Flows like a fluid and reflects nothing, perfect absorption and transfer
+metaitem.dimension.hyper-stable_self-healing_adhesive.name=Hyper-Stable Self-Healing Adhesive
+metaitem.dimension.hyper-stable_self-healing_adhesive.tooltip=Complete and selective adhesion, even when torn or damaged
+metaitem.dimension.superconductor_rare-earth_composite.name=Superconductor Rare-Earth Composite
+metaitem.dimension.superconductor_rare-earth_composite.tooltip=Zero resistance to electrical and quantum flow, regardless of temperature
+metaitem.gooware.biocells.name=Biocells
+metaitem.gooware.biocells.tooltip=Mutated Raw inteligence
+metaitem.gooware.living_bio_wafer.name=Living Bio Wafer
+metaitem.gooware.living_bio_wafer.tooltip=Raw Circuit
+metaitem.gooware.living_bio_chip.name=Living Bio Chip
+metaitem.gooware.living_bio_chip.tooltip=Needed for Circuits
+metaitem.nuclear_star.name=Nuclear Star
+metaitem.nuclear_star.tooltip=BY THE POWERS OF NAUGHTINESS, I COMMAND
+metaitem.living_crystal_chip.name=Living Crystal Chip
+metaitem.living_crystal_chip.tooltip=Needed for Circuits
+metaitem.optical.optically_enriched_crystalline_boule.name=Optically Enriched Crystalline Boule
+metaitem.optical.optically_enriched_crystalline_boule.tooltip=Raw Circuit
+metaitem.optical.photonically_prepared_wafer.name=Photonically Prepared Wafer
+metaitem.optical.photonically_prepared_wafer.tooltip=Raw Circuit
+metaitem.optical.photonically_enhanced_wafer.name=Photonically Enhanced Wafer
+metaitem.optical.photonically_enhanced_wafer.tooltip=Raw Circuit
+metaitem.optical.raw_exposed_optical_chip.name=Raw Exposed Optical Chip
+metaitem.optical.raw_exposed_optical_chip.tooltip=Raw Optical Chip
+metaitem.optical.optically_compatible_memory.name=Optically Compatible Memory
+metaitem.optical.optically_compatible_memory.tooltip=Its in the name!
+metaitem.optical.optically_perfected_cpu.name=Optically Perfected CPU
+metaitem.optical.optically_perfected_cpu.tooltip=Perfected CPU!
+metaitem.optical.optical_cpu_containment_housing.name=Optical CPU Containment Housing
+metaitem.optical.optical_cpu_containment_housing.tooltip=CPU Housing
+metaitem.optical.optical_circuit_board.name=Optical Circuit Board
+metaitem.optical.optical_circuit_board.tooltip=Optically Infused Board
+metaitem.timepiece.name=Timepiece
+metaitem.timepiece.tooltip=Beware of the kid with the hat
+
+
+
+
+
+metaitem.boule.cubic_zirconia.europium.name=Europium-doped Monocrystalline Cubic Zirconia Boule
+metaitem.boule.cubic_zirconia.europium.tooltip=Raw Crystal
+metaitem.wafer.cubic_zirconia.europium.name=Europium-doped Cubic Zirconia Wafer
+metaitem.wafer.cubic_zirconia.europium.tooltip=Raw Crystal
+metaitem.wafer.crystal.interface.name=Crystal Interface Wafer
+metaitem.wafer.crystal.interface.tooltip=Raw Crystal Interface
+metaitem.plate.crystal.interface.name=Crystal Interface Chip
+metaitem.plate.crystal.interface.tooltip=Crystal Interface
+metaitem.engraved.crystal_chip.ruby.name=Engraved Ruby Crystal Chip
+metaitem.engraved.crystal_chip.ruby.tooltip=Control Ruby
+metaitem.engraved.crystal_chip.sapphire.name=Engraved Sapphire Crystal Chip
+metaitem.engraved.crystal_chip.sapphire.tooltip=Conversion Sapphire
+metaitem.engraved.crystal_chip.diamond.name=Engraved Diamond Crystal Chip
+metaitem.engraved.crystal_chip.diamond.tooltip=Logic Diamond
+metaitem.crystal.modulator.ruby.name=Ruby Crystal Modulator
+metaitem.crystal.modulator.ruby.tooltip=Control Processing Circuit
+metaitem.crystal.modulator.sapphire.name=Sapphire Crystal Modulator
+metaitem.crystal.modulator.sapphire.tooltip=Conversion Processing Circuit
+metaitem.crystal.modulator.diamond.name=Diamond Crystal Modulator
+metaitem.crystal.modulator.diamond.tooltip=Logic Processing Circuit
+metaitem.crystal.system_on_chip.socket.name=Crystal SOC Socket
+metaitem.crystal.system_on_chip.socket.tooltip=Bridging Crystal and Circuit
+metaitem.glass_fiber.name=Glass Fiber
+metaitem.glass_fiber.tooltip=B(SiO₂)₇
+metaitem.europium_doped_monocrystalline_silicon_boule.name=Europium doped Monocrystalline Silicon Boule
+metaitem.europium_doped_monocrystalline_silicon_boule.tooltip=Raw Circuit
+metaitem.europium_doped_wafer.name=Europium doped Wafer
+metaitem.europium_doped_wafer.tooltip=Raw Circuit
+metaitem.americium_doped_monocrystalline_silicon_boule.name=Americium doped Monocrystalline Silicon Boule
+metaitem.americium_doped_monocrystalline_silicon_boule.tooltip=Raw Circuit
+metaitem.americium_doped_wafer.name=Americium doped Wafer
+metaitem.americium_doped_wafer.tooltip=Raw Circuit
+
+#
+metaitem.board.gooware.name=Bio Circuit Board
+metaitem.board.gooware.tooltip=Bio genetic mutated Board
+metaitem.circuit_board.gooware.name=Ultra Bio Mutated Circuit Board
+metaitem.circuit_board.gooware.tooltip=Bio genetic mutated Board
+metaitem.board.optical.name=Gallium Nitride Semiconducting Board
+metaitem.board.optical.tooltip=Absolute ideal materials for Optoelectronic Devices
+metaitem.board.spintronic.name=Carbon Nanotube Magnetic storage Board
+metaitem.board.spintronic.tooltip=Third generation Spintronic Technology
+metaitem.circuit_board.optical.name=Ultimate Circuit Board
+metaitem.circuit_board.optical.tooltip=The Technology Star of the Semiconductor Industry
+metaitem.circuit_board.spintronic.name=Infinite Circuit Board
+metaitem.circuit_board.spintronic.tooltip=The Best Implementation of Spin Transfer Torque
+
+#
+metaitem.station_1.name=Hi-Computation Station MK-I
+metaitem.station_1.tooltip=§b93015 TFlops§r
+metaitem.station_2.name=Hi-Computation Station MK-II
+metaitem.station_2.tooltip=§e76M Processor Units§r
+metaitem.station_3.name=Hi-Computation Station MK-III
+metaitem.station_3.tooltip=§aInvalidate RSA§r
+metaitem.station_4.name=Hi-Computation Station MK-IV Prototype
+metaitem.station_4.tooltip=§c56th Mersenne Prime§r
+metaitem.station_5.name=Hi-Computation Station MK-V Finaltype
+metaitem.station_5.tooltip=§5Paradox§r
+
+#
+metaitem.crystal.raw_advanced_chip.name=Raw Advanced Crystal Chip
+metaitem.crystal.raw_advanced_chip.tooltip=Raw Advanced Crystal Processor
+
+
+metaitem.protonated_fullerene_sieving_matrix.name=
+metaitem.saturated_fullerene_sieving_matrix.name=
+metaitem.unstable_star.name=
+
+#  Cosmic Components
+metaitem.component.cosmic.information_module.name=Cosmic Information Module
+metaitem.component.cosmic.information_module.tooltip=Universe in my hands
+metaitem.component.cosmic.holographic_imc.name=Holographic IMC
+metaitem.component.cosmic.holographic_imc.tooltip=Celestial Holographic Gravitational Scattering!
+
+#  Supracausal Components
+metaitem.component.supracausal.spacetime_condenser.name=Supracausal SpaceTime Condenser
+metaitem.component.supracausal.spacetime_condenser.tooltip=Hyperspace Stabilizer
+metaitem.component.supracausal.light_cone_module.name=Spacetime Light cone Stabilization Module
+metaitem.component.supracausal.light_cone_module.tooltip=Spin Foam Path Integral Computation!
+
+
+
+
+
+metaitem.optical_fiber.name=Optical Fiber
+metaitem.optical_fiber.tooltip=Light-transmitting Glass
+metaitem.dielectric_mirror.name=Dielectric Mirror
+metaitem.dielectric_mirror.tooltip=Bragg Mirror
+metaitem.laser.assembly.empty.name=Empty Laser Assembly
+metaitem.laser.assembly.empty.tooltip=Fill this with some Laser Medium
+metaitem.laser.helium_neon.name=Helium-Neon Laser
+metaitem.laser.helium_neon.tooltip=Purpose: Weak Optical Appliances
+metaitem.laser.nd_yag.name=Nd:YAG Laser
+metaitem.laser.nd_yag.tooltip=Purpose: Strong Optical Appliances
+metaitem.tube.topological_insulator.name=Topological Insulator Tube
+metaitem.tube.topological_insulator.tooltip=Conductive Surface States
+metaitem.containment_unit.bose_einstein_condensate.name=Bose-Einstein Condensate Containment Unit
+metaitem.containment_unit.bose_einstein_condensate.tooltip=Magnetic Evaporative Cooling
+metaitem.bose_einstein_condensate.name=Bose-Einstein Condensate
+metaitem.bose_einstein_condensate.tooltip=2,000 §cRb-87§7 Atoms at §b170nK§7!
+
+metaitem.plate.phase_change_memory.name=PRAM
+metaitem.plate.phase_change_memory.tooltip=Phase-change Memory
+metaitem.plate.optical_nor_memory_chip.name=ACNOR
+metaitem.plate.optical_nor_memory_chip.tooltip=All-optical Cascaded logic NOR
+metaitem.plate.spin_transfer_torque_memory.name=STTRAM
+metaitem.plate.spin_transfer_torque_memory.tooltip=Spin-Transfer Torque Memory
+metaitem.plate.spintronic_nand_memory_chip.name=MDNAND
+metaitem.plate.spintronic_nand_memory_chip.tooltip=Magnetic Domain-wall Invertic logic NAND
+metaitem.wafer.nano_pic.name=NPIC Wafer
+metaitem.wafer.nano_pic.tooltip=Raw Nano Power Circuit
+metaitem.wafer.pico_pic.name=PPIC Wafer
+metaitem.wafer.pico_pic.tooltip=Raw Pico Power Circuit
+metaitem.wafer.femto_pic.name=FPIC Wafer
+metaitem.wafer.femto_pic.tooltip=Raw Femto Power Circuit
+metaitem.plate.nano_pic.name=NPIC
+metaitem.plate.nano_pic.tooltip=Nano Power Integrated Circuit
+metaitem.plate.pico_pic.name=PPIC
+metaitem.plate.pico_pic.tooltip=Pico Power Integrated Circuit
+metaitem.plate.femto_pic.name=FPIC
+metaitem.plate.femto_pic.tooltip=Femto Power Integrated Circuit
+metaitem.wafer.atto_pic.name=APIC Wafer
+metaitem.wafer.atto_pic.tooltip=Raw Atto Power Circuit
+metaitem.plate.atto_pic.name=APIC
+metaitem.plate.atto_pic.tooltip=Raw Atto Power Integrated Circuit
+metaitem.wafer.zepto_pic.name=ZPIC Wafer
+metaitem.wafer.zepto_pic.tooltip=Raw Zepto Power Circuit
+metaitem.plate.zepto_pic.name=ZPIC
+metaitem.plate.zepto_pic.tooltip=Zepto Power Integrated Circuit
+metaitem.wafer.uhasoc.name=
+metaitem.wafer.uhasoc.tooltip=
+metaitem.plate.uhasoc.name=
+metaitem.plate.uhasoc.tooltip=
+
+# SMDs
+metaitem.component.optical_smd.capacitor.name=Optical Integrator
+metaitem.component.optical_smd.capacitor.tooltip=Optoelectronic Capacitor
+metaitem.component.optical_smd.diode.name=Optical Isolator
+metaitem.component.optical_smd.diode.tooltip=Optoelectronic Diode
+metaitem.component.optical_smd.resistor.name=Photoresistor
+metaitem.component.optical_smd.resistor.tooltip=Optoelectronic Resistor
+metaitem.component.optical_smd.transistor.name=Optical Transistor
+metaitem.component.optical_smd.transistor.tooltip=Optoelectronic Transistor
+metaitem.component.optical_smd.inductor.name=Optical Polarizer
+metaitem.component.optical_smd.inductor.tooltip=Optoelectronic Inductor
+
+
+metaitem.component.spintronic_smd.capacitor.name=Supercapacitor
+metaitem.component.spintronic_smd.capacitor.tooltip=Spin-Electronic Capacitor
+metaitem.component.spintronic_smd.diode.name=Schottky Diode
+metaitem.component.spintronic_smd.diode.tooltip=Spin-Electronic Diode
+metaitem.component.spintronic_smd.resistor.name=Magnetorestrictor
+metaitem.component.spintronic_smd.resistor.tooltip=Spin-Electronic Resistor
+metaitem.component.spintronic_smd.transistor.name=Spin MOSFET
+metaitem.component.spintronic_smd.transistor.tooltip=Spin-Electronic Transistor
+metaitem.component.spintronic_smd.inductor.name=Spin Polarizer
+metaitem.component.spintronic_smd.inductor.tooltip=Spin-Electronic Inductor
+
+
+metaitem.component.cosmic_smd.transistor.name=Crystal Information Payload
+metaitem.component.cosmic_smd.transistor.tooltip=Cosmic Transistor
+metaitem.component.cosmic_smd.resistor.name=Micro Interstellar material Information Wall
+metaitem.component.cosmic_smd.resistor.tooltip=Cosmic Resistor
+metaitem.component.cosmic_smd.capacitor.name=Holographic Energy Charge
+metaitem.component.cosmic_smd.capacitor.tooltip=Cosmic Capacitor
+metaitem.component.cosmic_smd.diode.name=Cosmic Ion Diode
+metaitem.component.cosmic_smd.diode.tooltip=Cosmic Diode
+metaitem.component.cosmic_smd.inductor.name=Zenith Polarizer
+metaitem.component.cosmic_smd.inductor.tooltip=Cosmic Inductor
+
+metaitem.component.supracausal_smd.transistor.name=Kaluza-Klein Extradimensional Dilator Field Effect Transistor
+metaitem.component.supracausal_smd.transistor.tooltip=Supracausal Transistor
+metaitem.component.supracausal_smd.resistor.name=Non anomalous Quantum Main Constraint Generator
+metaitem.component.supracausal_smd.resistor.tooltip=Supracausal Resistor
+metaitem.component.supracausal_smd.capacitor.name=Energy-Momentum-Stress Tensor Memory
+metaitem.component.supracausal_smd.capacitor.tooltip=Supracausal Capacitor
+metaitem.component.supracausal_smd.diode.name=Spin network Carrier Diode
+metaitem.component.supracausal_smd.diode.tooltip=Supracausal Diode
+metaitem.component.supracausal_smd.inductor.name=Supersymmetric Conformal Polarizer
+metaitem.component.supracausal_smd.inductor.tooltip=Supracausal Inductor
+
+# Processing Units
+metaitem.reaction_chamber.bz.name=Belousov-Zhabotinsky Reaction Chamber
+metaitem.nonlinear_chemical_oscillator.name=Nonlinear Chemical Oscillator
+metaitem.nonlinear_chemical_oscillator.tooltip=Non-equilibrium Thermodynamics!
+metaitem.optical_laser_control_unit.name=Optical Laser Control Unit
+metaitem.optical_laser_control_unit.tooltip=Laser Information Transmission
+metaitem.esr_computation_unit.name=ESR Computation Unit
+metaitem.esr_computation_unit.tooltip=Electron Spin Resonance Quantum Computation!
+metaitem.item.bio_processing_unit.name=Bio Processing Unit
+metaitem.item.bio_processing_unit.tooltip=Bio CPU
+metaitem.item.advanced_processor_board.name=Advanced Processor Boar
+metaitem.item.advanced_processor_board.tooltip=Advanced CPU
+metaitem.item.advanced_board.name=Advanced Board
+metaitem.item.advanced_board.tooltip=
+metaitem.item.quantum_processor_board.name=Quantum Processor Boar
+metaitem.item.quantum_processor_board.tooltip=Quantum CPU
+metaitem.item.quantum_board.name=Quantum Boar
+metaitem.item.quantum_board.tooltip=
+metaitem.item.nano_processor_board.name=Nano Processor Boar
+metaitem.item.nano_processor_board.tooltip=Nano CPU
+metaitem.item.nano_board.name=Nano Boar
+metaitem.item.nano_board.tooltip=
+
+
+
+
+
+
+
+gregtech.material.lumium=lumium
+gregtech.material.enderium=enderium
+gregtech.material.signalum=signalum
+gregtech.material.mithril=Mana Infused
+gregtech.material.draconium_awakened=draconium awakened
+gregtech.material.draconium=draconium
+gregtech.material.blackd_warf_matter=Blackd Warf Matter
+gregtech.material.whited_warf_matter=Whited Warf Matter
+gregtech.material.infinity=infinity
+gregtech.material.cosmic_neutronium=cosmic neutronium
+gregtech.material.spacetime=Spacetime
+gregtech.material.magneto_hydrodynamically_constrained_star_matter=magnet ohydrodynamically constrained star matter
+gregtech.material.eternity= eternity
+gregtech.material.shirabon=shirabon
+gregtech.material.astral_titanium=astral titanium
+gregtech.material.celestial_tungsten=celestial tungsten
+gregtech.material.rhugnor=Rhugnor
+gregtech.material.universium=universium
+gregtech.material.electrum_flux=electrum flux
+gregtech.material.hypogen=Hypogen
+gregtech.material.transcendent_metal=transcendent_metal
+gregtech.material.degenerate_rhenium=
+gregtech.material.draconium_chaotic=
+gregtech.material.orichalcum=
+gregtech.material.vibranium=
+gregtech.material.adamantium=
+gregtech.material.taranium=Taranium
+gregtech.material.quantum_alloy=Quantum Alloy
+gregtech.material.quantium=Quantum Alloy
+
+gregtech.material.mar_m_200_steel=
+gregtech.material.ichorium=
+gregtech.material.ichor_liquid=
+gregtech.material.crystal_matrix=
+gregtech.material.void_metal=
+gregtech.material.legendarium=
+gregtech.material.dragon_dust=
+
+
+#fluid
+gregtech.material.mutated_iiving_solder=Mutated Living Solder
+gregtech.material.ethyl_cyanoacrylate_super_glue=Ethyl Cyanoacrylate (Super Glue)
+gregtech.material.cyanoacrylate_polymer=Cyanoacrylate Polymer
+gregtech.material.ethyl_cyanoacetate=Ethyl Cyanoacetate
+gregtech.material.copper_sulfate_pentahydrate=Copper(II) Sulfate Pentahydrate
+gregtech.material.copper_sulfate=Copper(II) Sulfate
+gregtech.material.solid_acid_catalyst_mixture=Solid Acid Catalyst Mixture
+gregtech.material.cyanoacetic_acid=Cyanoacetic Acid
+gregtech.material.sodium_cyanide=Sodium Cyanide
+gregtech.material.chloroacetic_mixture=Chloroacetic Mixture
+gregtech.material.trichloroacetic_acid=Trichloroacetic Acid
+gregtech.material.dichloroacetic_acid=Dichloroacetic Acid
+gregtech.material.chloroacetic_acid=Chloroacetic Acid
+gregtech.material.acetic_anhydride=Acetic Anhydride
+gregtech.material.temporal_fluid=Tachyon Rich Temporal Fluid
+gregtech.material.spatial_fluid=Spatially Enlarged Fluid
+gregtech.material.rawstarmatter=Condensed Raw Stellar Plasma Mixture
+gregtech.material.primordial_matter=Liquid Primordial Matter
+gregtech.material.dimensionally_transcendent_crudecatalyst=Dimensionally Transcendent Crude Catalyst
+gregtech.material.dimensionally_transcendent_exoticcatalyst=Dimensionally Transcendent Exotic Catalyst
+gregtech.material.dimensionally_transcendent_prosaiccatalyst=Dimensionally Transcendent Prosaic Catalyst
+gregtech.material.dimensionally_transcendent_residue=Dimensionally Transcendent Residue
+gregtech.material.dimensionally_transcendent_resplendentcatalyst=Dimensionally Transcendent Resplendent Catalyst
+gregtech.material.dimensionally_transcendent_stellarcatalyst=Dimensionally Transcendent Stellar Catalyst
+gregtech.material.exciteddt_cc=Excited Dimensionally Transcendent Crude Catalyst
+gregtech.material.exciteddt_ec=Excited Dimensionally Transcendent Exotic Catalyst
+gregtech.material.exciteddt_pc=Excited Dimensionally Transcendent Prosaic Catalyst
+gregtech.material.exciteddt_rc=Excited Dimensionally Transcendent Resplendent Catalyst
+gregtech.material.exciteddt_sc=Excited Dimensionally Transcendent Stellar Catalyst
+gregtech.material.dragon_breath=
+gregtech.material.concentrate_dragon_breath=
+gregtech.material.dragon_blood=
+gregtech.material.nitrated_dragon_dust_solution=
+gregtech.material.residual_draconium_solution=
+gregtech.material.draconium_slag_solution=
+gregtech.material.dragon_tear=
+gregtech.material.blazing_pyrotheum=Blazing Pyrotheum
+gregtech.material.gelid_cryotheum=Gelid Cryotheum
+
+
+
+#Coil Block
+tile.wire_coil.naquadah_alloy.name=Naquadah Alloy Coil Block
+tile.wire_coil.electrum_flux.name=Electrum Flux Coil Block
+tile.wire_coil.awakened_draconium.name=Awakened Draconium Coil Block
+tile.wire_coil.hss_s.name=HSS-S Coil Block
+tile.wire_coil.infinity.name=Infinity Coil Block
+tile.wire_coil.hypogen.name=Hypogen Coil Block
+tile.wire_coil.eternal.name=Eternal Coil Block
+
+
+metaitem.crystal_redstone.name=crystal_redstone
+metaitem.crystal_crude_oil.name=crystal_crude_oil
+metaitem.crystal_glowstone.name=crystal_glowstone
+metaitem.crystal_ender.name=crystal_ender
+metaitem.crystal_geode.name=crystal_geode
+
+#
+tile.packaging_line.packaging_line_control_casing.name=
+tile.packaging_line.packaging_line_machine_casing.name=
+tile.packaging_line.packaging_line_casing.name=
+
+tile.advanced_assembly_line_casing.filter_casing.name=
+tile.advanced_assembly_line_casing.filter_casing.tooltip.1=
+tile.advanced_assembly_line_casing.filter_casing.tooltip.2=
+
+tile.advanced_assembly_line_casing.assembly_line_casing.name=
+tile.advanced_assembly_line_casing.assembly_control_casing.name=
+
+#machine
+tile.machine_casing.iridium_casing.name= iridium machine_casing
+tile.machine_casing.advanced_invar_casing.name=Plated Adiabatic Invar Machine Casing
+tile.machine_casing.advanced_aluminium_casing.name=Plated Antifreeze Aluminium Machine Casing
+tile.machine_casing.precise_assembler_casing_mk1.name=
+tile.machine_casing.precise_assembler_casing_mk2.name=
+tile.machine_casing.precise_assembler_casing_mk3.name=
+tile.machine_casing.substrate_casing.name=Substrate Machine Casing
+tile.machine_casing.advanced_substrate_casing.name=Advanced Substrate Machine Casing
+tile.machine_casing.vacuum_casing.name=
+tile.machine_casing.drill_head.name=Drill Head
+tile.machine_casing.naquadria_casing.name=Naquadria Radiation Resistant Machine Casing
+tile.machine_casing.hyper_casing.name=Extremely Dense Black Plutonium Machine Casing
+tile.machine_casing.talonite_casing.name=Low Friction Talonite Machine Casing
+tile.machine_casing.farm_pipe_casing.name=
+tile.machine_casing.farm_casing.name=
+tile.machine_casing.breeding_casing.name=
+
+tile.machine_casing_a.tritanium_casing.name=
+tile.machine_casing_a.quantum_casing.name=
+tile.machine_casing_a.reflective_casing.name=
+tile.machine_casing_a.general_processing_casing.name=
+tile.machine_casing_a.maraging_steel_casing.name=
+tile.machine_casing_a.babbitt_alloy_casing.name=
+tile.machine_casing_a.zirconium_carbide_casing.name=
+tile.machine_casing_a.supercritical_fluid_turbine_casing.name=
+tile.machine_casing_a.corrosion_casing.name=
+tile.machine_casing_a.hastelloy_x78_casing.name=
+tile.machine_casing_a.stellar_containment_casing.name=
+tile.machine_casing_a.hastelloy_k243_casing.name=
+tile.machine_casing_a.supercritical_fluid_turbine_shaft_block.name=
+tile.machine_casing_a.alloy_smelting_pipe_casing.name=
+tile.machine_casing_a.cyclotron_casing.name=
+tile.machine_casing_a.cyclotron_coil.name=
+
+tile.machine_casing_b.draconium_casing.name=
+tile.machine_casing_b.dragon_fusion_coil.name=
+tile.machine_casing_b.hg_1223_casing.name=
+
+
+
+
+#PCB
+tile.pcb_factory_casing.basic_photolithographic_framework_casing.name=
+tile.pcb_factory_casing.basic_photolithographic_framework_casing.tooltip=
+tile.pcb_factory_casing.mold_printing_assembly_framework_casing.name=
+tile.pcb_factory_casing.mold_printing_assembly_framework_casing.tooltip=
+tile.pcb_factory_casing.radiation_proof_scan_framework_casing.name=
+tile.pcb_factory_casing.radiation_proof_scan_framework_casing.tooltip=
+tile.pcb_factory_casing.biological_sterile_machine_casing.name=
+tile.pcb_factory_casing.biological_sterile_machine_casing.tooltip=
+tile.pcb_factory_casing.water_cooled_machine_casing.name=
+tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=
+tile.pcb_factory_casing.infinity_cooled_machine_casing.name=
+tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=
+
+#pipelinel
+tile.pipelinel_casing.pbi.name=
+tile.pipelinel_casing.polybenzimidazole_pipe.name=
+
+#machine
+naxtech.machine.packaging_line.name=
+
+
+
+naxtech.machine.component_assembly_line.name=
+recipemap.component_assembly_line_recipes.name=
+naxtech.machine.component_assembly_line.tier=
+naxtech.machine.component_assembly_line.tooltip.1=
+naxtech.machine.component_assembly_line.tooltip.2=
+naxtech.machine.component_assembly_line.tooltip.3=
+naxtech.machine.component_assembly_line.tooltip.4=
+
+tile.component_assembly_line_casing.lv.name=
+tile.component_assembly_line_casing.lv.tooltip=
+tile.component_assembly_line_casing.mv.name=
+tile.component_assembly_line_casing.mv.tooltip=
+tile.component_assembly_line_casing.hv.name=
+tile.component_assembly_line_casing.hv.tooltip=
+tile.component_assembly_line_casing.ev.name=
+tile.component_assembly_line_casing.ev.tooltip=
+tile.component_assembly_line_casing.iv.name=
+tile.component_assembly_line_casing.iv.tooltip=
+tile.component_assembly_line_casing.luv.name=
+tile.component_assembly_line_casing.luv.tooltip=
+tile.component_assembly_line_casing.zpm.name=
+tile.component_assembly_line_casing.zpm.tooltip=
+tile.component_assembly_line_casing.uv.name=
+tile.component_assembly_line_casing.uv.tooltip=
+tile.component_assembly_line_casing.uhv.name=
+tile.component_assembly_line_casing.uhv.tooltip=
+tile.component_assembly_line_casing.uev.name=
+tile.component_assembly_line_casing.uev.tooltip=
+tile.component_assembly_line_casing.uiv.name=
+tile.component_assembly_line_casing.uiv.tooltip=
+tile.component_assembly_line_casing.uxv.name=
+tile.component_assembly_line_casing.uxv.tooltip=
+tile.component_assembly_line_casing.opv.name=
+tile.component_assembly_line_casing.opv.tooltip=
+tile.component_assembly_line_casing.max.name=
+tile.component_assembly_line_casing.max.tooltip=
+
+#  Wrap Items
+metaitem.wrap.circuit.ulv.name=
+metaitem.wrap.circuit.ulv.tooltip=
+metaitem.wrap.circuit.lv.name=
+metaitem.wrap.circuit.lv.tooltip=
+metaitem.wrap.circuit.mv.name=
+metaitem.wrap.circuit.mv.tooltip=
+metaitem.wrap.circuit.hv.name=
+metaitem.wrap.circuit.hv.tooltip=
+metaitem.wrap.circuit.ev.name=
+metaitem.wrap.circuit.ev.tooltip=
+metaitem.wrap.circuit.iv.name=
+metaitem.wrap.circuit.iv.tooltip=
+metaitem.wrap.circuit.luv.name=
+metaitem.wrap.circuit.luv.tooltip=
+metaitem.wrap.circuit.zpm.name=
+metaitem.wrap.circuit.zpm.tooltip=
+metaitem.wrap.circuit.uv.name=
+metaitem.wrap.circuit.uv.tooltip=
+metaitem.wrap.circuit.uhv.name=
+metaitem.wrap.circuit.uhv.tooltip=
+metaitem.wrap.circuit.uev.name=
+metaitem.wrap.circuit.uev.tooltip=
+metaitem.wrap.circuit.uiv.name=
+metaitem.wrap.circuit.uiv.tooltip=
+metaitem.wrap.circuit.uxv.name=
+metaitem.wrap.circuit.uxv.tooltip=
+metaitem.wrap.circuit.opv.name=
+metaitem.wrap.circuit.opv.tooltip=
+metaitem.wrap.circuit.max.name=
+metaitem.wrap.circuit.max.tooltip=
+
+naxtech.machine.component_assembly_line.casing_tier=
+naxtech.machine.component_assembly_line.tier.1=
+naxtech.machine.component_assembly_line.tier.2=
+naxtech.machine.component_assembly_line.tier.3=
+naxtech.machine.component_assembly_line.tier.4=
+naxtech.machine.component_assembly_line.tier.5=
+naxtech.machine.component_assembly_line.tier.6=
+naxtech.machine.component_assembly_line.tier.7=
+naxtech.machine.component_assembly_line.tier.8=
+naxtech.machine.component_assembly_line.tier.9=
+naxtech.machine.component_assembly_line.tier.10=
+naxtech.machine.component_assembly_line.tier.11=
+naxtech.machine.component_assembly_line.tier.12=
+naxtech.machine.component_assembly_line.tier.13=
+naxtech.machine.component_assembly_line.tier.14=
+
+naxtech.machine.energy_hatch.input_4a.uev.name=
+naxtech.machine.energy_hatch.input_4a.uiv.name=
+naxtech.machine.energy_hatch.input_4a.uxv.name=
+naxtech.machine.energy_hatch.input_4a.opv.name=
+naxtech.machine.energy_hatch.input_16a.uev.name=
+naxtech.machine.energy_hatch.input_16a.uiv.name=
+naxtech.machine.energy_hatch.input_16a.uxv.name=
+naxtech.machine.energy_hatch.input_16a.opv.name=
+naxtech.machine.energy_hatch.output_4a.lv.name=
+naxtech.machine.energy_hatch.output_4a.mv.name=
+naxtech.machine.energy_hatch.output_4a.hv.name=
+naxtech.machine.energy_hatch.output_4a.uev.name=
+naxtech.machine.energy_hatch.output_4a.uiv.name=
+naxtech.machine.energy_hatch.output_4a.uxv.name=
+naxtech.machine.energy_hatch.output_4a.opv.name=
+naxtech.machine.energy_hatch.output_16a.lv.name=
+naxtech.machine.energy_hatch.output_16a.mv.name=
+naxtech.machine.energy_hatch.output_16a.hv.name=
+naxtech.machine.energy_hatch.output_16a.ev.name=
+naxtech.machine.energy_hatch.output_16a.uev.name=
+naxtech.machine.energy_hatch.output_16a.uiv.name=
+naxtech.machine.energy_hatch.output_16a.uxv.name=
+naxtech.machine.energy_hatch.output_16a.opv.name=
+
+recipemap.component_assembler_recipes.name=
+naxtech.machine.component_assembler.lv.name=
+naxtech.machine.component_assembler.lv.tooltip=
+naxtech.machine.component_assembler.mv.name=
+naxtech.machine.component_assembler.mv.tooltip=
+naxtech.machine.component_assembler.hv.name=
+naxtech.machine.component_assembler.hv.tooltip=
+naxtech.machine.component_assembler.ev.name=
+naxtech.machine.component_assembler.ev.tooltip=
+naxtech.machine.component_assembler.iv.name=
+naxtech.machine.component_assembler.iv.tooltip=
+
+metaitem.cover.electric_motor.max.name=
+metaitem.cover.electric_piston.max.name=
+metaitem.cover.electric_pump.max.name=
+metaitem.cover.electric_pump.max.tooltip=
+metaitem.cover.conveyor_module.max.name=
+metaitem.cover.conveyor_module.max.tooltip=
+metaitem.cover.robot_arm.max.name=
+metaitem.cover.robot_arm.max.tooltip=
+metaitem.cover.emitter.max.name=
+metaitem.cover.sensor.max.name=
+metaitem.cover.field_generator.max.name=
+
+metaitem.cover.electric_motor.maxx.name=
+metaitem.cover.electric_piston.maxx.name=
+metaitem.cover.electric_pump.maxx.name=
+metaitem.cover.electric_pump.maxx.tooltip=
+metaitem.cover.conveyor_module.maxx.name=
+metaitem.cover.conveyor_module.maxx.tooltip=
+metaitem.cover.robot_arm.maxx.name=
+metaitem.cover.robot_arm.maxx.tooltip=
+metaitem.cover.emitter.maxx.name=
+metaitem.cover.sensor.maxx.name=
+metaitem.cover.field_generator.maxx.name=
+
+metaitem.cover.electric_motor.ex.name=
+metaitem.cover.electric_piston.ex.name=
+metaitem.cover.electric_pump.ex.name=
+metaitem.cover.electric_pump.ex.tooltip=
+metaitem.cover.conveyor_module.ex.name=
+metaitem.cover.conveyor_module.ex.tooltip=
+metaitem.cover.robot_arm.ex.name=
+metaitem.cover.robot_arm.ex.tooltip=
+metaitem.cover.emitter.ex.name=
+metaitem.cover.sensor.ex.name=
+metaitem.cover.field_generator.ex.name=
+
+naxtech.machine.catalyst_hatch.name=Catalyst Hatch
+naxtech.multipart.catalyst.only=Only catalysts can be placed
+
+naxtech.machine.industrial_maintenance_hatch.name=Industrial Maintenance Hatch
+
+naxtech.machine.blazing_blast_furnace.name=Volcanus
+naxtech.machine.blazing_blast_furnace.amount=Blazing Pyrotheum: %sL
+naxtech.machine.blazing_blast_furnace.heat=Blazing Pyrotheum are converting into heat!
+naxtech.machine.blazing_blast_furnace.warning=Insufficient Blazing Pyrotheum
+naxtech.machine.blazing_blast_furnace.tooltip.1=Need to provide §cBlazing Pyrotheum§7 for work
+naxtech.machine.blazing_blast_furnace.tooltip.2=When no §cBlazing Pyrotheum§7 are provided, Volcanus will shut down.
+naxtech.machine.blazing_blast_furnace.tooltip.3=The maximum parallels is determined based on the Coil level, and each improvement will increase maximum parallels to twice the original number.
+naxtech.machine.blazing_blast_furnace.tooltip.4=
+
+naxtech.machine.cryogenic_freezer.name=Cryogenic Freezer
+naxtech.machine.cryogenic_freezer.amount=Gelid Cryotheum: %sL
+naxtech.machine.cryogenic_freezer.subcooled=Gelid Cryotheum are absorbing surrounding heat!
+naxtech.machine.cryogenic_freezer.warning=Insufficient Gelid Cryotheum
+naxtech.machine.cryogenic_freezer.tooltip.1=Need to provide §bGelid Cryotheum§7 for work
+naxtech.machine.cryogenic_freezer.tooltip.2=When no §bGelid Cryotheum§7 are provided, Cryogenic Freezer will shut down.
+naxtech.machine.cryogenic_freezer.tooltip.3=
+naxtech.machine.cryogenic_freezer.tooltip.4=
+
+naxtech.machine.precise_assembler.name=
+recipemap.precise_assembler_recipes.name=
+naxtech.machine.precise_assembler.tier=
+naxtech.machine.precise_assembler.tooltip.1=
+naxtech.machine.precise_assembler.tooltip.2=
+naxtech.machine.precise_assembler.tooltip.3=
+naxtech.machine.precise_assembler.tooltip.4=
+naxtech.machine.precise_assembler.tooltip.5=
+naxtech.machine.precise_assembler.tier.1=MK1
+naxtech.machine.precise_assembler.tier.2=MK2
+naxtech.machine.precise_assembler.tier.3=MK3
+
+naxtech.machine.integrated_ore_factory.name=Integrated Ore Processing Factory
+naxtech.machine.integrated_ore_factory.tooltip.1=
+naxtech.machine.integrated_ore_factory.tooltip_shift.1=
+naxtech.machine.integrated_ore_factory.tooltip_shift.2=
+naxtech.machine.integrated_ore_factory.mode.0=Processing Mode: Pulverization-Ore Washer-Thermal Centrifuge-Pulverization
+naxtech.machine.integrated_ore_factory.mode.1=Processing Mode: Pulverization-Ore Washer-Pulverization-Centrifuge
+naxtech.machine.integrated_ore_factory.mode.2=Processing Mode: Pulverization-Pulverization-Centrifuge
+naxtech.machine.integrated_ore_factory.mode.3=Processing Mode: Pulverization-Ore Washer-Sifter
+naxtech.machine.integrated_ore_factory.mode.4=Processing Mode: Pulverization-Chemical Bath-Pulverization-Centrifuge
+
+naxtech.machine.integrated_ore_factory.void.true=Stone Dust Voiding Enabled
+naxtech.machine.integrated_ore_factory.void.false=Stone Dust Voiding Disabled
+
+naxtech.machine.compact_fusion_reactor_mk1.name=
+naxtech.machine.compact_fusion_reactor_mk2.name=
+naxtech.machine.compact_fusion_reactor_mk3.name=
+naxtech.machine.compact_fusion_reactor_mk4.name=
+naxtech.machine.compact_fusion_reactor_mk5.name=
+
+naxtech.machine.chemical_plant.name=Chemical Plant
+recipemap.chemical_plant_recipes.name=Chemical Processing
+naxtech.machine.chemical_plant.coil_tier=Coil level: %d
+naxtech.machine.chemical_plant.casing_tier=Casing level: %d
+naxtech.machine.chemical_plant.tube_tier=Pipe level: %d
+naxtech.machine.chemical_plant.tier=Tier: %d
+naxtech.recipe.casing_tier=
+naxtech.recipe.casing_tier.1=
+naxtech.recipe.casing_tier.2=
+naxtech.recipe.casing_tier.3=
+naxtech.recipe.casing_tier.4=
+naxtech.recipe.casing_tier.5=
+naxtech.recipe.casing_tier.6=
+
+naxtech.machine.isa_mill.name=Isa Mill
+recipemap.isa_mill_recipes.name=Wet Milling
+
+naxtech.machine.flotation_factory.name=Industrial Flotation Factory
+recipemap.flotation_factory_recipes.name=Flotation
+
+tile.control_casing.isa_mill_casing.name=Inconel-625 Machine Casing
+tile.control_casing.isa_mill_casing_pipe.name=Inconel-625 Mild dispersion Pipe Casing
+tile.control_casing.isa_mill_casing_gearbox.name=Inconel-625 Ball-milling Gearbox Casing
+tile.control_casing.flotation_casing.name=Hastelloy-N Machine Casing
+tile.control_casing.flotation_casing_pipe.name=Hastelloy-N Oil film coated Pipe Casing
+tile.control_casing.flotation_casing_gearbox.name=Hastelloy-N Gearbox Casing
+
+tile.active_multiblock_casing.flotation_intake_casing.name=Hastelloy-N Sieve selection Intake Casing
+
+naxtech.machine.buffer_hatch.name=Buffer Hatch
+naxtech.machine.buffer_hatch.import.tooltip=Input buffer for multiblocks
+naxtech.multipart.ph.name=pH: %s
+
+recipemap.quantum_force_transformer_recipes.name=
+naxtech.machine.quantum_force_transformer.name=
+naxtech.machine.quantum_force_transformer.tooltip.1=
+naxtech.machine.quantum_force_transformer.tooltip.2=
+naxtech.machine.quantum_force_transformer.tooltip.3=
+naxtech.machine.quantum_force_transformer.tier=
+naxtech.machine.quantum_force_transformer.tier.1=
+naxtech.machine.quantum_force_transformer.tier.2=
+naxtech.machine.quantum_force_transformer.tier.3=
+naxtech.machine.quantum_force_transformer.tier.4=
+
+tile.quantum_force_transformer_glasses_casing.force_field_constrained_glass.name=
+tile.quantum_force_transformer_glasses_casing.force_field_constrained_glass.tooltip=
+tile.quantum_force_transformer_glasses_casing.cosmic_microwave_background_radiation_absorption_glass.name=
+tile.quantum_force_transformer_glasses_casing.cosmic_microwave_background_radiation_absorption_glass.tooltip=
+tile.quantum_force_transformer_glasses_casing.spacetime_supercondenser_glass.name=
+tile.quantum_force_transformer_glasses_casing.spacetime_supercondenser_glass.tooltip=
+tile.quantum_force_transformer_glasses_casing.supracausal_light_cone_glass.name=
+tile.quantum_force_transformer_glasses_casing.supracausal_light_cone_glass.tooltip=
+
+tile.quantum_force_transformer_casing.quantum_constraint_casing.name=
+tile.quantum_force_transformer_casing.neutron_pulse_manipulator_casing.name=
+tile.quantum_force_transformer_casing.neutron_pulse_manipulator_casing.tooltip=
+tile.quantum_force_transformer_casing.neutron_shielding_core_casing.name=
+tile.quantum_force_transformer_casing.neutron_shielding_core_casing.tooltip=
+tile.quantum_force_transformer_casing.cosmic_fabric_manipulator_casing.name=
+tile.quantum_force_transformer_casing.cosmic_fabric_manipulator_casing.tooltip=
+tile.quantum_force_transformer_casing.cosmic_fabric_shielding_core_casing.name=
+tile.quantum_force_transformer_casing.cosmic_fabric_shielding_core_casing.tooltip=
+tile.quantum_force_transformer_casing.infinity_infused_manipulator_casing.name=
+tile.quantum_force_transformer_casing.infinity_infused_manipulator_casing.tooltip=
+tile.quantum_force_transformer_casing.infinity_infused_shielding_core_casing.name=
+tile.quantum_force_transformer_casing.infinity_infused_shielding_core_casing.tooltip=
+tile.quantum_force_transformer_casing.supracausal_continuum_manipulator_casing.name=
+tile.quantum_force_transformer_casing.supracausal_continuum_manipulator_casing.tooltip=
+tile.quantum_force_transformer_casing.supracausal_continuum_shielding_core_casing.name=
+tile.quantum_force_transformer_casing.supracausal_continuum_shielding_core_casing.tooltip=
+tile.quantum_force_transformer_casing.quantum_force_transformer_coil.name=

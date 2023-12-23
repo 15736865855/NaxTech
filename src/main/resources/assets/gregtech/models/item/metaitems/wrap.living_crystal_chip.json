@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/metaitems/living_crystal_chip",
+    "layer1": "naxtech:items/wrap_overlay"
+  }
+}

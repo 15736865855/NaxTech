@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/material_sets/tf/crystal_crude_oil"
+  }
+}

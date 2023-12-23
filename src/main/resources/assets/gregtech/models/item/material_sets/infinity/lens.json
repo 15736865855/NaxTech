@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/material_sets/infinity/lens",
+    "layer1": "naxtech:items/material_sets/infinity/lens_overlay",
+    "layer2": "naxtech:items/material_sets/infinity/halo_overlay"
+  }
+}

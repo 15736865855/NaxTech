@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/wrap/metaitems/advanced_smd_diode",
+    "layer1": "naxtech:items/wrap_overlay"
+  }
+}

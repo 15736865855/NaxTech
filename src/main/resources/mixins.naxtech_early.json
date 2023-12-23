@@ -1,11 +1,15 @@
 {
-	"package": "${mixin_package}",
-	"required": true,
-	"refmap": "${mixin_refmap}",
-	"target": "@env(DEFAULT)",
-	"minVersion": "0.8.5",
-	"compatibilityLevel": "JAVA_8",
-	"mixins": [],
-	"server": [],
-	"client": []
+  "package": "com.onlyex.naxtech.mixin",
+  "required": true,
+  "refmap": "${mixin_refmap}",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8.5",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "appeng.MixinStackSizeRenderer",
+    "minecraft.MixinNettyPacketDecoder"
+  ],
+  "server": [],
+  "client": [
+    "minecraft.MixinBlockGlass"]
 }

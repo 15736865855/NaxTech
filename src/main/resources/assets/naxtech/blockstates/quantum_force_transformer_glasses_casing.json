@@ -1,0 +1,65 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "active=false,variant=force_field_constrained_glass": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/force_field_constrained_glass"
+      }
+    },
+    "active=true,variant=force_field_constrained_glass": {
+      "model": "gregtech:cube_2_layer_all",
+      "ambientocclusion": false,
+      "textures": {
+        "bot_all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/force_field_constrained_glass",
+        "top_all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/force_field_constrained_glass_bloom"
+      }
+    },
+    "active=false,variant=cosmic_microwave_background_radiation_absorption_glass": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/cosmic_microwave_background_radiation_absorption_glass"
+      }
+    },
+    "active=true,variant=cosmic_microwave_background_radiation_absorption_glass": {
+      "model": "gregtech:cube_2_layer_all",
+      "ambientocclusion": false,
+      "textures": {
+        "bot_all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/cosmic_microwave_background_radiation_absorption_glass",
+        "top_all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/cosmic_microwave_background_radiation_absorption_glass_bloom"
+      }
+    },
+    "active=false,variant=spacetime_supercondenser_glass": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/spacetime_supercondenser_glass"
+      }
+    },
+    "active=true,variant=spacetime_supercondenser_glass": {
+      "model": "gregtech:cube_2_layer_all",
+      "ambientocclusion": false,
+      "textures": {
+        "bot_all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/spacetime_supercondenser_glass",
+        "top_all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/spacetime_supercondenser_glass_bloom"
+      }
+    },
+    "active=false,variant=supracausal_light_cone_glass": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/supracausal_light_cone_glass"
+      }
+    },
+    "active=true,variant=supracausal_light_cone_glass": {
+      "model": "gregtech:cube_2_layer_all",
+      "ambientocclusion": false,
+      "textures": {
+        "bot_all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/supracausal_light_cone_glass",
+        "top_all": "naxtech:blocks/casings/quantum_force_transformer_glasses_casing/supracausal_light_cone_glass_bloom"
+      }
+    }
+  }
+}

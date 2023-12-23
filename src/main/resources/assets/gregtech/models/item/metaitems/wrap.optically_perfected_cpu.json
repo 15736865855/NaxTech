@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/metaitems/optical.optically_perfected_cpu",
+    "layer1": "naxtech:items/wrap_overlay"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant=filter_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/advanced_assembly_line_casing/filter_casing"
+      }
+    },
+    "variant=assembly_line_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/advanced_assembly_line_casing/assembly_line_casing"
+      }
+    },
+    "variant=assembly_control_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/advanced_assembly_line_casing/assembly_control_casing"
+      }
+    }
+  }
+}

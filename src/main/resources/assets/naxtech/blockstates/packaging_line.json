@@ -1,0 +1,23 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant=packaging_line_machine_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/packaging_line/packaging_line_machine_casing"
+      }
+    },
+    "variant=packaging_line_control_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/packaging_line/packaging_line_control_casing"
+      }
+    },
+    "variant=packaging_line_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/packaging_line/packaging_line_casing"
+      }
+    }
+  }
+}

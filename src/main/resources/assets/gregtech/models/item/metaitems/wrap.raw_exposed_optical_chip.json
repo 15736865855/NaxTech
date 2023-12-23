@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/metaitems/optical.raw_exposed_optical_chip",
+    "layer1": "naxtech:items/wrap_overlay"
+  }
+}

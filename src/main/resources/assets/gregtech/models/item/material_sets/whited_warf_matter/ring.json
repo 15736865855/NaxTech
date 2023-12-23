@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/material_sets/whited_warf_matter/ring",
+    "layer1": "naxtech:items/material_sets/whited_warf_matter/halo_overlay"
+  }
+}

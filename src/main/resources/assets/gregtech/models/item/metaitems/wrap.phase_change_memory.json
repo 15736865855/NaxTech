@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/metaitems/plate.phase_change_memory",
+    "layer1": "naxtech:items/wrap_overlay"
+  }
+}

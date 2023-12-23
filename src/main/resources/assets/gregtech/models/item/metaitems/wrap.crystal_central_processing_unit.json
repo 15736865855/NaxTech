@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/wrap/metaitems/crystal_central_processing_unit",
+    "layer1": "naxtech:items/wrap_overlay"
+  }
+}

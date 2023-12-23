@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/material_sets/mhcsm/foil",
+    "layer1": "naxtech:items/material_sets/mhcsm/foil_overlay"
+  }
+}

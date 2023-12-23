@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/material_sets/eternity/rotor",
+    "layer1": "naxtech:items/material_sets/eternity/rotor_overlay"
+  }
+}
