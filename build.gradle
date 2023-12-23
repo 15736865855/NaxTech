@@ -178,7 +178,7 @@ if (propertyBool('use_access_transformer')) {
             tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from("${projectDir}/src/main/resources/${location}")
             tasks.srgifyBinpatchedJar.accessTransformerFiles.from("${projectDir}/src/main/resources/${location}")
         } else {
-           // throw new GradleException("Access Transformer file [$fileLocation] does not exist!")
+            throw new GradleException("Access Transformer file [$fileLocation] does not exist!")
         }
     }
 }
