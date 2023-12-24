@@ -7,6 +7,9 @@ metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精�
 item.material.oreprefix.nanites=%s纳米蜂群
 item.material.oreprefix.wrap=封装%s
 
+#  Behavior
+behavior.data_item.require_decoding=存有需要解码的未知信息
+
 #  Mill Balls
 metaitem.mill.grindball_soapstone.name=皂石研磨球
 metaitem.mill.grindball_aluminium.name=铝研磨球
@@ -386,7 +389,30 @@ metaitem.wrap.circuit_board.spintronic.name=封装无尽电路板
 metaitem.wrap.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
 
 
-
+#   Biological Components
+metaitem.biological.components.electrochemical_gradient_recorder.name=电化学梯度记录仪
+metaitem.biological.components.electrochemical_gradient_recorder.tooltip=生物计算基础
+metaitem.biological.components.hyperribosome.name=超核糖体
+metaitem.biological.components.hyperribosome.tooltip=蛋白质工厂
+metaitem.biological.components.neutron_absorbing_protein.name=中子吸收蛋白
+metaitem.biological.components.neutron_absorbing_protein.tooltip=不可思议
+metaitem.biological.components.quantum_tunneling_microtubule.name=量子隧穿微管
+metaitem.biological.components.quantum_tunneling_microtubule.tooltip=生物聚变终成现实
+metaitem.biological.components.superexcited_conductive_polymer.name=超激发传导聚合体
+metaitem.biological.components.superexcited_conductive_polymer.tooltip=生物高压线
+metaitem.biological.components.ultra_micro_phase_separator.name=超微型相分离器
+metaitem.biological.components.ultra_micro_phase_separator.tooltip=生化反应守护者
+metaitem.biological.components.dna_decoder.name=DNA解码器
+metaitem.biological.components.dna_decoder.tooltip=自复制图灵机的一部分
+metaitem.biological.components.dna_encoder.name=DNA编码器
+metaitem.biological.components.dna_encoder.tooltip=自复制图灵机的一部分
+metaitem.biological.components.dna_decode_encoder.name=DNA解-编码器
+metaitem.biological.components.dna_decode_encoder.tooltip=会为了计算饮干宇宙
+metaitem.algae.ordinary_algae.name=普通藻类
+metaitem.algae.red_alga.name=红藻
+metaitem.algae.green_alga.name=绿藻
+metaitem.algae.chrysophyceae.name=金藻
+metaitem.algae.brown_alga.name=褐藻
 
 
 
@@ -412,7 +438,15 @@ metaitem.dimension.quantum_anomaly.tooltip=可能应使用激光来照射它
 metaitem.null.name=空
 metaitem.null.tooltip=§b§o天体即空洞
 
-
+#  Debug
+metaitem.debug.structure_writer.name=多方块导出工具
+metaitem.debug.structure_writer.tooltip=因为我需要一个...
+metaitem.debug.structure_writer.export_to_log=导出为日志
+metaitem.debug.structure_writer.export_to_json=导出为Json
+metaitem.debug.structure_writer.rotate_along_y_axis=沿Y轴旋转
+metaitem.debug.structure_writer.ex=无
+metaitem.debug.structure_writer.structural_scale=结构规模： X:%s  Y:%s  Z:%s
+metaitem.debug.structure_builder.name=多方块构建工具
 
 
 

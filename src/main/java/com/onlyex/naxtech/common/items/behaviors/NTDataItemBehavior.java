@@ -14,7 +14,7 @@ public class NTDataItemBehavior implements IItemBehaviour, IEPDataItem {
         IItemBehaviour.super.addInformation(itemStack, lines);
         if (NTDataManager.hasEPDataTag(itemStack)) {
             lines.add("§kUnknownInformation");
-            lines.add(I18n.format("behavior.ep_data_item.require_decoding"));
+            lines.add(I18n.format("behavior.data_item.require_decoding"));
         }
 //        String EPDataId = EPDataManager.readEPDataId(itemStack);
 //        if (EPDataId == null) return;

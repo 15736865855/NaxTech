@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "naxtech:items/tools/soldering_iron",
+    "layer1": "naxtech:items/tools/soldering_iron_overlay"
+  }
+}

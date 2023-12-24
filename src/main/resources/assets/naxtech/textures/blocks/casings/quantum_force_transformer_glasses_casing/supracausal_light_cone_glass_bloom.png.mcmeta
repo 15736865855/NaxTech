@@ -5,7 +5,7 @@
         "layer": "BLOOM",
         "gregtech": true,
         "textures": [
-            "epimorphism:blocks/casing/ep_quantum_force_transformer_casing/supracausal_light_cone_glass_ctm"
+            "naxtech:blocks/casing/quantum_force_transformer_casing/supracausal_light_cone_glass_ctm"
         ],
         "extra": {
             "light": 2

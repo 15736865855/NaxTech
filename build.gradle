@@ -158,10 +158,10 @@ dependencies {
     //implementation rfg.deobf("curse.maven:gregtech-food-option-477021:4716101")
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4961400")
 
-    //implementation rfg.deobf("curse.maven:artisan-worktables-284351:3205284")
+    implementation rfg.deobf("curse.maven:artisan-worktables-284351:3205284")
     runtimeOnly 'curse.maven:athenaeum-284350:4633750'
 
-    implementation 'mezz.jei:jei_1.12.2:4.16.1.302'
+    implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
     runtimeOnly 'curse.maven:top-245211:2667280'
 
     compileOnly(rfg.deobf('CraftTweaker2:CraftTweaker2-API:4.1.20.684'))

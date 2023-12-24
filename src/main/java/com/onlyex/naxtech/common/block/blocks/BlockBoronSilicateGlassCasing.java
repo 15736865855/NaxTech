@@ -100,14 +100,14 @@ public class BlockBoronSilicateGlassCasing extends VariantActiveBlock<BlockBoron
     }
 
     public enum CasingType implements IStringSerializable, ITierGlassBlockState {
-        TI_BORON_SILICATE_GLASS_BLOCK("ti_boron_silicate_glass_block", GTValues.EV, true),
-        W_BORON_SILICATE_GLASS_BLOCK("w_boron_silicate_glass_block", GTValues.IV, true),
-        CThY_BORON_SILICATE_GLASS_BLOCK("thy_boron_silicate_glass_block", GTValues.LuV, true),
-        CR_BORON_SILICATE_GLASS_BLOCK("cr_boron_silicate_glass_block", GTValues.ZPM, true),
-        IR_BORON_SILICATE_GLASS_BLOCK("ir_boron_silicate_glass_block", GTValues.UV, true),
-        OS_BORON_SILICATE_GLASS_BLOCK("os_boron_silicate_glass_block", GTValues.UHV, true),
-        NE_BORON_SILICATE_GLASS_BLOCK("ne_boron_silicate_glass_block", GTValues.UEV, true),
-        SNE_BORON_SILICATE_GLASS_BLOCK("sne_boron_silicate_glass_block", GTValues.UIV, true);
+        TI_BORON_SILICATE_GLASS_BLOCK("ti", GTValues.EV, true),
+        W_BORON_SILICATE_GLASS_BLOCK("w", GTValues.IV, true),
+        CThY_BORON_SILICATE_GLASS_BLOCK("thy", GTValues.LuV, true),
+        CR_BORON_SILICATE_GLASS_BLOCK("cr", GTValues.ZPM, true),
+        IR_BORON_SILICATE_GLASS_BLOCK("ir", GTValues.UV, true),
+        OS_BORON_SILICATE_GLASS_BLOCK("os", GTValues.UHV, true),
+        NE_BORON_SILICATE_GLASS_BLOCK("ne", GTValues.UEV, true),
+        SNE_BORON_SILICATE_GLASS_BLOCK("sne", GTValues.UIV, true);
 
 
 

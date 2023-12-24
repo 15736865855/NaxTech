@@ -60,6 +60,23 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;
 
+    //  Biological
+    public static MetaItem<?>.MetaValueItem ELECTROCHEMICAL_GRADIENT_RECORDER;
+    public static MetaItem<?>.MetaValueItem ULTRA_MICRO_PHASE_SEPARATOR;
+    public static MetaItem<?>.MetaValueItem QUANTUM_TUNNELING_MICROTUBULE;
+    public static MetaItem<?>.MetaValueItem HYPERRIBOSOME;
+    public static MetaItem<?>.MetaValueItem NEUTRON_ABSORBING_PROTEIN;
+    public static MetaItem<?>.MetaValueItem SUPEREXCITED_CONDUCTIVE_POLYMER;
+    public static MetaItem<?>.MetaValueItem DNA_ENCODER;
+    public static MetaItem<?>.MetaValueItem DNA_DECODER;
+    public static MetaItem<?>.MetaValueItem DNA_DECODE_ENCODER;
+
+    public static MetaItem<?>.MetaValueItem ORDINARY_ALGAE;
+    public static MetaItem<?>.MetaValueItem RED_ALGA;
+    public static MetaItem<?>.MetaValueItem GREEN_ALGA;
+    public static MetaItem<?>.MetaValueItem CHRYSOPHYCEAE;
+    public static MetaItem<?>.MetaValueItem BROWN_ALGA;
+
     //
     //Wrap Circuit
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_ULV;
@@ -332,6 +349,7 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_DIODE;
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_INDUCTOR;
 
+    public static MetaItem<?>.MetaValueItem DEBUG_STRUCTURE_WRITER;
 
     public static void init()
     {

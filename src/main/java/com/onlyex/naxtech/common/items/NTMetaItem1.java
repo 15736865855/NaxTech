@@ -4,12 +4,14 @@ package com.onlyex.naxtech.common.items;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.CommonProxy;
 import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;
+import com.onlyex.naxtech.common.items.behaviors.StructureWriteBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 
 import static com.onlyex.naxtech.common.items.NTMetaItems.*;
+import static com.onlyex.naxtech.common.items.NTMetaItems.DEBUG_STRUCTURE_WRITER;
 
 public class NTMetaItem1 extends StandardMetaItem {
 
@@ -175,6 +177,22 @@ public class NTMetaItem1 extends StandardMetaItem {
         GOOWARE_CIRCUIT = this.addItem(303, "circuit_board.gooware");
         OPTICAL_CIRCUIT = this.addItem(304, "circuit_board.optical");
         SPINTRONIC_CIRCUIT = this.addItem(305, "circuit_board.spintronic");
+
+        //  Biological Components
+        ELECTROCHEMICAL_GRADIENT_RECORDER = this.addItem(351, "biological.components.electrochemical_gradient_recorder");
+        ULTRA_MICRO_PHASE_SEPARATOR = this.addItem(352, "biological.components.ultra_micro_phase_separator");
+        QUANTUM_TUNNELING_MICROTUBULE = this.addItem(353, "biological.components.quantum_tunneling_microtubule");
+        HYPERRIBOSOME = this.addItem(354, "biological.components.hyperribosome");
+        NEUTRON_ABSORBING_PROTEIN = this.addItem(355, "biological.components.neutron_absorbing_protein");
+        SUPEREXCITED_CONDUCTIVE_POLYMER = this.addItem(356, "biological.components.superexcited_conductive_polymer");
+        DNA_ENCODER = this.addItem(357, "biological.components.dna_encoder");
+        DNA_DECODER = this.addItem(358, "biological.components.dna_decoder");
+        DNA_DECODE_ENCODER = this.addItem(359, "biological.components.dna_decode_encoder");
+        ORDINARY_ALGAE = this.addItem(360, "algae.ordinary_algae");
+        RED_ALGA = this.addItem(361, "algae.red_alga");
+        GREEN_ALGA = this.addItem(362, "algae.green_alga");
+        CHRYSOPHYCEAE = this.addItem(363, "algae.chrysophyceae");
+        BROWN_ALGA = this.addItem(364, "algae.brown_alga");
 
         //400~
         BIO_PROCESSING_UNIT = this.addItem(400,"item.bio_processing_unit");
@@ -358,7 +376,7 @@ public class NTMetaItem1 extends StandardMetaItem {
         SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(1414, "plate.spin_transfer_torque_memory");
         SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(1415, "plate.spintronic_nand_memory_chip");
 
-
+        DEBUG_STRUCTURE_WRITER = this.addItem(9999, "debug.structure_writer").addComponents(StructureWriteBehavior.INSTANCE);
 
 
 

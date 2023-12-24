@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "naxtech:items/void",
+    "layer1": "naxtech:items/tools/bending_cylinder"
+  }
+}
