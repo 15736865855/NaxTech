@@ -61,6 +61,7 @@ public class CommonProxy {
         registry.register(GLASS_CASING);
         registry.register(CONTROL_CASING);
         registry.register(MACHINE_CASING);
+        registry.register(MACHINE_CASING);
         registry.register(PACKAGING_LINE);
         registry.register(COMPONENT_ASSEMBLY_LINE_CASING);
         registry.register(ADVANCED_ASSEMBLY_LINE_CASING);

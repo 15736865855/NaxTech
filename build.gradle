@@ -151,14 +151,14 @@ dependencies {
         }
     }
 
-    //APIs-2.8.3
+    //APIs-2.8.5
     implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848")
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4951281")
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4965457")
     implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
-    implementation rfg.deobf("curse.maven:gregtech-food-option-477021:4716101")
-    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
+    //implementation rfg.deobf("curse.maven:gregtech-food-option-477021:4716101")
+    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4961400")
 
-    implementation rfg.deobf("curse.maven:artisan-worktables-284351:3205284")
+    //implementation rfg.deobf("curse.maven:artisan-worktables-284351:3205284")
     runtimeOnly 'curse.maven:athenaeum-284350:4633750'
 
     implementation 'mezz.jei:jei_1.12.2:4.16.1.302'
