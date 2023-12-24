@@ -5,7 +5,7 @@ import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.BlockActiveMultiblockCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockControlCasing;
-import com.onlyex.naxtech.common.block.blocks.BlockGlassCasing;
+import com.onlyex.naxtech.common.block.blocks.BlockBoronSilicateGlassCasing;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -57,7 +57,7 @@ public class MetaTileEntityFlotationFactory extends RecipeMapMultiblockControlle
         return NTMetaBlocks.CONTROL_CASING.getState(BlockControlCasing.CasingType.FLOTATION_CASING);
     }
     private static IBlockState getGlassState() {
-        return NTMetaBlocks.GLASS_CASING.getState(BlockGlassCasing.CasingType.W_BORON_SILICATE_GLASS_BLOCK);
+        return NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.W_BORON_SILICATE_GLASS_BLOCK);
     }
     private static IBlockState getPipeState() {
         return NTMetaBlocks.CONTROL_CASING.getState(BlockControlCasing.CasingType.FLOTATION_CASING_PIPE);

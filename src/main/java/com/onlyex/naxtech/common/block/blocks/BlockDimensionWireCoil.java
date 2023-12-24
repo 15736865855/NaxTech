@@ -47,7 +47,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
         this.setHardness(50.0f);
         this.setResistance(100.0f);
         this.setSoundType(SoundType.METAL);
-        this.setHarvestLevel(ToolClasses.WRENCH, 6);
+        this.setHarvestLevel("wrench", 6);
         this.setDefaultState(this.getState(CoilType.NAQUADAH_ALLOY));
     }
 

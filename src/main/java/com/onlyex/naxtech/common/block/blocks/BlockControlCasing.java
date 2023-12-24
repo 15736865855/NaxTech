@@ -22,7 +22,7 @@ public class BlockControlCasing extends VariantBlock<BlockControlCasing.CasingTy
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
-        setCreativeTab(NAXTECH_TAB);
+        this.setCreativeTab(NAXTECH_TAB);
         this.setHarvestLevel("wrench", 2);
         this.setDefaultState(this.getState(CasingType.ISA_MILL_CASING));
     }

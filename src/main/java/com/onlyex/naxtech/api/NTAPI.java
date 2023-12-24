@@ -3,7 +3,7 @@ package com.onlyex.naxtech.api;
 import com.onlyex.naxtech.api.block.ITier;
 import com.onlyex.naxtech.api.block.impl.WrappedIntTier;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
-import com.onlyex.naxtech.common.block.blocks.BlockComponentAssemblyLineCasing;
+import com.onlyex.naxtech.common.block.blocks.assembly.BlockComponentAssemblyLineCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockDimensionWireCoil;
 import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasing;
 import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerCasing;

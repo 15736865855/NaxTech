@@ -9,8 +9,8 @@ import com.onlyex.naxtech.api.unification.NTMaterials;
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
-import com.onlyex.naxtech.common.block.blocks.BlockAdvancedAssemblyLineCasing;
-import com.onlyex.naxtech.common.block.blocks.BlockGlassCasing;
+import com.onlyex.naxtech.common.block.blocks.assembly.BlockAdvancedAssemblyLineCasing;
+import com.onlyex.naxtech.common.block.blocks.BlockBoronSilicateGlassCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockPipelinelCasing;
 import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasing;
 import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
@@ -172,7 +172,7 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
     }
 
     private IBlockState getGlassState() {
-        return NTMetaBlocks.GLASS_CASING.getState(BlockGlassCasing.CasingType.OS_BORON_SILICATE_GLASS_BLOCK);
+        return NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.OS_BORON_SILICATE_GLASS_BLOCK);
     }
 
     private IBlockState getFrameState() {

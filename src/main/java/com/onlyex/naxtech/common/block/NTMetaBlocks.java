@@ -1,9 +1,9 @@
 package com.onlyex.naxtech.common.block;
 
 import com.onlyex.naxtech.common.block.blocks.*;
-import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasing;
-import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerCasing;
-import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerGlassCasing;
+import com.onlyex.naxtech.common.block.blocks.assembly.*;
+import com.onlyex.naxtech.common.block.blocks.machinel.*;
+import com.onlyex.naxtech.common.block.blocks.quantum.*;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -15,25 +15,40 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class NTMetaBlocks {
     public static BlockDimensionWireCoil NT_WIRE_COIL;//线圈
-    public static BlockGlassCasing GLASS_CASING;//强化硅酸盐硼玻璃
-    public static BlockControlCasing CONTROL_CASING;//控制外壳
-    public static BlockMachinelCasing MACHINE_CASING;//机械外壳
-    public static BlockPipelinelCasing PIPELINE_CASING;//管道外壳
-    public static BlockPackagingline PACKAGING_LINE;//封装线外壳
+
+    //glass
+    public static BlockBoronSilicateGlassCasing BORON_SILICATE_GLASS_CASING;//强化硅酸盐硼玻璃-1
+
+    //control
+    public static BlockControlCasing CONTROL_CASING;//控制外壳-1
+
+    //machinel
+    public static BlockMachinelCasing MACHINE_CASING;//机械外壳-1
+    public static BlockMachinelCasingA MACHINE_CASING_A;//机械外壳-2
+    public static BlockMachinelCasingB MACHINE_CASING_B;//机械外壳-3
+
+    //pipeline
+    public static BlockPipelinelCasing PIPELINE_CASING;//管道外壳-1
+
+    //quantum
+    public static BlockQuantumForceTransformerCasing QUANTUM_FORCE_TRANSFORMER_CASING;//量子操纵者外壳
+    public static BlockQuantumForceTransformerGlassCasing QUANTUM_FORCE_TRANSFORMER_GLASS_CASING;//量子操纵者玻璃
+
+    //Assembly
     public static BlockComponentAssemblyLineCasing COMPONENT_ASSEMBLY_LINE_CASING;//部件装配线外壳
     public static BlockAdvancedAssemblyLineCasing ADVANCED_ASSEMBLY_LINE_CASING;//进阶装配线外壳
 
     public static BlockActiveMultiblockCasing ACTIVE_MULTIBLOCK_CASING;//活跃多块外壳
+    public static BlockPackagingline PACKAGING_LINE;//封装线外壳
+    public static BlockPCBFactoryCasing PCB_FACTORY_CASING;//PCB
 
-    public static BlockQuantumForceTransformerCasing QUANTUM_FORCE_TRANSFORMER_CASING;//量子操纵者外壳
-    public static BlockQuantumForceTransformerGlassCasing QUANTUM_FORCE_TRANSFORMER_GLASS_CASING;//量子操纵者玻璃
 
     private NTMetaBlocks() {}
     public static void init() {
         NT_WIRE_COIL = new BlockDimensionWireCoil();
         NT_WIRE_COIL.setRegistryName("wire_coil");
-        GLASS_CASING = new BlockGlassCasing();
-        GLASS_CASING.setRegistryName("glasses_casing");
+        BORON_SILICATE_GLASS_CASING = new BlockBoronSilicateGlassCasing();
+        BORON_SILICATE_GLASS_CASING.setRegistryName("boron_silicate_glasses_casing");
         CONTROL_CASING = new BlockControlCasing();
         CONTROL_CASING.setRegistryName("control_casing");
         MACHINE_CASING = new BlockMachinelCasing();
@@ -52,6 +67,12 @@ public class NTMetaBlocks {
         QUANTUM_FORCE_TRANSFORMER_CASING.setRegistryName("quantum_force_transformer_casing");
         QUANTUM_FORCE_TRANSFORMER_GLASS_CASING = new BlockQuantumForceTransformerGlassCasing();
         QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.setRegistryName("quantum_force_transformer_glasses_casing");
+        MACHINE_CASING_A = new BlockMachinelCasingA();
+        MACHINE_CASING_A.setRegistryName("machine_casing_a");
+        MACHINE_CASING_B = new BlockMachinelCasingB();
+        MACHINE_CASING_B.setRegistryName("machine_casing_B");
+        PCB_FACTORY_CASING = new BlockPCBFactoryCasing();
+        PCB_FACTORY_CASING.setRegistryName("pcb_factory_casing");
     }
 
     @SideOnly(Side.CLIENT)
@@ -63,11 +84,14 @@ public class NTMetaBlocks {
         registerItemModel(ADVANCED_ASSEMBLY_LINE_CASING);
         registerItemModel(PIPELINE_CASING);
         registerItemModel(QUANTUM_FORCE_TRANSFORMER_CASING);
+        registerItemModel(MACHINE_CASING_A);
+        registerItemModel(MACHINE_CASING_B);
+        registerItemModel(PCB_FACTORY_CASING);
 
 
         //  VariantActiveBlock Registry
         NT_WIRE_COIL.onModelRegister();
-        GLASS_CASING.onModelRegister();
+        BORON_SILICATE_GLASS_CASING.onModelRegister();
         ACTIVE_MULTIBLOCK_CASING.onModelRegister();
         QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.onModelRegister();
 

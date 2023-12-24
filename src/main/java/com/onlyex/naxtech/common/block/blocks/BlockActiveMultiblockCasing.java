@@ -12,15 +12,18 @@ import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
 
+import static com.onlyex.naxtech.common.CommonProxy.NAXTECH_TAB;
+
 public class BlockActiveMultiblockCasing extends VariantActiveBlock<BlockActiveMultiblockCasing.CasingType> {
     public BlockActiveMultiblockCasing() {
         super(Material.IRON);
-        setTranslationKey("active_multiblock_casing");
-        setHardness(5.0f);
-        setResistance(10.0f);
-        setSoundType(SoundType.METAL);
-        setHarvestLevel(ToolClasses.WRENCH, 2);
-        setDefaultState(this.getState(CasingType.FLOTATION_INTAKE_CASING));
+        this.setTranslationKey("active_multiblock_casing");
+        this.setHardness(5.0f);
+        this.setResistance(10.0f);
+        this.setSoundType(SoundType.METAL);
+        this.setCreativeTab(NAXTECH_TAB);
+        this.setHarvestLevel("wrench", 2);
+        this.setDefaultState(this.getState(CasingType.FLOTATION_INTAKE_CASING));
     }
 
     @Override

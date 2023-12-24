@@ -89,16 +89,16 @@ metaitem.circuit.suprachronal.opv.tooltip=在已知时空之外运行的电路�
 metaitem.circuit.suprachronal.max.name=超时空MAX级电路
 metaitem.circuit.suprachronal.max.tooltip=在已知时空之外运行的电路板 /n§fMAX级电路
 #Glasses
-tile.glasses_casing.ti_boron_silicate_glass_block.name=钛强化硅酸盐硼玻璃
-tile.glasses_casing.w_boron_silicate_glass_block.name=钨强化硅酸盐硼玻璃
-tile.glasses_casing.cr_boron_silicate_glass_block.name=铬强化硅酸盐硼玻璃
-tile.glasses_casing.thy_boron_silicate_glass_block.name=钍钇玻璃块
-tile.glasses_casing.ir_boron_silicate_glass_block.name=铱强化硅酸盐硼玻璃
-tile.glasses_casing.os_boron_silicate_glass_block.name=锇强化硅酸盐硼玻璃
-tile.glasses_casing.ne_boron_silicate_glass_block.name=中子强化硅酸盐硼玻璃
-tile.glasses_casing.sne_boron_silicate_glass_block.name=宇宙中子强化硅酸盐硼玻璃
-tile.glasses_casing.ava_boron_silicate_glass_block.name=无尽强化硅酸盐硼玻璃
-tile.glasses_casing.tl_boron_silicate_glass_block.name=超时空强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.ti.name=钛强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.w.name=钨强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.cr.name=铬强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.thy.name=钍钇玻璃块
+tile.boron_silicate_glasses_casing.ir.name=铱强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.os.name=锇强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.ne.name=中子强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.sne.name=宇宙中子强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.ava.name=无尽强化硅酸盐硼玻璃
+tile.boron_silicate_glasses_casing.tl.name=超时空强化硅酸盐硼玻璃
 
 metaitem.cover.electric_motor.max.name=电动马达（MAX）
 metaitem.cover.electric_piston.max.name=电力活塞（MAX）

@@ -1,112 +1,112 @@
 {
   "forge_marker": 1,
   "variants": {
-    "active=false,variant=ti_boron_silicate_glass_block": {
+    "active=false,variant=ti": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/ti_boron_silicate_glass_block"
       }
     },
-    "active=true,variant=ti_boron_silicate_glass_block": {
+    "active=true,variant=ti": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/ti_boron_silicate_glass_block"
       }
     },
-    "active=false,variant=w_boron_silicate_glass_block": {
+    "active=false,variant=w": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/w_boron_silicate_glass_block"
       }
     },
-    "active=true,variant=w_boron_silicate_glass_block": {
+    "active=true,variant=w": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/w_boron_silicate_glass_block"
       }
     },
-    "active=false,variant=cr_boron_silicate_glass_block": {
+    "active=false,variant=cr": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/cr_boron_silicate_glass_block"
       }
     },
-    "active=true,variant=cr_boron_silicate_glass_block": {
+    "active=true,variant=cr": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/cr_boron_silicate_glass_block"
       }
     },
-      "active=false,variant=thy_boron_silicate_glass_block": {
+      "active=false,variant=thy": {
         "model": "minecraft:cube_all",
         "ambientocclusion": false,
         "textures": {
           "all": "naxtech:blocks/glasses/thy_boron_silicate_glass_block"
         }
       },
-      "active=true,variant=thy_boron_silicate_glass_block": {
+      "active=true,variant=thy": {
         "model": "minecraft:cube_all",
         "ambientocclusion": false,
         "textures": {
           "all": "naxtech:blocks/glasses/thy_boron_silicate_glass_block"
         }
       },
-      "active=false,variant=ir_boron_silicate_glass_block": {
+      "active=false,variant=ir": {
         "model": "minecraft:cube_all",
         "ambientocclusion": false,
         "textures": {
           "all": "naxtech:blocks/glasses/ir_boron_silicate_glass_block"
         }
       },
-      "active=true,variant=ir_boron_silicate_glass_block": {
+      "active=true,variant=ir": {
         "model": "minecraft:cube_all",
         "ambientocclusion": false,
         "textures": {
           "all": "naxtech:blocks/glasses/ir_boron_silicate_glass_block"
         }
       },
-    "active=false,variant=os_boron_silicate_glass_block": {
+    "active=false,variant=os": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/os_boron_silicate_glass_block"
       }
     },
-    "active=true,variant=os_boron_silicate_glass_block": {
+    "active=true,variant=os": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/os_boron_silicate_glass_block"
       }
     },
-    "active=false,variant=ne_boron_silicate_glass_block": {
+    "active=false,variant=ne": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/ne_boron_silicate_glass_block"
       }
     },
-    "active=true,variant=ne_boron_silicate_glass_block": {
+    "active=true,variant=ne": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/ne_boron_silicate_glass_block"
       }
     },
-    "active=false,variant=sne_boron_silicate_glass_block": {
+    "active=false,variant=sne": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {
         "all": "naxtech:blocks/glasses/sne_boron_silicate_glass_block"
       }
     },
-    "active=true,variant=sne_boron_silicate_glass_block": {
+    "active=true,variant=sne": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {

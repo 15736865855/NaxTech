@@ -27,17 +27,17 @@ import java.util.List;
 
 import static com.onlyex.naxtech.common.CommonProxy.NAXTECH_TAB;
 
-public class BlockGlassCasing extends VariantActiveBlock<BlockGlassCasing.CasingType> {
+public class BlockBoronSilicateGlassCasing extends VariantActiveBlock<BlockBoronSilicateGlassCasing.CasingType> {
 
-    public BlockGlassCasing() {
+    public BlockBoronSilicateGlassCasing() {
         super(Material.GLASS);
-        setTranslationKey("glasses_casing");
-        setSoundType(SoundType.GLASS);
-        setHarvestLevel("pickaxe", 3);
-        setHardness(12.0F);
-        setResistance(8.0F);
-        setCreativeTab(NAXTECH_TAB);
-        setDefaultState(this.getState(CasingType.TI_BORON_SILICATE_GLASS_BLOCK));
+        this.setTranslationKey("boron_silicate_glasses_casing");
+        this.setSoundType(SoundType.GLASS);
+        this.setHarvestLevel("pickaxe", 3);
+        this.setHardness(12.0F);
+        this.setResistance(8.0F);
+        this.setCreativeTab(NAXTECH_TAB);
+        this.setDefaultState(this.getState(CasingType.TI_BORON_SILICATE_GLASS_BLOCK));
         this.useNeighborBrightness = true;
 
     }//TODO 连接材质
@@ -90,9 +90,9 @@ public class BlockGlassCasing extends VariantActiveBlock<BlockGlassCasing.Casing
     @Override
     public void addInformation(@Nonnull ItemStack stack, @Nullable World player, @Nonnull List<String> tooltip, @Nonnull ITooltipFlag advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        VariantItemBlock<CasingType, BlockGlassCasing> itemBlock = (VariantItemBlock<BlockGlassCasing.CasingType, BlockGlassCasing>) stack.getItem();
+        VariantItemBlock<CasingType, BlockBoronSilicateGlassCasing> itemBlock = (VariantItemBlock<BlockBoronSilicateGlassCasing.CasingType, BlockBoronSilicateGlassCasing>) stack.getItem();
         IBlockState stackState = itemBlock.getBlockState(stack);
-        BlockGlassCasing.CasingType casingType =  this.getState(stackState);
+        BlockBoronSilicateGlassCasing.CasingType casingType =  this.getState(stackState);
         tooltip.add(I18n.format("naxtech.glass_tier.tooltip", casingType.getTireNameColored()));
         if (casingType.isOpticalGlass) {
             tooltip.add(casingType.getOpticalTierName());

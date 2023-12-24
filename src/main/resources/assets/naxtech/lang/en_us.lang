@@ -99,16 +99,16 @@ metaitem.circuit.suprachronal.max.tooltip=Full control over spacetime/n§fMAX-ti
 
 
 #Glasses
-tile.glasses_casing.ti_boron_silicate_glass_block.name=Ti Boron Silicate GLASS
-tile.glasses_casing.w_boron_silicate_glass_block.name=W Boron Silicate GLASS
-tile.glasses_casing.cr_boron_silicate_glass_block.name=CR Boron Silicate GLASS
-tile.glasses_casing.thy_boron_silicate_glass_block.name=ThYBoron Silicate GLASS
-tile.glasses_casing.ir_boron_silicate_glass_block.name=IR Boron Silicate GLASS
-tile.glasses_casing.os_boron_silicate_glass_block.name=OS Boron Silicate GLASS
-tile.glasses_casing.ne_boron_silicate_glass_block.name=NE Boron Silicate GLASS
-tile.glasses_casing.sne_boron_silicate_glass_block.name=SpaceNE Boron Silicate GLASS
-tile.glasses_casing.ava_boron_silicate_glass_block.name=AVA Boron Silicate GLASS
-tile.glasses_casing.tl_boron_silicate_glass_block.name=TL Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.ti.name=Ti Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.w.name=W Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.cr.name=CR Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.thy.name=ThYBoron Silicate GLASS
+tile.boron_silicate_glasses_casing.ir.name=IR Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.os.name=OS Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.ne.name=NE Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.sne.name=SpaceNE Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.ava.name=AVA Boron Silicate GLASS
+tile.boron_silicate_glasses_casing.tl.name=TL Boron Silicate GLASS
 
 naxtech.glass_tier.tooltip=
 naxtech.optical_glass_tier.tooltip.0=

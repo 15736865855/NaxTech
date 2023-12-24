@@ -32,7 +32,7 @@ public class BlockQuantumForceTransformerGlassCasing extends VariantActiveBlock<
         setHardness(5.0F);
         setResistance(10.0F);
         setSoundType(SoundType.GLASS);
-        setHarvestLevel(ToolClasses.PICKAXE, 1);
+        setHarvestLevel("pickaxe", 4);
         setDefaultState(this.getState(GlassType.FORCE_FIELD_CONSTRAINED_GLASS));
         this.useNeighborBrightness = true;
     }
