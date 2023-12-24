@@ -30,7 +30,7 @@ MAX = 14
   .temperature(600)//自定义温度
   .customStill()//自定义材质
   .alternativeName("seed.oil")//替代名称
-  .attribute(FluidAttributes.ACID)//属性（流体属性. ACID）
+  .attribute(FluidAttributes.ACID)//属性（流体属性）
   )
 
   .color().iconSet()                    <--- 外观

@@ -6,6 +6,7 @@ item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
 item.material.oreprefix.nanites=%s纳米蜂群
 item.material.oreprefix.wrap=封装%s
+item.material.oreprefix.casingSmall=%s外壳
 
 #  Behavior
 behavior.data_item.require_decoding=存有需要解码的未知信息

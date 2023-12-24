@@ -50,7 +50,7 @@ public class DimensionMaterials {
                 .blast(b -> b .temp(120000, HIGH))
                 .build();
 
-        CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))//TODO 方块 流体 材质
+        CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))
                 .ingot()
                 .liquid(new FluidBuilder())
                 .element(NTElements.CoNe)
