@@ -3,7 +3,7 @@
         "ctm_version": 1,
         "type": "ctm",
         "textures": [
-            "naxtech:blocks/casings/coils/machine_coil_universium_ctm"
+            "gregtech:blocks/casings/coils/machine_coil_universium_ctm"
         ]
     }
 }
