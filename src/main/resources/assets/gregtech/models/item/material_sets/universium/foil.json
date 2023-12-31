@@ -1,7 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "naxtech:items/material_sets/universium/foil",
-    "layer1": "naxtech:items/material_sets/universium/halo_overlay"
+    "layer0": "naxtech:items/material_sets/universium/foil"
   }
 }
