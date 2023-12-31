@@ -24,20 +24,14 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
 import static com.onlyex.naxtech.common.CommonProxy.NAXTECH_TAB;
-/**
- * name            the unique name of the Heating Coil
- * coilTemperature the temperature of the Heating Coil
- * level           the level of the Heating Coil - used for Multismelter parallel amount
- * energyDiscount  the energy discount of the Heating Coil
- * tier            the tier of the Heating Coil - used for cracker pyrolyse discounts
- * material        the {@link Material} of the Heating Coil, use null for no specific material
- */
+
 public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWireCoil.CoilType> {
 
     public BlockDimensionWireCoil() {
@@ -48,7 +42,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
         this.setResistance(100.0f);
         this.setSoundType(SoundType.METAL);
         this.setHarvestLevel("wrench", 6);
-        this.setDefaultState(this.getState(CoilType.NAQUADAH_ALLOY));
+        this.setDefaultState(this.getState(CoilType.ELECTRUM_FLUX));
     }
 
     @Nonnull
@@ -56,14 +50,18 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
         return BlockRenderLayer.SOLID;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public void addInformation(@Nonnull ItemStack itemStack, @Nullable World worldIn, List<String> lines, @Nonnull ITooltipFlag tooltipFlag) {
+    public void addInformation(@NotNull ItemStack itemStack, @Nullable World worldIn, @NotNull List<String> lines, @NotNull ITooltipFlag tooltipFlag) {
         super.addInformation(itemStack, worldIn, lines, tooltipFlag);
 
-        VariantItemBlock<CoilType, BlockDimensionWireCoil> itemBlock = (VariantItemBlock<CoilType, BlockDimensionWireCoil>) itemStack.getItem();
+        // noinspection rawtypes, unchecked
+        VariantItemBlock itemBlock = (VariantItemBlock<CoilType, BlockDimensionWireCoil>) itemStack.getItem();
         IBlockState stackState = itemBlock.getBlockState(itemStack);
-        CoilType coilType =  this.getState(stackState);
+        CoilType coilType = getState(stackState);
+
         lines.add(I18n.format("tile.wire_coil.tooltip_heat", coilType.coilTemperature));
+
         if (TooltipHelper.isShiftDown()) {
             int coilTier = coilType.ordinal();
             lines.add(I18n.format("tile.wire_coil.tooltip_smelter"));
@@ -71,7 +69,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
             int EUt = MetaTileEntityMultiSmelter.getEUtForParallel(MetaTileEntityMultiSmelter.getMaxParallel(coilType.getLevel()), coilType.getEnergyDiscount());
             lines.add(I18n.format("tile.wire_coil.tooltip_energy_smelter", EUt));
             lines.add(I18n.format("tile.wire_coil.tooltip_pyro"));
-            lines.add(I18n.format("tile.wire_coil.tooltip_speed_pyro", coilTier == 0 ? 75 : 50 * (coilTier + 9)));
+            lines.add(I18n.format("tile.wire_coil.tooltip_speed_pyro", coilTier == 0 ? 75 : 50 * (coilTier + 1)));
             lines.add(I18n.format("tile.wire_coil.tooltip_cracking"));
             lines.add(I18n.format("tile.wire_coil.tooltip_energy_cracking", 100 - 10 * coilTier));
         } else {
@@ -90,13 +88,14 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
 
     public enum CoilType implements IStringSerializable, IHeatingCoilBlockStats {
 
-        NAQUADAH_ALLOY("naquadah_alloy", 8101, 8, 8, Materials.NaquadahAlloy),
-        ELECTRUM_FLUX("electrum_flux", 9901, 16, 16, NTMaterials.ElectrumFlux),
-        AWAKENED_DRACONIUM("awakened_draconium", 10801, 32, 16, NTMaterials.DraconiumAwakened),
-        INFINITY("infinity", 11701, 32, 32, NTMaterials.Infinity),
-        HYPOGEN("hypogen", 12601, 64, 32, NTMaterials.Hypogen),
-        ETERNAL("eternal", 13501, 64, 64, null);
-
+        ELECTRUM_FLUX("electrum_flux", 9601, 16, 8, NTMaterials.ElectrumFlux),
+        AWAKENED_DRACONIUM("awakened_draconium", 11801, 24, 16, NTMaterials.DraconiumAwakened),
+        UNIVE("unive", 14601, 32, 24, NTMaterials.CosmicNeutronium),
+        END("end", 18001, 40, 32, NTMaterials.Infinity),
+        HYPOGEN("hypogen", 21601, 48, 32, NTMaterials.Hypogen),
+        UNIVERSIUM_COIL("universium", 24801, 64, 48, NTMaterials.Universium),
+        ETERNAL("eternal", 27301, 72, 64, NTMaterials.Eternity),
+        CUPAR_PROTON_PAIR_COIL("cupar_proton_pair_coil", 30001, 256, 128, null);
         private final String name;
         private final int coilTemperature;
         private final int level;

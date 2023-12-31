@@ -1,19 +1,6 @@
 {
   "forge_marker": 1,
   "variants": {
-    "active=false,variant=naquadah_alloy": {
-        "model": "minecraft:cube_all",
-        "textures": {
-            "all": "naxtech:blocks/casings/coils/machine_coil_naquadah_alloy"
-        }
-    },
-    "active=true,variant=naquadah_alloy": {
-        "model": "gregtech:cube_2_layer_all",
-        "textures": {
-            "bot_all": "naxtech:blocks/casings/coils/machine_coil_naquadah_alloy",
-            "top_all":"naxtech:blocks/casings/coils/machine_coil_naquadah_alloy_bloom"
-        }
-    },
     "active=false,variant=electrum_flux": {
         "model": "minecraft:cube_all",
         "textures": {
@@ -23,8 +10,7 @@
     "active=true,variant=electrum_flux": {
         "model": "gregtech:cube_2_layer_all",
         "textures": {
-            "bot_all": "naxtech:blocks/casings/coils/machine_coil_electrum_flux",
-            "top_all":"naxtech:blocks/casings/coils/machine_coil_electrum_flux_bloom"
+            "bot_all": "naxtech:blocks/casings/coils/machine_coil_electrum_flux"
         }
     },
     "active=false,variant=awakened_draconium": {
@@ -36,35 +22,32 @@
     "active=true,variant=awakened_draconium": {
         "model": "gregtech:cube_2_layer_all",
         "textures": {
-            "bot_all": "naxtech:blocks/casings/coils/machine_coil_awakened_draconium",
-            "top_all":"naxtech:blocks/casings/coils/machine_coil_awakened_draconium_bloom"
+            "bot_all": "naxtech:blocks/casings/coils/machine_coil_awakened_draconium"
         }
     },
-    "active=false,variant=hss_s": {
-        "model": "minecraft:cube_all",
-        "textures": {
-            "all": "naxtech:blocks/casings/coils/machine_coil_hss_s"
-        }
+    "active=false,variant=unive": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/coils/machine_coil_unive"
+      }
     },
-    "active=true,variant=hss_s": {
-        "model": "gregtech:cube_2_layer_all",
-        "textures": {
-            "bot_all": "naxtech:blocks/casings/coils/machine_coil_hss_s",
-            "top_all":"naxtech:blocks/casings/coils/machine_coil_hss_s_bloom"
-        }
+    "active=true,variant=unive": {
+      "model": "gregtech:cube_2_layer_all",
+      "textures": {
+        "bot_all": "naxtech:blocks/casings/coils/machine_coil_unive"
+      }
     },
-    "active=false,variant=infinity": {
-        "model": "minecraft:cube_all",
-        "textures": {
-            "all": "naxtech:blocks/casings/coils/machine_coil_infinity"
-        }
+    "active=false,variant=end": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/coils/machine_coil_end"
+      }
     },
-    "active=true,variant=infinity": {
-        "model": "gregtech:cube_2_layer_all",
-        "textures": {
-            "bot_all": "naxtech:blocks/casings/coils/machine_coil_infinity",
-            "top_all":"naxtech:blocks/casings/coils/machine_coil_infinity_bloom"
-        }
+    "active=true,variant=end": {
+      "model": "gregtech:cube_2_layer_all",
+      "textures": {
+        "bot_all": "naxtech:blocks/casings/coils/machine_coil_end"
+      }
     },
     "active=false,variant=hypogen": {
         "model": "minecraft:cube_all",
@@ -75,22 +58,45 @@
     "active=true,variant=hypogen": {
         "model": "gregtech:cube_2_layer_all",
         "textures": {
-            "bot_all": "naxtech:blocks/casings/coils/machine_coil_hypogen",
-            "top_all":"naxtech:blocks/casings/coils/machine_coil_hypogen_bloom"
+            "bot_all": "naxtech:blocks/casings/coils/machine_coil_hypogen"
         }
     },
+    "active=false,variant=universium": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/coils/machine_coil_universium"
+      }
+    },
+    "active=true,variant=universium": {
+      "model": "gregtech:cube_2_layer_all",
+      "textures": {
+        "bot_all": "naxtech:blocks/casings/coils/machine_coil_universium",
+        "top_all":"naxtech:blocks/casings/coils/machine_coil_universium_bloom"
+      }
+    },
     "active=false,variant=eternal": {
-        "model": "minecraft:cube_all",
-        "textures": {
-            "all": "naxtech:blocks/casings/coils/machine_coil_eternal"
-        }
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/coils/machine_coil_eternal"
+      }
     },
     "active=true,variant=eternal": {
         "model": "gregtech:cube_2_layer_all",
         "textures": {
-            "bot_all": "naxtech:blocks/casings/coils/machine_coil_eternal",
-            "top_all":"naxtech:blocks/casings/coils/machine_coil_eternal_bloom"
+            "bot_all": "naxtech:blocks/casings/coils/machine_coil_eternal"
         }
+    },
+    "active=false,variant=cupar_proton_pair_coil": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "naxtech:blocks/casings/coils/machine_coil_cupar_proton_pair_coil"
+      }
+    },
+    "active=true,variant=cupar_proton_pair_coil": {
+      "model": "gregtech:cube_2_layer_all",
+      "textures": {
+        "bot_all": "naxtech:blocks/casings/coils/machine_coil_cupar_proton_pair_coil"
+      }
     }
   }
 }

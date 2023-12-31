@@ -120,6 +120,13 @@ naxtech.optical_glass_tier.tooltip.2=
 naxtech.optical_glass_tier.tooltip.3=
 naxtech.optical_glass_tier.tooltip.4=
 naxtech.optical_glass_tier.tooltip.5=
+naxtech.optical_glass_tier.tooltip.6=
+naxtech.optical_glass_tier.tooltip.7=
+naxtech.optical_glass_tier.tooltip.8=
+naxtech.optical_glass_tier.tooltip.9=
+naxtech.optical_glass_tier.tooltip.10=
+naxtech.optical_glass_tier.tooltip.11=
+naxtech.optical_glass_tier.tooltip.12=
 
 naxtech.multiblock.pattern.error.glasses=
 
@@ -737,15 +744,23 @@ gregtech.material.blazing_pyrotheum=Blazing Pyrotheum
 gregtech.material.gelid_cryotheum=Gelid Cryotheum
 
 
-
 #Coil Block
-tile.wire_coil.naquadah_alloy.name=Naquadah Alloy Coil Block
-tile.wire_coil.electrum_flux.name=Electrum Flux Coil Block
-tile.wire_coil.awakened_draconium.name=Awakened Draconium Coil Block
-tile.wire_coil.hss_s.name=HSS-S Coil Block
-tile.wire_coil.infinity.name=Infinity Coil Block
-tile.wire_coil.hypogen.name=Hypogen Coil Block
-tile.wire_coil.eternal.name=Eternal Coil Block
+tile.wire_coil.electrum_flux.name=‹-Electrum Flux Coil-›
+tile.wire_coil.electrum_flux.tooltip=
+tile.wire_coil.awakened_draconium.name=‹-Awakened Draconium Coil-›
+tile.wire_coil.awakened_draconium.tooltip=
+tile.wire_coil.unive.name=
+tile.wire_coil.unive.tooltip=
+tile.wire_coil.end.name=
+tile.wire_coil.end.tooltip=
+tile.wire_coil.hypogen.name=‹-Hypogen Coil-›
+tile.wire_coil.hypogen.tooltip=
+tile.wire_coil.universium.name=
+tile.wire_coil.universium.tooltip=
+tile.wire_coil.eternal.name=‹-Eternal Coil-›
+tile.wire_coil.eternal.tooltip=
+tile.wire_coil.cupar_proton_pair_coil.name=
+tile.wire_coil.cupar_proton_pair_coil.tooltip=
 
 
 metaitem.crystal_redstone.name=crystal_redstone

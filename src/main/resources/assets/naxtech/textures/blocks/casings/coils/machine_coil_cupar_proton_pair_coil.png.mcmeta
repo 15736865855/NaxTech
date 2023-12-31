@@ -1,0 +1,12 @@
+{
+    "animation": { "frametime": 1 }, 
+    "ctm": {
+        "ctm_version": 1,
+        "type": "ctm",
+        "layer": "BLOOM",
+        "gregtech": true,
+        "textures": [
+            "naxtech:blocks/casings/coils/machine_coil_cupar_proton_pair_coil_ctm"
+        ]
+    }
+}
