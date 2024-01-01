@@ -15,6 +15,20 @@ behavior.data_item.require_decoding=存有需要解码的未知信息
 metaitem.mill.grindball_soapstone.name=皂石研磨球
 metaitem.mill.grindball_aluminium.name=铝研磨球
 
+item.gt.tool.hammer_lv.name=风钻（LV）
+item.gt.tool.hammer_mv.name=风钻（MV）
+item.gt.tool.hammer_hv.name=风钻（HV）
+item.gt.tool.hammer_ev.name=风钻（EV）
+item.gt.tool.hammer_iv.name=风钻（IV）
+item.gt.tool.vajra.name=金刚杵
+metaitem.prospector.uv.name=电动勘探扫描仪（UV）
+metaitem.prospector.uiv.name=电动勘探扫描仪（UIV）
+item.gt.tool.choocher.name=%s两用扳手
+item.gt.tool.jinitaimei.name=%s螺丝钳
+item.gt.tool.choocher_hv.name=电动%s两用扳手
+item.gt.tool.jinitaimei_hv.name=电动%s螺丝钳
+
+
 # Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
 metaitem.circuit.gooware_processor.tooltip=粘稠的有机浆液附着于表面/n§2ZPM级电路
@@ -421,8 +435,9 @@ metaitem.algae.red_alga.name=红藻
 metaitem.algae.green_alga.name=绿藻
 metaitem.algae.chrysophyceae.name=金藻
 metaitem.algae.brown_alga.name=褐藻
-
-
+metaitem.algae.t.name=T型藻类
+metaitem.petri_dish.fertile.name=培养皿
+metaitem.petri_dish.sterile.name=培养皿(无菌)
 
 # Supra-Chronal Stuff
 metaitem.eigenfolded.kerr.manifold.name=本征折叠克尔流形

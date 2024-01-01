@@ -6,6 +6,8 @@ import com.onlyex.naxtech.api.recipes.properties.CasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.items.NTMetaItems;
+import com.onlyex.naxtech.common.items.NTToolItems;
+import com.onlyex.naxtech.loaders.NTTRecipes;
 import com.onlyex.naxtech.loaders.formula.FormulaManager;
 import com.onlyex.naxtech.loaders.recipe.handlers.NTRecipeHandlerList;
 import gregtech.api.GregTechAPI;
@@ -23,6 +25,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -163,5 +166,11 @@ public class CommonProxy {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void initComponents(GregTechAPI.RegisterEvent<CraftingComponent> event) {
         //MaterialComponents.init();
+    }
+
+    public void preInit(FMLPreInitializationEvent event) {
+        NTToolItems.init();
+        NTTRecipes.registerTool();
+
     }
 }

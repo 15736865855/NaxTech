@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "naxtech:items/tools/vajra",
+    "layer1": "naxtech:items/tools/vajra_head"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "naxtech:items/tools/fengzuan_hv",
+    "layer1": "naxtech:items/tools/fengzuantou"
+  }
+}

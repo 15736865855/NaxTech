@@ -55,6 +55,7 @@ public class NaxTech {
 
         CapabilityManager.INSTANCE.register(IPollution.class, new PollutionProvider.Storage(), PollutionProvider.Impl::new);
         proxy.preLoad();
+        proxy.preInit(event);
 
     }
 

@@ -17,6 +17,7 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem NULL;
     public static MetaItem<?>.MetaValueItem PINE_CONE;
     public static MetaItem<?>.MetaValueItem PINE_FRAGMENT;
+    public static MetaItem<?>.MetaValueItem BIOLOGY_INTEGRATED_CIRCUIT;
 
     //
     public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_MAX;
@@ -293,7 +294,9 @@ public class NTMetaItems {
     //
     public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
     public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
-
+    public static MetaItem<?>.MetaValueItem T_ALGAE;
+    public static MetaItem<?>.MetaValueItem PETRI_DISH_STERILE;
+    public static MetaItem<?>.MetaValueItem PETRI_DISH_FERTILE;
 
     public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
     public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
@@ -350,7 +353,10 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_DIODE;
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_INDUCTOR;
 
+    public static MetaItem<?>.MetaValueItem PROSPECTOR_UV;
+    public static MetaItem<?>.MetaValueItem PROSPECTOR_UIV;
     public static MetaItem<?>.MetaValueItem DEBUG_STRUCTURE_WRITER;
+    public static MetaItem<?>.MetaValueItem DEBUG_STRUCTURE_BUILDER;
 
     public static void init()
     {

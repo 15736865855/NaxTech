@@ -3,16 +3,22 @@ package com.onlyex.naxtech.common.items;
 
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.CommonProxy;
+import com.onlyex.naxtech.common.items.behaviors.IntBcircuitBehavior;
 import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;
 import com.onlyex.naxtech.common.items.behaviors.StructureWriteBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.HaloRenderItemBehavior;
+import gregtech.api.GTValues;
+import gregtech.api.GregTechAPI;
+import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.common.items.behaviors.MultiblockBuilderBehavior;
+import gregtech.common.items.behaviors.ProspectorScannerBehavior;
 
 import static com.onlyex.naxtech.common.items.NTMetaItems.*;
-import static com.onlyex.naxtech.common.items.NTMetaItems.DEBUG_STRUCTURE_WRITER;
+import static com.onlyex.naxtech.common.items.NTMetaItems.PETRI_DISH_FERTILE;
 
 public class NTMetaItem1 extends StandardMetaItem {
 
@@ -79,7 +85,7 @@ public class NTMetaItem1 extends StandardMetaItem {
         NULL = this.addItem(44, "null").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.MASK_INGOT, 1));
         PINE_CONE=this.addItem(45, "item.pine_cone");
         PINE_FRAGMENT=this.addItem(46, "item.pine_fragment");
-
+        BIOLOGY_INTEGRATED_CIRCUIT = this.addItem(47, "item.biology_integrated_circuit").addComponents(new IntBcircuitBehavior());
 
 
 
@@ -155,6 +161,9 @@ public class NTMetaItem1 extends StandardMetaItem {
         //ID 180~199
         BZ_REACTION_CHAMBER = this.addItem(180, "reaction_chamber.bz");
         NONLINEAR_CHEMICAL_OSCILLATOR = this.addItem(181, "nonlinear_chemical_oscillator");
+        T_ALGAE = this.addItem(182,"algae.t");
+        PETRI_DISH_STERILE = this.addItem(183,"petri_dish.sterile");
+        PETRI_DISH_FERTILE = this.addItem(184,"petri_dish.fertile");
 
         //ID 200~
         OPTICAL_FIBER = this.addItem(200, "optical_fiber");
@@ -378,8 +387,22 @@ public class NTMetaItem1 extends StandardMetaItem {
         SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(1414, "plate.spin_transfer_torque_memory");
         SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(1415, "plate.spintronic_nand_memory_chip");
 
-        DEBUG_STRUCTURE_WRITER = this.addItem(9999, "debug.structure_writer").addComponents(StructureWriteBehavior.INSTANCE);
 
+        //2000~
+        PROSPECTOR_UV = this.addItem(2000, "prospector.uv")
+                .addComponents(ElectricStats.createElectricItem(16_000_000_000L, GTValues.UV),
+                        new ProspectorScannerBehavior(7, GTValues.UV))
+                .setMaxStackSize(1)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+
+        PROSPECTOR_UIV = this.addItem(2001, "prospector.uiv")
+                .addComponents(ElectricStats.createElectricItem(256_000_000_000L, GTValues.UIV),
+                        new ProspectorScannerBehavior(9, GTValues.UIV))
+                .setMaxStackSize(1)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+
+        DEBUG_STRUCTURE_WRITER = this.addItem(9999, "debug.structure_writer").addComponents(StructureWriteBehavior.INSTANCE);
+        DEBUG_STRUCTURE_BUILDER = this.addItem(10000, "debug.structure_builder").addComponents(new MultiblockBuilderBehavior());
 
 
 

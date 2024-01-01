@@ -16,6 +16,19 @@ behavior.data_item.require_decoding=
 metaitem.mill.grindball_soapstone.name=Soapstone Grindball
 metaitem.mill.grindball_aluminium.name=Aluminium Grindball
 
+
+item.gt.tool.hammer_lv.name=
+item.gt.tool.hammer_mv.name=
+item.gt.tool.hammer_hv.name=
+item.gt.tool.hammer_ev.name=
+item.gt.tool.hammer_iv.name=
+item.gt.tool.vajra.name=
+metaitem.prospector.uv.name=
+metaitem.prospector.uiv.name=
+item.gt.tool.choocher.name=
+item.gt.tool.jinitaimei.name=
+item.gt.tool.choocher_hv.name=
+item.gt.tool.jinitaimei_hv.name=
 # Circuits
 # Gooware
 metaitem.circuit.gooware_processor.name=Gooware Processor
@@ -392,6 +405,12 @@ metaitem.algae.red_alga.name=Red Alga
 metaitem.algae.green_alga.name=Green Alga
 metaitem.algae.chrysophyceae.name=Chrysophyceae
 metaitem.algae.brown_alga.name=Brown Alga
+metaitem.algae.t.name=
+metaitem.petri_dish.sterile.name=
+metaitem.petri_dish.fertile.name=
+
+
+
 
 # Supra-Chronal Stuff
 metaitem.eigenfolded.kerr.manifold.name=Eigenfolded Kerr Manifold
