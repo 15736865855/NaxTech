@@ -4,6 +4,7 @@ import codechicken.lib.texture.TextureUtils;
 import com.onlyex.naxtech.api.utils.NTUtils;
 import com.onlyex.naxtech.client.renderer.texture.custom.IsaMillRenderer;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 
@@ -31,6 +32,7 @@ OrientedOverlayRenderer
     public static NTOverlayRenderer MULTIPART_BUFFER_HATCH = new NTOverlayRenderer("multiparts/overlay_buffer_hatch");
     public static OrientedOverlayRenderer ISA_MILL_OVERLAY = new OrientedOverlayRenderer("multiblock/isa_mill");
     public static NTOverlayRenderer QUANTUM_CONSTRAINT_CASING = new NTOverlayRenderer("casings/quantum_force_transformer_casing/quantum_constraint_casing");
+    public static SimpleOverlayRenderer INF_WATER = new SimpleOverlayRenderer("multipart/overlay_water");
 
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();
 

@@ -13,6 +13,7 @@ import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.texture.Textures;
 
+import static com.onlyex.naxtech.api.NTValues.gtqtcoreId;
 import static com.onlyex.naxtech.api.utils.NTUtils.epId;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
 import static gregtech.common.metatileentities.MetaTileEntities.registerSimpleMetaTileEntity;
@@ -42,7 +43,7 @@ public class NTMetaTileEntities {
     public static NTMetaTileEntityBufferHatch MULTIPART_BUFFER_HATCH;
 
     public static SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.IV + 1];
-
+    public static MetaTileInfWaterHatch INF_WATER_HATCH;
 
     //多方块
     public static MetaTileEntityPackagingLine PACKAGING_LINE;
@@ -96,6 +97,7 @@ public class NTMetaTileEntities {
         MULTIPART_CATALYST_HATCH = registerSingleMetaTileEntity(24, new NTMetaTileEntityCatalystHatch(epId("catalyst_hatch")));
         INDUSTRIAL_MAINTENANCE_HATCH = registerSingleMetaTileEntity(25, new NTMetaTileEntityIndustrialMaintenanceHatch(epId("industrial_maintenance_hatch")));
         MULTIPART_BUFFER_HATCH = registerSingleMetaTileEntity(26, new NTMetaTileEntityBufferHatch(epId("buffer_hatch")));
+        INF_WATER_HATCH = registerSingleMetaTileEntity(27,new MetaTileInfWaterHatch(gtqtcoreId("infinite_water_hatch")));
 
 
         //14500

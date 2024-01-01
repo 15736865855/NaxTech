@@ -1078,6 +1078,11 @@ naxtech.machine.buffer_hatch.import.tooltip=为多方块结构输入缓冲剂
 naxtech.multipart.ph.name=当前pH值：%s
 naxtech.machine.industrial_maintenance_hatch.name=工业级维护仓
 
+naxtech.machine.infinite_water_hatch.name=无限水仓
+naxtech.tooltip.inf_water1=供水 2^31-1 mb/t
+naxtech.tooltip.inf_water2=§9百 度 贴 吧
+naxtech.tooltip.inf_water3=只能给多方块结构供水,你不能从中抽水.
+
 naxtech.machine.blazing_blast_furnace.name=炽焱高炉
 naxtech.machine.blazing_blast_furnace.amount=烈焰之炽焱储量：%sL
 naxtech.machine.blazing_blast_furnace.heat=烈焰之炽焱正在转换为热量！

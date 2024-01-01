@@ -1071,6 +1071,11 @@ naxtech.multipart.catalyst.only=Only catalysts can be placed
 
 naxtech.machine.industrial_maintenance_hatch.name=Industrial Maintenance Hatch
 
+naxtech.machine.infinite_water_hatch.name=无限水仓
+naxtech.tooltip.inf_water1=供水 2^31-1 mb/t
+naxtech.tooltip.inf_water2=§9百 度 贴 吧
+naxtech.tooltip.inf_water3=只能给多方块结构供水,你不能从中抽水.
+
 naxtech.machine.blazing_blast_furnace.name=Volcanus
 naxtech.machine.blazing_blast_furnace.amount=Blazing Pyrotheum: %sL
 naxtech.machine.blazing_blast_furnace.heat=Blazing Pyrotheum are converting into heat!
