@@ -819,9 +819,15 @@ tile.machine_casing_a.cyclotron_coil.name=
 tile.machine_casing_b.draconium_casing.name=
 tile.machine_casing_b.dragon_fusion_coil.name=
 tile.machine_casing_b.hg_1223_casing.name=
-
-
-
+tile.machine_casing_b.macerator_casing.name=
+tile.machine_casing_b.brick.name=
+tile.machine_casing_b.talonite_casing.name=
+tile.machine_casing_b.machine_casing.name=
+tile.machine_casing_b.turbine_casing.name=
+tile.machine_casing_b.fishing_casing.name=
+tile.machine_casing_b.vacuum_casing.name=
+tile.machine_casing_b.process_casing.name=
+tile.machine_casing_b.aseptic_farm_machine_casing.name=
 
 #PCB
 tile.pcb_factory_casing.basic_photolithographic_framework_casing.name=
@@ -837,6 +843,22 @@ tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=
 tile.pcb_factory_casing.infinity_cooled_machine_casing.name=
 tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=
 
+
+
+#ADV
+tile.adv_factory_casing.machine_tech.name=
+tile.adv_factory_casing.machine_basic.name=
+tile.adv_factory_casing.machine_dimensional_cover_blue.name=
+tile.adv_factory_casing.machine_dimensional_cover_orange.name=
+tile.adv_factory_casing.machine_matterfab.name=
+tile.adv_factory_casing.machine_matterfab_active.name=
+tile.adv_factory_casing.machine_matterfab_active_animated.name=
+tile.adv_factory_casing.machine_matterfab_animated.name=
+tile.adv_factory_casing.machine_lesu.name=
+tile.adv_factory_casing.machine_vent_rotating.name=
+tile.adv_factory_casing.machine_tubbine.name=
+
+
 #pipelinel
 tile.pipelinel_casing.pbi.name=
 tile.pipelinel_casing.polybenzimidazole_pipe.name=
@@ -844,7 +866,13 @@ tile.pipelinel_casing.polybenzimidazole_pipe.name=
 #machine
 naxtech.machine.packaging_line.name=
 
-
+#dimension
+tile.dimension_casing.motorb_lock.name=
+tile.dimension_casing.dimension.name=
+tile.dimension_casing.dimension_computer.name=
+tile.dimension_casing.field_generator.name=
+tile.dimension_casing.dimensional.name=
+tile.dimension_casing.annihilation.name=
 
 naxtech.machine.component_assembly_line.name=
 recipemap.component_assembly_line_recipes.name=

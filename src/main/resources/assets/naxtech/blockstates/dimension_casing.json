@@ -1,0 +1,50 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "naxtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "motor_block": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/motor_block"
+        }
+      },
+      "annihilation": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/annihilation"
+        }
+      },
+      "dimensional": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/dimensional"
+        }
+      },
+      "field_generator": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/field_generator"
+        }
+      },
+      "dimension": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/dimension"
+        }
+      },
+      "dimension_computer": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/dimension_computer"
+        }
+      }
+    }
+  }
+}
+

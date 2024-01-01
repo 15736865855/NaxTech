@@ -2,6 +2,8 @@ package com.onlyex.naxtech.common.block;
 
 import com.onlyex.naxtech.common.block.blocks.*;
 import com.onlyex.naxtech.common.block.blocks.assembly.*;
+import com.onlyex.naxtech.common.block.blocks.dimension.BlockDimensionCasing;
+import com.onlyex.naxtech.common.block.blocks.dimension.BlockDimensionWireCoil;
 import com.onlyex.naxtech.common.block.blocks.machinel.*;
 import com.onlyex.naxtech.common.block.blocks.quantum.*;
 import gregtech.common.blocks.MetaBlocks;
@@ -14,7 +16,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class NTMetaBlocks {
+    //dimension
     public static BlockDimensionWireCoil NT_WIRE_COIL;//线圈
+    public static BlockDimensionCasing DIMENSION_CASING;
+
 
     //glass
     public static BlockBoronSilicateGlassCasing BORON_SILICATE_GLASS_CASING;//强化硅酸盐硼玻璃-1
@@ -41,6 +46,7 @@ public class NTMetaBlocks {
     public static BlockActiveMultiblockCasing ACTIVE_MULTIBLOCK_CASING;//活跃多块外壳
     public static BlockPackagingline PACKAGING_LINE;//封装线外壳
     public static BlockPCBFactoryCasing PCB_FACTORY_CASING;//PCB
+    public static BlockADVFactoryCasing ADV_FACTORY_CASING;//ADV
 
 
     private NTMetaBlocks() {}
@@ -73,6 +79,10 @@ public class NTMetaBlocks {
         MACHINE_CASING_B.setRegistryName("machine_casing_B");
         PCB_FACTORY_CASING = new BlockPCBFactoryCasing();
         PCB_FACTORY_CASING.setRegistryName("pcb_factory_casing");
+        DIMENSION_CASING = new BlockDimensionCasing();
+        DIMENSION_CASING.setRegistryName("dimension_casing");
+        ADV_FACTORY_CASING = new BlockADVFactoryCasing();
+        ADV_FACTORY_CASING.setRegistryName("adv_factory_casing");
     }
 
     @SideOnly(Side.CLIENT)
@@ -87,6 +97,8 @@ public class NTMetaBlocks {
         registerItemModel(MACHINE_CASING_A);
         registerItemModel(MACHINE_CASING_B);
         registerItemModel(PCB_FACTORY_CASING);
+        registerItemModel(DIMENSION_CASING);
+        registerItemModel(ADV_FACTORY_CASING);
 
 
         //  VariantActiveBlock Registry

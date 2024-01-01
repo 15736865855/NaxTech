@@ -1,0 +1,80 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "naxtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "machine_tech": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_tech"
+        }
+      },
+      "machine_basic": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_basic"
+        }
+      },
+      "machine_dimensional_cover_blue": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_dimensional_cover_blue"
+        }
+      },
+      "machine_dimensional_cover_orange": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_dimensional_cover_orange"
+        }
+      },
+      "machine_matterfab": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_matterfab"
+        }
+      },
+      "machine_matterfab_active": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_matterfab_active"
+        }
+      },
+      "machine_matterfab_active_animated": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_matterfab_active_animated"
+        }
+      },
+      "machine_matterfab_animated": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_matterfab_animated"
+        }
+      },
+      "machine_lesu": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_lesu"
+        }
+      },
+      "machine_vent_rotating": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_vent_rotating"
+        }
+      },
+      "machine_tubbine": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/adv_factory_casing/machine_tubbine"
+        }
+      }
+    }
+  }
+}
+

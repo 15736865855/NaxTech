@@ -19,6 +19,62 @@
         "textures": {
           "all": "naxtech:blocks/casings/machine_casing_b/hg_1223_casing"
         }
+      },
+      "macerator_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/machine_casing_b/macerator_casing"
+        }
+      },
+      "brick": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/machine_casing_b/brick"
+        }
+      },
+      "talonite_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/machine_casing_b/talonite_casing"
+        }
+      },
+      "machine_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/machine_casing_b/machine_casing"
+        }
+      },
+      "turbine_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/machine_casing_b/turbine_casing"
+        }
+      },
+      "fishing_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/machine_casing_b/fishing_casing"
+        }
+      },
+      "vacuum_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "naxtech:blocks/casings/machine_casing_b/vacuum_casing",
+          "side": "naxtech:blocks/casings/machine_casing_b/vacuum_casing_side",
+          "bottom": "naxtech:blocks/casings/machine_casing_b/vacuum_casing"
+        }
+      },
+      "process_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/machine_casing_b/process_casing"
+        }
+      },
+      "aseptic_farm_machine_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/machine_casing_b/aseptic_farm_machine_casing"
+        }
       }
     }
   }

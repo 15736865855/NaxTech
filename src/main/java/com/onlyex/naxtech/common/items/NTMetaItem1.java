@@ -6,6 +6,7 @@ import com.onlyex.naxtech.common.CommonProxy;
 import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;
 import com.onlyex.naxtech.common.items.behaviors.StructureWriteBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
+import com.onlyex.naxtech.common.items.behaviors.renderer.HaloRenderItemBehavior;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
@@ -45,10 +46,10 @@ public class NTMetaItem1 extends StandardMetaItem {
         COSMIC_COMPUTER = this.addItem(14, "circuit.cosmic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
         COSMIC_MAINFRAME = this.addItem(15, "circuit.cosmic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
 
-        SUPRACAUSAL_PROCESSOR = this.addItem(16, "circuit.supracausal_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        SUPRACAUSAL_ASSEMBLY = this.addItem(17, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
-        SUPRACAUSAL_COMPUTER = this.addItem(18, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
-        SUPRACAUSAL_MAINFRAME = this.addItem(19, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
+        SUPRACAUSAL_PROCESSOR = this.addItem(16, "circuit.supracausal_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_ASSEMBLY = this.addItem(17, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_COMPUTER = this.addItem(18, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_MAINFRAME = this.addItem(19, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
 
         //ID 20~59
         EU_DOPED_CUBIC_ZIRCONIA_BOULE = this.addItem(20, "boule.cubic_zirconia.europium");
@@ -215,20 +216,20 @@ public class NTMetaItem1 extends StandardMetaItem {
         COSMIC_DIODE = this.addItem(433, "component.cosmic_smd.diode");
         COSMIC_INDUCTOR = this.addItem(434, "component.cosmic_smd.inductor");
 
-        SUPRACAUSAL_TRANSISTOR = this.addItem(435, "component.supracausal_smd.transistor");
-        SUPRACAUSAL_RESISTOR = this.addItem(436, "component.supracausal_smd.resistor");
-        SUPRACAUSAL_CAPACITOR = this.addItem(437, "component.supracausal_smd.capacitor");
-        SUPRACAUSAL_DIODE = this.addItem(438, "component.supracausal_smd.diode");
-        SUPRACAUSAL_INDUCTOR = this.addItem(439, "component.supracausal_smd.inductor");
+        SUPRACAUSAL_TRANSISTOR = this.addItem(435, "component.supracausal_smd.transistor").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_RESISTOR = this.addItem(436, "component.supracausal_smd.resistor").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_CAPACITOR = this.addItem(437, "component.supracausal_smd.capacitor").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_DIODE = this.addItem(438, "component.supracausal_smd.diode").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_INDUCTOR = this.addItem(439, "component.supracausal_smd.inductor").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
 
         //500~
         //  Cosmic Components
-        COSMIC_INFORMATION_MODULE = this.addItem(500, "component.cosmic.information_module");
-        HOLOGRAPHIC_INFORMATION_IMC = this.addItem(501, "component.cosmic.holographic_imc");
+        COSMIC_INFORMATION_MODULE = this.addItem(500, "component.cosmic.information_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        HOLOGRAPHIC_INFORMATION_IMC = this.addItem(501, "component.cosmic.holographic_imc").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
 
         //  Supracausal Components
-        SPACETIME_CONDENSER = this.addItem(502, "component.supracausal.spacetime_condenser");
-        LIGHT_CONE_MODULE = this.addItem(503, "component.supracausal.light_cone_module");
+        SPACETIME_CONDENSER = this.addItem(502, "component.supracausal.spacetime_condenser").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        LIGHT_CONE_MODULE = this.addItem(503, "component.supracausal.light_cone_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
 
 
         //1200~

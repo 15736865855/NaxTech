@@ -1,8 +1,7 @@
 package com.onlyex.naxtech.api.unification.material.info;
 
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
-import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
-import com.onlyex.naxtech.common.items.behaviors.renderer.HaloRenderItemBehavior;
+import com.onlyex.naxtech.common.items.behaviors.renderer.*;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import stanhebben.zenscript.annotations.ZenClass;
@@ -12,7 +11,7 @@ import stanhebben.zenscript.annotations.ZenClass;
 @ZenRegister
 public class NTMaterialIconSet {
     public static final MaterialIconSet CUSTOM_MHCSM = new MaterialIconSet("mhcsm", null, true);
-    public static final MaterialIconSet CUSTOM_CN = new MaterialIconSet("cosmic_neutronium", null, true);
+    public static final MaterialIconSet CUSTOM_CN = new MaterialIconSetWithRenderer("cosmic_neutronium", null, true,new DataRenderItemBehavior());
     public static final MaterialIconSet CUSTOM_SPACETIME = new MaterialIconSet("spacetime", null, true);
     public static final MaterialIconSet CUSTOM_WWM = new MaterialIconSet("whited_warf_matter", null, true);
     public static final MaterialIconSet CUSTOM_DEGENERATE_RHENIUM = new MaterialIconSet("degenerate_rhenium", null, true);

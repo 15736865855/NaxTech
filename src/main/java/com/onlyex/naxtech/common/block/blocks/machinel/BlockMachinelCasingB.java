@@ -1,6 +1,8 @@
 package com.onlyex.naxtech.common.block.blocks.machinel;
 
+import gregtech.api.block.IStateHarvestLevel;
 import gregtech.api.block.VariantBlock;
+import gregtech.api.items.toolitem.ToolClasses;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -23,7 +25,6 @@ public class BlockMachinelCasingB extends VariantBlock<BlockMachinelCasingB.Casi
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
         this.setCreativeTab(NAXTECH_TAB);
-        this.setHarvestLevel("wrench", 2);
         this.setDefaultState(this.getState(CasingType.DRACONIUM_CASING));
     }
 
@@ -33,22 +34,42 @@ public class BlockMachinelCasingB extends VariantBlock<BlockMachinelCasingB.Casi
 
 
 
-    public enum CasingType implements IStringSerializable {
+    public enum CasingType implements IStringSerializable , IStateHarvestLevel {
 
-        DRACONIUM_CASING("draconium_casing"),
-        DRAGON_FUSION_COIL("dragon_fusion_coil"),
-        HG_1223_CASING("hg_1223_casing");
+        DRACONIUM_CASING("draconium_casing",2),
+        DRAGON_FUSION_COIL("dragon_fusion_coil",2),
+        HG_1223_CASING("hg_1223_casing",2),
+        MACERATOR_CASING("macerator_casing", 4),
+        BRICK("brick", 4),
+        TALONITE_CASING("talonite_casing", 4),
+        MACHINE_CASING("machine_casing", 4),
+        TURBINE_CASING("turbine_casing", 4),
+        FISHING_CASING("fishing_casing", 4),
+        VACUUM_CASING("vacuum_casing",2),
+        PROCESS("process_casing",2),
+        ASEPTIC_FARM_CASING("aseptic_farm_machine_casing",2);
 
         private final String name;
+        private final int harvestLevel;
 
-        CasingType(String name) {
+        CasingType(String name, int harvestLevel) {
             this.name = name;
+            this.harvestLevel = harvestLevel;
         }
 
         @Nonnull
         @Override
         public String getName() {
             return name;
+        }
+
+        @Override
+        public int getHarvestLevel(IBlockState state) {
+            return harvestLevel;
+        }
+        @Override
+        public String getHarvestTool(IBlockState state) {
+            return "wrench";
         }
     }
 }

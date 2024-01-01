@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.common.block.blocks;
+package com.onlyex.naxtech.common.block.blocks.dimension;
 
 import com.onlyex.naxtech.api.unification.NTMaterials;
 import gregtech.api.block.IHeatingCoilBlockStats;

@@ -71,6 +71,8 @@ public class CommonProxy {
         registry.register(MACHINE_CASING_A);
         registry.register(MACHINE_CASING_B);
         registry.register(PCB_FACTORY_CASING);
+        registry.register(DIMENSION_CASING);
+        registry.register(ADV_FACTORY_CASING);
 
     }
 
@@ -94,6 +96,8 @@ public class CommonProxy {
         registry.register(createItemBlock(MACHINE_CASING_A, VariantItemBlock::new));
         registry.register(createItemBlock(MACHINE_CASING_B, VariantItemBlock::new));
         registry.register(createItemBlock(PCB_FACTORY_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(DIMENSION_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(ADV_FACTORY_CASING, VariantItemBlock::new));
 
 
     }

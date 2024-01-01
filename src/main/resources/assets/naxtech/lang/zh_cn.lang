@@ -713,13 +713,13 @@ gregtech.material.infinity=§c无尽
 gregtech.material.cosmic_neutronium=§b宇宙中子态素
 gregtech.material.spacetime=时空
 gregtech.material.magneto_hydrodynamically_constrained_star_matter=磁流体约束恒星物质
-gregtech.material.eternity=§s永恒
+gregtech.material.eternity=§b永恒
 gregtech.material.shirabon=调律源金
 gregtech.material.astral_titanium=星体钛
 gregtech.material.celestial_tungsten=天体钨
 gregtech.material.rhugnor=鲁格诺
-gregtech.material.universium=§t宇宙素
-gregtech.material.electrum_flux=通流琥珀金
+gregtech.material.universium=§3宇宙素
+gregtech.material.electrum_flux=§e通流琥珀金
 gregtech.material.hypogen=海珀珍
 gregtech.material.mar_m_200_steel=MAR-M200特种钢
 gregtech.material.transcendent_metal=超时空金属
@@ -779,9 +779,9 @@ gregtech.material.gelid_cryotheum=极寒之凛冰
 gregtech.material.quantum_alloy=量子合金
 gregtech.material.quantium=量子
 #Coil Block
-tile.wire_coil.electrum_flux.name=‹-通流琥珀金线圈-›
+tile.wire_coil.electrum_flux.name=‹-§e通流琥珀金线圈§r-›
 tile.wire_coil.electrum_flux.tooltip=
-tile.wire_coil.awakened_draconium.name=‹-觉醒龙锭线圈-›
+tile.wire_coil.awakened_draconium.name=‹-觉醒龙锭线圈§r-›
 tile.wire_coil.awakened_draconium.tooltip=
 tile.wire_coil.unive.name=‹-§b宇宙态素中子线圈§r-›
 tile.wire_coil.unive.tooltip=
@@ -789,11 +789,11 @@ tile.wire_coil.end.name=‹-§c§l寰宇支配之无尽线圈§r-›
 tile.wire_coil.end.tooltip=
 tile.wire_coil.hypogen.name=‹-§6海珀珍线圈§r-›
 tile.wire_coil.hypogen.tooltip=
-tile.wire_coil.universium.name=‹-§t宇宙素线圈§r-›
+tile.wire_coil.universium.name=‹-§3宇宙素线圈§r-›
 tile.wire_coil.universium.tooltip=
-tile.wire_coil.eternal.name=‹-§s永恒线圈§r-›
+tile.wire_coil.eternal.name=‹-§b永恒线圈§r-›
 tile.wire_coil.eternal.tooltip=
-tile.wire_coil.cupar_proton_pair_coil.name=‹-§t库珀对线圈§r-›
+tile.wire_coil.cupar_proton_pair_coil.name=‹-§o§1库珀对线圈§r-›
 tile.wire_coil.cupar_proton_pair_coil.tooltip=
 
 
@@ -855,6 +855,15 @@ tile.machine_casing_a.cyclotron_coil.name=重离子偏转线圈方块
 tile.machine_casing_b.draconium_casing.name=魔力亲和龙素机器外壳
 tile.machine_casing_b.dragon_fusion_coil.name=混沌聚合线圈方块
 tile.machine_casing_b.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
+tile.machine_casing_b.macerator_casing.name=巨型粉碎外壳
+tile.machine_casing_b.brick.name=隔热砖
+tile.machine_casing_b.talonite_casing.name=钴合金外壳
+tile.machine_casing_b.machine_casing.name=镀铑钯机械外壳
+tile.machine_casing_b.turbine_casing.name=镀铑钯管道外壳
+tile.machine_casing_b.fishing_casing.name=渔场外壳
+tile.machine_casing_b.vacuum_casing.name=真空干燥外壳
+tile.machine_casing_b.process_casing.name=加工厂外壳
+tile.machine_casing_b.aseptic_farm_machine_casing.name=无菌农场机器外壳
 
 
 
@@ -871,6 +880,34 @@ tile.pcb_factory_casing.water_cooled_machine_casing.name=水冷机器外壳
 tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=散热器件/n§6PCB工厂§7-§b水冷塔外壳§7/n只能使用§c水冷塔§7或§c空冻塔§7两种升级中的一种
 tile.pcb_factory_casing.infinity_cooled_machine_casing.name=无尽冷却机器外壳
 tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=无限接近于绝对零度/n§6PCB工厂§7-§b空冻塔外壳§7/n只能使用§c水冷塔§7或§c空冻塔§7两种升级中的一种
+
+
+
+#ADV
+tile.adv_factory_casing.machine_tech.name=智能机器外壳
+tile.adv_factory_casing.machine_basic.name=智能基础外壳
+tile.adv_factory_casing.machine_dimensional_cover_blue.name=先进维度覆盖器（B型）
+tile.adv_factory_casing.machine_dimensional_cover_orange.name=先进维度覆盖器（O型）
+tile.adv_factory_casing.machine_matterfab.name=智能物质生成模块
+tile.adv_factory_casing.machine_matterfab_active.name=智能物质生成模块（活跃）
+tile.adv_factory_casing.machine_matterfab_active_animated.name=智能有机物质生成模块（活跃）
+tile.adv_factory_casing.machine_matterfab_animated.name=智能有机物质生成模块
+tile.adv_factory_casing.machine_lesu.name=智能储能单元
+tile.adv_factory_casing.machine_vent_rotating.name=智能散热器
+tile.adv_factory_casing.machine_tubbine.name=智能涡轮
+
+
+#dimension
+tile.dimension_casing.motorb_lock.name=超维度动力模块
+tile.dimension_casing.dimension.name=超维度基材模块
+tile.dimension_casing.dimension_computer.name=超维度计算模块
+tile.dimension_casing.field_generator.name=超维度力场模块
+tile.dimension_casing.dimensional.name=超维度维度模块
+tile.dimension_casing.annihilation.name=超维度湮灭模块
+
+
+
+
 
 
 #pipelinel
