@@ -1,1 +1,14 @@
-{"animation": {"frametime": 2}}
+{
+  "animation": { "frametime": 2 },
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "naxtech:blocks/casings/coils/hypogen_ctm"
+    ],
+    "extra": {
+      "connect_inside": true
+    }
+  }
+}

@@ -4,9 +4,7 @@ import com.onlyex.naxtech.api.unification.NTMaterials;
 import gregtech.api.block.IHeatingCoilBlockStats;
 import gregtech.api.block.VariantActiveBlock;
 import gregtech.api.block.VariantItemBlock;
-import gregtech.api.items.toolitem.ToolClasses;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.material.Materials;
 import gregtech.client.utils.TooltipHelper;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockWireCoil;
@@ -86,7 +84,7 @@ public class BlockDimensionWireCoil  extends VariantActiveBlock<BlockDimensionWi
     }
 
 
-    public enum CoilType implements IStringSerializable, IHeatingCoilBlockStats {
+    public enum CoilType implements IStringSerializable, IHeatingCoilBlockStats {//TODO 材质
 
         ELECTRUM_FLUX("electrum_flux", 9601, 16, 8, NTMaterials.ElectrumFlux),
         AWAKENED_DRACONIUM("awakened_draconium", 11801, 24, 16, NTMaterials.DraconiumAwakened),

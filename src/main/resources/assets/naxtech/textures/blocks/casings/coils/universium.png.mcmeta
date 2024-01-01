@@ -1,9 +1,13 @@
 {
     "ctm": {
         "ctm_version": 1,
-        "type": "ctm",
+        "type": "CTM",
+        "layer": "SOLID",
         "textures": [
             "naxtech:blocks/casings/coils/universium_ctm"
-        ]
+        ],
+        "extra": {
+            "connect_inside": true
+        }
     }
 }

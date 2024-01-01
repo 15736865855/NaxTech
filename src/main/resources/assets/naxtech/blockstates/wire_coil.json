@@ -95,14 +95,14 @@
     "active=false,variant=cupar_proton_pair_coil": {
       "model": "minecraft:cube_all",
       "textures": {
-        "all": "naxtech:naxtech/casings/coils/cupar_proton_pair_coil"
+        "all": "naxtech:blocks/casings/coils/cupar_proton_pair_coil"
       }
     },
     "active=true,variant=cupar_proton_pair_coil": {
       "model": "gregtech:cube_2_layer_all",
       "textures": {
-        "bot_all": "naxtech:naxtech/casings/coils/cupar_proton_pair_coil",
-        "top_all":"naxtech:naxtech/casings/coils/cupar_proton_pair_coil_bloom"
+        "bot_all": "naxtech:blocks/casings/coils/cupar_proton_pair_coil",
+        "top_all":"naxtech:blocks/casings/coils/cupar_proton_pair_coil_bloom"
       }
     }
   }

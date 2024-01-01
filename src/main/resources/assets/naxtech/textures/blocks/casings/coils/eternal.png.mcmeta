@@ -1,1 +1,14 @@
-{"animation": {"frametime": 3}}
+{
+  "animation": { "frametime": 3 },
+  "ctm": {
+    "ctm_version": 1,
+    "type": "CTM",
+    "layer": "SOLID",
+    "textures": [
+      "naxtech:blocks/casings/coils/eternal_ctm"
+    ],
+    "extra": {
+      "connect_inside": true
+    }
+  }
+}
