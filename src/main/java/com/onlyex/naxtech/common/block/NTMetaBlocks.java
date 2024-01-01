@@ -2,10 +2,10 @@ package com.onlyex.naxtech.common.block;
 
 import com.onlyex.naxtech.common.block.blocks.*;
 import com.onlyex.naxtech.common.block.blocks.assembly.*;
-import com.onlyex.naxtech.common.block.blocks.dimension.BlockDimensionCasing;
-import com.onlyex.naxtech.common.block.blocks.dimension.BlockDimensionWireCoil;
+import com.onlyex.naxtech.common.block.blocks.dimension.*;
 import com.onlyex.naxtech.common.block.blocks.machinel.*;
 import com.onlyex.naxtech.common.block.blocks.quantum.*;
+import com.onlyex.naxtech.common.block.wood.*;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -49,6 +49,10 @@ public class NTMetaBlocks {
     public static BlockADVFactoryCasing ADV_FACTORY_CASING;//ADV
 
 
+
+    public static final BlockPineLeaves PINE_LEAVES = new BlockPineLeaves();
+    public static final BlockPineLog PINE_LOG = new BlockPineLog();
+    public static final BlockPineSapling PINE_SAPLING = new BlockPineSapling();
     private NTMetaBlocks() {}
     public static void init() {
         NT_WIRE_COIL = new BlockDimensionWireCoil();
@@ -99,6 +103,9 @@ public class NTMetaBlocks {
         registerItemModel(PCB_FACTORY_CASING);
         registerItemModel(DIMENSION_CASING);
         registerItemModel(ADV_FACTORY_CASING);
+        registerItemModel(PINE_LEAVES);
+        registerItemModel(PINE_LOG);
+        registerItemModel(PINE_SAPLING);
 
 
         //  VariantActiveBlock Registry

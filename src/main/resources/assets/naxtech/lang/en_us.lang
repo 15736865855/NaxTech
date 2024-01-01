@@ -866,6 +866,22 @@ tile.pipelinel_casing.polybenzimidazole_pipe.name=
 #machine
 naxtech.machine.packaging_line.name=
 
+
+#pine
+tile.pine_log.name=
+tile.pine_sapling.name=
+tile.pine_leaves.name=
+metaitem.item.pine_cone.name=
+metaitem.item.pine_fragment.name=
+
+
+
+
+
+
+
+
+
 #dimension
 tile.dimension_casing.motorb_lock.name=
 tile.dimension_casing.dimension.name=

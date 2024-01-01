@@ -73,7 +73,9 @@ public class CommonProxy {
         registry.register(PCB_FACTORY_CASING);
         registry.register(DIMENSION_CASING);
         registry.register(ADV_FACTORY_CASING);
-
+        registry.register(PINE_LOG);
+        registry.register(PINE_SAPLING);
+        registry.register(PINE_LEAVES);
     }
 
     @SubscribeEvent
@@ -100,6 +102,9 @@ public class CommonProxy {
         registry.register(createItemBlock(ADV_FACTORY_CASING, VariantItemBlock::new));
 
 
+        registry.register(createItemBlock(PINE_LOG, ItemBlock::new));
+        registry.register(createItemBlock(PINE_SAPLING, ItemBlock::new));
+        registry.register(createItemBlock(PINE_LEAVES, ItemBlock::new));
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {

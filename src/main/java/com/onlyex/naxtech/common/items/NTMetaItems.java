@@ -15,7 +15,8 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem TIMEPIECE;
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
     public static MetaItem<?>.MetaValueItem NULL;
-
+    public static MetaItem<?>.MetaValueItem PINE_CONE;
+    public static MetaItem<?>.MetaValueItem PINE_FRAGMENT;
 
     //
     public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_MAX;

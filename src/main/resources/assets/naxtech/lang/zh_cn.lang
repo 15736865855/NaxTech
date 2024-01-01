@@ -905,9 +905,12 @@ tile.dimension_casing.field_generator.name=超维度力场模块
 tile.dimension_casing.dimensional.name=超维度维度模块
 tile.dimension_casing.annihilation.name=超维度湮灭模块
 
-
-
-
+#pine
+tile.pine_log.name=松木
+tile.pine_sapling.name=松树树苗
+tile.pine_leaves.name=松树树叶（不含松鼠）
+metaitem.item.pine_cone.name=松果
+metaitem.item.pine_fragment.name=粉碎的松树组织
 
 
 #pipelinel

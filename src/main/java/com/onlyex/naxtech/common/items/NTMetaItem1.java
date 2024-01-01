@@ -77,7 +77,8 @@ public class NTMetaItem1 extends StandardMetaItem {
         GRINDBALL_SOAPSTONE = this.addItem(42, "mill.grindball_soapstone").setMaxStackSize(1).addComponents(new MillBallBehavior());
         GRINDBALL_ALUMINIUM = this.addItem(43, "mill.grindball_aluminium").setMaxStackSize(1).addComponents(new MillBallBehavior());
         NULL = this.addItem(44, "null").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.MASK_INGOT, 1));
-
+        PINE_CONE=this.addItem(45, "item.pine_cone");
+        PINE_FRAGMENT=this.addItem(46, "item.pine_fragment");
 
 
 
