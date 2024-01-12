@@ -12,17 +12,19 @@ import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.util.BlockInfo;
 import gregtech.common.blocks.MetaBlocks;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import org.apache.commons.lang3.ArrayUtils;
 
+import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Supplier;
 
 import static com.onlyex.naxtech.api.NTAPI.*;
 
 
-public class NTTraceabilityPredicate {
+public class NTTraceabilityPredicate extends TraceabilityPredicate {
 
     //  Tier Traceability Predicates
     public static Supplier<TierTraceabilityPredicate> MACHINE_CASINGS = () -> new TierTraceabilityPredicate(MAP_MACHINE_CASING,"MachineCasingType",null);
@@ -43,6 +45,9 @@ public class NTTraceabilityPredicate {
             Comparator.comparing((s) -> ((WrappedIntTier)MAP_QFT_SHIELDING_CORE.get(s)).getIntTier()), "QFTShieldingCore", null);
     public static Supplier<TierTraceabilityPredicate> QFT_GLASS = () -> new TierTraceabilityPredicate(MAP_QFT_GLASS,
             Comparator.comparing((s) -> ((WrappedIntTier)MAP_QFT_GLASS.get(s)).getIntTier()), "QFTGlass", null);
+
+    public static Supplier<TierTraceabilityPredicate> LE_GLASS = () -> new TierTraceabilityPredicate(MAP_GLASS,//TODO
+            Comparator.comparing((s) -> ((WrappedIntTier)MAP_GLASS.get(s)).getIntTier()),"Glass",null);
 
     //  Optional Traceability Predicates
     public static TraceabilityPredicate optionalStates(String mark, IBlockState... allowedStates) {
@@ -84,4 +89,5 @@ public class NTTraceabilityPredicate {
                 //.map(tile -> new BlockInfo(MetaBlocks.MACHINE.getDefaultState(), NTUniverUtil.getTileEntity(tile)))
                 .toArray(BlockInfo[]::new);
     }
+
 }

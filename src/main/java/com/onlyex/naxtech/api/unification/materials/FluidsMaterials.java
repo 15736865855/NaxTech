@@ -202,6 +202,11 @@ public class FluidsMaterials {
                 .components(Ice, 2, Electrotine, 1, Water, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        PineOil = new Material.Builder(getMaterialsId(), gregtechId( "pine_oil"))
+                .fluid()
+                .color(0xD6AC37)
+                .build();
     }
     private static int getMaterialsId() {
         if (startId < END_ID) {

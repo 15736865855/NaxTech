@@ -11,6 +11,7 @@ item.material.oreprefix.casingSmall=%s
 
 #  Behavior
 behavior.data_item.require_decoding=
+metaitem.item.biology_integrated_circuit.name=
 
 #  Mill Balls
 metaitem.mill.grindball_soapstone.name=Soapstone Grindball
@@ -761,7 +762,7 @@ gregtech.material.draconium_slag_solution=
 gregtech.material.dragon_tear=
 gregtech.material.blazing_pyrotheum=Blazing Pyrotheum
 gregtech.material.gelid_cryotheum=Gelid Cryotheum
-
+gregtech.material.pine_oil=
 
 #Coil Block
 tile.wire_coil.electrum_flux.name=‹-Electrum Flux Coil-›
@@ -1071,10 +1072,10 @@ naxtech.multipart.catalyst.only=Only catalysts can be placed
 
 naxtech.machine.industrial_maintenance_hatch.name=Industrial Maintenance Hatch
 
-naxtech.machine.infinite_water_hatch.name=无限水仓
-naxtech.tooltip.inf_water1=供水 2^31-1 mb/t
-naxtech.tooltip.inf_water2=§9百 度 贴 吧
-naxtech.tooltip.inf_water3=只能给多方块结构供水,你不能从中抽水.
+naxtech.machine.infinite_water_hatch.name=
+naxtech.tooltip.inf_water1=
+naxtech.tooltip.inf_water2=
+naxtech.tooltip.inf_water3=
 
 naxtech.machine.blazing_blast_furnace.name=Volcanus
 naxtech.machine.blazing_blast_furnace.amount=Blazing Pyrotheum: %sL
@@ -1196,3 +1197,16 @@ tile.quantum_force_transformer_casing.supracausal_continuum_manipulator_casing.t
 tile.quantum_force_transformer_casing.supracausal_continuum_shielding_core_casing.name=
 tile.quantum_force_transformer_casing.supracausal_continuum_shielding_core_casing.tooltip=
 tile.quantum_force_transformer_casing.quantum_force_transformer_coil.name=
+
+
+naxtech.machine.huge_cracking_unit.name=
+naxtech.multiblock.md.level=%s
+naxtech.multiblock.md.glass=%s
+naxtech.multiblock.fu.level=%s
+naxtech.multiblock.hb.tooltip.1=%s
+naxtech.multiblock.hb.tooltip.2=%s
+naxtech.multiblock.hb.tooltip.4=%s
+naxtech.multiblock.hb.tooltip.3=%s
+naxtech.multiblock.ab.tooltip.1=%s
+naxtech.multiblock.ab.tooltip.3=%s
+naxtech.multiblock.ab.tooltip.2=%s

@@ -3,22 +3,23 @@ package com.onlyex.naxtech.api;
 import com.onlyex.naxtech.api.block.ITier;
 import com.onlyex.naxtech.api.block.impl.WrappedIntTier;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
+import com.onlyex.naxtech.common.block.blocks.BlockBoronSilicateGlassCasing;
 import com.onlyex.naxtech.common.block.blocks.assembly.BlockComponentAssemblyLineCasing;
 import com.onlyex.naxtech.common.block.blocks.dimension.BlockDimensionWireCoil;
 import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasing;
 import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerCasing;
 import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerGlassCasing;
-import gregtech.common.blocks.BlockBoilerCasing;
-import gregtech.common.blocks.BlockMachineCasing;
-import gregtech.common.blocks.BlockMetalCasing;
-import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.blocks.*;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import static gregtech.api.GregTechAPI.HEATING_COILS;
+import static net.minecraft.init.Blocks.GLASS;
 
 public class NTAPI {
 
@@ -32,6 +33,8 @@ public class NTAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_QFT_MANIPULATOR = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_QFT_SHIELDING_CORE = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_QFT_GLASS = new Object2ObjectOpenHashMap<>();
+
+    public static final Object2ObjectOpenHashMap<IBlockState, ITier> MAP_GLASS = new Object2ObjectOpenHashMap<>();
     public static void APIBlockInit() {
         //  HEATING_COILS Addition
         for (BlockDimensionWireCoil.CoilType type : BlockDimensionWireCoil.CoilType.values()) {
@@ -142,5 +145,34 @@ public class NTAPI {
                 new WrappedIntTier(BlockQuantumForceTransformerGlassCasing.GlassType.SPACETIME_SUPERCONDENSER_GLASS, 3));
         MAP_QFT_GLASS.put(NTMetaBlocks.QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.getState(BlockQuantumForceTransformerGlassCasing.GlassType.SUPRACAUSAL_LIGHT_CONE_GLASS),
                 new WrappedIntTier(BlockQuantumForceTransformerGlassCasing.GlassType.SUPRACAUSAL_LIGHT_CONE_GLASS, 4));
+
+
+        MAP_GLASS.put(MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.FUSION_GLASS),
+                new WrappedIntTier(BlockGlassCasing.CasingType.FUSION_GLASS,3));
+
+        MAP_GLASS.put(NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.TI_BORON_SILICATE_GLASS_BLOCK),
+                new WrappedIntTier(BlockBoronSilicateGlassCasing.CasingType.TI_BORON_SILICATE_GLASS_BLOCK,4));
+
+        MAP_GLASS.put(NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.W_BORON_SILICATE_GLASS_BLOCK),
+                new WrappedIntTier(BlockBoronSilicateGlassCasing.CasingType.W_BORON_SILICATE_GLASS_BLOCK,5));
+
+        MAP_GLASS.put(NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.CTHY_BORON_SILICATE_GLASS_BLOCK),
+                new WrappedIntTier(BlockBoronSilicateGlassCasing.CasingType.CTHY_BORON_SILICATE_GLASS_BLOCK,6));
+
+        MAP_GLASS.put(NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.CR_BORON_SILICATE_GLASS_BLOCK),
+                new WrappedIntTier(BlockBoronSilicateGlassCasing.CasingType.CR_BORON_SILICATE_GLASS_BLOCK,7));
+
+        MAP_GLASS.put(NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.IR_BORON_SILICATE_GLASS_BLOCK),
+                new WrappedIntTier(BlockBoronSilicateGlassCasing.CasingType.IR_BORON_SILICATE_GLASS_BLOCK,8));
+
+        MAP_GLASS.put(NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.OS_BORON_SILICATE_GLASS_BLOCK),
+                new WrappedIntTier(BlockBoronSilicateGlassCasing.CasingType.OS_BORON_SILICATE_GLASS_BLOCK,9));
+
+        MAP_GLASS.put(NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.NE_BORON_SILICATE_GLASS_BLOCK),
+                new WrappedIntTier(BlockBoronSilicateGlassCasing.CasingType.NE_BORON_SILICATE_GLASS_BLOCK,10));
+
+        MAP_GLASS.put(NTMetaBlocks.BORON_SILICATE_GLASS_CASING.getState(BlockBoronSilicateGlassCasing.CasingType.SNE_BORON_SILICATE_GLASS_BLOCK),
+                new WrappedIntTier(BlockBoronSilicateGlassCasing.CasingType.SNE_BORON_SILICATE_GLASS_BLOCK,11));
+
     }
 }

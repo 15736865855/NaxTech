@@ -491,6 +491,7 @@ metaitem.living_crystal_chip.tooltip=用来制作电路板
 metaitem.protonated_fullerene_sieving_matrix.name=质子化富勒烯筛分基质
 metaitem.saturated_fullerene_sieving_matrix.name=饱和富勒烯筛分基质
 metaitem.unstable_star.name=易变之星
+metaitem.item.biology_integrated_circuit.name=生物集成电路
 
 #
 metaitem.optical.optically_enriched_crystalline_boule.name=光学富集单晶硅
@@ -750,6 +751,16 @@ gregtech.material.void_metal=虚空金属
 gregtech.material.legendarium=传奇金属
 gregtech.material.dragon_dust=龙尘
 gregtech.material.taranium=塔兰金属
+gregtech.material.quantum_alloy=量子合金
+gregtech.material.quantium=量子
+
+
+
+
+
+
+
+
 
 
 #fluid
@@ -791,8 +802,18 @@ gregtech.material.residual_draconium_solution=龙素残余物溶液
 gregtech.material.draconium_slag_solution=龙素残渣溶液
 gregtech.material.blazing_pyrotheum=烈焰之炽焱
 gregtech.material.gelid_cryotheum=极寒之凛冰
-gregtech.material.quantum_alloy=量子合金
-gregtech.material.quantium=量子
+gregtech.material.pine_oil=松油
+
+
+
+
+
+
+
+
+
+
+
 #Coil Block
 tile.wire_coil.electrum_flux.name=‹-§e通流琥珀金线圈§r-›
 tile.wire_coil.electrum_flux.tooltip=
@@ -1191,3 +1212,15 @@ tile.quantum_force_transformer_casing.supracausal_continuum_manipulator_casing.t
 tile.quantum_force_transformer_casing.supracausal_continuum_shielding_core_casing.name=超因果连续体扭曲核心机械方块
 tile.quantum_force_transformer_casing.supracausal_continuum_shielding_core_casing.tooltip=§b量子操纵者§7-屏蔽核心等级：§cIV§7
 tile.quantum_force_transformer_casing.quantum_force_transformer_coil.name=超维度转换线圈方块
+
+naxtech.machine.huge_cracking_unit.name=巨型石油裂化机
+naxtech.multiblock.md.level=线圈等级：%s
+naxtech.multiblock.md.glass=玻璃等级：%s
+naxtech.multiblock.fu.level=效率提升：%s
+naxtech.multiblock.hb.tooltip.1=多方块结构内所有玻璃每提升一级，多方块配方并行数量*2。
+naxtech.multiblock.hb.tooltip.2=多方块结构内所有玻璃每提升一级，机器功耗减去10%%。
+naxtech.multiblock.hb.tooltip.4=多方块结构内所有玻璃每提升一级，机器功耗减去2.5%%。
+naxtech.multiblock.hb.tooltip.3=多方块结构内所有线圈每提升一级，机器耗时减去5%%。
+naxtech.multiblock.ab.tooltip.1=多方块结构内所有线圈每提升一级，多方块配方并行数量 * 2。
+naxtech.multiblock.ab.tooltip.3=多方块结构每升级（例如结构拓展）一次，并行升级倍率提高%s，最高提高%s
+naxtech.multiblock.ab.tooltip.2=多方块线圈全部升级完毕后，一次至多可处理 %s 个配方。

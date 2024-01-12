@@ -26,8 +26,8 @@ import static com.onlyex.naxtech.api.NTValues.MOD_ID;
         modid = MOD_ID,
         name="NaxTech",
         acceptedMinecraftVersions = "[1.12.2,1.13)",
-        version = "1.0" ,
-        dependencies = "required-after:gregtech@[2.8.1-beta,) ;"
+        version = "0.0.1" ,
+        dependencies = "required-after:gregtech@[2.8.5-beta,) ;"
 )
 public class NaxTech {
 

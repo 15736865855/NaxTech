@@ -20,6 +20,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -78,7 +79,8 @@ public class BlockBoronSilicateGlassCasing extends VariantActiveBlock<BlockBoron
     @Override
     @SideOnly(Side.CLIENT)
     @SuppressWarnings("deprecation")
-    public boolean shouldSideBeRendered(@Nonnull IBlockState state, IBlockAccess world, BlockPos pos, @Nonnull EnumFacing side) {
+    public boolean shouldSideBeRendered(@NotNull IBlockState state, IBlockAccess world, BlockPos pos,
+                                        @NotNull EnumFacing side) {
         IBlockState sideState = world.getBlockState(pos.offset(side));
 
         return sideState.getBlock() == this ?
@@ -102,7 +104,7 @@ public class BlockBoronSilicateGlassCasing extends VariantActiveBlock<BlockBoron
     public enum CasingType implements IStringSerializable, ITierGlassBlockState {
         TI_BORON_SILICATE_GLASS_BLOCK("ti", GTValues.EV, true),
         W_BORON_SILICATE_GLASS_BLOCK("w", GTValues.IV, true),
-        CThY_BORON_SILICATE_GLASS_BLOCK("thy", GTValues.LuV, true),
+        CTHY_BORON_SILICATE_GLASS_BLOCK("thy", GTValues.LuV, true),
         CR_BORON_SILICATE_GLASS_BLOCK("cr", GTValues.ZPM, true),
         IR_BORON_SILICATE_GLASS_BLOCK("ir", GTValues.UV, true),
         OS_BORON_SILICATE_GLASS_BLOCK("os", GTValues.UHV, true),
