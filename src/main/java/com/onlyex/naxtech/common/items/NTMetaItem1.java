@@ -181,6 +181,27 @@ public class NTMetaItem1 extends StandardMetaItem {
         HYPERDIMENSIONAL_DRONE = this.addItem(211, "hyperdimensional.drone");
 
 
+        //240~256 singularity  //.addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, false))
+        ETERNAL_SINGULARITY = this.addItem(240, "singularity.eternal_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.ETERNAL_SINGULARITY, 1));
+        GASTRONOMIC_SINGULARITY = this.addItem(241, "singularity.gastronomic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        GALACTIC_SINGULARITY = this.addItem(242, "singularity.galactic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        NATURAL_SINGULARITY = this.addItem(243, "singularity.natural_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        MAGICAL_SINGULARITY = this.addItem(244, "singularity.magical_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        FANTASTIC_SINGULARITY = this.addItem(245, "singularity.fantastic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        CHEMICAL_SINGULARITY = this.addItem(246, "singularity.chemical_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        THERMIONIC_SINGULARITY = this.addItem(247, "singularity.thermionic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        PROTONIC_SINGULARITY = this.addItem(248, "singularity.protonic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        PLATONIC_SINGULARITY = this.addItem(249, "singularity.platonic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        CUBIC_SINGULARITY = this.addItem(250, "singularity.cubic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        ASTRONOMIC_SINGULARITY = this.addItem(251, "singularity.astronomic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        TERRIFIC_SINGULARITY = this.addItem(252, "singularity.terrific_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        INTRINSIC_SINGULARITY = this.addItem(253, "singularity.intrinsic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        QUADRATIC_SINGULARITY = this.addItem(254, "singularity.quadratic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        COSMIC_SINGULARITY = this.addItem(255, "singularity.cosmic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        IMPOSSIBLE_SINGULARITY = this.addItem(256, "singularity.impossible_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+
+        //257~
+
         //300~
         GOOWARE_BOARD = this.addItem(300, "board.gooware");
         OPTICAL_BOARD = this.addItem(301, "board.optical");

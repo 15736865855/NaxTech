@@ -604,6 +604,24 @@ metaitem.component.supracausal.light_cone_module.name=时空光锥稳定模块
 metaitem.component.supracausal.light_cone_module.tooltip=自旋泡沫路径积分计算！
 
 
+#singularity
+metaitem.singularity.eternal_singularity.name=永恒奇点
+metaitem.singularity.gastronomic_singularity.name=美食奇点
+metaitem.singularity.galactic_singularity.name=银河奇点
+metaitem.singularity.natural_singularity.name=自然奇点
+metaitem.singularity.magical_singularity.name=魔法奇点
+metaitem.singularity.fantastic_singularity.name=奇异奇点
+metaitem.singularity.chemical_singularity.name=化学奇点
+metaitem.singularity.thermionic_singularity.name=热离子奇点
+metaitem.singularity.protonic_singularity.name=质子奇点
+metaitem.singularity.platonic_singularity.name=柏拉图奇点
+metaitem.singularity.cubic_singularity.name=立方奇点
+metaitem.singularity.astronomic_singularity.name=天文奇点
+metaitem.singularity.terrific_singularity.name=本征奇点
+metaitem.singularity.intrinsic_singularity.name=星空奇点
+metaitem.singularity.quadratic_singularity.name=量子奇点
+metaitem.singularity.cosmic_singularity.name=宇宙奇点
+metaitem.singularity.impossible_singularity.name=不可能奇点
 
 
 

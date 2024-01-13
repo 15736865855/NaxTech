@@ -51,6 +51,9 @@ OrientedOverlayRenderer
     public static TextureAtlasSprite HALO_NOISE;
 
     public static TextureAtlasSprite MASK_INGOT;
+    public static TextureAtlasSprite ETERNAL_SINGULARITY;
+    public static TextureAtlasSprite COMBINED_SINGULARITY;
+
 
     public static TextureAtlasSprite[] COSMIC;
     public static TextureAtlasSprite COSMIC_0;
@@ -74,6 +77,9 @@ OrientedOverlayRenderer
         HALO_NOISE = textureMap.registerSprite(NTUtils.naxId("items/halo_noise"));
 
         MASK_INGOT = textureMap.registerSprite(NTUtils.naxId( "items/mask_ingot"));
+
+        ETERNAL_SINGULARITY = textureMap.registerSprite(NTUtils.naxId( "items/eternal_singularity_mask"));
+        COMBINED_SINGULARITY = textureMap.registerSprite(NTUtils.naxId( "items/combined_singularity_mask"));
 
         COSMIC_0 = textureMap.registerSprite(NTUtils.naxId("shader/cosmic_0"));
         COSMIC_1 = textureMap.registerSprite(NTUtils.naxId("shader/cosmic_1"));

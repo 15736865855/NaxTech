@@ -31,10 +31,10 @@ public class CosmicItemRenderer extends WrappedItemRenderer {
         ResourceUtils.registerReloadListener(resourceManager -> spriteQuadCache.clear());
     }
 
-    public CosmicItemRenderer(IModelState state, IBakedModel wrapped) {
+/*    public CosmicItemRenderer(IModelState state, IBakedModel wrapped) {
         super(state, wrapped);
 
-    }
+    }*/
 
     public CosmicItemRenderer(IModelState state, IWrappedModelGetter getter) {
         super(state, getter);

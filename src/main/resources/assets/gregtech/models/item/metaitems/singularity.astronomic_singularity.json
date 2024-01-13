@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/singularity/astronomic_singularity",
+    "layer1": "naxtech:items/singularity/astronomic_singularity_overlay"
+  }
+}

@@ -9,26 +9,26 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 /**
- * Any item implementing this that also binds itself to TODO INPUT MODEL NAME HERE.
- * Will automatically have the cosmic shader applied to the mask with the given opacity.
+ *任何实现此功能的项目也将自身绑定到这里的待办事项输入模型名称。
+ *将自动将宇宙着色器应用于具有给定不透明度的蒙版。
  */
 public interface ICosmicRenderBehavior extends IItemRendererManager {
     /**
-     * The mask where the cosmic overlay will be.
+     * 宇宙着色器应
      *
-     * @param stack  The stack being rendered.
-     * @param player The entity holding the item, May be null, If null assume either inventory, or ground.
-     * @return The masked area where the cosmic overlay will be.
+     * @param stack  正在渲染的堆栈
+     * @param player 持有物品的实体，可能为空，如果为空，则假设库存或地面。
+     * @return 宇宙覆盖的蒙版区域。
      */
     @SideOnly(Side.CLIENT)
     TextureAtlasSprite getMaskTexture(ItemStack stack, @Nullable EntityLivingBase player);
 
     /**
-     * The opacity that the mask overlay will be rendered with.
+     * 蒙版覆盖将呈现的不透明度。
      *
-     * @param stack  The stack being rendered.
-     * @param player The entity holding the item, May be null, If null assume either inventory, or ground.
-     * @return The opacity that the mask overlay will be rendered with.
+     * @param stack  正在渲染的堆栈
+     * @param player 持有物品的实体，可能为空，如果为空，则假设库存或地面。
+     * @return 覆盖将呈现的不透明度。
      */
     @SideOnly (Side.CLIENT)
     float getMaskOpacity(ItemStack stack, @Nullable EntityLivingBase player);

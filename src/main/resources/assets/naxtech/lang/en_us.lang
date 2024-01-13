@@ -555,6 +555,25 @@ metaitem.component.supracausal.light_cone_module.name=Spacetime Light cone Stabi
 metaitem.component.supracausal.light_cone_module.tooltip=Spin Foam Path Integral Computation!
 
 
+metaitem.singularity.eternal_singularity.name=Eternal Singularity
+metaitem.singularity.gastronomic_singularity.name=Gastronomic Singularity
+metaitem.singularity.galactic_singularity.name=Galactic Singularity
+metaitem.singularity.natural_singularity.name=Natural Singularity
+metaitem.singularity.magical_singularity.name=Magical Singularity
+metaitem.singularity.fantastic_singularity.name=Fantastic Singularity
+metaitem.singularity.chemical_singularity.name=Chemical Singularity
+metaitem.singularity.thermionic_singularity.name=Thermionic Singularity
+metaitem.singularity.protonic_singularity.name=Protonic Singularity
+metaitem.singularity.platonic_singularity.name=Platonic Singularity
+metaitem.singularity.cubic_singularity.name=Cubic Singularity
+metaitem.singularity.astronomic_singularity.name=Astronomic Singularity
+metaitem.singularity.terrific_singularity.name=Terrific Singularity
+metaitem.singularity.intrinsic_singularity.name=Intrinsic Singularity
+metaitem.singularity.quadratic_singularity.name=Quadratic Singularity
+metaitem.singularity.cosmic_singularity.name=Cosmic Singularity
+metaitem.singularity.impossible_singularity.name=Impossible Singularity
+
+
 
 
 

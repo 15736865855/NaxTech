@@ -54,6 +54,10 @@ public class HaloRenderItemBehavior implements IHaloRenderBehavior {
     @SideOnly(Side.CLIENT)
     @Override
     public void onRendererRegistry(ResourceLocation location) {
-        ModelRegistryHelper.register(new ModelResourceLocation(location, "inventory"), new HaloItemRenderer(TransformUtils.DEFAULT_ITEM, modelRegistry -> modelRegistry.getObject(new ModelResourceLocation(location, "inventory"))));
+        ModelRegistryHelper.register(new ModelResourceLocation(location, "inventory"),
+                new HaloItemRenderer(TransformUtils.DEFAULT_ITEM, modelRegistry ->
+                        modelRegistry.getObject(new ModelResourceLocation(location, "inventory"))
+                )
+        );
     }
 }

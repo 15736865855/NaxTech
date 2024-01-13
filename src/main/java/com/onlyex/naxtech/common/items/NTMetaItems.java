@@ -19,6 +19,26 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem PINE_FRAGMENT;
     public static MetaItem<?>.MetaValueItem BIOLOGY_INTEGRATED_CIRCUIT;
 
+    //singularity
+    public static MetaItem<?>.MetaValueItem ETERNAL_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem GASTRONOMIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem GALACTIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem NATURAL_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem MAGICAL_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem FANTASTIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CHEMICAL_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem THERMIONIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem PROTONIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem PLATONIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CUBIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem ASTRONOMIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem TERRIFIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem INTRINSIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem QUADRATIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem COSMIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem IMPOSSIBLE_SINGULARITY;
+
+
     //
     public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_MAX;
     public static MetaItem<?>.MetaValueItem ELECTRIC_PISTON_MAX;

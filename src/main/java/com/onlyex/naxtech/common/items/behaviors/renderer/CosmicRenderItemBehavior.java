@@ -35,6 +35,10 @@ public class CosmicRenderItemBehavior implements ICosmicRenderBehavior {
 
     @Override
     public void onRendererRegistry(ResourceLocation location) {
-        ModelRegistryHelper.register(new ModelResourceLocation(location, "inventory"), new CosmicItemRenderer(TransformUtils.DEFAULT_ITEM, modelRegistry -> modelRegistry.getObject(new ModelResourceLocation(location, "inventory"))));
+        ModelRegistryHelper.register(new ModelResourceLocation(location, "inventory"),
+                new CosmicItemRenderer(TransformUtils.DEFAULT_ITEM, modelRegistry ->
+                        modelRegistry.getObject(new ModelResourceLocation(location, "inventory"))
+                )
+        );
     }
 }
