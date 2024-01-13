@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures" : {
+    "layer0": "naxtech:items/metaitems/cosmic_fabric_plasma_containment_cell"
+  }
+}

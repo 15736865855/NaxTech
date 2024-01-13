@@ -52,7 +52,7 @@ public class DimensionMaterials {
 
         CosmicNeutronium = new Material.Builder(getMaterialsId(), gregtechId("cosmic_neutronium"))
                 .ingot()
-                .liquid(new FluidBuilder())
+                .liquid(new FluidBuilder().customStill())
                 .element(NTElements.CoNe)
                 .color(0x323232).iconSet(CUSTOM_CN)
                 .flags(DIMENSION)

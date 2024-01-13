@@ -16,6 +16,8 @@ import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.behaviors.MultiblockBuilderBehavior;
 import gregtech.common.items.behaviors.ProspectorScannerBehavior;
+import gregtech.common.items.behaviors.TooltipBehavior;
+import net.minecraft.client.resources.I18n;
 
 import static com.onlyex.naxtech.common.items.NTMetaItems.*;
 import static com.onlyex.naxtech.common.items.NTMetaItems.PETRI_DISH_FERTILE;
@@ -86,6 +88,9 @@ public class NTMetaItem1 extends StandardMetaItem {
         PINE_CONE=this.addItem(45, "item.pine_cone");
         PINE_FRAGMENT=this.addItem(46, "item.pine_fragment");
         BIOLOGY_INTEGRATED_CIRCUIT = this.addItem(47, "item.biology_integrated_circuit").addComponents(new IntBcircuitBehavior());
+        CHROMATIC_LENS = this.addItem(48, "chromatic_lens").addOreDict("craftingLensChromatic");
+        QCD_PROTECTIVE_PLATING = this.addItem(49, "qcd_protective_plating");
+        COSMIC_FABRIC = this.addItem(50, "cosmic_fabric");
 
 
 
@@ -161,9 +166,22 @@ public class NTMetaItem1 extends StandardMetaItem {
         //ID 180~199
         BZ_REACTION_CHAMBER = this.addItem(180, "reaction_chamber.bz");
         NONLINEAR_CHEMICAL_OSCILLATOR = this.addItem(181, "nonlinear_chemical_oscillator");
-        T_ALGAE = this.addItem(182,"algae.t");
-        PETRI_DISH_STERILE = this.addItem(183,"petri_dish.sterile");
-        PETRI_DISH_FERTILE = this.addItem(184,"petri_dish.fertile");
+        PETRI_DISH_STERILE = this.addItem(182,"petri_dish.sterile");
+        PETRI_DISH_FERTILE = this.addItem(183,"petri_dish.fertile");
+        BARNARDA_C_BASE = this.addItem(184, "alga.barnarda_c.base");
+        BARNARDA_C_CHLORELLA = this.addItem(185, "alga.barnarda_c.chlorella").addOreDict("dyePurple");
+        BARNARDA_C_BRYOPSIS_HYPNOIDES = this.addItem(186, "alga.barnarda_c.bryopsis_hypnoides").addOreDict("dyeGreen");
+        BARNARDA_C_ZOOXANTHELLAE = this.addItem(187, "alga.barnarda_c.zooxanthellae").addOreDict("dyeOrange");
+        TAU_CETI_F_BASE = this.addItem(188, "alga.tau_ceti_f.base");
+        TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(189, "alga.tau_ceti_f.scenedesmus_obliquus").addOreDict("dyeLime");
+        TAU_CETI_F_PHAEOPHYTA = this.addItem(190, "alga.tau_ceti_f.phaeophyta").addOreDict("dyeBrown");
+        TAU_CETI_F_SPIRULINA = this.addItem(191, "alga.tau_ceti_f.spirulina").addOreDict("dyeBlue");
+        PROXIMA_B_BASE = this.addItem(192, "alga.proxima_b.base");
+        PROXIMA_B_CONCHOSPORE = this.addItem(193, "alga.proxima_b.conchospore").addOreDict("dyeRed");
+        PROXIMA_B_POLYSIPHONIA_SENTICULOSA = this.addItem(194, "alga.proxima_b.polysiphonia_senticulosa").addOreDict("dyeYellow");
+        PROXIMA_B_SPIROGYRA = this.addItem(195, "alga.proxima_b.spirogyra").addOreDict("dyeGray");
+        BIO_DISH_PETRI_DISH_STERILE = this.addItem(196,"petri_dish.bio_dish.sterile");
+        BIO_DISH_PETRI_DISH_FERTILE = this.addItem(197,"petri_dish.bio_dish.fertile");
 
         //ID 200~
         OPTICAL_FIBER = this.addItem(200, "optical_fiber");
@@ -179,6 +197,27 @@ public class NTMetaItem1 extends StandardMetaItem {
         ESR_COMPUTATION_UNIT = this.addItem(209, "esr_computation_unit");
         EIGENFOLDED_KERR_MANIFOLD = this.addItem(210, "eigenfolded.kerr.manifold");
         HYPERDIMENSIONAL_DRONE = this.addItem(211, "hyperdimensional.drone");
+
+        //  High Energy Physics Items
+        PLASMA_CONTAINMENT_CELL = this.addItem(212, "plasma_containment_cell");
+        RHENIUM_PLASMA_CONTAINMENT_CELL = this.addItem(213, "rhenium_plasma_containment_cell");
+        NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(214, "neutron_plasma_containment_cell");
+        EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL = this.addItem(215, "extremely_durable_plasma_containment_cell");
+        DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(216, "dense_neutron_plasma_containment_cell");
+        COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(217, "cosmic_neutron_plasma_containment_cell");
+        TIME_DILATION_CONTAINMENT_UNIT = this.addItem(218, "time_dilation_containment_unit");
+        CONTAINED_RN_SINGULARITY = this.addItem(219, "contained_reissner_nordstrom_singularity");
+        CONTAINED_KN_SINGULARITY = this.addItem(220, "contained_kerr_newmann_singularity");
+        CONTAINED_KERR_SINGULARITY = this.addItem(221, "contained_kerr_singularity");
+        CONTAINED_HIGH_DENSITY_PROTONIC_MATTER = this.addItem(222, "contained_high_density_protonic_matter");
+        CONTAINED_EXOTIC_MATTER = this.addItem(223, "contained_exotic_matter");
+        CHARGED_TRIPLET_NEUTRONIUM_SPHERE = this.addItem(224, "charged_triplet_neutronium_sphere");
+        COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL = this.addItem(225, "cosmic_fabric_plasma_containment_cell").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4"));
+        }));
 
 
         //240~256 singularity  //.addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, false))
@@ -210,6 +249,7 @@ public class NTMetaItem1 extends StandardMetaItem {
         OPTICAL_CIRCUIT = this.addItem(304, "circuit_board.optical");
         SPINTRONIC_CIRCUIT = this.addItem(305, "circuit_board.spintronic");
 
+        //ID 351~
         //  Biological Components
         ELECTROCHEMICAL_GRADIENT_RECORDER = this.addItem(351, "biological.components.electrochemical_gradient_recorder");
         ULTRA_MICRO_PHASE_SEPARATOR = this.addItem(352, "biological.components.ultra_micro_phase_separator");
@@ -234,7 +274,10 @@ public class NTMetaItem1 extends StandardMetaItem {
         QUANTUM_BOARD = this.addItem(404,"item.quantum_board");
         NANO_PROCESSOR_BOARD = this.addItem(405,"item.nano_processor_board");
         NANO_BOARD = this.addItem(406,"item.nano_board");
+        EXOTIC_SOC = this.addItem(407, "item.exotic_soc");
 
+
+        //ID 425~
         SPINTRONIC_CAPACITOR = this.addItem(425, "component.spintronic_smd.capacitor");
         SPINTRONIC_DIODE = this.addItem(426, "component.spintronic_smd.diode");
         SPINTRONIC_RESISTOR = this.addItem(427, "component.spintronic_smd.resistor");
@@ -257,7 +300,6 @@ public class NTMetaItem1 extends StandardMetaItem {
         //  Cosmic Components
         COSMIC_INFORMATION_MODULE = this.addItem(500, "component.cosmic.information_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
         HOLOGRAPHIC_INFORMATION_IMC = this.addItem(501, "component.cosmic.holographic_imc").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-
         //  Supracausal Components
         SPACETIME_CONDENSER = this.addItem(502, "component.supracausal.spacetime_condenser").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
         LIGHT_CONE_MODULE = this.addItem(503, "component.supracausal.light_cone_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
@@ -287,7 +329,6 @@ public class NTMetaItem1 extends StandardMetaItem {
         WRAP_FIBER_BOARD = this.addItem(1219, "wrap.fiber_board");
         WRAP_MULTILAYER_FIBER_BOARD = this.addItem(1220, "wrap.multilayer_fiber_board");
         WRAP_WETWARE_BOARD = this.addItem(1221, "wrap.wetware_board");
-
 
         WRAP_BASIC_CIRCUIT_BOARD = this.addItem(1222, "wrap.basic_circuit_board");
         WRAP_GOOD_CIRCUIT_BOARD = this.addItem(1223, "wrap.good_circuit_board");
@@ -390,6 +431,12 @@ public class NTMetaItem1 extends StandardMetaItem {
         WRAP_OPTICAL_CIRCUIT = this.addItem(1308, "wrap.circuit_board.optical");
         WRAP_SPINTRONIC_CIRCUIT = this.addItem(1309, "wrap.circuit_board.spintronic");
 
+
+
+
+
+
+
         //1400~
         NANO_PIC_WAFER = this.addItem(1400, "wafer.nano_pic");
         PICO_PIC_WAFER = this.addItem(1401, "wafer.pico_pic");
@@ -407,7 +454,10 @@ public class NTMetaItem1 extends StandardMetaItem {
         OPTICAL_NOR_MEMORY_CHIP = this.addItem(1413, "plate.optical_nor_memory_chip");
         SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(1414, "plate.spin_transfer_torque_memory");
         SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(1415, "plate.spintronic_nand_memory_chip");
-
+        UNTREATED_COSMIC_CPU = this.addItem(1416, "wafer.untreated_cosmic_cpu");
+        COSMIC_CPU = this.addItem(1417, "plate.cosmic_cpu");
+        COSMIC_CPU_CHIP = this.addItem(1418, "plate.cosmic_cpu_chip");
+        COSMIC_MEMORY_CHIP = this.addItem(1419, "plate.cosmic_memory_chip");
 
         //2000~
         PROSPECTOR_UV = this.addItem(2000, "prospector.uv")

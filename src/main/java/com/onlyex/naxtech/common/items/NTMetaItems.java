@@ -18,6 +18,16 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem PINE_CONE;
     public static MetaItem<?>.MetaValueItem PINE_FRAGMENT;
     public static MetaItem<?>.MetaValueItem BIOLOGY_INTEGRATED_CIRCUIT;
+    public static MetaItem<?>.MetaValueItem CHROMATIC_LENS;
+    public static MetaItem<?>.MetaValueItem QCD_PROTECTIVE_PLATING;
+    public static MetaItem<?>.MetaValueItem COSMIC_FABRIC;
+
+
+
+
+
+
+
 
     //singularity
     public static MetaItem<?>.MetaValueItem ETERNAL_SINGULARITY;
@@ -222,6 +232,13 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_BOARD;
     public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_CIRCUIT;
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_CIRCUIT;
+
+
+
+
+
+
+
     //
     public static MetaItem<?>.MetaValueItem OPTICALLY_ENRICHED_CRYSTALLINE_BOULE;
     public static MetaItem<?>.MetaValueItem PHOTONICALLY_PREPARED_WAFER;
@@ -246,6 +263,10 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem QUANTUM_BOARD;
     public static MetaItem<?>.MetaValueItem NANO_PROCESSOR_BOARD;
     public static MetaItem<?>.MetaValueItem NANO_BOARD;
+    public static MetaItem<?>.MetaValueItem EXOTIC_SOC;
+
+
+
 
     //0-19
     public static MetaItem<?>.MetaValueItem GOOWARE_PROCESSOR;
@@ -309,20 +330,36 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem GOOWARE_CIRCUIT;
     public static MetaItem<?>.MetaValueItem OPTICAL_CIRCUIT;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_CIRCUIT;
-
-
+    //  Algae
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_BASE;
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_CHLORELLA;
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_BRYOPSIS_HYPNOIDES;
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_ZOOXANTHELLAE;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_BASE;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_SCENEDESMUS_OBLIQUUS;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_PHAEOPHYTA;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_SPIRULINA;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_BASE;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_CONCHOSPORE;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_POLYSIPHONIA_SENTICULOSA;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_SPIROGYRA;
     //
     public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
     public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
-    public static MetaItem<?>.MetaValueItem T_ALGAE;
     public static MetaItem<?>.MetaValueItem PETRI_DISH_STERILE;
     public static MetaItem<?>.MetaValueItem PETRI_DISH_FERTILE;
+    public static MetaItem<?>.MetaValueItem BIO_DISH_PETRI_DISH_STERILE;
+    public static MetaItem<?>.MetaValueItem BIO_DISH_PETRI_DISH_FERTILE;
 
     public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
     public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
     public static MetaItem<?>.MetaValueItem OPTICAL_NOR_MEMORY_CHIP;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_NAND_MEMORY_CHIP;
 
+    public static MetaItem<?>.MetaValueItem UNTREATED_COSMIC_CPU;
+    public static MetaItem<?>.MetaValueItem COSMIC_CPU;
+    public static MetaItem<?>.MetaValueItem COSMIC_CPU_CHIP;
+    public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CHIP;
 
     //
     public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;
@@ -341,6 +378,22 @@ public class NTMetaItems {
     //
     public static MetaItem<?>.MetaValueItem EIGENFOLDED_KERR_MANIFOLD;
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
+
+    //  High Energy Physics Items
+    public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem RHENIUM_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem NEUTRON_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem TIME_DILATION_CONTAINMENT_UNIT;
+    public static MetaItem<?>.MetaValueItem CONTAINED_RN_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_KN_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_KERR_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_HIGH_DENSITY_PROTONIC_MATTER;
+    public static MetaItem<?>.MetaValueItem CONTAINED_EXOTIC_MATTER;
+    public static MetaItem<?>.MetaValueItem CHARGED_TRIPLET_NEUTRONIUM_SPHERE;
+    public static MetaItem<?>.MetaValueItem COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL;
 
     // PIC
     public static MetaItem<?>.MetaValueItem NANO_PIC_WAFER;

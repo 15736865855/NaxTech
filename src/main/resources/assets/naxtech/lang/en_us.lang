@@ -401,16 +401,31 @@ metaitem.biological.components.dna_encoder.name=DNA Encoder
 metaitem.biological.components.dna_encoder.tooltip=Part of a Self-replicating Turing Machine
 metaitem.biological.components.dna_decode_encoder.name=DNA Decode-encoder
 metaitem.biological.components.dna_decode_encoder.tooltip=Will deplete the universe in order to calculate
+
+metaitem.petri_dish.sterile.name=
+metaitem.petri_dish.fertile.name=
+metaitem.petri_dish.bio_dish.fertile.name=
+metaitem.petri_dish.bio_dish.fertile.tooltip=
+metaitem.petri_dish.bio_dish.sterile.name=
+metaitem.petri_dish.bio_dish.sterile.tooltip=
+#  Algae
 metaitem.algae.ordinary_algae.name=Ordinary Algae
 metaitem.algae.red_alga.name=Red Alga
 metaitem.algae.green_alga.name=Green Alga
 metaitem.algae.chrysophyceae.name=Chrysophyceae
 metaitem.algae.brown_alga.name=Brown Alga
-metaitem.algae.t.name=
-metaitem.petri_dish.sterile.name=
-metaitem.petri_dish.fertile.name=
-
-
+metaitem.alga.barnarda_c.base.name=
+metaitem.alga.barnarda_c.chlorella.name=
+metaitem.alga.barnarda_c.bryopsis_hypnoides.name=
+metaitem.alga.barnarda_c.zooxanthellae.name=
+metaitem.alga.tau_ceti_f.base.name=
+metaitem.alga.tau_ceti_f.scenedesmus_obliquus.name=
+metaitem.alga.tau_ceti_f.phaeophyta.name=
+metaitem.alga.tau_ceti_f.spirulina.name=
+metaitem.alga.proxima_b.base.name=
+metaitem.alga.proxima_b.conchospore.name=
+metaitem.alga.proxima_b.polysiphonia_senticulosa.name=
+metaitem.alga.proxima_b.spirogyra.name=
 
 
 # Supra-Chronal Stuff
@@ -418,6 +433,40 @@ metaitem.eigenfolded.kerr.manifold.name=Eigenfolded Kerr Manifold
 metaitem.hyperdimensional.drone.name=Hyperdimensional Drone
 metaitem.dimension.quantum_anomaly.name=Quantum Anomaly
 metaitem.dimension.quantum_anomaly.tooltip=
+
+#  High Energy Physics Items
+metaitem.plasma_containment_cell.name=
+metaitem.plasma_containment_cell.tooltip=
+metaitem.rhenium_plasma_containment_cell.name=
+metaitem.rhenium_plasma_containment_cell.tooltip=
+metaitem.neutron_plasma_containment_cell.name=
+metaitem.neutron_plasma_containment_cell.tooltip=
+metaitem.extremely_durable_plasma_containment_cell.name=
+metaitem.extremely_durable_plasma_containment_cell.tooltip=
+metaitem.dense_neutron_plasma_containment_cell.name=
+metaitem.dense_neutron_plasma_containment_cell.tooltip=
+metaitem.cosmic_neutron_plasma_containment_cell.name=
+metaitem.cosmic_neutron_plasma_containment_cell.tooltip=
+metaitem.time_dilation_containment_unit.name=
+metaitem.time_dilation_containment_unit.tooltip=
+metaitem.contained_reissner_nordstrom_singularity.name=
+metaitem.contained_reissner_nordstrom_singularity.tooltip=
+metaitem.contained_kerr_newmann_singularity.name=
+metaitem.contained_kerr_newmann_singularity.tooltip=
+metaitem.contained_kerr_singularity.name=
+metaitem.contained_kerr_singularity.tooltip=
+metaitem.contained_high_density_protonic_matter.name=
+metaitem.contained_high_density_protonic_matter.tooltip=
+metaitem.contained_exotic_matter.name=
+metaitem.contained_exotic_matter.tooltip=
+metaitem.charged_triplet_neutronium_sphere.name=
+metaitem.charged_triplet_neutronium_sphere.tooltip=
+metaitem.cosmic_fabric_plasma_containment_cell.name=
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1=
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2=
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3=
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=
+
 
 
 metaitem.null.name=
@@ -541,6 +590,15 @@ metaitem.crystal.raw_advanced_chip.tooltip=Raw Advanced Crystal Processor
 metaitem.protonated_fullerene_sieving_matrix.name=
 metaitem.saturated_fullerene_sieving_matrix.name=
 metaitem.unstable_star.name=
+metaitem.chromatic_lens.name=
+metaitem.chromatic_lens.tooltip=
+metaitem.cosmic_fabric.name=
+metaitem.cosmic_fabric.tooltip=
+metaitem.qcd_protective_plating.name=
+
+
+
+
 
 #  Cosmic Components
 metaitem.component.cosmic.information_module.name=Cosmic Information Module
@@ -626,7 +684,14 @@ metaitem.wafer.uhasoc.name=
 metaitem.wafer.uhasoc.tooltip=
 metaitem.plate.uhasoc.name=
 metaitem.plate.uhasoc.tooltip=
-
+metaitem.wafer.untreated_cosmic_cpu.name=
+metaitem.wafer.untreated_cosmic_cpu.tooltip=
+metaitem.plate.cosmic_cpu.name=
+metaitem.plate.cosmic_cpu.tooltip=
+metaitem.plate.cosmic_cpu_chip.name=
+metaitem.plate.cosmic_cpu_chip.tooltip=
+metaitem.plate.cosmic_memory_chip.name=
+metaitem.plate.cosmic_memory_chip.tooltip=
 # SMDs
 metaitem.component.optical_smd.capacitor.name=Optical Integrator
 metaitem.component.optical_smd.capacitor.tooltip=Optoelectronic Capacitor
@@ -696,7 +761,8 @@ metaitem.item.nano_processor_board.name=Nano Processor Boar
 metaitem.item.nano_processor_board.tooltip=Nano CPU
 metaitem.item.nano_board.name=Nano Boar
 metaitem.item.nano_board.tooltip=
-
+metaitem.item.exotic_soc.name=奇异SoC
+metaitem.item.exotic_soc.tooltip=量子反常自旋计算单元
 
 
 

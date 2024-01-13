@@ -430,20 +430,70 @@ metaitem.biological.components.dna_encoder.name=DNA编码器
 metaitem.biological.components.dna_encoder.tooltip=自复制图灵机的一部分
 metaitem.biological.components.dna_decode_encoder.name=DNA解-编码器
 metaitem.biological.components.dna_decode_encoder.tooltip=会为了计算饮干宇宙
+
+metaitem.petri_dish.fertile.name=培养皿
+metaitem.petri_dish.sterile.name=培养皿(无菌)
+metaitem.petri_dish.bio_dish.fertile.name=菌群培养皿
+metaitem.petri_dish.bio_dish.fertile.tooltip=菌群网络培养基
+metaitem.petri_dish.bio_dish.sterile.name=菌群培养皿(无菌)
+metaitem.petri_dish.bio_dish.sterile.tooltip=菌群网络培养基
+#  Algae
 metaitem.algae.ordinary_algae.name=普通藻类
 metaitem.algae.red_alga.name=红藻
 metaitem.algae.green_alga.name=绿藻
 metaitem.algae.chrysophyceae.name=金藻
 metaitem.algae.brown_alga.name=褐藻
-metaitem.algae.t.name=T型藻类
-metaitem.petri_dish.fertile.name=培养皿
-metaitem.petri_dish.sterile.name=培养皿(无菌)
+metaitem.alga.barnarda_c.base.name=未知巴纳德C藻类
+metaitem.alga.barnarda_c.chlorella.name=巴纳德C球藻
+metaitem.alga.barnarda_c.bryopsis_hypnoides.name=巴纳德C藓羽藻
+metaitem.alga.barnarda_c.zooxanthellae.name=巴纳德C黄藻
+metaitem.alga.tau_ceti_f.base.name=未知天仓五藻类
+metaitem.alga.tau_ceti_f.scenedesmus_obliquus.name=天仓五斜生栅藻
+metaitem.alga.tau_ceti_f.phaeophyta.name=天苍五褐藻
+metaitem.alga.tau_ceti_f.spirulina.name=天苍五螺旋蓝藻
+metaitem.alga.proxima_b.base.name=未知比邻星B藻类
+metaitem.alga.proxima_b.conchospore.name=比邻星B壳班藻
+metaitem.alga.proxima_b.polysiphonia_senticulosa.name=比邻星B多管藻
+metaitem.alga.proxima_b.spirogyra.name=比邻星B水绵藻
 
 # Supra-Chronal Stuff
 metaitem.eigenfolded.kerr.manifold.name=本征折叠克尔流形
 metaitem.hyperdimensional.drone.name=超维度无人机
 
-#维度 metaitem..name=
+#  High Energy Physics Items
+metaitem.plasma_containment_cell.name=等离子体遏制装置
+metaitem.plasma_containment_cell.tooltip=用于封装等离子体
+metaitem.rhenium_plasma_containment_cell.name=铼等离子遏制装置
+metaitem.rhenium_plasma_containment_cell.tooltip=使用§6等离子冷凝器§7进行冷却
+metaitem.neutron_plasma_containment_cell.name=中子等离子遏制装置
+metaitem.neutron_plasma_containment_cell.tooltip=使用§6等离子冷凝器§7进行冷却
+metaitem.extremely_durable_plasma_containment_cell.name=超高耐久等离子体遏制装置
+metaitem.extremely_durable_plasma_containment_cell.tooltip=用于封装等离子体
+metaitem.dense_neutron_plasma_containment_cell.name=致密中子等离子体遏制装置
+metaitem.dense_neutron_plasma_containment_cell.tooltip=意外的泄露事故或可导致星球毁灭
+metaitem.cosmic_neutron_plasma_containment_cell.name=寰宇中子等离子体遏制装置
+metaitem.cosmic_neutron_plasma_containment_cell.tooltip=意外的泄露事故或可导致宇宙毁灭
+metaitem.time_dilation_containment_unit.name=时间膨胀遏制装置
+metaitem.time_dilation_containment_unit.tooltip=用于封装各类奇异物质
+metaitem.contained_reissner_nordstrom_singularity.name=莱斯纳-诺斯特朗黑洞奇点遏制装置
+metaitem.contained_reissner_nordstrom_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_kerr_newmann_singularity.name=克尔-纽曼黑洞奇点遏制装置
+metaitem.contained_kerr_newmann_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_kerr_singularity.name=克尔黑洞奇点遏制装置
+metaitem.contained_kerr_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_high_density_protonic_matter.name=高密度质子物质遏制装置
+metaitem.contained_high_density_protonic_matter.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_exotic_matter.name=奇异物质遏制装置
+metaitem.contained_exotic_matter.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.charged_triplet_neutronium_sphere.name=带电三重态中子素球体
+metaitem.charged_triplet_neutronium_sphere.tooltip=活体中子星
+metaitem.cosmic_fabric_plasma_containment_cell.name=寰宇织网等离子体遏制装置
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1=一些凡夫俗子曾试图制成过此物，然而它们根本无法理解其中真髓。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2=它们将制成的只有此物的1%%效能的劣质造物称为“二向箔”，多么可笑。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3=真正的寰宇织网如今不过唾手可得之物。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=使用§6等离子冷凝器§7进行冷却
+
+#维度
 metaitem.dimension.raw_tesseract.name=粗制超立方体
 metaitem.dimension.raw_tesseract.tooltip=低维工程学(?)
 metaitem.dimension.energised_tesseract.name=充能超立方体
@@ -492,6 +542,13 @@ metaitem.protonated_fullerene_sieving_matrix.name=质子化富勒烯筛分基质
 metaitem.saturated_fullerene_sieving_matrix.name=饱和富勒烯筛分基质
 metaitem.unstable_star.name=易变之星
 metaitem.item.biology_integrated_circuit.name=生物集成电路
+metaitem.chromatic_lens.name=彩虹透镜
+metaitem.chromatic_lens.tooltip=五彩斑斓
+metaitem.cosmic_fabric.name=寰宇织料
+metaitem.cosmic_fabric.tooltip=宇宙的织机缓缓扭动
+metaitem.qcd_protective_plating.name=量子色动力学防护层
+
+
 
 #
 metaitem.optical.optically_enriched_crystalline_boule.name=光学富集单晶硅
@@ -674,7 +731,16 @@ metaitem.wafer.uhasoc.name=UHASoC晶圆
 metaitem.wafer.uhasoc.tooltip=待处理极高进阶片上系统
 metaitem.plate.uhasoc.name=UHASoC晶片
 metaitem.plate.uhasoc.tooltip=极高进阶片上系统
+metaitem.wafer.untreated_cosmic_cpu.name=未处理的寰宇计算中央处理器（CCCPU）晶圆
+metaitem.wafer.untreated_cosmic_cpu.tooltip=待处理寰宇电路
+metaitem.plate.cosmic_cpu.name=寰宇计算中央处理器（CCCPU）晶圆
+metaitem.plate.cosmic_cpu.tooltip=寰宇计算中央处理器原料
+metaitem.plate.cosmic_cpu_chip.name=寰宇计算中央处理器（CCCPU）晶片
+metaitem.plate.cosmic_cpu_chip.tooltip=寰宇计算中央处理器
 
+
+metaitem.plate.cosmic_memory_chip.name=世界线信息存储器（WLRAM）晶片
+metaitem.plate.cosmic_memory_chip.tooltip=世界线信息存储器
 
 metaitem.component.spintronic_smd.capacitor.name=超级电容
 metaitem.component.spintronic_smd.capacitor.tooltip=自旋电子电容器
@@ -733,6 +799,10 @@ metaitem.item.nano_processor_board.name=纳米处理单元
 metaitem.item.nano_processor_board.tooltip=纳米CPU
 metaitem.item.nano_board.name=纳米单元
 metaitem.item.nano_board.tooltip=
+metaitem.item.exotic_soc.name=奇异SoC
+metaitem.item.exotic_soc.tooltip=量子反常自旋计算单元
+
+
 
 #materials
 gregtech.material.lumium=流明
