@@ -1020,7 +1020,8 @@ tile.pcb_factory_casing.water_cooled_machine_casing.name=水冷机器外壳
 tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=散热器件/n§6PCB工厂§7-§b水冷塔外壳§7/n只能使用§c水冷塔§7或§c空冻塔§7两种升级中的一种
 tile.pcb_factory_casing.infinity_cooled_machine_casing.name=无尽冷却机器外壳
 tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=无限接近于绝对零度/n§6PCB工厂§7-§b空冻塔外壳§7/n只能使用§c水冷塔§7或§c空冻塔§7两种升级中的一种
-
+tile.pcb_factory_casing.computing_casing.name=扫描数据计算单元
+tile.pcb_factory_casing.computing_casing.tooltip=用于为§6PCB工厂§7提供对扫描对象的自动分析演算的功能
 
 
 #ADV
@@ -1036,14 +1037,41 @@ tile.adv_factory_casing.machine_lesu.name=智能储能单元
 tile.adv_factory_casing.machine_vent_rotating.name=智能散热器
 tile.adv_factory_casing.machine_tubbine.name=智能涡轮
 
+#DHPCA
+tile.dhpca_factory_casing.bioware_computer_casing.name=生物计算机外壳
+tile.dhpca_factory_casing.bioware_computer_casing.tooltip=干净又卫生
+tile.dhpca_factory_casing.bioware_computer_heat_vent.name=生物计算机散热口
+tile.dhpca_factory_casing.bioware_computer_heat_vent.tooltip=带过滤器的通风口
+tile.dhpca_factory_casing.bioware_advanced_computer_casing.name=高级生物计算机外壳
+tile.dhpca_factory_casing.bioware_advanced_computer_casing.tooltip=几千个量子位宽
+
+
+
+
+
 
 #dimension
-tile.dimension_casing.motorb_lock.name=超维度动力模块
+tile.dimension_casing.motor_block.name=超维度动力模块
+tile.dimension_casing.motor_block.tooltip=
 tile.dimension_casing.dimension.name=超维度基材模块
+tile.dimension_casing.dimension.tooltip=用于超高能物理实验器件
 tile.dimension_casing.dimension_computer.name=超维度计算模块
+tile.dimension_casing.dimension_computer.tooltip=
 tile.dimension_casing.field_generator.name=超维度力场模块
+tile.dimension_casing.field_generator.tooltip=用于偏转离子束
 tile.dimension_casing.dimensional.name=超维度维度模块
+tile.dimension_casing.dimensional.tooltip=用于连接不同维度的时间与空间
 tile.dimension_casing.annihilation.name=超维度湮灭模块
+tile.dimension_casing.annihilation.tooltip=
+tile.dimension_casing.advanced_dimension_energy.name=进阶超维度机械模块
+tile.dimension_casing.advanced_dimension_energy.tooltip=用于极端情况下的超高能物理实验
+tile.dimension_casing.ultimate_dimension_energy.name=终极超维度机械模块
+tile.dimension_casing.ultimate_dimension_energy.tooltip=用于超级极端情况下的超高能物理实验
+tile.dimension_casing.hollow.name=超维度中空结构模块
+tile.dimension_casing.hollow.tooltip=用于强化加速器通道
+tile.dimension_casing.spacetime.name=超维度时空扭曲机械模块
+tile.dimension_casing.spacetime.tooltip=光速不再是限制
+
 
 #pine
 tile.pine_log.name=松木

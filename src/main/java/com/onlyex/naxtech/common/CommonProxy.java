@@ -79,6 +79,7 @@ public class CommonProxy {
         registry.register(PINE_LOG);
         registry.register(PINE_SAPLING);
         registry.register(PINE_LEAVES);
+        registry.register(DHPCA_FACTORY_CASING);
     }
 
     @SubscribeEvent
@@ -103,6 +104,7 @@ public class CommonProxy {
         registry.register(createItemBlock(PCB_FACTORY_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(DIMENSION_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(ADV_FACTORY_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(DHPCA_FACTORY_CASING, VariantItemBlock::new));
 
 
         registry.register(createItemBlock(PINE_LOG, ItemBlock::new));

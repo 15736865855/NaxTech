@@ -972,7 +972,8 @@ tile.pcb_factory_casing.water_cooled_machine_casing.name=
 tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=
 tile.pcb_factory_casing.infinity_cooled_machine_casing.name=
 tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=
-
+tile.pcb_factory_casing.computing_casing.name=
+tile.pcb_factory_casing.computing_casing.tooltip=
 
 
 #ADV
@@ -1008,17 +1009,39 @@ metaitem.item.pine_fragment.name=
 
 
 
-
+#DHPCA
+tile.dhpca_factory_casing.bioware_computer_casing.name=
+tile.dhpca_factory_casing.bioware_computer_casing.tooltip=
+tile.dhpca_factory_casing.bioware_computer_heat_vent.name=
+tile.dhpca_factory_casing.bioware_computer_heat_vent.tooltip=
+tile.dhpca_factory_casing.bioware_advanced_computer_casing.name=
+tile.dhpca_factory_casing.bioware_advanced_computer_casing.tooltip=
 
 
 
 #dimension
-tile.dimension_casing.motorb_lock.name=
+tile.dimension_casing.motor_block.name=
+tile.dimension_casing.motor_block.tooltip=
 tile.dimension_casing.dimension.name=
+tile.dimension_casing.dimension.tooltip=
 tile.dimension_casing.dimension_computer.name=
+tile.dimension_casing.dimension_computer.tooltip=
 tile.dimension_casing.field_generator.name=
+tile.dimension_casing.field_generator.tooltip=
 tile.dimension_casing.dimensional.name=
+tile.dimension_casing.dimensional.tooltip=
 tile.dimension_casing.annihilation.name=
+tile.dimension_casing.annihilation.tooltip=
+tile.dimension_casing.advanced_dimension_energy.name=
+tile.dimension_casing.advanced_dimension_energy.tooltip=
+tile.dimension_casing.ultimate_dimension_energy.name=
+tile.dimension_casing.ultimate_dimension_energy.tooltip=
+tile.dimension_casing.hollow.name=
+tile.dimension_casing.hollow.tooltip=
+tile.dimension_casing.spacetime.name=
+tile.dimension_casing.spacetime.tooltip=
+
+
 
 naxtech.machine.component_assembly_line.name=
 recipemap.component_assembly_line_recipes.name=

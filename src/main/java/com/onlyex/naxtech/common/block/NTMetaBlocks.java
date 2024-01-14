@@ -47,6 +47,7 @@ public class NTMetaBlocks {
     public static BlockPackagingline PACKAGING_LINE;//封装线外壳
     public static BlockPCBFactoryCasing PCB_FACTORY_CASING;//PCB
     public static BlockADVFactoryCasing ADV_FACTORY_CASING;//ADV
+    public static BlockDHPCAFactoryCasing DHPCA_FACTORY_CASING;//DHPCA
 
 
 
@@ -87,6 +88,8 @@ public class NTMetaBlocks {
         DIMENSION_CASING.setRegistryName("dimension_casing");
         ADV_FACTORY_CASING = new BlockADVFactoryCasing();
         ADV_FACTORY_CASING.setRegistryName("adv_factory_casing");
+        DHPCA_FACTORY_CASING = new BlockDHPCAFactoryCasing();
+        DHPCA_FACTORY_CASING.setRegistryName("dhpca_factory_casing");
     }
 
     @SideOnly(Side.CLIENT)
@@ -106,6 +109,7 @@ public class NTMetaBlocks {
         registerItemModel(PINE_LEAVES);
         registerItemModel(PINE_LOG);
         registerItemModel(PINE_SAPLING);
+        registerItemModel(DHPCA_FACTORY_CASING);
 
 
         //  VariantActiveBlock Registry

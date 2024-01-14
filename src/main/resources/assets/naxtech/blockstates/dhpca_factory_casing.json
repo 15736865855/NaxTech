@@ -1,0 +1,44 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all"
+  },
+  "variants": {
+    "variant": {
+      "bioware_computer_casing": {
+        "model": "minecraft:cube",
+        "textures": {
+          "particle": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_casing/front",
+          "down": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_casing/bottom",
+          "up": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_casing/top",
+          "north": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_casing/side",
+          "east": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_casing/side",
+          "south": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_casing/side",
+          "west": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_casing/side"
+        }
+      },
+      "bioware_computer_heat_vent": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "bottom": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_heat_vent_top_bot",
+          "top": "#bottom",
+          "side": "naxtech:blocks/casings/dhpca_factory_casing/bioware_computer_heat_vent_side"
+        }
+      },
+      "bioware_advanced_computer_casing": {
+        "model": "minecraft:cube",
+        "textures": {
+          "particle": "naxtech:blocks/casings/dhpca_factory_casing/advanced_bioware_computer_casing/front",
+          "down": "naxtech:blocks/casings/dhpca_factory_casing/advanced_bioware_computer_casing/bottom",
+          "up": "naxtech:blocks/casings/dhpca_factory_casing/advanced_bioware_computer_casing/top",
+          "north": "naxtech:blocks/casings/dhpca_factory_casing/advanced_bioware_computer_casing/side",
+          "east": "naxtech:blocks/casings/dhpca_factory_casing/advanced_bioware_computer_casing/side",
+          "south": "naxtech:blocks/casings/dhpca_factory_casing/advanced_bioware_computer_casing/side",
+          "west": "naxtech:blocks/casings/dhpca_factory_casing/advanced_bioware_computer_casing/side"
+        }
+      }
+    }
+  }
+}
+
+

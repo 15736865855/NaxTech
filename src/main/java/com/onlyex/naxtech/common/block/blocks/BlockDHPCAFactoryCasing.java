@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.common.block.blocks.dimension;
+package com.onlyex.naxtech.common.block.blocks;
 
 import gregtech.api.block.VariantBlock;
 import net.minecraft.block.SoundType;
@@ -10,41 +10,30 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 
 import static com.onlyex.naxtech.common.CommonProxy.NAXTECH_TAB;
 
-public class BlockDimensionCasing extends VariantBlock<BlockDimensionCasing.CasingType> {
-
-
-    public BlockDimensionCasing() {
+@ParametersAreNonnullByDefault
+public class BlockDHPCAFactoryCasing extends VariantBlock<BlockDHPCAFactoryCasing.CasingType> {
+    public BlockDHPCAFactoryCasing() {
         super(Material.IRON);
-        this.setTranslationKey("dimension_casing");
+        this.setTranslationKey("dhpca_factory_casing");
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
         this.setCreativeTab(NAXTECH_TAB);
-        this.setHarvestLevel("wrench", 5);
-        this.setDefaultState(this.getState(CasingType.MOTOR_BLOCK));
+        this.setHarvestLevel("wrench", 3);
+        this.setDefaultState(this.getState(CasingType.BIOWARE_COMPUTER_CASING));
     }
-
     public boolean canCreatureSpawn(@Nonnull IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, @Nonnull EntityLiving.SpawnPlacementType type) {
         return false;
     }
 
-
-
-    public enum CasingType implements IStringSerializable {
-
-        MOTOR_BLOCK("motor_block"),
-        ANNIHILATION("annihilation"),
-        DIMENSIONAL("dimensional"),
-        FIELD_GENERATOR("field_generator"),
-        DIMENSION("dimension"),
-        DIMENSION_COMPUTER("dimension_computer"),
-        ADVANCED_DIMENSION_ENERGY("advanced_dimension_energy"),
-        ULTIMATE_DIMENSION_ENERGY("ultimate_dimension_energy"),
-        HOLLOW("hollow"),
-        SPACETIME("spacetime");
+    public static enum CasingType implements IStringSerializable {
+        BIOWARE_COMPUTER_CASING("bioware_computer_casing"),
+        BIOWARE_COMPUTER_HEAT_VENT("bioware_computer_heat_vent"),
+        BIOWARE_ADVANCED_COMPUTER_CASING("bioware_advanced_computer_casing");
 
         private final String name;
 

@@ -36,7 +36,8 @@ public class BlockPCBFactoryCasing extends VariantBlock<BlockPCBFactoryCasing.Ca
         RADIATION_PROOF_SCAN_FRAMEWORK_CASING("radiation_proof_scan_framework_casing"),
         BIOLOGICAL_STERILE_MACHINE_CASING("biological_sterile_machine_casing"),
         WATER_COOLED_MACHINE_CASING("water_cooled_machine_casing"),
-        INFINITY_COOLED_MACHINE_CASING("infinity_cooled_machine_casing");
+        INFINITY_COOLED_MACHINE_CASING("infinity_cooled_machine_casing"),
+        COMPMUTING_CASING("computing_casing");
 
         private final String name;
 

@@ -43,6 +43,30 @@
         "textures": {
           "all": "naxtech:blocks/casings/dimension_casing/dimension_computer"
         }
+      },
+      "advanced_dimension_energy": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/advanced_dimension_energy"
+        }
+      },
+      "ultimate_dimension_energy": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/ultimate_dimension_energy"
+        }
+      },
+      "hollow": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/hollow"
+        }
+      },
+      "spacetime": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "naxtech:blocks/casings/dimension_casing/spacetime"
+        }
       }
     }
   }

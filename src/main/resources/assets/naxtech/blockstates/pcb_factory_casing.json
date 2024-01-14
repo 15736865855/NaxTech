@@ -37,6 +37,14 @@
         "textures": {
           "all": "naxtech:blocks/casings/pcb_factory_casing/infinity_cooled_machine_casing"
         }
+      },
+      "computing_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "naxtech:blocks/casings/pcb_factory_casing/radiation_proof_scan_framework_casing",
+          "side": "naxtech:blocks/casings/pcb_factory_casing/computing_casing",
+          "bottom": "#top"
+        }
       }
     }
   }
