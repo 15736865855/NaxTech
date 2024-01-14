@@ -232,8 +232,8 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_BOARD;
     public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_CIRCUIT;
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_CIRCUIT;
-
-
+    public static MetaItem<?>.MetaValueItem WRAP_COSMIC_CPU_CHIP;
+    public static MetaItem<?>.MetaValueItem WRAP_COSMIC_MEMORY_CHIP;
 
 
 
@@ -263,7 +263,8 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem QUANTUM_BOARD;
     public static MetaItem<?>.MetaValueItem NANO_PROCESSOR_BOARD;
     public static MetaItem<?>.MetaValueItem NANO_BOARD;
-    public static MetaItem<?>.MetaValueItem EXOTIC_SOC;
+    public static MetaItem<?>.MetaValueItem EXOTIC_BOARD;
+    public static MetaItem<?>.MetaValueItem EXOTIC_PROCESSOR_BOARD;
 
 
 
@@ -319,10 +320,17 @@ public class NTMetaItems {
     //  Cosmic Components
     public static MetaItem<?>.MetaValueItem COSMIC_INFORMATION_MODULE;
     public static MetaItem<?>.MetaValueItem HOLOGRAPHIC_INFORMATION_IMC;
+    public static MetaItem<?>.MetaValueItem CLADDED_OPTICAL_FIBER_CORE;
+    public static MetaItem<?>.MetaValueItem CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT;
+    public static MetaItem<?>.MetaValueItem CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT;
+
 
     //  Supracausal Components
     public static MetaItem<?>.MetaValueItem SPACETIME_CONDENSER;
     public static MetaItem<?>.MetaValueItem LIGHT_CONE_MODULE;
+    public static MetaItem<?>.MetaValueItem EXCITATION_MAINTAINER;
+
+
 
     public static MetaItem<?>.MetaValueItem GOOWARE_BOARD;
     public static MetaItem<?>.MetaValueItem OPTICAL_BOARD;
@@ -426,6 +434,7 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_DIODE;
     public static MetaItem<?>.MetaValueItem SUPRACAUSAL_INDUCTOR;
 
+    public static MetaItem<?>.MetaValueItem PROSPECTOR_ZPM;
     public static MetaItem<?>.MetaValueItem PROSPECTOR_UV;
     public static MetaItem<?>.MetaValueItem PROSPECTOR_UIV;
     public static MetaItem<?>.MetaValueItem DEBUG_STRUCTURE_WRITER;

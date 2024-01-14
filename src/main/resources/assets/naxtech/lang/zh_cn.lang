@@ -21,6 +21,7 @@ item.gt.tool.hammer_hv.name=风钻（HV）
 item.gt.tool.hammer_ev.name=风钻（EV）
 item.gt.tool.hammer_iv.name=风钻（IV）
 item.gt.tool.vajra.name=金刚杵
+metaitem.prospector.zpm.name=电动勘探扫描仪（§cZPM§r）
 metaitem.prospector.uv.name=电动勘探扫描仪（UV）
 metaitem.prospector.uiv.name=电动勘探扫描仪（UIV）
 item.gt.tool.choocher.name=%s两用扳手
@@ -410,6 +411,12 @@ metaitem.wrap.board.spintronic.tooltip=第三代自旋电子技术
 metaitem.wrap.circuit_board.spintronic.name=封装无尽电路板
 metaitem.wrap.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
 
+metaitem.wrap.cosmic_cpu_chip.name=封装寰宇计算中央处理器（CCCPU）晶圆
+metaitem.wrap.cosmic_cpu_chip.tooltip=寰宇计算中央处理器原料
+metaitem.wrap.cosmic_memory_chip.name=封装寰宇计算中央处理器（CCCPU）晶片
+metaitem.wrap.cosmic_memory_chip.tooltip=寰宇计算中央处理器
+
+
 
 #   Biological Components
 metaitem.biological.components.electrochemical_gradient_recorder.name=电化学梯度记录仪
@@ -653,12 +660,20 @@ metaitem.component.cosmic.information_module.name=宇宙信息承载模块
 metaitem.component.cosmic.information_module.tooltip=宇宙在我手中
 metaitem.component.cosmic.holographic_imc.name=存算一体全息存储器
 metaitem.component.cosmic.holographic_imc.tooltip=天穹对偶引力散射！
+metaitem.component.cosmic.cladded_optical_fiber_core.name=包层光导纤维内芯
+metaitem.component.cosmic.cladded_optical_fiber_core.tooltip=光纤
+metaitem.component.cosmic.closed_timelike_curve_computational_unit.name=封闭类时曲线计算单元
+metaitem.component.cosmic.closed_timelike_curve_computational_unit.tooltip=宇宙计算器
+metaitem.component.cosmic.closed_timelike_curve_guidance_unit.name=封闭类时曲线引导单元
+metaitem.component.cosmic.closed_timelike_curve_guidance_unit.tooltip=时空向导
 
 #  Supracausal Components
 metaitem.component.supracausal.spacetime_condenser.name=超因果时空凝聚器
 metaitem.component.supracausal.spacetime_condenser.tooltip=超空间稳定器
 metaitem.component.supracausal.light_cone_module.name=时空光锥稳定模块
 metaitem.component.supracausal.light_cone_module.tooltip=自旋泡沫路径积分计算！
+metaitem.component.spintronic.excitation_maintainer.name=励磁容器
+metaitem.component.spintronic.excitation_maintainer.tooltip=特殊磁体密闭装置
 
 
 #singularity
@@ -799,9 +814,10 @@ metaitem.item.nano_processor_board.name=纳米处理单元
 metaitem.item.nano_processor_board.tooltip=纳米CPU
 metaitem.item.nano_board.name=纳米单元
 metaitem.item.nano_board.tooltip=
-metaitem.item.exotic_soc.name=奇异SoC
-metaitem.item.exotic_soc.tooltip=量子反常自旋计算单元
-
+metaitem.item.exotic_board.name=奇异单元
+metaitem.item.exotic_board.tooltip=量子反常自旋计算单元
+metaitem.item.exotic_processor_board.name=奇异处理单元
+metaitem.item.exotic_processor_board.tooltip=奇异CPU
 
 
 #materials

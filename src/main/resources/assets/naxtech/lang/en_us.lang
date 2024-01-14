@@ -24,12 +24,20 @@ item.gt.tool.hammer_hv.name=
 item.gt.tool.hammer_ev.name=
 item.gt.tool.hammer_iv.name=
 item.gt.tool.vajra.name=
+metaitem.prospector.zpm.name=
 metaitem.prospector.uv.name=
 metaitem.prospector.uiv.name=
 item.gt.tool.choocher.name=
 item.gt.tool.jinitaimei.name=
 item.gt.tool.choocher_hv.name=
 item.gt.tool.jinitaimei_hv.name=
+
+
+
+
+
+
+
 # Circuits
 # Gooware
 metaitem.circuit.gooware_processor.name=Gooware Processor
@@ -381,6 +389,12 @@ metaitem.wrap.board.spintronic.tooltip=
 metaitem.wrap.circuit_board.spintronic.name=
 metaitem.wrap.circuit_board.spintronic.tooltip=
 
+metaitem.wrap.cosmic_cpu_chip.name=
+metaitem.wrap.cosmic_cpu_chip.tooltip=
+metaitem.wrap.cosmic_memory_chip.name=
+metaitem.wrap.cosmic_memory_chip.tooltip=
+
+
 
 #   Biological Components
 metaitem.biological.components.electrochemical_gradient_recorder.name=Electrochemical Gradient Recorder
@@ -605,12 +619,21 @@ metaitem.component.cosmic.information_module.name=Cosmic Information Module
 metaitem.component.cosmic.information_module.tooltip=Universe in my hands
 metaitem.component.cosmic.holographic_imc.name=Holographic IMC
 metaitem.component.cosmic.holographic_imc.tooltip=Celestial Holographic Gravitational Scattering!
+metaitem.component.cosmic.cladded_optical_fiber_core.name=
+metaitem.component.cosmic.cladded_optical_fiber_core.tooltip=
+metaitem.component.cosmic.closed_timelike_curve_computational_unit.name=
+metaitem.component.cosmic.closed_timelike_curve_computational_unit.tooltip=
+metaitem.component.cosmic.closed_timelike_curve_guidance_unit.name=
+metaitem.component.cosmic.closed_timelike_curve_guidance_unit.tooltip=
 
 #  Supracausal Components
 metaitem.component.supracausal.spacetime_condenser.name=Supracausal SpaceTime Condenser
 metaitem.component.supracausal.spacetime_condenser.tooltip=Hyperspace Stabilizer
 metaitem.component.supracausal.light_cone_module.name=Spacetime Light cone Stabilization Module
 metaitem.component.supracausal.light_cone_module.tooltip=Spin Foam Path Integral Computation!
+metaitem.component.spintronic.excitation_maintainer.name=
+metaitem.component.spintronic.excitation_maintainer.tooltip=
+
 
 
 metaitem.singularity.eternal_singularity.name=Eternal Singularity
@@ -761,8 +784,10 @@ metaitem.item.nano_processor_board.name=Nano Processor Boar
 metaitem.item.nano_processor_board.tooltip=Nano CPU
 metaitem.item.nano_board.name=Nano Boar
 metaitem.item.nano_board.tooltip=
-metaitem.item.exotic_soc.name=奇异SoC
-metaitem.item.exotic_soc.tooltip=量子反常自旋计算单元
+metaitem.item.exotic_board.name=
+metaitem.item.exotic_board.tooltip=
+metaitem.item.exotic_processor_board.name=
+metaitem.item.exotic_processor_board.tooltip=
 
 
 

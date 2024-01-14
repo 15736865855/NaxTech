@@ -8,10 +8,10 @@ import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;
 import com.onlyex.naxtech.common.items.behaviors.StructureWriteBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.HaloRenderItemBehavior;
-import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;
+import gregtech.api.items.metaitem.stats.IItemComponent;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.behaviors.MultiblockBuilderBehavior;
@@ -20,7 +20,6 @@ import gregtech.common.items.behaviors.TooltipBehavior;
 import net.minecraft.client.resources.I18n;
 
 import static com.onlyex.naxtech.common.items.NTMetaItems.*;
-import static com.onlyex.naxtech.common.items.NTMetaItems.PETRI_DISH_FERTILE;
 
 public class NTMetaItem1 extends StandardMetaItem {
 
@@ -274,7 +273,8 @@ public class NTMetaItem1 extends StandardMetaItem {
         QUANTUM_BOARD = this.addItem(404,"item.quantum_board");
         NANO_PROCESSOR_BOARD = this.addItem(405,"item.nano_processor_board");
         NANO_BOARD = this.addItem(406,"item.nano_board");
-        EXOTIC_SOC = this.addItem(407, "item.exotic_soc");
+        EXOTIC_BOARD = this.addItem(407, "item.exotic_board");
+        EXOTIC_PROCESSOR_BOARD = this.addItem(408, "item.exotic_processor_board");
 
 
         //ID 425~
@@ -300,9 +300,18 @@ public class NTMetaItem1 extends StandardMetaItem {
         //  Cosmic Components
         COSMIC_INFORMATION_MODULE = this.addItem(500, "component.cosmic.information_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
         HOLOGRAPHIC_INFORMATION_IMC = this.addItem(501, "component.cosmic.holographic_imc").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        CLADDED_OPTICAL_FIBER_CORE = this.addItem(502, "component.cosmic.cladded_optical_fiber_core");
+        CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT = this.addItem(503, "component.cosmic.closed_timelike_curve_computational_unit");
+        CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT = this.addItem(504, "component.cosmic.closed_timelike_curve_guidance_unit");
+
+
         //  Supracausal Components
-        SPACETIME_CONDENSER = this.addItem(502, "component.supracausal.spacetime_condenser").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        LIGHT_CONE_MODULE = this.addItem(503, "component.supracausal.light_cone_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SPACETIME_CONDENSER = this.addItem(510, "component.supracausal.spacetime_condenser").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        LIGHT_CONE_MODULE = this.addItem(511, "component.supracausal.light_cone_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        EXCITATION_MAINTAINER = this.addItem(512, "component.spintronic.excitation_maintainer");
+
+
+
 
 
         //1200~
@@ -431,7 +440,8 @@ public class NTMetaItem1 extends StandardMetaItem {
         WRAP_OPTICAL_CIRCUIT = this.addItem(1308, "wrap.circuit_board.optical");
         WRAP_SPINTRONIC_CIRCUIT = this.addItem(1309, "wrap.circuit_board.spintronic");
 
-
+        WRAP_COSMIC_CPU_CHIP = this.addItem(1310, "wrap.cosmic_cpu_chip");
+        WRAP_COSMIC_MEMORY_CHIP = this.addItem(1311, "wrap.cosmic_memory_chip");
 
 
 
@@ -460,15 +470,21 @@ public class NTMetaItem1 extends StandardMetaItem {
         COSMIC_MEMORY_CHIP = this.addItem(1419, "plate.cosmic_memory_chip");
 
         //2000~
-        PROSPECTOR_UV = this.addItem(2000, "prospector.uv")
-                .addComponents(ElectricStats.createElectricItem(16_000_000_000L, GTValues.UV),
-                        new ProspectorScannerBehavior(7, GTValues.UV))
+        PROSPECTOR_ZPM = this.addItem(20000, "prospector.zpm")
+                .addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4_000_000_000L, 7),
+                        new ProspectorScannerBehavior(7, 7)})
                 .setMaxStackSize(1)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
-        PROSPECTOR_UIV = this.addItem(2001, "prospector.uiv")
-                .addComponents(ElectricStats.createElectricItem(256_000_000_000L, GTValues.UIV),
-                        new ProspectorScannerBehavior(9, GTValues.UIV))
+        PROSPECTOR_UV = this.addItem(2001, "prospector.uv")
+                .addComponents(ElectricStats.createElectricItem(16_000_000_000L, 8),
+                        new ProspectorScannerBehavior(9, 8))
+                .setMaxStackSize(1)
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+
+        PROSPECTOR_UIV = this.addItem(2002, "prospector.uiv")
+                .addComponents(ElectricStats.createElectricItem(256_000_000_000L, 9),
+                        new ProspectorScannerBehavior(11, 9))// todo
                 .setMaxStackSize(1)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
@@ -477,6 +493,6 @@ public class NTMetaItem1 extends StandardMetaItem {
 
 
 
-        //WRAP_ = this.addItem(12, "wrap.");
+
     }
 }
