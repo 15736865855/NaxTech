@@ -156,7 +156,7 @@ dependencies {
     implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4965457")
     implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
     implementation rfg.deobf("curse.maven:gregtech-food-option-477021:4904513")
-    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5028606")
+    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5035908")
     implementation rfg.deobf("curse.maven:forestry-59751:2918418") // Forestry 5.8.2.387
 
     implementation rfg.deobf("curse.maven:artisan-worktables-284351:3205284")
