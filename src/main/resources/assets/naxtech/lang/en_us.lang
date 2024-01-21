@@ -1357,9 +1357,43 @@ naxtech.multiblock.ab.tooltip.2=%s
 
 
 
+#research
+#
+naxtech.multiblock.research.max=
+naxtech.multiblock.research.usage=
+#.gooware
+naxtech.multiblock.gooware.research.max=
+naxtech.multiblock.gooware.research.usage=
+#.optical
+naxtech.multiblock.optical.research.max=
+naxtech.multiblock.optical.research.usage=
+#.spintronic
+naxtech.multiblock.spintronic.research.max=
+naxtech.multiblock.spintronic.research.usage=
+#.cosmic
+naxtech.multiblock.cosmic.research.max=
+naxtech.multiblock.cosmic.research.usage=
+#.supra_causal
+naxtech.multiblock.supra_causal.research.max=
+naxtech.multiblock.supra_causal.research.usage=
+#.supra_chronal
+naxtech.multiblock.supra_chronal.research.max=
+naxtech.multiblock.supra_chronal.research.usage=
+#.supra_dimension
+naxtech.multiblock.supra_dimension.research.max=
+naxtech.multiblock.supra_dimension.research.usage=
 
+naxtech.machine.research.upkeep_eut=
+naxtech.machine.research.max_eut=
 
-
+naxtech.machine.research.rwut=
+naxtech.machine.gooware.research.go_rwut=
+naxtech.machine.optical.research.op_rwut=
+naxtech.machine.spintronic.research.sp_rwut=
+naxtech.machine.cosmic.research.co_rwut=
+naxtech.machine.supra_causal.research.sca_rwut=
+naxtech.machine.supra_chronal.research.sch_rwut=
+naxtech.machine.supra_dimension.research.sdi_rwut=
 
 
 

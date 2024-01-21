@@ -49,13 +49,13 @@ metaitem.circuit.optical_computer.tooltip=超大规模计算数据支持/n§6UEV
 metaitem.circuit.optical_mainframe.name=光学存算一体电脑主机群
 metaitem.circuit.optical_mainframe.tooltip=计算速度无限逼近于光速/n§6UIV级电路
 
-metaitem.circuit.spintronic_processor.name=自旋电子存算一体处理器
+metaitem.circuit.spintronic_processor.name=自旋电子学存算一体处理器
 metaitem.circuit.spintronic_processor.tooltip=超级磁性半导体电路/n§5UHV级电路
-metaitem.circuit.spintronic_assembly.name=自旋电子存算一体处理器集群
+metaitem.circuit.spintronic_assembly.name=自旋电子学存算一体处理器集群
 metaitem.circuit.spintronic_assembly.tooltip=量子随机游走/n§5UEV级电路
-metaitem.circuit.spintronic_computer.name=自旋电子存算一体超级计算机
+metaitem.circuit.spintronic_computer.name=自旋电子学存算一体超级计算机
 metaitem.circuit.spintronic_computer.tooltip=以自旋控制一切/n§5UIV级电路
-metaitem.circuit.spintronic_mainframe.name=自旋电子存算一体电脑主机群
+metaitem.circuit.spintronic_mainframe.name=自旋电子学存算一体电脑主机群
 metaitem.circuit.spintronic_mainframe.tooltip=来自未来的电路/n§5UXV级电路
 
 metaitem.circuit.cosmic_processor.name=寰宇行星级处理器复合体
@@ -346,15 +346,15 @@ metaitem.wrap.raw_advanced_crystal_chip.name=封装先进晶体芯片原料
 metaitem.wrap.raw_advanced_crystal_chip.tooltip=先进晶体处理器的原料
 
 metaitem.wrap.spintronic_smd.capacitor.name=封装超级电容
-metaitem.wrap.spintronic_smd.capacitor.tooltip=自旋电子电容器
+metaitem.wrap.spintronic_smd.capacitor.tooltip=自旋电子学电容器
 metaitem.wrap.spintronic_smd.diode.name=封装肖特基二极管
-metaitem.wrap.spintronic_smd.diode.tooltip=自旋电子二极管
+metaitem.wrap.spintronic_smd.diode.tooltip=自旋电子学二极管
 metaitem.wrap.spintronic_smd.inductor.name=封装自旋偏振器
-metaitem.wrap.spintronic_smd.inductor.tooltip=自旋电子电感器
+metaitem.wrap.spintronic_smd.inductor.tooltip=自旋电子学电感器
 metaitem.wrap.spintronic_smd.resistor.name=封装磁阻器
-metaitem.wrap.spintronic_smd.resistor.tooltip=自旋电子电阻器
+metaitem.wrap.spintronic_smd.resistor.tooltip=自旋电子学电阻器
 metaitem.wrap.spintronic_smd.transistor.name=封装自旋金氧半场效晶体管
-metaitem.wrap.spintronic_smd.transistor.tooltip=自旋电子晶体管
+metaitem.wrap.spintronic_smd.transistor.tooltip=自旋电子学晶体管
 
 metaitem.wrap.cosmic.information_module.name=封装宇宙信息承载模块
 metaitem.wrap.cosmic.information_module.tooltip=宇宙在我手中
@@ -407,7 +407,7 @@ metaitem.wrap.board.optical.tooltip=绝对理想的光电器件材料
 metaitem.wrap.circuit_board.optical.name=封装半导体工业的技术之星
 metaitem.wrap.circuit_board.optical.tooltip=究极电路板
 metaitem.wrap.board.spintronic.name=封装碳纳米管磁性存储电路基板
-metaitem.wrap.board.spintronic.tooltip=第三代自旋电子技术
+metaitem.wrap.board.spintronic.tooltip=第三代自旋电子学技术
 metaitem.wrap.circuit_board.spintronic.name=封装无尽电路板
 metaitem.wrap.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
 
@@ -630,7 +630,7 @@ metaitem.board.gooware.tooltip=生物基因突变的电路基板
 metaitem.board.optical.name=氮化镓半导体材料电路基板
 metaitem.board.optical.tooltip=绝对理想的光电器件材料
 metaitem.board.spintronic.name=碳纳米管磁性存储电路基板
-metaitem.board.spintronic.tooltip=第三代自旋电子技术
+metaitem.board.spintronic.tooltip=第三代自旋电子学技术
 
 metaitem.circuit_board.gooware.name=超生物突变电路基板
 metaitem.circuit_board.gooware.tooltip=生物基因突变的电路基板
@@ -758,15 +758,15 @@ metaitem.plate.cosmic_memory_chip.name=世界线信息存储器（WLRAM）晶片
 metaitem.plate.cosmic_memory_chip.tooltip=世界线信息存储器
 
 metaitem.component.spintronic_smd.capacitor.name=超级电容
-metaitem.component.spintronic_smd.capacitor.tooltip=自旋电子电容器
+metaitem.component.spintronic_smd.capacitor.tooltip=自旋电子学电容器
 metaitem.component.spintronic_smd.diode.name=肖特基二极管
-metaitem.component.spintronic_smd.diode.tooltip=自旋电子二极管
+metaitem.component.spintronic_smd.diode.tooltip=自旋电子学二极管
 metaitem.component.spintronic_smd.resistor.name=磁阻器
-metaitem.component.spintronic_smd.resistor.tooltip=自旋电子电阻器
+metaitem.component.spintronic_smd.resistor.tooltip=自旋电子学电阻器
 metaitem.component.spintronic_smd.transistor.name=自旋金氧半场效晶体管
-metaitem.component.spintronic_smd.transistor.tooltip=自旋电子晶体管
+metaitem.component.spintronic_smd.transistor.tooltip=自旋电子学晶体管
 metaitem.component.spintronic_smd.inductor.name=自旋偏振器
-metaitem.component.spintronic_smd.inductor.tooltip=自旋电子电感器
+metaitem.component.spintronic_smd.inductor.tooltip=自旋电子学电感器
 
 metaitem.component.cosmic_smd.transistor.name=晶体信息载荷
 metaitem.component.cosmic_smd.transistor.tooltip=寰宇晶体管
@@ -1371,26 +1371,43 @@ naxtech.multiblock.ab.tooltip.2=多方块线圈全部升级完毕后，一次至
 
 
 
+#research
+#
+naxtech.multiblock.research.max=
+naxtech.multiblock.research.usage=
+#.gooware
+naxtech.multiblock.gooware.research.max=
+naxtech.multiblock.gooware.research.usage=
+#.optical
+naxtech.multiblock.optical.research.max=
+naxtech.multiblock.optical.research.usage=
+#.spintronic
+naxtech.multiblock.spintronic.research.max=
+naxtech.multiblock.spintronic.research.usage=
+#.cosmic
+naxtech.multiblock.cosmic.research.max=
+naxtech.multiblock.cosmic.research.usage=
+#.supra_causal
+naxtech.multiblock.supra_causal.research.max=
+naxtech.multiblock.supra_causal.research.usage=
+#.supra_chronal
+naxtech.multiblock.supra_chronal.research.max=
+naxtech.multiblock.supra_chronal.research.usage=
+#.supra_dimension
+naxtech.multiblock.supra_dimension.research.max=
+naxtech.multiblock.supra_dimension.research.usage=
 
+naxtech.machine.research.upkeep_eut=
+naxtech.machine.research.max_eut=
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+naxtech.machine.research.rwut=
+naxtech.machine.gooware.research.go_rwut=
+naxtech.machine.optical.research.op_rwut=
+naxtech.machine.spintronic.research.sp_rwut=
+naxtech.machine.cosmic.research.co_rwut=
+naxtech.machine.supra_causal.research.sca_rwut=
+naxtech.machine.supra_chronal.research.sch_rwut=
+naxtech.machine.supra_dimension.research.sdi_rwut=
 
 
 
