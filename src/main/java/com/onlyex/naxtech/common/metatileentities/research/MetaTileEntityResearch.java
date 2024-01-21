@@ -1,5 +1,8 @@
 package com.onlyex.naxtech.common.metatileentities.research;
 
+import codechicken.lib.render.CCRenderState;
+import codechicken.lib.render.pipeline.IVertexOperation;
+import codechicken.lib.vec.Matrix4;
 import com.onlyex.naxtech.api.capability.research.rwu.*;
 import com.onlyex.naxtech.api.capability.research.IResearchHatch;
 
@@ -10,6 +13,8 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockAbilityPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiblockPart;
 
 import net.minecraft.client.resources.I18n;
@@ -29,6 +34,43 @@ public class MetaTileEntityResearch  extends MetaTileEntityMultiblockPart
 
     public MetaTileEntityResearch(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTValues.UEV);
+    }
+
+    public SimpleOverlayRenderer getFrontOverlay() {
+        return null;
+    }
+
+    public SimpleOverlayRenderer getFrontActiveOverlay() {
+        return getFrontOverlay();
+    }
+    @Override
+    public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
+
+    }
+    @Override
+    public MultiblockAbility<IResearchHatch> getAbility() {
+        return null;
+    }//TODO
+
+
+    @Override
+    public ICubeRenderer getBaseTexture() {
+        return null;
+    }//TODO
+
+    @Override
+    public int getDefaultPaintingColor() {
+        return 0xFFFFFF;
+    }
+
+    @Override
+    protected boolean openGUIOnRightClick() {
+        return false;
+    }//右键单击打开GUI TODO
+
+    @Override
+    public boolean canPartShare() {
+        return false;
     }
 
     @Override
@@ -115,10 +157,6 @@ public class MetaTileEntityResearch  extends MetaTileEntityMultiblockPart
         return null;
     }
 
-    @Override
-    public MultiblockAbility<IResearchHatch> getAbility() {
-        return null;//TODO
-    }
 
     @Override
     public void registerAbilities(List<IResearchHatch> abilityList) {
