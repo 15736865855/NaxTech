@@ -20,6 +20,7 @@ import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMulti
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -157,7 +158,10 @@ public class MetaTileEntityResearch  extends MetaTileEntityMultiblockPart
         return null;
     }
 
+    @Override
+    public void getDrops(NonNullList<ItemStack> dropsList, @Nullable EntityPlayer harvester){
 
+    }
     @Override
     public void registerAbilities(List<IResearchHatch> abilityList) {
         abilityList.add(this);
