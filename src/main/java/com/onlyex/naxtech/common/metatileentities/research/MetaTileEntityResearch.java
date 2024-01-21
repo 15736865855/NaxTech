@@ -160,7 +160,7 @@ public class MetaTileEntityResearch  extends MetaTileEntityMultiblockPart
 
     @Override
     public void getDrops(NonNullList<ItemStack> dropsList, @Nullable EntityPlayer harvester){
-
+//项目变体 TODO
     }
     @Override
     public void registerAbilities(List<IResearchHatch> abilityList) {
