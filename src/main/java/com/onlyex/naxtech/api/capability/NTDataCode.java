@@ -16,5 +16,6 @@ public class NTDataCode {
     public static final int CHANNEL_11 = 9994;
     public static final int CHANNEL_12 = 9995;
 
+
     private NTDataCode() {/**/}
 }

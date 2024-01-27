@@ -7,6 +7,8 @@ import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.common.items.NTToolItems;
+import com.onlyex.naxtech.common.pipelike.research.BlockResearchPipe;
+import com.onlyex.naxtech.common.pipelike.research.ItemBlockResearchPipe;
 import com.onlyex.naxtech.loaders.NTTRecipes;
 import com.onlyex.naxtech.loaders.formula.FormulaManager;
 import com.onlyex.naxtech.loaders.recipe.handlers.NTRecipeHandlerList;
@@ -60,6 +62,8 @@ public class CommonProxy {
         NTLog.logger.info("Registering blocks...");
         IForgeRegistry<Block> registry = event.getRegistry();
 
+        for (BlockResearchPipe pipe : RESEARCH_PIPES) registry.register(pipe);
+
         registry.register(NT_WIRE_COIL);
         registry.register(BORON_SILICATE_GLASS_CASING);
         registry.register(CONTROL_CASING);
@@ -87,6 +91,8 @@ public class CommonProxy {
     {
         NTLog.logger.info("Registering Items...");
         IForgeRegistry<Item> registry = event.getRegistry();
+
+        for (BlockResearchPipe pipe : RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockResearchPipe::new));
 
         registry.register(createItemBlock(NT_WIRE_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(BORON_SILICATE_GLASS_CASING, VariantItemBlock::new));

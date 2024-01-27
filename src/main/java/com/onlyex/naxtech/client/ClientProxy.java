@@ -26,6 +26,7 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event)
     {
+        NTMetaBlocks.registerStateMappers();
         NTMetaBlocks.registerItemModels();
     }
 

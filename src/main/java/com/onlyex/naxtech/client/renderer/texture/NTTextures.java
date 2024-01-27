@@ -1,12 +1,19 @@
 package com.onlyex.naxtech.client.renderer.texture;
 
 import codechicken.lib.texture.TextureUtils;
+import com.onlyex.naxtech.api.NTValues;
+import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtils;
 import com.onlyex.naxtech.client.renderer.texture.custom.IsaMillRenderer;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import static gregtech.client.renderer.texture.Textures.iconRegisters;
 
 public class NTTextures {
 //public static final OrientedOverlayRenderer ;
@@ -69,6 +76,12 @@ OrientedOverlayRenderer
 
     public static TextureAtlasSprite FORCE_FIELD;
 
+
+    public static TextureAtlasSprite RESEARCH_PIPE_IN;
+    public static TextureAtlasSprite RESEARCH_PIPE_SIDE;
+    public static TextureAtlasSprite RESEARCH_PIPE_SIDE_OVERLAY;
+    public static TextureAtlasSprite RESEARCH_PIPE_SIDE_OVERLAY_ACTIVE;
+
     public NTTextures() {}
 
     public static void register(TextureMap textureMap) {
@@ -106,6 +119,12 @@ OrientedOverlayRenderer
                 COSMIC_8,
                 COSMIC_9
         };
+
+        //TODO 材质
+        RESEARCH_PIPE_IN = textureMap.registerSprite(NTUtils.naxId("blocks/pipe/pipe_research_in"));
+        RESEARCH_PIPE_SIDE = textureMap.registerSprite(NTUtils.naxId("blocks/pipe/pipe_research_side"));
+        RESEARCH_PIPE_SIDE_OVERLAY = textureMap.registerSprite(NTUtils.naxId("blocks/pipe/pipe_research_side_overlay"));
+        RESEARCH_PIPE_SIDE_OVERLAY_ACTIVE = textureMap.registerSprite(NTUtils.naxId("blocks/pipe/pipe_research_side_overlay_active"));
     }
     public static void preInit() {TextureUtils.addIconRegister(NTTextures::register);}
 }

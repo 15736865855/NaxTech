@@ -1,19 +1,29 @@
 package com.onlyex.naxtech.common.block;
 
+import com.onlyex.naxtech.client.renderer.pipe.ResearchPipeRenderer;
 import com.onlyex.naxtech.common.block.blocks.*;
 import com.onlyex.naxtech.common.block.blocks.assembly.*;
 import com.onlyex.naxtech.common.block.blocks.dimension.*;
 import com.onlyex.naxtech.common.block.blocks.machinel.*;
 import com.onlyex.naxtech.common.block.blocks.quantum.*;
 import com.onlyex.naxtech.common.block.wood.*;
+import com.onlyex.naxtech.common.pipelike.research.BlockResearchPipe;
+import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
+import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
+import gregtech.client.model.SimpleStateMapper;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.IStateMapper;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import static com.onlyex.naxtech.api.utils.NTUtils.naxId;
+import static gregtech.api.util.GTUtility.gregtechId;
 
 public class NTMetaBlocks {
     //dimension
@@ -51,11 +61,22 @@ public class NTMetaBlocks {
 
 
 
+    public static final BlockResearchPipe[] RESEARCH_PIPES = new BlockResearchPipe[ResearchPipeType.values().length];
+
+
     public static final BlockPineLeaves PINE_LEAVES = new BlockPineLeaves();
     public static final BlockPineLog PINE_LOG = new BlockPineLog();
     public static final BlockPineSapling PINE_SAPLING = new BlockPineSapling();
     private NTMetaBlocks() {}
     public static void init() {
+
+        for (ResearchPipeType type : ResearchPipeType.values()) {
+            RESEARCH_PIPES[type.ordinal()] = new BlockResearchPipe(type);
+            RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("research_pipe_%s", type.getName()));
+            RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("research_pipe_%s", type.getName()));
+        }
+
+
         NT_WIRE_COIL = new BlockDimensionWireCoil();
         NT_WIRE_COIL.setRegistryName("wire_coil");
         BORON_SILICATE_GLASS_CASING = new BlockBoronSilicateGlassCasing();
@@ -90,10 +111,19 @@ public class NTMetaBlocks {
         ADV_FACTORY_CASING.setRegistryName("adv_factory_casing");
         DHPCA_FACTORY_CASING = new BlockDHPCAFactoryCasing();
         DHPCA_FACTORY_CASING.setRegistryName("dhpca_factory_casing");
-    }
 
+        registerTileEntity();
+    }
+    public static void registerTileEntity() {
+        GameRegistry.registerTileEntity(TileEntityResearchPipe.class, naxId("research_pipe"));
+    }
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
+
+        for (BlockResearchPipe pipe : RESEARCH_PIPES)
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
+                    stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
+
         registerItemModel(CONTROL_CASING);
         registerItemModel(MACHINE_CASING);
         registerItemModel(PACKAGING_LINE);
@@ -118,6 +148,16 @@ public class NTMetaBlocks {
         ACTIVE_MULTIBLOCK_CASING.onModelRegister();
         QUANTUM_FORCE_TRANSFORMER_GLASS_CASING.onModelRegister();
 
+    }
+
+    @SideOnly(Side.CLIENT)
+    public static void registerStateMappers() {
+        IStateMapper normalStateMapper;
+
+        normalStateMapper = new SimpleStateMapper(ResearchPipeRenderer.INSTANCE.getModelLocation());
+        for (BlockResearchPipe pipe : RESEARCH_PIPES) {
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
     }
 
     @SideOnly(Side.CLIENT)
