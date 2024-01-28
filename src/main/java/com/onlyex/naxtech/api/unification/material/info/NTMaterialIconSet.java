@@ -1,7 +1,9 @@
 package com.onlyex.naxtech.api.unification.material.info;
 
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
-import com.onlyex.naxtech.common.items.behaviors.renderer.*;
+import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
+import com.onlyex.naxtech.common.items.behaviors.renderer.DataRenderItemBehavior;
+import com.onlyex.naxtech.common.items.behaviors.renderer.HaloRenderItemBehavior;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import stanhebben.zenscript.annotations.ZenClass;

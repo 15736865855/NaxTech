@@ -3,10 +3,11 @@ package com.onlyex.naxtech.common.metatileentities;
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtils;
-import com.onlyex.naxtech.common.metatileentities.multi.hpca.*;
-import com.onlyex.naxtech.common.metatileentities.multi.dimension.*;
+import com.onlyex.naxtech.common.metatileentities.module.hpca.MetaTileEntityHPCAAdvancedComputation;
+import com.onlyex.naxtech.common.metatileentities.module.hpca.MetaTileEntityHPCAAdvancedCooler;
+import com.onlyex.naxtech.common.metatileentities.multi.dimension.MetaTileEntityQuantumForceTransformer;
 import com.onlyex.naxtech.common.metatileentities.multi.electric.*;
-import com.onlyex.naxtech.common.metatileentities.multi.industry.*;
+import com.onlyex.naxtech.common.metatileentities.multi.industry.MetaTileEntityHugeCrackingUnit;
 import com.onlyex.naxtech.common.metatileentities.multi.part.*;
 import gregtech.api.GTValues;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -33,8 +34,7 @@ public class NTMetaTileEntities {
     public static SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.IV + 1];
     public static MetaTileInfWaterHatch INF_WATER_HATCH;
 
-    //组件-
-
+    //组件-module-
     //-HPCA
     public static MetaTileEntityHPCAAdvancedComputation HPCA_SUPER_COMPUTATION_COMPONENT;
     public static MetaTileEntityHPCAAdvancedComputation HPCA_ULTIMATE_COMPUTATION_COMPONENT;
@@ -42,7 +42,19 @@ public class NTMetaTileEntities {
     public static MetaTileEntityHPCAAdvancedCooler HPCA_SUPER_COOLER_COMPONENT;
     public static MetaTileEntityHPCAAdvancedCooler HPCA_ULTIMATE_COOLER_COMPONENT;
 
-    //多方块-
+
+
+
+
+    //仓口-hatch
+    //-research
+
+
+
+
+
+
+    //多方块-  TODO
     public static MetaTileEntityPackagingLine PACKAGING_LINE;
     public static MetaTileEntityComponentAssemblyLine COMPONENT_ASSEMBLY_LINE;
     public static MetaTileEntityBlazingBlastFurnace BLAZING_BLAST_FURNACE;

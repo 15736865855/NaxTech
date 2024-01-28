@@ -1,7 +1,9 @@
 package com.onlyex.naxtech.api.recipes;
 
 import com.onlyex.naxtech.api.recipes.builder.*;
-import com.onlyex.naxtech.api.recipes.machines.*;
+import com.onlyex.naxtech.api.recipes.machines.RecipeMapChemicalPlant;
+import com.onlyex.naxtech.api.recipes.machines.RecipeMapComponentAssemblyLine;
+import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;

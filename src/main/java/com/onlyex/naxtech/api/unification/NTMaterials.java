@@ -1,6 +1,9 @@
 package com.onlyex.naxtech.api.unification;
 
-import com.onlyex.naxtech.api.unification.materials.*;
+import com.onlyex.naxtech.api.unification.materials.DimensionMaterials;
+import com.onlyex.naxtech.api.unification.materials.DustMaterials;
+import com.onlyex.naxtech.api.unification.materials.FluidsMaterials;
+import com.onlyex.naxtech.api.unification.materials.MachineCasingMaterials;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.info.MaterialFlag;
 

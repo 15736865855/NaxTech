@@ -12,14 +12,11 @@ import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransform
 import gregtech.common.blocks.*;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.IStringSerializable;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import static gregtech.api.GregTechAPI.HEATING_COILS;
-import static net.minecraft.init.Blocks.GLASS;
 
 public class NTAPI {
 

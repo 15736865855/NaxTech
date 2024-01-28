@@ -1,16 +1,13 @@
 package com.onlyex.naxtech.common.pipelike.research.net;
 
+import com.onlyex.naxtech.api.capability.IDataAccessHatch;
 import com.onlyex.naxtech.api.capability.research.IResearchComputationProvider;
-
 import com.onlyex.naxtech.api.capability.research.IResearchDataAccessHatch;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
-import com.onlyex.naxtech.api.capability.IDataAccessHatch;
 import gregtech.api.recipes.Recipe;
-
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -47,15 +44,15 @@ public class ResearchNetHandler implements IDataAccessHatch, IResearchComputatio
     }
 
     @Override
-    public int requestCWUt(int cwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
-        int provided = traverseRequestCWUt(cwut, simulate, seen);
+    public int requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
+        int provided = traverseRequestRWUt(rwut, simulate, seen);
         if (provided > 0) setPipesActive();
         return provided;
     }
 
     @Override
-    public int getMaxCWUt(@NotNull Collection<IResearchComputationProvider> seen) {
-        return traverseMaxCWUt(seen);
+    public int getMaxRWUt(@NotNull Collection<IResearchComputationProvider> seen) {
+        return traverseMaxRWUt(seen);
     }
 
     @Override
@@ -90,16 +87,16 @@ public class ResearchNetHandler implements IDataAccessHatch, IResearchComputatio
         return false;
     }
 
-    private int traverseRequestCWUt(int cwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
+    private int traverseRequestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
         IResearchComputationProvider provider = getComputationProvider(seen);
         if (provider == null) return 0;
-        return provider.requestCWUt(cwut, simulate, seen);
+        return provider.requestRWUt(rwut, simulate, seen);
     }
 
-    private int traverseMaxCWUt(@NotNull Collection<IResearchComputationProvider> seen) {
+    private int traverseMaxRWUt(@NotNull Collection<IResearchComputationProvider> seen) {
         IResearchComputationProvider provider = getComputationProvider(seen);
         if (provider == null) return 0;
-        return provider.getMaxCWUt(seen);
+        return provider.getMaxRWUt(seen);
     }
 
     private boolean traverseCanBridge(@NotNull Collection<IResearchComputationProvider> seen) {

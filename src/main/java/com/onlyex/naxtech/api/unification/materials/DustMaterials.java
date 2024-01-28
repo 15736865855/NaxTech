@@ -3,7 +3,6 @@ package com.onlyex.naxtech.api.unification.materials;
 import gregtech.api.unification.material.Material;
 
 import static com.onlyex.naxtech.api.unification.NTMaterials.*;
-import static com.onlyex.naxtech.api.unification.NTMaterials.NOR;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.DULL;
 import static gregtech.api.util.GTUtility.gregtechId;

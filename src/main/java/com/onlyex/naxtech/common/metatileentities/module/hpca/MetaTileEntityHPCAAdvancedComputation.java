@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.common.metatileentities.multi.hpca;
+package com.onlyex.naxtech.common.metatileentities.module.hpca;
 
 import gregtech.api.GTValues;
 import gregtech.api.capability.IHPCAComputationProvider;

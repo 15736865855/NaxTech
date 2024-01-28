@@ -2,17 +2,22 @@ package com.onlyex.naxtech.common.block;
 
 import com.onlyex.naxtech.client.renderer.pipe.ResearchPipeRenderer;
 import com.onlyex.naxtech.common.block.blocks.*;
-import com.onlyex.naxtech.common.block.blocks.assembly.*;
-import com.onlyex.naxtech.common.block.blocks.dimension.*;
-import com.onlyex.naxtech.common.block.blocks.machinel.*;
-import com.onlyex.naxtech.common.block.blocks.quantum.*;
-import com.onlyex.naxtech.common.block.wood.*;
+import com.onlyex.naxtech.common.block.blocks.assembly.BlockAdvancedAssemblyLineCasing;
+import com.onlyex.naxtech.common.block.blocks.assembly.BlockComponentAssemblyLineCasing;
+import com.onlyex.naxtech.common.block.blocks.dimension.BlockDimensionCasing;
+import com.onlyex.naxtech.common.block.blocks.dimension.BlockDimensionWireCoil;
+import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasing;
+import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasingA;
+import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasingB;
+import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerCasing;
+import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerGlassCasing;
+import com.onlyex.naxtech.common.block.wood.BlockPineLeaves;
+import com.onlyex.naxtech.common.block.wood.BlockPineLog;
+import com.onlyex.naxtech.common.block.wood.BlockPineSapling;
 import com.onlyex.naxtech.common.pipelike.research.BlockResearchPipe;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
 import gregtech.client.model.SimpleStateMapper;
-import gregtech.client.renderer.handler.MetaTileEntityRenderer;
-import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -24,8 +29,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import static com.onlyex.naxtech.api.utils.NTUtils.naxId;
-import static gregtech.api.util.GTUtility.gregtechId;
-import static gregtech.common.blocks.MetaBlocks.MACHINE;
 import static gregtech.common.blocks.MetaBlocks.statePropertiesToString;
 
 public class NTMetaBlocks {

@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.common.metatileentities.multi.hpca;
+package com.onlyex.naxtech.common.metatileentities.module.hpca;
 
 import gregtech.api.GTValues;
 import gregtech.api.capability.IHPCACoolantProvider;
@@ -8,7 +8,6 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
-
 import gregtech.common.metatileentities.multi.multiblockpart.hpca.MetaTileEntityHPCAComponent;
 import net.minecraft.util.ResourceLocation;
 

@@ -2,9 +2,7 @@ package com.onlyex.naxtech.common.pipelike.research.net;
 
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import gregtech.api.pipenet.WorldPipeNet;
-
 import net.minecraft.world.World;
-
 import org.jetbrains.annotations.NotNull;
 
 public class WorldResearchPipeNet extends WorldPipeNet<ResearchPipeProperties, ResearchPipeNet> {

@@ -4,12 +4,10 @@ import com.onlyex.naxtech.api.capability.NTTileCapabilities;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
 import gregtech.api.pipenet.PipeNetWalker;
 import gregtech.api.util.GTUtility;
-
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
 import org.jetbrains.annotations.Nullable;
 
 public class ResearchNetWalker extends PipeNetWalker<TileEntityResearchPipe> {

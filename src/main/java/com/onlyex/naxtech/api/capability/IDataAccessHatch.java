@@ -1,7 +1,6 @@
 package com.onlyex.naxtech.api.capability;
 
 import gregtech.api.recipes.Recipe;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

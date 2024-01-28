@@ -1,5 +1,6 @@
 package com.onlyex.naxtech.client.renderer.pipe;
 
+import codechicken.lib.vec.uv.IconTransformation;
 import com.onlyex.naxtech.api.utils.NTUtils;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
@@ -10,11 +11,8 @@ import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.unification.material.Material;
 import gregtech.client.renderer.pipe.PipeRenderer;
 import gregtech.common.ConfigHolder;
-
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
-
-import codechicken.lib.vec.uv.IconTransformation;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumMap;

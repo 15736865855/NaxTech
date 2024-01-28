@@ -2,7 +2,6 @@ package com.onlyex.naxtech.api.pattern;
 
 import com.onlyex.naxtech.api.block.impl.WrappedIntTier;
 import com.onlyex.naxtech.api.pattern.predicates.TierTraceabilityPredicate;
-import com.onlyex.naxtech.api.utils.NTUniverUtil;
 import gregtech.api.block.VariantActiveBlock;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -11,13 +10,10 @@ import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.util.BlockInfo;
-import gregtech.common.blocks.MetaBlocks;
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import org.apache.commons.lang3.ArrayUtils;
 
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Supplier;
 

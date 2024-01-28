@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.client.event;
 
-import com.onlyex.naxtech.client.shader.CosmicShaderHelper;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
+import com.onlyex.naxtech.client.shader.CosmicShaderHelper;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

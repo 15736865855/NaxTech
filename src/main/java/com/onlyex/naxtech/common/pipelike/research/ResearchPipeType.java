@@ -1,7 +1,6 @@
 package com.onlyex.naxtech.common.pipelike.research;
 
 import gregtech.api.pipenet.block.IPipeType;
-
 import org.jetbrains.annotations.NotNull;
 
 public enum ResearchPipeType implements IPipeType<ResearchPipeProperties> {

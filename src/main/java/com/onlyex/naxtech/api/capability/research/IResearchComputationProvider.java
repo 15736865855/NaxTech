@@ -12,40 +12,40 @@ import java.util.Collection;
 public interface IResearchComputationProvider {
 
     /**
-     * requestCWUt(int cwut, boolean simulate)：
-     * 默认方法，实现该接口的类可以通过此方法请求每刻的最大 CWU/t（每刻的计算工作单位）。
-     * simulate 参数表示是否模拟请求，方法返回可供的 CWU/t 数量。
+     * requestRWUt(int rwut, boolean simulate)：
+     * 默认方法，实现该接口的类可以通过此方法请求每刻的最大 RWU/t（每刻的计算工作单位）。
+     * simulate 参数表示是否模拟请求，方法返回可供的 RWU/t 数量。
      */
-    default int requestCWUt(int cwut, boolean simulate) {
+    default int requestRWUt(int rwut, boolean simulate) {
         Collection<IResearchComputationProvider> list = new ArrayList<>();
         list.add(this);
-        return requestCWUt(cwut, simulate, list);
+        return requestRWUt(rwut, simulate, list);
     }
 
     /**
-     * requestCWUt(int cwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen)：
-     * 用于请求每刻的最大 CWU/t。
-     * 该方法需要实现类提供 cwut 和 simulate 参数的处理逻辑，并返回可供的 CWU/t 数量。
+     * requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen)：
+     * 用于请求每刻的最大 RWU/t。
+     * 该方法需要实现类提供 rwut 和 simulate 参数的处理逻辑，并返回可供的 RWU/t 数量。
      * seen 参数表示已经检查过的光学计算提供者。
      */
-    int requestCWUt(int cwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen);
+    int requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen);
 
     /**
-     * getMaxCWUt()：
-     * 默认方法，返回该计算提供者可以提供的最大 CWU/t 数量。
+     * getMaxRWUt()：
+     * 默认方法，返回该计算提供者可以提供的最大 RWU/t 数量。
      */
-    default int getMaxCWUt() {
+    default int getMaxRWUt() {
         Collection<IResearchComputationProvider> list = new ArrayList<>();
         list.add(this);
-        return getMaxCWUt(list);
+        return getMaxRWUt(list);
     }
 
     /**
-     * getMaxCWUt(@NotNull Collection<IResearchComputationProvider> seen)：
-     * 返回该计算提供者可以提供的最大 CWU/t 数量。
+     * getMaxRWUt(@NotNull Collection<IResearchComputationProvider> seen)：
+     * 返回该计算提供者可以提供的最大 RWU/t 数量。
      * seen 参数表示已经检查过的光学计算提供者。
      */
-    int getMaxCWUt(@NotNull Collection<IResearchComputationProvider> seen);
+    int getMaxRWUt(@NotNull Collection<IResearchComputationProvider> seen);
 
     /**
      * canBridge()：

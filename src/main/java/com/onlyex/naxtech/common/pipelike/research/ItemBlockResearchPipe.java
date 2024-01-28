@@ -2,15 +2,10 @@ package com.onlyex.naxtech.common.pipelike.research;
 
 import gregtech.api.pipenet.block.ItemBlockPipe;
 import gregtech.client.utils.TooltipHelper;
-
-import gregtech.common.pipelike.optical.BlockOpticalPipe;
-import gregtech.common.pipelike.optical.OpticalPipeProperties;
-import gregtech.common.pipelike.optical.OpticalPipeType;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

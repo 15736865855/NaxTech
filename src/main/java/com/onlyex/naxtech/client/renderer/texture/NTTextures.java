@@ -1,19 +1,12 @@
 package com.onlyex.naxtech.client.renderer.texture;
 
 import codechicken.lib.texture.TextureUtils;
-import com.onlyex.naxtech.api.NTValues;
-import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtils;
 import com.onlyex.naxtech.client.renderer.texture.custom.IsaMillRenderer;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-import static gregtech.client.renderer.texture.Textures.iconRegisters;
 
 public class NTTextures {
 //public static final OrientedOverlayRenderer ;
@@ -25,30 +18,50 @@ OrientedOverlayRenderer
     //naxtech-
 
     //-casings
-    public static NTOverlayRenderer PACKAGING_LINE = new NTOverlayRenderer("casings/solid/machine_packaging_line");
-    public static NTOverlayRenderer ADVANCED_ASSEMBLY_LINE = new NTOverlayRenderer("casings/solid/advanced_assembly_line");
-    public static NTOverlayRenderer QUANTUM_CONSTRAINT_CASING = new NTOverlayRenderer("casings/quantum_force_transformer_casing/quantum_constraint_casing");
-    public static NTOverlayRenderer ADVANCED_INVAR_CASING = new NTOverlayRenderer("casings/solid/advanced_invar_casing");
-    public static NTOverlayRenderer ADVANCED_ALUMINIUM_CASING = new NTOverlayRenderer("casings/solid/advanced_aluminium_casing");
-    public static NTOverlayRenderer PRECISE_ASSEMBLER_CASING_MK1 = new NTOverlayRenderer("casings/solid/precise_assembler_casing_mk1");
-    public static NTOverlayRenderer PRECISE_ASSEMBLER_CASING_MK2 = new NTOverlayRenderer("casings/solid/precise_assembler_casing_mk2");
-    public static NTOverlayRenderer PRECISE_ASSEMBLER_CASING_MK3 = new NTOverlayRenderer("casings/solid/precise_assembler_casing_mk3");
-    public static NTOverlayRenderer IRIDIUM_CASING = new NTOverlayRenderer("casings/solid/advanced_assembly_line");
-    public static NTOverlayRenderer FLOTATION_CASING = new NTOverlayRenderer("casings/solid/flotation_casing");
-    public static NTOverlayRenderer ISA_MILL_CASING = new NTOverlayRenderer("casings/solid/isa_mill_casing");
+    public static NTOverlayRenderer PACKAGING_LINE =
+            new NTOverlayRenderer("casings/solid/machine_packaging_line");
+    public static NTOverlayRenderer ADVANCED_ASSEMBLY_LINE =
+            new NTOverlayRenderer("casings/solid/advanced_assembly_line");
+    public static NTOverlayRenderer QUANTUM_CONSTRAINT_CASING =
+            new NTOverlayRenderer("casings/quantum_force_transformer_casing/quantum_constraint_casing");
+    public static NTOverlayRenderer ADVANCED_INVAR_CASING =
+            new NTOverlayRenderer("casings/solid/advanced_invar_casing");
+    public static NTOverlayRenderer ADVANCED_ALUMINIUM_CASING =
+            new NTOverlayRenderer("casings/solid/advanced_aluminium_casing");
+    public static NTOverlayRenderer PRECISE_ASSEMBLER_CASING_MK1 =
+            new NTOverlayRenderer("casings/solid/precise_assembler_casing_mk1");
+    public static NTOverlayRenderer PRECISE_ASSEMBLER_CASING_MK2 =
+            new NTOverlayRenderer("casings/solid/precise_assembler_casing_mk2");
+    public static NTOverlayRenderer PRECISE_ASSEMBLER_CASING_MK3 =
+            new NTOverlayRenderer("casings/solid/precise_assembler_casing_mk3");
+    public static NTOverlayRenderer IRIDIUM_CASING =
+            new NTOverlayRenderer("casings/solid/advanced_assembly_line");
+    public static NTOverlayRenderer FLOTATION_CASING =
+            new NTOverlayRenderer("casings/solid/flotation_casing");
+    public static NTOverlayRenderer ISA_MILL_CASING =
+            new NTOverlayRenderer("casings/solid/isa_mill_casing");
 
     //-multiparts
-    public static NTOverlayRenderer MULTIPART_CATALYST_HATCH = new NTOverlayRenderer("multiparts/overlay_catalyst_hatch");
-    public static NTOverlayRenderer MULTIPART_BUFFER_HATCH = new NTOverlayRenderer("multiparts/overlay_buffer_hatch");
-    public static NTOverlayRenderer INF_WATER = new NTOverlayRenderer("multiparts/overlay_water");
+    public static NTOverlayRenderer MULTIPART_CATALYST_HATCH =
+            new NTOverlayRenderer("multiparts/overlay_catalyst_hatch");
+    public static NTOverlayRenderer MULTIPART_BUFFER_HATCH =
+            new NTOverlayRenderer("multiparts/overlay_buffer_hatch");
+    public static NTOverlayRenderer INF_WATER =
+            new NTOverlayRenderer("multiparts/overlay_water");
 
+    public static final SimpleOverlayRenderer RESEARCH_DATA_ACCESS_HATCH =
+            new SimpleOverlayRenderer("overlay/machine/overlay_data_hatch_optical");
 
 
     //gregtech-
-    public static OrientedOverlayRenderer ISA_MILL_OVERLAY = new OrientedOverlayRenderer("multiblock/isa_mill");
-    public static OrientedOverlayRenderer CRYOGENIC_REACTOR_OVERLAY = new OrientedOverlayRenderer("multiblock/cryogenic_reactor");
-    public static OrientedOverlayRenderer CVD_UNIT_OVERLAY = new OrientedOverlayRenderer("multiblock/cvd_unit");
-    public static OrientedOverlayRenderer CHEMICAL_PLANT_OVERLAY = new OrientedOverlayRenderer("multiblock/chemical_plant");
+    public static OrientedOverlayRenderer ISA_MILL_OVERLAY =
+            new OrientedOverlayRenderer("multiblock/isa_mill");
+    public static OrientedOverlayRenderer CRYOGENIC_REACTOR_OVERLAY =
+            new OrientedOverlayRenderer("multiblock/cryogenic_reactor");
+    public static OrientedOverlayRenderer CVD_UNIT_OVERLAY =
+            new OrientedOverlayRenderer("multiblock/cvd_unit");
+    public static OrientedOverlayRenderer CHEMICAL_PLANT_OVERLAY =
+            new OrientedOverlayRenderer("multiblock/chemical_plant");
 
 
 

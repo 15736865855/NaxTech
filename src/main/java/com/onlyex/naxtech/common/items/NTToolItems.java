@@ -2,8 +2,14 @@ package com.onlyex.naxtech.common.items;
 
 import com.onlyex.naxtech.api.NTValues;
 import gregtech.api.GTValues;
-import gregtech.api.items.toolitem.*;
-import gregtech.common.items.tool.*;
+import gregtech.api.items.toolitem.IGTTool;
+import gregtech.api.items.toolitem.ItemGTTool;
+import gregtech.api.items.toolitem.ToolClasses;
+import gregtech.api.items.toolitem.ToolOreDict;
+import gregtech.common.items.tool.BlockRotatingBehavior;
+import gregtech.common.items.tool.EntityDamageBehavior;
+import gregtech.common.items.tool.TorchPlaceBehavior;
+import gregtech.common.items.tool.TreeFellingBehavior;
 import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;

@@ -1,5 +1,6 @@
 package com.onlyex.naxtech.common.pipelike.research.tile;
 
+import com.onlyex.naxtech.api.capability.IDataAccessHatch;
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
 import com.onlyex.naxtech.api.capability.research.IResearchComputationProvider;
@@ -8,18 +9,14 @@ import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchNetHandler;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
 import com.onlyex.naxtech.common.pipelike.research.net.WorldResearchPipeNet;
-import com.onlyex.naxtech.api.capability.IDataAccessHatch;
-
 import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.pipenet.tile.TileEntityPipeBase;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.util.TaskScheduler;
-
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -204,12 +201,12 @@ public class TileEntityResearchPipe extends TileEntityPipeBase<ResearchPipeType,
     private static class DefaultComputationHandler implements IResearchComputationProvider {
 
         @Override
-        public int requestCWUt(int cwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
+        public int requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxCWUt(@NotNull Collection<IResearchComputationProvider> seen) {
+        public int getMaxRWUt(@NotNull Collection<IResearchComputationProvider> seen) {
             return 0;
         }
 
