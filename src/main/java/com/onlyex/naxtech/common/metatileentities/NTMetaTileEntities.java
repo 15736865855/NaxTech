@@ -172,9 +172,9 @@ public class NTMetaTileEntities {
 
 
         //
-        RESEARCH_COMPUTATION_HATCH_RECEIVER = registerMetaTileEntity(33,
+        RESEARCH_COMPUTATION_HATCH_RECEIVER = registerSingleMetaTileEntity(33,
                 new MetaTileEntityResearchComputationHatch(naxId("research_computation_hatch.receiver"), false));
-        RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerMetaTileEntity(34,
+        RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(34,
                 new MetaTileEntityResearchComputationHatch(naxId("research_computation_hatch.transmitter"), true));
 
 
