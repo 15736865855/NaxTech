@@ -199,11 +199,6 @@ public class TileEntityResearchPipe extends TileEntityPipeBase<ResearchPipeType,
         public boolean isRecipeAvailable(@NotNull Recipe recipe, @NotNull Collection<IDataAccessHatch> seen) {
             return false;
         }
-
-        @Override
-        public boolean isCreative() {
-            return false;
-        }
     }
 
     private static class DefaultComputationHandler implements IResearchComputationProvider {

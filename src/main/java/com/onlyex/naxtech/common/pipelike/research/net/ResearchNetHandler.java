@@ -47,11 +47,6 @@ public class ResearchNetHandler implements IDataAccessHatch, IResearchComputatio
     }
 
     @Override
-    public boolean isCreative() {
-        return false;
-    }
-
-    @Override
     public int requestCWUt(int cwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
         int provided = traverseRequestCWUt(cwut, simulate, seen);
         if (provided > 0) setPipesActive();
