@@ -4,7 +4,7 @@ import com.onlyex.naxtech.api.capability.research.IResearchComputationProvider;
 
 import com.onlyex.naxtech.api.capability.research.IResearchDataAccessHatch;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
-import gregtech.api.capability.IDataAccessHatch;
+import com.onlyex.naxtech.api.capability.IDataAccessHatch;
 import gregtech.api.recipes.Recipe;
 
 import net.minecraft.util.EnumFacing;
@@ -70,8 +70,8 @@ public class ResearchNetHandler implements IDataAccessHatch, IResearchComputatio
 
     private void setPipesActive() {
         for (BlockPos pos : net.getAllNodes().keySet()) {
-            if (world.getTileEntity(pos) instanceof TileEntityResearchPipe opticalPipe) {
-                opticalPipe.setActive(true, 100);
+            if (world.getTileEntity(pos) instanceof TileEntityResearchPipe ResearchPipe) {
+                ResearchPipe.setActive(true, 100);
             }
         }
     }

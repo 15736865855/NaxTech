@@ -4,8 +4,7 @@ import com.onlyex.naxtech.api.capability.NTTileCapabilities;
 import com.onlyex.naxtech.api.capability.research.IResearchComputationProvider;
 import com.onlyex.naxtech.api.capability.research.IResearchDataAccessHatch;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
-import gregtech.api.capability.GregtechTileCapabilities;
-import gregtech.api.capability.IDataAccessHatch;
+import com.onlyex.naxtech.api.capability.IDataAccessHatch;
 import gregtech.api.pipenet.IRoutePath;
 
 import net.minecraft.util.EnumFacing;

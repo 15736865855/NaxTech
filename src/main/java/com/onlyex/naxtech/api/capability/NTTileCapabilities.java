@@ -2,7 +2,7 @@ package com.onlyex.naxtech.api.capability;
 
 import com.onlyex.naxtech.api.capability.research.IResearchComputationProvider;
 
-import gregtech.api.capability.IDataAccessHatch;
+import com.onlyex.naxtech.api.capability.IDataAccessHatch;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 

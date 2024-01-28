@@ -48,6 +48,11 @@ public class ResearchPipeNet extends PipeNet<ResearchPipeProperties> {
     }
 
     @Override
+    public void onChunkUnload() {
+        NET_DATA.clear();
+    }
+
+    @Override
     protected void transferNodeData(Map<BlockPos, Node<ResearchPipeProperties>> transferredNodes,
                                     PipeNet<ResearchPipeProperties> parentNet) {
         super.transferNodeData(transferredNodes, parentNet);

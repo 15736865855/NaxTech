@@ -1409,8 +1409,8 @@ naxtech.machine.supra_causal.research.sca_rwut=
 naxtech.machine.supra_chronal.research.sch_rwut=
 naxtech.machine.supra_dimension.research.sdi_rwut=
 
-
-
+tile.research_pipe_normal.name=数据光缆
+tile.research_pipe_normal.tooltip1=传递§f科研数据§7
 
 
 

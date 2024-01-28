@@ -1,6 +1,7 @@
 package com.onlyex.naxtech.client;
 
 import com.onlyex.naxtech.client.event.NTClientEventHandler;
+import com.onlyex.naxtech.client.renderer.pipe.ResearchPipeRenderer;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.client.utils.ShaderHelper;
 import com.onlyex.naxtech.common.CommonProxy;
@@ -22,6 +23,8 @@ public class ClientProxy extends CommonProxy {
         MinecraftForge.EVENT_BUS.register(new NTClientEventHandler());
         ShaderHelper.initShaders();
         NTTextures.preInit();
+
+        ResearchPipeRenderer.INSTANCE.preInit();
     }
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event)

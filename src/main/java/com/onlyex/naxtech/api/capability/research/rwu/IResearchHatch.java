@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.api.capability.research;
+package com.onlyex.naxtech.api.capability.research.rwu;
 
 import gregtech.api.gui.resources.TextureArea;
 

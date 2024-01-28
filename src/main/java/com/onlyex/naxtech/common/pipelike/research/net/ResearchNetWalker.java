@@ -2,7 +2,6 @@ package com.onlyex.naxtech.common.pipelike.research.net;
 
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
-import gregtech.api.capability.GregtechTileCapabilities;
 import gregtech.api.pipenet.PipeNetWalker;
 import gregtech.api.util.GTUtility;
 

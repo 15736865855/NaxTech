@@ -8,8 +8,8 @@ import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchNetHandler;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
 import com.onlyex.naxtech.common.pipelike.research.net.WorldResearchPipeNet;
+import com.onlyex.naxtech.api.capability.IDataAccessHatch;
 
-import gregtech.api.capability.IDataAccessHatch;
 import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.pipenet.tile.TileEntityPipeBase;
 import gregtech.api.recipes.Recipe;
@@ -178,9 +178,7 @@ public class TileEntityResearchPipe extends TileEntityPipeBase<ResearchPipeType,
         }
 
         if (stateChanged) {
-            writeCustomData(NTDataCodes.PIPE_RESEARCH_ACTIVE, buf -> {
-                buf.writeBoolean(this.isActive);
-            });
+            writeCustomData(NTDataCodes.PIPE_RESEARCH_ACTIVE, buf -> buf.writeBoolean(this.isActive));
             notifyBlockUpdate();
             markDirty();
         }

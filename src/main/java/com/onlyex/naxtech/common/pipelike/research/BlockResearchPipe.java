@@ -2,9 +2,9 @@ package com.onlyex.naxtech.common.pipelike.research;
 
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
 import com.onlyex.naxtech.client.renderer.pipe.ResearchPipeRenderer;
+import com.onlyex.naxtech.common.CommonProxy;
 import com.onlyex.naxtech.common.pipelike.research.net.WorldResearchPipeNet;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
-import gregtech.api.GregTechAPI;
 import gregtech.api.items.toolitem.ToolClasses;
 import gregtech.api.items.toolitem.ToolHelper;
 import gregtech.api.pipenet.block.BlockPipe;
@@ -37,7 +37,7 @@ public class BlockResearchPipe extends BlockPipe<ResearchPipeType, ResearchPipeP
     public BlockResearchPipe(@NotNull ResearchPipeType pipeType) {
         this.pipeType = pipeType;
         this.properties = ResearchPipeProperties.INSTANCE;
-        setCreativeTab(GregTechAPI.TAB_GREGTECH_PIPES);
+        setCreativeTab(CommonProxy.NAXTECH_TAB);
         setHarvestLevel(ToolClasses.WIRE_CUTTER, 1);
     }
 

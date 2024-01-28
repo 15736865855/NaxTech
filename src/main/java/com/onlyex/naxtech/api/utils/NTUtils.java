@@ -2,12 +2,11 @@ package com.onlyex.naxtech.api.utils;
 
 import com.onlyex.naxtech.api.NTValues;
 import net.minecraft.util.ResourceLocation;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class NTUtils {
-    @Nonnull
-    public static ResourceLocation naxId(@Nonnull String path) {
+    @NotNull
+    public static ResourceLocation naxId(@NotNull String path) {
             return new ResourceLocation(NTValues.MOD_ID, path);
     }
 }

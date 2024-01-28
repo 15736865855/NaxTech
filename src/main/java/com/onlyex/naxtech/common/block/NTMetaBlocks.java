@@ -11,6 +11,7 @@ import com.onlyex.naxtech.common.pipelike.research.BlockResearchPipe;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
 import gregtech.client.model.SimpleStateMapper;
+import gregtech.client.renderer.handler.MetaTileEntityRenderer;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -24,6 +25,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import static com.onlyex.naxtech.api.utils.NTUtils.naxId;
 import static gregtech.api.util.GTUtility.gregtechId;
+import static gregtech.common.blocks.MetaBlocks.MACHINE;
+import static gregtech.common.blocks.MetaBlocks.statePropertiesToString;
 
 public class NTMetaBlocks {
     //dimension
@@ -152,8 +155,8 @@ public class NTMetaBlocks {
 
     @SideOnly(Side.CLIENT)
     public static void registerStateMappers() {
-        IStateMapper normalStateMapper;
 
+        IStateMapper normalStateMapper;
         normalStateMapper = new SimpleStateMapper(ResearchPipeRenderer.INSTANCE.getModelLocation());
         for (BlockResearchPipe pipe : RESEARCH_PIPES) {
             ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
@@ -163,10 +166,11 @@ public class NTMetaBlocks {
     @SideOnly(Side.CLIENT)
     private static void registerItemModel(Block block) {
         for (IBlockState state : block.getBlockState().getValidStates()) {
+            // noinspection ConstantConditions
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block),
                     block.getMetaFromState(state),
                     new ModelResourceLocation(block.getRegistryName(),
-                            MetaBlocks.statePropertiesToString(state.getProperties())));
+                            statePropertiesToString(state.getProperties())));
         }
     }
 

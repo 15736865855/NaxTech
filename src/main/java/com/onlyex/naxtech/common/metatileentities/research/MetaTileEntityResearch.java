@@ -4,7 +4,7 @@ import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Matrix4;
 import com.onlyex.naxtech.api.capability.research.rwu.*;
-import com.onlyex.naxtech.api.capability.research.IResearchHatch;
+import com.onlyex.naxtech.api.capability.research.rwu.IResearchHatch;
 
 import gregtech.api.GTValues;
 import gregtech.api.gui.ModularUI;
