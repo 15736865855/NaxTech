@@ -3,6 +3,7 @@ package com.onlyex.naxtech.common.metatileentities;
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtils;
+import com.onlyex.naxtech.common.metatileentities.hatch.research.MetaTileEntityResearchComputationHatch;
 import com.onlyex.naxtech.common.metatileentities.module.hpca.MetaTileEntityHPCAAdvancedComputation;
 import com.onlyex.naxtech.common.metatileentities.module.hpca.MetaTileEntityHPCAAdvancedCooler;
 import com.onlyex.naxtech.common.metatileentities.multi.dimension.MetaTileEntityQuantumForceTransformer;
@@ -48,7 +49,8 @@ public class NTMetaTileEntities {
 
     //仓口-hatch
     //-research
-
+    public static MetaTileEntityResearchComputationHatch RESEARCH_COMPUTATION_HATCH_RECEIVER;
+    public static MetaTileEntityResearchComputationHatch RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
 
 
 
@@ -169,6 +171,11 @@ public class NTMetaTileEntities {
                 new MetaTileEntityHPCAAdvancedCooler(naxId("hpca.ultimate_cooler_component"),  false, true));
 
 
+        //
+        RESEARCH_COMPUTATION_HATCH_RECEIVER = registerMetaTileEntity(1409,
+                new MetaTileEntityResearchComputationHatch(naxId("research_computation_hatch.receiver"), false));
+        RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerMetaTileEntity(1410,
+                new MetaTileEntityResearchComputationHatch(naxId("research_computation_hatch.transmitter"), true));
 
 
 

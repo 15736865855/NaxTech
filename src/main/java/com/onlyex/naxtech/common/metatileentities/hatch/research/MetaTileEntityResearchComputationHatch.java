@@ -49,24 +49,31 @@ public class MetaTileEntityResearchComputationHatch extends MetaTileEntityMultib
     }
 
     @Override
-    public int requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
-        seen.add(this);
-        var controller = getController();
-        if (controller == null || !controller.isStructureFormed()) return 0;
+    public int requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seenProviders) {
+        seenProviders.add(this);
+        var multiblockController = getController();
+
+        if (multiblockController == null || !multiblockController.isStructureFormed()) {
+            return 0; // 如果控制器为空或者未形成结构，则返回0
+        }
+
         if (isTransmitter()) {
-            // Ask the Multiblock controller, which *should* be an IResearchComputationProvider
-            if (controller instanceof IResearchComputationProvider provider) {
-                return provider.requestRWUt(rwut, simulate, seen);
+            // 向多方块控制器发送请求RWUt值的请求
+            if (multiblockController instanceof IResearchComputationProvider computationProvider) {
+                return computationProvider.requestRWUt(rwut, simulate, seenProviders);
             } else {
                 NTLog.logger.error("Computation Transmission Hatch could not request RWU/t from its controller!");
                 return 0;
             }
         } else {
-            // Ask the attached Transmitter hatch, if it exists
-            IResearchComputationProvider provider = getResearchNetProvider();
-            if (provider == null) return 0;
-            return provider.requestRWUt(rwut, simulate, seen);
+            // 尝试获取连接的发送器对象，如果存在则调用其方法
+            IResearchComputationProvider computationProvider = getResearchNetProvider();
+            if (computationProvider != null) {
+                return computationProvider.requestRWUt(rwut, simulate, seenProviders);
+            }
         }
+
+        return 0; // 默认返回0
     }
 
     @Override
