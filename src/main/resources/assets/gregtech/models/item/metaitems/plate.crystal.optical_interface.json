@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "naxtech:items/wrap/metaitems/plate.crystal.optical_interface"
+    "layer0": "naxtech:items/metaitems/plate.crystal.optical_interface"
   }
 }

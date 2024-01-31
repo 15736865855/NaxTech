@@ -541,7 +541,7 @@ public class NTMetaItem1 extends StandardMetaItem {
         SUPRACAUSAL_MEMORY_CHIP = this.addItem(1420, "plate.supracausal_memory_chip");
 
         //2000~
-        PROSPECTOR_ZPM = this.addItem(20000, "prospector.zpm")
+        PROSPECTOR_ZPM = this.addItem(2000, "prospector.zpm")
                 .addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4_000_000_000L, 7),
                         new ProspectorScannerBehavior(7, 7)})
                 .setMaxStackSize(1)
