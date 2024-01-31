@@ -198,7 +198,7 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_GOOWARE_CIRCUIT;
 
     public static MetaItem<?>.MetaValueItem WRAP_CRYSTAL_SYSTEM_ON_CHIP;
-    public static MetaItem<?>.MetaValueItem WRAP_RAW_ADVANCED_CRYSTAL_CHIP;
+    public static MetaItem<?>.MetaValueItem WRAP_CRYSTAL_ADVANCED_RAW_CHIP;
 
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_CAPACITOR;
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_DIODE;
@@ -234,8 +234,10 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_CIRCUIT;
     public static MetaItem<?>.MetaValueItem WRAP_COSMIC_CPU_CHIP;
     public static MetaItem<?>.MetaValueItem WRAP_COSMIC_MEMORY_CHIP;
-
-
+    public static MetaItem<?>.MetaValueItem WRAP_CRYSTAL_OPTICAL_RAW_CHIP;
+    public static MetaItem<?>.MetaValueItem WRAP_CRYSTAL_SPINTRONIC_RAW_CHIP;
+    public static MetaItem<?>.MetaValueItem WRAP_CRYSTAL_COSMIC_RAW_CHIP;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_MEMORY_CHIP;
 
 
 
@@ -315,8 +317,11 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem STATION_MKIII;
     public static MetaItem<?>.MetaValueItem STATION_MKIV;
     public static MetaItem<?>.MetaValueItem STATION_MKV;
-    public static MetaItem<?>.MetaValueItem RAW_ADVANCED_CRYSTAL_CHIP;
-
+    public static MetaItem<?>.MetaValueItem CRYSTAL_ADVANCED_RAW_CHIP;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_OPTICAL_RAW_CHIP;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SPINTRONIC_RAW_CHIP;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_COSMIC_RAW_CHIP;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_OPTICAL_INTERFACE_PLATE;
     //  Cosmic Components
     public static MetaItem<?>.MetaValueItem COSMIC_INFORMATION_MODULE;
     public static MetaItem<?>.MetaValueItem HOLOGRAPHIC_INFORMATION_IMC;
@@ -368,6 +373,7 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem COSMIC_CPU;
     public static MetaItem<?>.MetaValueItem COSMIC_CPU_CHIP;
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CHIP;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_MEMORY_CHIP;
 
     //
     public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;

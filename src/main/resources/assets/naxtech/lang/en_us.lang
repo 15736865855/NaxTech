@@ -321,8 +321,8 @@ metaitem.wrap.board.gooware.name=
 metaitem.wrap.board.gooware.tooltip=
 metaitem.wrap.circuit_board.gooware.name=
 metaitem.wrap.circuit_board.gooware.tooltip=
-metaitem.wrap.raw_advanced_crystal_chip.name=
-metaitem.wrap.raw_advanced_crystal_chip.tooltip=
+metaitem.wrap.crystal.advanced_raw_chip.name=
+metaitem.wrap.crystal.advanced_raw_chip.tooltip=
 
 metaitem.wrap.spintronic_smd.capacitor.name=
 metaitem.wrap.spintronic_smd.capacitor.tooltip=
@@ -393,8 +393,15 @@ metaitem.wrap.cosmic_cpu_chip.name=
 metaitem.wrap.cosmic_cpu_chip.tooltip=
 metaitem.wrap.cosmic_memory_chip.name=
 metaitem.wrap.cosmic_memory_chip.tooltip=
+metaitem.wrap.supracausal_memory_chip.name=
+metaitem.wrap.supracausal_memory_chip.tooltip=
 
-
+metaitem.wrap.crystal.optical_raw_chip.name=
+metaitem.wrap.crystal.optical_raw_chip.tooltip=
+metaitem.wrap.crystal.spintronic_raw_chip.name=
+metaitem.wrap.crystal.spintronic_raw_chip.tooltip=
+metaitem.wrap.crystal.cosmic_raw_chip.name=
+metaitem.wrap.crystal.cosmic_raw_chip.tooltip=
 
 #   Biological Components
 metaitem.biological.components.electrochemical_gradient_recorder.name=Electrochemical Gradient Recorder
@@ -543,6 +550,8 @@ metaitem.wafer.cubic_zirconia.europium.name=Europium-doped Cubic Zirconia Wafer
 metaitem.wafer.cubic_zirconia.europium.tooltip=Raw Crystal
 metaitem.wafer.crystal.interface.name=Crystal Interface Wafer
 metaitem.wafer.crystal.interface.tooltip=Raw Crystal Interface
+metaitem.plate.crystal.optical_interface.name=
+metaitem.plate.crystal.optical_interface.tooltip=
 metaitem.plate.crystal.interface.name=Crystal Interface Chip
 metaitem.plate.crystal.interface.tooltip=Crystal Interface
 metaitem.engraved.crystal_chip.ruby.name=Engraved Ruby Crystal Chip
@@ -597,9 +606,14 @@ metaitem.station_5.name=Hi-Computation Station MK-V Finaltype
 metaitem.station_5.tooltip=§5Paradox§r
 
 #
-metaitem.crystal.raw_advanced_chip.name=Raw Advanced Crystal Chip
-metaitem.crystal.raw_advanced_chip.tooltip=Raw Advanced Crystal Processor
-
+metaitem.crystal.advanced_raw_chip.name=Raw Advanced Crystal Chip
+metaitem.crystal.advanced_raw_chip.tooltip=Raw Advanced Crystal Processor
+metaitem.crystal.optical_raw_chip.name=
+metaitem.crystal.optical_raw_chip.tooltip=
+metaitem.crystal.spintronic_raw_chip.name=
+metaitem.crystal.spintronic_raw_chip.tooltip=
+metaitem.crystal.cosmic_raw_chip.name=
+metaitem.crystal.cosmic_raw_chip.tooltip=
 
 metaitem.protonated_fullerene_sieving_matrix.name=
 metaitem.saturated_fullerene_sieving_matrix.name=
@@ -715,6 +729,9 @@ metaitem.plate.cosmic_cpu_chip.name=
 metaitem.plate.cosmic_cpu_chip.tooltip=
 metaitem.plate.cosmic_memory_chip.name=
 metaitem.plate.cosmic_memory_chip.tooltip=
+metaitem.plate.supracausal_memory_chip.name=
+metaitem.plate.supracausal_memory_chip.tooltip=
+
 # SMDs
 metaitem.component.optical_smd.capacitor.name=Optical Integrator
 metaitem.component.optical_smd.capacitor.tooltip=Optoelectronic Capacitor

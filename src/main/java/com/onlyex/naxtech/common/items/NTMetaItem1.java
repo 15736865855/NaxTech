@@ -33,30 +33,54 @@ public class NTMetaItem1 extends StandardMetaItem {
 
         //ID 0~19
 
-        GOOWARE_PROCESSOR = this.addItem(0, "circuit.gooware_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM);
-        GOOWARE_ASSEMBLY = this.addItem(1, "circuit.gooware_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
-        GOOWARE_COMPUTER = this.addItem(2, "circuit.gooware_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        GOOWARE_MAINFRAME = this.addItem(3, "circuit.gooware_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
+        GOOWARE_PROCESSOR = this.addItem(0, "circuit.gooware_processor")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM);
+        GOOWARE_ASSEMBLY = this.addItem(1, "circuit.gooware_assembly")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
+        GOOWARE_COMPUTER = this.addItem(2, "circuit.gooware_computer")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
+        GOOWARE_MAINFRAME = this.addItem(3, "circuit.gooware_mainframe")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
 
-        OPTICAL_PROCESSOR = this.addItem(4,"circuit.optical_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
-        OPTICAL_ASSEMBLY = this.addItem(5,"circuit.optical_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        OPTICAL_COMPUTER = this.addItem(6,"circuit.optical_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        OPTICAL_MAINFRAME = this.addItem(7,"circuit.optical_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
+        OPTICAL_PROCESSOR = this.addItem(4,"circuit.optical_processor")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
+        OPTICAL_ASSEMBLY = this.addItem(5,"circuit.optical_assembly")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
+        OPTICAL_COMPUTER = this.addItem(6,"circuit.optical_computer")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
+        OPTICAL_MAINFRAME = this.addItem(7,"circuit.optical_mainframe")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
 
-        SPINTRONIC_PROCESSOR = this.addItem(8, "circuit.spintronic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        SPINTRONIC_ASSEMBLY = this.addItem(9, "circuit.spintronic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        SPINTRONIC_COMPUTER = this.addItem(10, "circuit.spintronic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        SPINTRONIC_MAINFRAME = this.addItem(11, "circuit.spintronic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
+        SPINTRONIC_PROCESSOR = this.addItem(8, "circuit.spintronic_processor")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
+        SPINTRONIC_ASSEMBLY = this.addItem(9, "circuit.spintronic_assembly")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
+        SPINTRONIC_COMPUTER = this.addItem(10, "circuit.spintronic_computer")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
+        SPINTRONIC_MAINFRAME = this.addItem(11, "circuit.spintronic_mainframe")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
 
-        COSMIC_PROCESSOR = this.addItem(12, "circuit.cosmic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        COSMIC_ASSEMBLY = this.addItem(13, "circuit.cosmic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        COSMIC_COMPUTER = this.addItem(14, "circuit.cosmic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
-        COSMIC_MAINFRAME = this.addItem(15, "circuit.cosmic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
+        COSMIC_PROCESSOR = this.addItem(12, "circuit.cosmic_processor")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
+        COSMIC_ASSEMBLY = this.addItem(13, "circuit.cosmic_assembly")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
+        COSMIC_COMPUTER = this.addItem(14, "circuit.cosmic_computer")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
+        COSMIC_MAINFRAME = this.addItem(15, "circuit.cosmic_mainframe")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
 
-        SUPRACAUSAL_PROCESSOR = this.addItem(16, "circuit.supracausal_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        SUPRACAUSAL_ASSEMBLY = this.addItem(17, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        SUPRACAUSAL_COMPUTER = this.addItem(18, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        SUPRACAUSAL_MAINFRAME = this.addItem(19, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_PROCESSOR = this.addItem(16, "circuit.supracausal_processor")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV)
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_ASSEMBLY = this.addItem(17, "circuit.supracausal_assembly")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV)
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_COMPUTER = this.addItem(18, "circuit.supracausal_computer")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV)
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_MAINFRAME = this.addItem(19, "circuit.supracausal_mainframe")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX)
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
 
         //ID 20~59
         EU_DOPED_CUBIC_ZIRCONIA_BOULE = this.addItem(20, "boule.cubic_zirconia.europium");
@@ -80,17 +104,25 @@ public class NTMetaItem1 extends StandardMetaItem {
         STATION_MKIII = this.addItem(38,"station_3");
         STATION_MKIV = this.addItem(39,"station_4");
         STATION_MKV = this.addItem(40,"station_5");
-        RAW_ADVANCED_CRYSTAL_CHIP = this.addItem(41,"crystal.raw_advanced_chip");
-        GRINDBALL_SOAPSTONE = this.addItem(42, "mill.grindball_soapstone").setMaxStackSize(1).addComponents(new MillBallBehavior());
-        GRINDBALL_ALUMINIUM = this.addItem(43, "mill.grindball_aluminium").setMaxStackSize(1).addComponents(new MillBallBehavior());
-        NULL = this.addItem(44, "null").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.MASK_INGOT, 1));
+        CRYSTAL_ADVANCED_RAW_CHIP = this.addItem(41,"crystal.advanced_raw_chip");
+        GRINDBALL_SOAPSTONE = this.addItem(42, "mill.grindball_soapstone")
+                .setMaxStackSize(1).addComponents(new MillBallBehavior());
+        GRINDBALL_ALUMINIUM = this.addItem(43, "mill.grindball_aluminium")
+                .setMaxStackSize(1).addComponents(new MillBallBehavior());
+        NULL = this.addItem(44, "null")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.MASK_INGOT, 1));
         PINE_CONE=this.addItem(45, "item.pine_cone");
         PINE_FRAGMENT=this.addItem(46, "item.pine_fragment");
-        BIOLOGY_INTEGRATED_CIRCUIT = this.addItem(47, "item.biology_integrated_circuit").addComponents(new IntBcircuitBehavior());
-        CHROMATIC_LENS = this.addItem(48, "chromatic_lens").addOreDict("craftingLensChromatic");
+        BIOLOGY_INTEGRATED_CIRCUIT = this.addItem(47, "item.biology_integrated_circuit")
+                .addComponents(new IntBcircuitBehavior());
+        CHROMATIC_LENS = this.addItem(48, "chromatic_lens")
+                .addOreDict("craftingLensChromatic");
         QCD_PROTECTIVE_PLATING = this.addItem(49, "qcd_protective_plating");
         COSMIC_FABRIC = this.addItem(50, "cosmic_fabric");
-
+        CRYSTAL_OPTICAL_RAW_CHIP = this.addItem(51,"crystal.optical_raw_chip");
+        CRYSTAL_SPINTRONIC_RAW_CHIP = this.addItem(52,"crystal.spintronic_raw_chip");
+        CRYSTAL_COSMIC_RAW_CHIP = this.addItem(53,"crystal.cosmic_raw_chip");
+        CRYSTAL_OPTICAL_INTERFACE_PLATE = this.addItem(54,"plate.crystal.optical_interface");
 
 
         //ID 60~
@@ -168,17 +200,26 @@ public class NTMetaItem1 extends StandardMetaItem {
         PETRI_DISH_STERILE = this.addItem(182,"petri_dish.sterile");
         PETRI_DISH_FERTILE = this.addItem(183,"petri_dish.fertile");
         BARNARDA_C_BASE = this.addItem(184, "alga.barnarda_c.base");
-        BARNARDA_C_CHLORELLA = this.addItem(185, "alga.barnarda_c.chlorella").addOreDict("dyePurple");
-        BARNARDA_C_BRYOPSIS_HYPNOIDES = this.addItem(186, "alga.barnarda_c.bryopsis_hypnoides").addOreDict("dyeGreen");
-        BARNARDA_C_ZOOXANTHELLAE = this.addItem(187, "alga.barnarda_c.zooxanthellae").addOreDict("dyeOrange");
+        BARNARDA_C_CHLORELLA = this.addItem(185, "alga.barnarda_c.chlorella")
+                .addOreDict("dyePurple");
+        BARNARDA_C_BRYOPSIS_HYPNOIDES = this.addItem(186, "alga.barnarda_c.bryopsis_hypnoides")
+                .addOreDict("dyeGreen");
+        BARNARDA_C_ZOOXANTHELLAE = this.addItem(187, "alga.barnarda_c.zooxanthellae")
+                .addOreDict("dyeOrange");
         TAU_CETI_F_BASE = this.addItem(188, "alga.tau_ceti_f.base");
-        TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(189, "alga.tau_ceti_f.scenedesmus_obliquus").addOreDict("dyeLime");
-        TAU_CETI_F_PHAEOPHYTA = this.addItem(190, "alga.tau_ceti_f.phaeophyta").addOreDict("dyeBrown");
-        TAU_CETI_F_SPIRULINA = this.addItem(191, "alga.tau_ceti_f.spirulina").addOreDict("dyeBlue");
+        TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(189, "alga.tau_ceti_f.scenedesmus_obliquus")
+                .addOreDict("dyeLime");
+        TAU_CETI_F_PHAEOPHYTA = this.addItem(190, "alga.tau_ceti_f.phaeophyta")
+                .addOreDict("dyeBrown");
+        TAU_CETI_F_SPIRULINA = this.addItem(191, "alga.tau_ceti_f.spirulina")
+                .addOreDict("dyeBlue");
         PROXIMA_B_BASE = this.addItem(192, "alga.proxima_b.base");
-        PROXIMA_B_CONCHOSPORE = this.addItem(193, "alga.proxima_b.conchospore").addOreDict("dyeRed");
-        PROXIMA_B_POLYSIPHONIA_SENTICULOSA = this.addItem(194, "alga.proxima_b.polysiphonia_senticulosa").addOreDict("dyeYellow");
-        PROXIMA_B_SPIROGYRA = this.addItem(195, "alga.proxima_b.spirogyra").addOreDict("dyeGray");
+        PROXIMA_B_CONCHOSPORE = this.addItem(193, "alga.proxima_b.conchospore")
+                .addOreDict("dyeRed");
+        PROXIMA_B_POLYSIPHONIA_SENTICULOSA = this.addItem(194, "alga.proxima_b.polysiphonia_senticulosa")
+                .addOreDict("dyeYellow");
+        PROXIMA_B_SPIROGYRA = this.addItem(195, "alga.proxima_b.spirogyra")
+                .addOreDict("dyeGray");
         BIO_DISH_PETRI_DISH_STERILE = this.addItem(196,"petri_dish.bio_dish.sterile");
         BIO_DISH_PETRI_DISH_FERTILE = this.addItem(197,"petri_dish.bio_dish.fertile");
 
@@ -211,7 +252,8 @@ public class NTMetaItem1 extends StandardMetaItem {
         CONTAINED_HIGH_DENSITY_PROTONIC_MATTER = this.addItem(222, "contained_high_density_protonic_matter");
         CONTAINED_EXOTIC_MATTER = this.addItem(223, "contained_exotic_matter");
         CHARGED_TRIPLET_NEUTRONIUM_SPHERE = this.addItem(224, "charged_triplet_neutronium_sphere");
-        COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL = this.addItem(225, "cosmic_fabric_plasma_containment_cell").addComponents(new TooltipBehavior((lines) -> {
+        COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL = this.addItem(225, "cosmic_fabric_plasma_containment_cell")
+                .addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1"));
             lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2"));
             lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3"));
@@ -220,23 +262,40 @@ public class NTMetaItem1 extends StandardMetaItem {
 
 
         //240~256 singularity  //.addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, false))
-        ETERNAL_SINGULARITY = this.addItem(240, "singularity.eternal_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.ETERNAL_SINGULARITY, 1));
-        GASTRONOMIC_SINGULARITY = this.addItem(241, "singularity.gastronomic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        GALACTIC_SINGULARITY = this.addItem(242, "singularity.galactic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        NATURAL_SINGULARITY = this.addItem(243, "singularity.natural_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        MAGICAL_SINGULARITY = this.addItem(244, "singularity.magical_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        FANTASTIC_SINGULARITY = this.addItem(245, "singularity.fantastic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        CHEMICAL_SINGULARITY = this.addItem(246, "singularity.chemical_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        THERMIONIC_SINGULARITY = this.addItem(247, "singularity.thermionic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        PROTONIC_SINGULARITY = this.addItem(248, "singularity.protonic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        PLATONIC_SINGULARITY = this.addItem(249, "singularity.platonic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        CUBIC_SINGULARITY = this.addItem(250, "singularity.cubic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        ASTRONOMIC_SINGULARITY = this.addItem(251, "singularity.astronomic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        TERRIFIC_SINGULARITY = this.addItem(252, "singularity.terrific_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        INTRINSIC_SINGULARITY = this.addItem(253, "singularity.intrinsic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        QUADRATIC_SINGULARITY = this.addItem(254, "singularity.quadratic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        COSMIC_SINGULARITY = this.addItem(255, "singularity.cosmic_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
-        IMPOSSIBLE_SINGULARITY = this.addItem(256, "singularity.impossible_singularity").addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        ETERNAL_SINGULARITY = this.addItem(240, "singularity.eternal_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.ETERNAL_SINGULARITY, 1));
+        GASTRONOMIC_SINGULARITY = this.addItem(241, "singularity.gastronomic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        GALACTIC_SINGULARITY = this.addItem(242, "singularity.galactic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        NATURAL_SINGULARITY = this.addItem(243, "singularity.natural_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        MAGICAL_SINGULARITY = this.addItem(244, "singularity.magical_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        FANTASTIC_SINGULARITY = this.addItem(245, "singularity.fantastic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        CHEMICAL_SINGULARITY = this.addItem(246, "singularity.chemical_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        THERMIONIC_SINGULARITY = this.addItem(247, "singularity.thermionic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        PROTONIC_SINGULARITY = this.addItem(248, "singularity.protonic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        PLATONIC_SINGULARITY = this.addItem(249, "singularity.platonic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        CUBIC_SINGULARITY = this.addItem(250, "singularity.cubic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        ASTRONOMIC_SINGULARITY = this.addItem(251, "singularity.astronomic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        TERRIFIC_SINGULARITY = this.addItem(252, "singularity.terrific_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        INTRINSIC_SINGULARITY = this.addItem(253, "singularity.intrinsic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        QUADRATIC_SINGULARITY = this.addItem(254, "singularity.quadratic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        COSMIC_SINGULARITY = this.addItem(255, "singularity.cosmic_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
+        IMPOSSIBLE_SINGULARITY = this.addItem(256, "singularity.impossible_singularity")
+                .addComponents(new CosmicRenderItemBehavior(() -> NTTextures.COMBINED_SINGULARITY, 1));
 
         //257~
 
@@ -290,24 +349,33 @@ public class NTMetaItem1 extends StandardMetaItem {
         COSMIC_DIODE = this.addItem(433, "component.cosmic_smd.diode");
         COSMIC_INDUCTOR = this.addItem(434, "component.cosmic_smd.inductor");
 
-        SUPRACAUSAL_TRANSISTOR = this.addItem(435, "component.supracausal_smd.transistor").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        SUPRACAUSAL_RESISTOR = this.addItem(436, "component.supracausal_smd.resistor").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        SUPRACAUSAL_CAPACITOR = this.addItem(437, "component.supracausal_smd.capacitor").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        SUPRACAUSAL_DIODE = this.addItem(438, "component.supracausal_smd.diode").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        SUPRACAUSAL_INDUCTOR = this.addItem(439, "component.supracausal_smd.inductor").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_TRANSISTOR = this.addItem(435, "component.supracausal_smd.transistor")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_RESISTOR = this.addItem(436, "component.supracausal_smd.resistor")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_CAPACITOR = this.addItem(437, "component.supracausal_smd.capacitor")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_DIODE = this.addItem(438, "component.supracausal_smd.diode")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SUPRACAUSAL_INDUCTOR = this.addItem(439, "component.supracausal_smd.inductor")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
 
         //500~
         //  Cosmic Components
-        COSMIC_INFORMATION_MODULE = this.addItem(500, "component.cosmic.information_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        HOLOGRAPHIC_INFORMATION_IMC = this.addItem(501, "component.cosmic.holographic_imc").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        COSMIC_INFORMATION_MODULE = this.addItem(500, "component.cosmic.information_module")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        HOLOGRAPHIC_INFORMATION_IMC = this.addItem(501, "component.cosmic.holographic_imc")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
         CLADDED_OPTICAL_FIBER_CORE = this.addItem(502, "component.cosmic.cladded_optical_fiber_core");
         CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT = this.addItem(503, "component.cosmic.closed_timelike_curve_computational_unit");
         CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT = this.addItem(504, "component.cosmic.closed_timelike_curve_guidance_unit");
 
 
         //  Supracausal Components
-        SPACETIME_CONDENSER = this.addItem(510, "component.supracausal.spacetime_condenser").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
-        LIGHT_CONE_MODULE = this.addItem(511, "component.supracausal.light_cone_module").addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        SPACETIME_CONDENSER = this.addItem(510, "component.supracausal.spacetime_condenser")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
+        LIGHT_CONE_MODULE = this.addItem(511, "component.supracausal.light_cone_module")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> NTTextures.HALO, true));
         EXCITATION_MAINTAINER = this.addItem(512, "component.spintronic.excitation_maintainer");
 
 
@@ -402,7 +470,7 @@ public class NTMetaItem1 extends StandardMetaItem {
         WRAP_GOOWARE_BOARD = this.addItem(1276, "wrap.board.gooware");
         WRAP_GOOWARE_CIRCUIT = this.addItem(1277, "wrap.circuit_board.gooware");
         WRAP_CRYSTAL_SYSTEM_ON_CHIP = this.addItem(1278, "wrap.crystal_system_on_chip");
-        WRAP_RAW_ADVANCED_CRYSTAL_CHIP = this.addItem(1279, "wrap.raw_advanced_crystal_chip");
+        WRAP_CRYSTAL_ADVANCED_RAW_CHIP = this.addItem(1279, "wrap.crystal.advanced_raw_chip");
 
         WRAP_SPINTRONIC_CAPACITOR = this.addItem(1280, "wrap.spintronic_smd.capacitor");
         WRAP_SPINTRONIC_DIODE = this.addItem(1281, "wrap.spintronic_smd.diode");
@@ -442,8 +510,10 @@ public class NTMetaItem1 extends StandardMetaItem {
 
         WRAP_COSMIC_CPU_CHIP = this.addItem(1310, "wrap.cosmic_cpu_chip");
         WRAP_COSMIC_MEMORY_CHIP = this.addItem(1311, "wrap.cosmic_memory_chip");
-
-
+        WRAP_CRYSTAL_OPTICAL_RAW_CHIP = this.addItem(1312,"wrap.crystal.optical_raw_chip");
+        WRAP_CRYSTAL_SPINTRONIC_RAW_CHIP = this.addItem(1313,"wrap.crystal.spintronic_raw_chip");
+        WRAP_CRYSTAL_COSMIC_RAW_CHIP = this.addItem(1314,"wrap.crystal.cosmic_raw_chip");
+        WRAP_SUPRACAUSAL_MEMORY_CHIP = this.addItem(1315,"wrap.supracausal_memory_chip");
 
 
 
@@ -468,6 +538,7 @@ public class NTMetaItem1 extends StandardMetaItem {
         COSMIC_CPU = this.addItem(1417, "plate.cosmic_cpu");
         COSMIC_CPU_CHIP = this.addItem(1418, "plate.cosmic_cpu_chip");
         COSMIC_MEMORY_CHIP = this.addItem(1419, "plate.cosmic_memory_chip");
+        SUPRACAUSAL_MEMORY_CHIP = this.addItem(1420, "plate.supracausal_memory_chip");
 
         //2000~
         PROSPECTOR_ZPM = this.addItem(20000, "prospector.zpm")
@@ -488,8 +559,10 @@ public class NTMetaItem1 extends StandardMetaItem {
                 .setMaxStackSize(1)
                 .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
-        DEBUG_STRUCTURE_WRITER = this.addItem(9999, "debug.structure_writer").addComponents(StructureWriteBehavior.INSTANCE);
-        DEBUG_STRUCTURE_BUILDER = this.addItem(10000, "debug.structure_builder").addComponents(new MultiblockBuilderBehavior());
+        DEBUG_STRUCTURE_WRITER = this.addItem(9999, "debug.structure_writer")
+                .addComponents(StructureWriteBehavior.INSTANCE);
+        DEBUG_STRUCTURE_BUILDER = this.addItem(10000, "debug.structure_builder")
+                .addComponents(new MultiblockBuilderBehavior());
 
 
 

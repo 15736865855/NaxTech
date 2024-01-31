@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "naxtech:items/metaitems/crystal.spintronic_raw_chip",
+    "layer1": "naxtech:items/wrap_overlay"
+  }
+}

@@ -342,8 +342,8 @@ metaitem.wrap.board.gooware.name=封装生物电路基板
 metaitem.wrap.board.gooware.tooltip=生物基因突变的电路基板
 metaitem.wrap.circuit_board.gooware.name=封装超生物突变电路基板
 metaitem.wrap.circuit_board.gooware.tooltip=生物基因突变的电路基板
-metaitem.wrap.raw_advanced_crystal_chip.name=封装先进晶体芯片原料
-metaitem.wrap.raw_advanced_crystal_chip.tooltip=先进晶体处理器的原料
+metaitem.wrap.crystal.advanced_raw_chip.name=封装先进晶体芯片原料
+metaitem.wrap.crystal.advanced_raw_chip.tooltip=先进晶体处理器的原料
 
 metaitem.wrap.spintronic_smd.capacitor.name=封装超级电容
 metaitem.wrap.spintronic_smd.capacitor.tooltip=自旋电子学电容器
@@ -415,8 +415,15 @@ metaitem.wrap.cosmic_cpu_chip.name=封装寰宇计算中央处理器（CCCPU）�
 metaitem.wrap.cosmic_cpu_chip.tooltip=寰宇计算中央处理器原料
 metaitem.wrap.cosmic_memory_chip.name=封装寰宇计算中央处理器（CCCPU）晶片
 metaitem.wrap.cosmic_memory_chip.tooltip=寰宇计算中央处理器
+metaitem.wrap.supracausal_memory_chip.name=维度因果循环存储器（DCRAM）晶片
+metaitem.wrap.supracausal_memory_chip.tooltip=维度因果循环存储器
 
-
+metaitem.wrap.crystal.optical_raw_chip.name=封装光学晶体芯片原料
+metaitem.wrap.crystal.optical_raw_chip.tooltip=光学晶体处理器的原料
+metaitem.wrap.crystal.spintronic_raw_chip.name=封装自旋电子学晶体芯片原料
+metaitem.wrap.crystal.spintronic_raw_chip.tooltip=自旋电子学晶体处理器的原料
+metaitem.wrap.crystal.cosmic_raw_chip.name=封装寰宇晶体芯片原料
+metaitem.wrap.crystal.cosmic_raw_chip.tooltip=寰宇晶体处理器的原料
 
 #   Biological Components
 metaitem.biological.components.electrochemical_gradient_recorder.name=电化学梯度记录仪
@@ -599,6 +606,8 @@ metaitem.wafer.crystal.interface.name=晶振接口晶圆
 metaitem.wafer.crystal.interface.tooltip=原始水晶接口
 metaitem.plate.crystal.interface.name=晶振接口芯片
 metaitem.plate.crystal.interface.tooltip=晶振接口
+metaitem.plate.crystal.optical_interface.name=光学晶振接口芯片
+metaitem.plate.crystal.optical_interface.tooltip=光学晶振接口
 metaitem.engraved.crystal_chip.ruby.name=刻蚀红水晶芯片
 metaitem.engraved.crystal_chip.ruby.tooltip=控制红宝石
 metaitem.engraved.crystal_chip.sapphire.name=刻蚀蓝水晶芯片
@@ -652,8 +661,17 @@ metaitem.station_5.name=高算力工作站 MK-V
 metaitem.station_5.tooltip=§5佯谬§r
 
 #
-metaitem.crystal.raw_advanced_chip.name=先进晶体芯片原料
-metaitem.crystal.raw_advanced_chip.tooltip=先进晶体处理器的原料
+metaitem.crystal.advanced_raw_chip.name=先进晶体芯片原料
+metaitem.crystal.advanced_raw_chip.tooltip=先进晶体处理器的原料
+metaitem.crystal.optical_raw_chip.name=光学晶体芯片原料
+metaitem.crystal.optical_raw_chip.tooltip=光学晶体处理器的原料
+metaitem.crystal.spintronic_raw_chip.name=自旋电子学晶体芯片原料
+metaitem.crystal.spintronic_raw_chip.tooltip=自旋电子学晶体处理器的原料
+metaitem.crystal.cosmic_raw_chip.name=寰宇晶体芯片原料
+metaitem.crystal.cosmic_raw_chip.tooltip=寰宇晶体处理器的原料
+
+
+
 
 #  Cosmic Components
 metaitem.component.cosmic.information_module.name=宇宙信息承载模块
@@ -756,6 +774,8 @@ metaitem.plate.cosmic_cpu_chip.tooltip=寰宇计算中央处理器
 
 metaitem.plate.cosmic_memory_chip.name=世界线信息存储器（WLRAM）晶片
 metaitem.plate.cosmic_memory_chip.tooltip=世界线信息存储器
+metaitem.plate.supracausal_memory_chip.name=维度因果循环存储器（DCRAM）晶片
+metaitem.plate.supracausal_memory_chip.tooltip=维度因果循环存储器
 
 metaitem.component.spintronic_smd.capacitor.name=超级电容
 metaitem.component.spintronic_smd.capacitor.tooltip=自旋电子学电容器
