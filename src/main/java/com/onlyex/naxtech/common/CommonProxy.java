@@ -7,8 +7,8 @@ import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.common.items.NTToolItems;
-import com.onlyex.naxtech.common.pipelike.research.BlockResearchPipe;
-import com.onlyex.naxtech.common.pipelike.research.ItemBlockResearchPipe;
+import com.onlyex.naxtech.common.pipelike.research.block.*;
+import com.onlyex.naxtech.common.pipelike.research.item.*;
 import com.onlyex.naxtech.loaders.NTTRecipes;
 import com.onlyex.naxtech.loaders.formula.FormulaManager;
 import com.onlyex.naxtech.loaders.recipe.handlers.NTRecipeHandlerList;
@@ -63,6 +63,13 @@ public class CommonProxy {
         IForgeRegistry<Block> registry = event.getRegistry();
 
         for (BlockResearchPipe pipe : RESEARCH_PIPES) registry.register(pipe);
+        for (BlockGOResearchPipe pipe : GO_RESEARCH_PIPES) registry.register(pipe);
+        for (BlockOPResearchPipe pipe : OP_RESEARCH_PIPES) registry.register(pipe);
+        for (BlockSPResearchPipe pipe : SP_RESEARCH_PIPES) registry.register(pipe);
+        for (BlockCOResearchPipe pipe : CO_RESEARCH_PIPES) registry.register(pipe);
+        for (BlockSCAResearchPipe pipe : SCA_RESEARCH_PIPES) registry.register(pipe);
+        for (BlockSCHResearchPipe pipe : SCH_RESEARCH_PIPES) registry.register(pipe);
+        for (BlockSDIResearchPipe pipe : SDI_RESEARCH_PIPES) registry.register(pipe);
 
         registry.register(NT_WIRE_COIL);
         registry.register(BORON_SILICATE_GLASS_CASING);
@@ -93,6 +100,13 @@ public class CommonProxy {
         IForgeRegistry<Item> registry = event.getRegistry();
 
         for (BlockResearchPipe pipe : RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockResearchPipe::new));
+        for (BlockGOResearchPipe pipe : GO_RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockGOResearchPipe::new));
+        for (BlockOPResearchPipe pipe : OP_RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockOPResearchPipe::new));
+        for (BlockSPResearchPipe pipe : SP_RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockSPResearchPipe::new));
+        for (BlockCOResearchPipe pipe : CO_RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockCOResearchPipe::new));
+        for (BlockSCAResearchPipe pipe : SCA_RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockSCAResearchPipe::new));
+        for (BlockSCHResearchPipe pipe : SCH_RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockSCHResearchPipe::new));
+        for (BlockSDIResearchPipe pipe : SDI_RESEARCH_PIPES) registry.register(createItemBlock(pipe, ItemBlockSDIResearchPipe::new));
 
         registry.register(createItemBlock(NT_WIRE_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(BORON_SILICATE_GLASS_CASING, VariantItemBlock::new));

@@ -52,10 +52,23 @@ public class ResearchNetWalker extends PipeNetWalker<TileEntityResearchPipe> {
         }
 
         if (((ResearchNetWalker) root).routePath == null) {
-            if (neighbourTile.hasCapability(NTTileCapabilities.CAPABILITY_DATA_ACCESS,
-                    faceToNeighbour.getOpposite()) ||
-                    neighbourTile.hasCapability(NTTileCapabilities.CABABILITY_COMPUTATION_PROVIDER,
-                            faceToNeighbour.getOpposite())) {
+            if (neighbourTile.hasCapability(NTTileCapabilities.CABABILITY_RESEARCH_PROVIDER,
+                            faceToNeighbour.getOpposite()) ||
+                    neighbourTile.hasCapability(NTTileCapabilities.GO_CABABILITY_RESEARCH_PROVIDER,
+                            faceToNeighbour.getOpposite()) ||
+                    neighbourTile.hasCapability(NTTileCapabilities.OP_CABABILITY_RESEARCH_PROVIDER,
+                            faceToNeighbour.getOpposite()) ||
+                    neighbourTile.hasCapability(NTTileCapabilities.SP_CABABILITY_RESEARCH_PROVIDER,
+                            faceToNeighbour.getOpposite()) ||
+                    neighbourTile.hasCapability(NTTileCapabilities.CO_CABABILITY_RESEARCH_PROVIDER,
+                            faceToNeighbour.getOpposite()) ||
+                    neighbourTile.hasCapability(NTTileCapabilities.SCA_CABABILITY_RESEARCH_PROVIDER,
+                            faceToNeighbour.getOpposite()) ||
+                    neighbourTile.hasCapability(NTTileCapabilities.SCH_CABABILITY_RESEARCH_PROVIDER,
+                            faceToNeighbour.getOpposite()) ||
+                    neighbourTile.hasCapability(NTTileCapabilities.SDI_CABABILITY_RESEARCH_PROVIDER,
+                            faceToNeighbour.getOpposite())
+            ) {
                 ((ResearchNetWalker) root).routePath = new ResearchRoutePath(pipeTile, faceToNeighbour,
                         getWalkedBlocks());
                 stop();

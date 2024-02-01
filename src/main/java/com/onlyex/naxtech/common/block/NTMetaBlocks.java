@@ -14,9 +14,9 @@ import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransform
 import com.onlyex.naxtech.common.block.wood.BlockPineLeaves;
 import com.onlyex.naxtech.common.block.wood.BlockPineLog;
 import com.onlyex.naxtech.common.block.wood.BlockPineSapling;
-import com.onlyex.naxtech.common.pipelike.research.BlockResearchPipe;
+import com.onlyex.naxtech.common.pipelike.research.block.*;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
-import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
+import com.onlyex.naxtech.common.pipelike.research.tile.*;
 import gregtech.client.model.SimpleStateMapper;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -68,7 +68,13 @@ public class NTMetaBlocks {
 
 
     public static final BlockResearchPipe[] RESEARCH_PIPES = new BlockResearchPipe[ResearchPipeType.values().length];
-
+    public static final BlockGOResearchPipe[] GO_RESEARCH_PIPES = new BlockGOResearchPipe[ResearchPipeType.values().length];
+    public static final BlockOPResearchPipe[] OP_RESEARCH_PIPES = new BlockOPResearchPipe[ResearchPipeType.values().length];
+    public static final BlockSPResearchPipe[] SP_RESEARCH_PIPES = new BlockSPResearchPipe[ResearchPipeType.values().length];
+    public static final BlockCOResearchPipe[] CO_RESEARCH_PIPES = new BlockCOResearchPipe[ResearchPipeType.values().length];
+    public static final BlockSCAResearchPipe[] SCA_RESEARCH_PIPES = new BlockSCAResearchPipe[ResearchPipeType.values().length];
+    public static final BlockSCHResearchPipe[] SCH_RESEARCH_PIPES = new BlockSCHResearchPipe[ResearchPipeType.values().length];
+    public static final BlockSDIResearchPipe[] SDI_RESEARCH_PIPES = new BlockSDIResearchPipe[ResearchPipeType.values().length];
 
     public static final BlockPineLeaves PINE_LEAVES = new BlockPineLeaves();
     public static final BlockPineLog PINE_LOG = new BlockPineLog();
@@ -80,6 +86,41 @@ public class NTMetaBlocks {
             RESEARCH_PIPES[type.ordinal()] = new BlockResearchPipe(type);
             RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("research_pipe_%s", type.getName()));
             RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("research_pipe_%s", type.getName()));
+        }
+        for (ResearchPipeType type : ResearchPipeType.values()) {
+            GO_RESEARCH_PIPES[type.ordinal()] = new BlockGOResearchPipe(type);
+            GO_RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("go_research_pipe_%s", type.getName()));
+            GO_RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("go_research_pipe_%s", type.getName()));
+        }
+        for (ResearchPipeType type : ResearchPipeType.values()) {
+            OP_RESEARCH_PIPES[type.ordinal()] = new BlockOPResearchPipe(type);
+            OP_RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("op_research_pipe_%s", type.getName()));
+            OP_RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("op_research_pipe_%s", type.getName()));
+        }
+        for (ResearchPipeType type : ResearchPipeType.values()) {
+            SP_RESEARCH_PIPES[type.ordinal()] = new BlockSPResearchPipe(type);
+            SP_RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("sp_research_pipe_%s", type.getName()));
+            SP_RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("sp_research_pipe_%s", type.getName()));
+        }
+        for (ResearchPipeType type : ResearchPipeType.values()) {
+            CO_RESEARCH_PIPES[type.ordinal()] = new BlockCOResearchPipe(type);
+            CO_RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("co_research_pipe_%s", type.getName()));
+            CO_RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("co_research_pipe_%s", type.getName()));
+        }
+        for (ResearchPipeType type : ResearchPipeType.values()) {
+            SCA_RESEARCH_PIPES[type.ordinal()] = new BlockSCAResearchPipe(type);
+            SCA_RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("sca_research_pipe_%s", type.getName()));
+            SCA_RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("sca_research_pipe_%s", type.getName()));
+        }
+        for (ResearchPipeType type : ResearchPipeType.values()) {
+            SCH_RESEARCH_PIPES[type.ordinal()] = new BlockSCHResearchPipe(type);
+            SCH_RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("sch_research_pipe_%s", type.getName()));
+            SCH_RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("sch_research_pipe_%s", type.getName()));
+        }
+        for (ResearchPipeType type : ResearchPipeType.values()) {
+            SDI_RESEARCH_PIPES[type.ordinal()] = new BlockSDIResearchPipe(type);
+            SDI_RESEARCH_PIPES[type.ordinal()].setRegistryName(String.format("sdi_research_pipe_%s", type.getName()));
+            SDI_RESEARCH_PIPES[type.ordinal()].setTranslationKey(String.format("sdi_research_pipe_%s", type.getName()));
         }
 
 
@@ -122,11 +163,39 @@ public class NTMetaBlocks {
     }
     public static void registerTileEntity() {
         GameRegistry.registerTileEntity(TileEntityResearchPipe.class, naxId("research_pipe"));
+        GameRegistry.registerTileEntity(TileEntityGOResearchPipe.class, naxId("go_research_pipe"));
+        GameRegistry.registerTileEntity(TileEntityOPResearchPipe.class, naxId("op_research_pipe"));
+        GameRegistry.registerTileEntity(TileEntitySPResearchPipe.class, naxId("sp_research_pipe"));
+        GameRegistry.registerTileEntity(TileEntityCOResearchPipe.class, naxId("co_research_pipe"));
+        GameRegistry.registerTileEntity(TileEntitySCAResearchPipe.class, naxId("sca_research_pipe"));
+        GameRegistry.registerTileEntity(TileEntitySCHResearchPipe.class, naxId("sch_research_pipe"));
+        GameRegistry.registerTileEntity(TileEntitySDIResearchPipe.class, naxId("sdi_research_pipe"));
     }
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
 
         for (BlockResearchPipe pipe : RESEARCH_PIPES)
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
+                    stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
+        for (BlockGOResearchPipe pipe : GO_RESEARCH_PIPES)
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
+                    stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
+        for (BlockOPResearchPipe pipe : OP_RESEARCH_PIPES)
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
+                    stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
+        for (BlockSPResearchPipe pipe : SP_RESEARCH_PIPES)
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
+                    stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
+        for (BlockCOResearchPipe pipe : CO_RESEARCH_PIPES)
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
+                    stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
+        for (BlockSCAResearchPipe pipe : SCA_RESEARCH_PIPES)
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
+                    stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
+        for (BlockSCHResearchPipe pipe : SCH_RESEARCH_PIPES)
+            ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
+                    stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
+        for (BlockSDIResearchPipe pipe : SDI_RESEARCH_PIPES)
             ModelLoader.setCustomMeshDefinition(Item.getItemFromBlock(pipe),
                     stack -> ResearchPipeRenderer.INSTANCE.getModelLocation());
 
@@ -162,6 +231,27 @@ public class NTMetaBlocks {
         IStateMapper normalStateMapper;
         normalStateMapper = new SimpleStateMapper(ResearchPipeRenderer.INSTANCE.getModelLocation());
         for (BlockResearchPipe pipe : RESEARCH_PIPES) {
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
+        for (BlockGOResearchPipe pipe : GO_RESEARCH_PIPES) {
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
+        for (BlockOPResearchPipe pipe : OP_RESEARCH_PIPES) {
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
+        for (BlockSPResearchPipe pipe : SP_RESEARCH_PIPES) {
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
+        for (BlockCOResearchPipe pipe : CO_RESEARCH_PIPES) {
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
+        for (BlockSCAResearchPipe pipe : SCA_RESEARCH_PIPES) {
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
+        for (BlockSCHResearchPipe pipe : SCH_RESEARCH_PIPES) {
+            ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
+        }
+        for (BlockSDIResearchPipe pipe : SDI_RESEARCH_PIPES) {
             ModelLoader.setCustomStateMapper(pipe, normalStateMapper);
         }
     }

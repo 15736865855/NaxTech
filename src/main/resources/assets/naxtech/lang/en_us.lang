@@ -1400,6 +1400,8 @@ naxtech.multiblock.supra_chronal.research.usage=
 naxtech.multiblock.supra_dimension.research.max=
 naxtech.multiblock.supra_dimension.research.usage=
 
+naxtech.machine.research.bridge=
+
 naxtech.machine.research.upkeep_eut=
 naxtech.machine.research.max_eut=
 
@@ -1416,8 +1418,11 @@ naxtech.machine.supra_dimension.research.sdi_rwut=
 tile.research_pipe_normal.name=
 tile.research_pipe_normal.tooltip1=
 
+naxtech.machine.research_computation_hatch.receiver.name=
+naxtech.machine.research_computation_hatch.receiver.tooltip=
 
-
+naxtech.machine.research_computation_hatch.transmitter.name=
+naxtech.machine.research_computation_hatch.transmitter.tooltip=
 
 
 

@@ -3,13 +3,15 @@ package com.onlyex.naxtech.common.metatileentities.hatch.research;
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Matrix4;
+
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.research.IResearchComputationHatch;
-import com.onlyex.naxtech.api.capability.research.IResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.rwu.IResearchComputationHatch;
+import com.onlyex.naxtech.api.capability.hatch.research.rwu.IResearchComputationProvider;
 import com.onlyex.naxtech.api.metatileentity.multiblock.NTMultiblockAbility;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
+
 import gregtech.api.GTValues;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -17,11 +19,14 @@ import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockAbilityPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiblockPart;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+
 import net.minecraftforge.common.capabilities.Capability;
+
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -139,7 +144,7 @@ public class MetaTileEntityResearchComputationHatch extends MetaTileEntityMultib
         if (tileEntity == null) return null;
 
         if (tileEntity instanceof TileEntityResearchPipe) {
-            return tileEntity.getCapability(NTTileCapabilities.CABABILITY_COMPUTATION_PROVIDER,
+            return tileEntity.getCapability(NTTileCapabilities.CABABILITY_RESEARCH_PROVIDER,
                     getFrontFacing().getOpposite());
         }
         return null;
@@ -182,8 +187,8 @@ public class MetaTileEntityResearchComputationHatch extends MetaTileEntityMultib
 
     @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing side) {
-        if (side == getFrontFacing() && capability == NTTileCapabilities.CABABILITY_COMPUTATION_PROVIDER) {
-            return NTTileCapabilities.CABABILITY_COMPUTATION_PROVIDER.cast(this);
+        if (side == getFrontFacing() && capability == NTTileCapabilities.CABABILITY_RESEARCH_PROVIDER) {
+            return NTTileCapabilities.CABABILITY_RESEARCH_PROVIDER.cast(this);
         }
         return super.getCapability(capability, side);
     }

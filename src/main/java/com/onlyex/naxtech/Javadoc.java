@@ -22,6 +22,18 @@ OpV = 13
 MAX = 14
 */
 
+/*rwu
+*
+* 普通-1
+* 生物-gooware-2
+* 光学-optical-3
+* 自旋电子学-spintronic-4
+* 寰宇-cosmic-5
+* 超因果-supra_causal-6
+* 超时空-supra_chronal-7
+* 超维度-supra_dimension-8
+*/
+
 /*
   材料注册
   <p>

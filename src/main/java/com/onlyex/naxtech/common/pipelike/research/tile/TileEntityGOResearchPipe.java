@@ -2,12 +2,12 @@ package com.onlyex.naxtech.common.pipelike.research.tile;
 
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.rwu.IResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.gooware.IGOResearchComputationProvider;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
 import com.onlyex.naxtech.common.pipelike.research.net.WorldResearchPipeNet;
-import com.onlyex.naxtech.common.pipelike.research.net.handler.ResearchNetHandler;
+import com.onlyex.naxtech.common.pipelike.research.net.handler.GOResearchNetHandler;
 import gregtech.api.pipenet.tile.IPipeTile;
 import gregtech.api.pipenet.tile.TileEntityPipeBase;
 import gregtech.api.util.TaskScheduler;
@@ -22,13 +22,13 @@ import java.lang.ref.WeakReference;
 import java.util.Collection;
 import java.util.EnumMap;
 
-public class TileEntityResearchPipe extends TileEntityPipeBase<ResearchPipeType, ResearchPipeProperties> {
+public class TileEntityGOResearchPipe extends TileEntityPipeBase<ResearchPipeType, ResearchPipeProperties> {
 
-    private final EnumMap<EnumFacing, ResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
+    private final EnumMap<EnumFacing, GOResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
     // the OpticalNetHandler can only be created on the server, so we have an empty placeholder for the client
-    private final IResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
+    private final IGOResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
     private WeakReference<ResearchPipeNet> currentPipeNet = new WeakReference<>(null);
-    private ResearchNetHandler defaultHandler;
+    private GOResearchNetHandler defaultHandler;
     private int ticksActive = 0;
     private boolean isActive;
 
@@ -51,24 +51,24 @@ public class TileEntityResearchPipe extends TileEntityPipeBase<ResearchPipeType,
         ResearchPipeNet net = getResearchPipeNet();
         if (net == null) return;
         for (EnumFacing facing : EnumFacing.VALUES) {
-            handlers.put(facing, new ResearchNetHandler(net, this, facing));
+            handlers.put(facing, new GOResearchNetHandler(net, this, facing));
         }
-        defaultHandler = new ResearchNetHandler(net, this, null);
+        defaultHandler = new GOResearchNetHandler(net, this, null);
     }
 
     @Nullable
     @Override
     public <T> T getCapabilityInternal(Capability<T> capability, @Nullable EnumFacing facing) {
 
-        if (capability == NTTileCapabilities.CABABILITY_RESEARCH_PROVIDER) {
+        if (capability == NTTileCapabilities.GO_CABABILITY_RESEARCH_PROVIDER) {
             if (world.isRemote) {
-                return NTTileCapabilities.CABABILITY_RESEARCH_PROVIDER.cast(clientComputationHandler);
+                return NTTileCapabilities.GO_CABABILITY_RESEARCH_PROVIDER.cast(clientComputationHandler);
             }
 
             if (handlers.isEmpty()) initHandlers();
 
             checkNetwork();
-            return NTTileCapabilities.CABABILITY_RESEARCH_PROVIDER
+            return NTTileCapabilities.GO_CABABILITY_RESEARCH_PROVIDER
                     .cast(handlers.getOrDefault(facing, defaultHandler));
         }
         return super.getCapabilityInternal(capability, facing);
@@ -79,7 +79,7 @@ public class TileEntityResearchPipe extends TileEntityPipeBase<ResearchPipeType,
             ResearchPipeNet current = getResearchPipeNet();
             if (defaultHandler.getNet() != current) {
                 defaultHandler.updateNetwork(current);
-                for (ResearchNetHandler handler : handlers.values()) {
+                for (GOResearchNetHandler handler : handlers.values()) {
                     handler.updateNetwork(current);
                 }
             }
@@ -105,7 +105,7 @@ public class TileEntityResearchPipe extends TileEntityPipeBase<ResearchPipeType,
         super.transferDataFrom(tileEntity);
         if (getResearchPipeNet() == null)
             return;
-        TileEntityResearchPipe pipe = (TileEntityResearchPipe) tileEntity;
+        TileEntityGOResearchPipe pipe = (TileEntityGOResearchPipe) tileEntity;
         if (!pipe.handlers.isEmpty() && pipe.defaultHandler != null) {
             // take handlers from old pipe
             handlers.clear();
@@ -176,20 +176,20 @@ public class TileEntityResearchPipe extends TileEntityPipeBase<ResearchPipeType,
         }
     }
 
-    private static class DefaultComputationHandler implements IResearchComputationProvider {
+    private static class DefaultComputationHandler implements IGOResearchComputationProvider {
 
         @Override
-        public int requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
+        public int requestGORWUt(int gorwut, boolean simulate, @NotNull Collection<IGOResearchComputationProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxRWUt(@NotNull Collection<IResearchComputationProvider> seen) {
+        public int getMaxGORWUt(@NotNull Collection<IGOResearchComputationProvider> seen) {
             return 0;
         }
 
         @Override
-        public boolean canBridge(@NotNull Collection<IResearchComputationProvider> seen) {
+        public boolean canBridge(@NotNull Collection<IGOResearchComputationProvider> seen) {
             return false;
         }
     }

@@ -4,7 +4,7 @@ import com.onlyex.naxtech.api.capability.IBall;
 import com.onlyex.naxtech.api.capability.IBuffer;
 import com.onlyex.naxtech.api.capability.ICatalyst;
 import com.onlyex.naxtech.api.capability.IIndustrialMaintenance;
-import com.onlyex.naxtech.api.capability.research.IResearchComputationHatch;
+import com.onlyex.naxtech.api.capability.hatch.research.rwu.IResearchComputationHatch;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 
 @SuppressWarnings("InstantiationOfUtilityClass")
