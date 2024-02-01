@@ -1473,7 +1473,8 @@ naxtech.machine.sdi_research_computation_hatch.receiver.tooltip=
 naxtech.machine.sdi_research_computation_hatch.transmitter.name=
 naxtech.machine.sdi_research_computation_hatch.transmitter.tooltip=
 
-
+research.data_item.assemblyline.title=
+research.data_item.assemblyline.data=- §a%s
 
 
 

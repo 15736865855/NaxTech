@@ -33,7 +33,12 @@ MAX = 14
 * 超时空-supra_chronal-7
 * 超维度-supra_dimension-8
 */
-
+/*
+.itemInputs()
+.itemOutputs()
+.fluidInputs()
+.fluidOutputs()
+*/
 /*
   材料注册
   <p>

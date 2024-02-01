@@ -1502,8 +1502,8 @@ naxtech.machine.hpca.super_cooler_component.tooltip=
 naxtech.machine.hpca.ultimate_cooler_component.name=HPCA终级主动冷却组件
 naxtech.machine.hpca.ultimate_cooler_component.tooltip=
 
-
-
+research.data_item.assemblyline.title=§n科研数据：
+research.data_item.assemblyline.data=- §a%s
 
 
 
