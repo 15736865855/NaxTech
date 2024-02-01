@@ -1438,7 +1438,40 @@ naxtech.machine.research_computation_hatch.receiver.tooltip=
 naxtech.machine.research_computation_hatch.transmitter.name=
 naxtech.machine.research_computation_hatch.transmitter.tooltip=
 
+naxtech.machine.go_research_computation_hatch.receiver.name=
+naxtech.machine.go_research_computation_hatch.receiver.tooltip=
+naxtech.machine.go_research_computation_hatch.transmitter.name=
+naxtech.machine.go_research_computation_hatch.transmitter.tooltip=
 
+naxtech.machine.op_research_computation_hatch.receiver.name=
+naxtech.machine.op_research_computation_hatch.receiver.tooltip=
+naxtech.machine.op_research_computation_hatch.transmitter.name=
+naxtech.machine.op_research_computation_hatch.transmitter.tooltip=
+
+naxtech.machine.sp_research_computation_hatch.receiver.name=
+naxtech.machine.sp_research_computation_hatch.receiver.tooltip=
+naxtech.machine.sp_research_computation_hatch.transmitter.name=
+naxtech.machine.sp_research_computation_hatch.transmitter.tooltip=
+
+naxtech.machine.co_research_computation_hatch.receiver.name=
+naxtech.machine.co_research_computation_hatch.receiver.tooltip=
+naxtech.machine.co_research_computation_hatch.transmitter.name=
+naxtech.machine.co_research_computation_hatch.transmitter.tooltip=
+
+naxtech.machine.sca_research_computation_hatch.receiver.name=
+naxtech.machine.sca_research_computation_hatch.receiver.tooltip=
+naxtech.machine.sca_research_computation_hatch.transmitter.name=
+naxtech.machine.sca_research_computation_hatch.transmitter.tooltip=
+
+naxtech.machine.sch_research_computation_hatch.receiver.name=
+naxtech.machine.sch_research_computation_hatch.receiver.tooltip=
+naxtech.machine.sch_research_computation_hatch.transmitter.name=
+naxtech.machine.sch_research_computation_hatch.transmitter.tooltip=
+
+naxtech.machine.sdi_research_computation_hatch.receiver.name=
+naxtech.machine.sdi_research_computation_hatch.receiver.tooltip=
+naxtech.machine.sdi_research_computation_hatch.transmitter.name=
+naxtech.machine.sdi_research_computation_hatch.transmitter.tooltip=
 
 
 

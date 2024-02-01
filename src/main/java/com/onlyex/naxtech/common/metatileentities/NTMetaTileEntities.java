@@ -3,7 +3,7 @@ package com.onlyex.naxtech.common.metatileentities;
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtils;
-import com.onlyex.naxtech.common.metatileentities.hatch.research.MetaTileEntityResearchComputationHatch;
+import com.onlyex.naxtech.common.metatileentities.hatch.research.*;
 import com.onlyex.naxtech.common.metatileentities.module.hpca.MetaTileEntityHPCAAdvancedComputation;
 import com.onlyex.naxtech.common.metatileentities.module.hpca.MetaTileEntityHPCAAdvancedCooler;
 import com.onlyex.naxtech.common.metatileentities.multi.dimension.MetaTileEntityQuantumForceTransformer;
@@ -51,7 +51,20 @@ public class NTMetaTileEntities {
     //-research
     public static MetaTileEntityResearchComputationHatch RESEARCH_COMPUTATION_HATCH_RECEIVER;
     public static MetaTileEntityResearchComputationHatch RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
-
+    public static MetaTileEntityGOResearchComputationHatch GO_RESEARCH_COMPUTATION_HATCH_RECEIVER;
+    public static MetaTileEntityGOResearchComputationHatch GO_RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
+    public static MetaTileEntityOPResearchComputationHatch OP_RESEARCH_COMPUTATION_HATCH_RECEIVER;
+    public static MetaTileEntityOPResearchComputationHatch OP_RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
+    public static MetaTileEntitySPResearchComputationHatch SP_RESEARCH_COMPUTATION_HATCH_RECEIVER;
+    public static MetaTileEntitySPResearchComputationHatch SP_RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
+    public static MetaTileEntityCOResearchComputationHatch CO_RESEARCH_COMPUTATION_HATCH_RECEIVER;
+    public static MetaTileEntityCOResearchComputationHatch CO_RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
+    public static MetaTileEntitySCAResearchComputationHatch SCA_RESEARCH_COMPUTATION_HATCH_RECEIVER;
+    public static MetaTileEntitySCAResearchComputationHatch SCA_RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
+    public static MetaTileEntitySCHResearchComputationHatch SCH_RESEARCH_COMPUTATION_HATCH_RECEIVER;
+    public static MetaTileEntitySCHResearchComputationHatch SCH_RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
+    public static MetaTileEntitySDIResearchComputationHatch SDI_RESEARCH_COMPUTATION_HATCH_RECEIVER;
+    public static MetaTileEntitySDIResearchComputationHatch SDI_RESEARCH_COMPUTATION_HATCH_TRANSMITTER;
 
 
 
@@ -177,6 +190,40 @@ public class NTMetaTileEntities {
         RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(34,
                 new MetaTileEntityResearchComputationHatch(naxId("research_computation_hatch.transmitter"), true));
 
+        GO_RESEARCH_COMPUTATION_HATCH_RECEIVER = registerSingleMetaTileEntity(35,
+                new MetaTileEntityGOResearchComputationHatch(naxId("go_research_computation_hatch.receiver"), false));
+        GO_RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(36,
+                new MetaTileEntityGOResearchComputationHatch(naxId("go_research_computation_hatch.transmitter"), true));
+
+        OP_RESEARCH_COMPUTATION_HATCH_RECEIVER = registerSingleMetaTileEntity(37,
+                new MetaTileEntityOPResearchComputationHatch(naxId("op_research_computation_hatch.receiver"), false));
+        OP_RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(38,
+                new MetaTileEntityOPResearchComputationHatch(naxId("op_research_computation_hatch.transmitter"), true));
+
+        SP_RESEARCH_COMPUTATION_HATCH_RECEIVER = registerSingleMetaTileEntity(39,
+                new MetaTileEntitySPResearchComputationHatch(naxId("sp_research_computation_hatch.receiver"), false));
+        SP_RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(40,
+                new MetaTileEntitySPResearchComputationHatch(naxId("sp_research_computation_hatch.transmitter"), true));
+
+        CO_RESEARCH_COMPUTATION_HATCH_RECEIVER = registerSingleMetaTileEntity(41,
+                new MetaTileEntityCOResearchComputationHatch(naxId("co_research_computation_hatch.receiver"), false));
+        CO_RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(42,
+                new MetaTileEntityCOResearchComputationHatch(naxId("co_research_computation_hatch.transmitter"), true));
+
+        SCA_RESEARCH_COMPUTATION_HATCH_RECEIVER = registerSingleMetaTileEntity(43,
+                new MetaTileEntitySCAResearchComputationHatch(naxId("sca_research_computation_hatch.receiver"), false));
+        SCA_RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(44,
+                new MetaTileEntitySCAResearchComputationHatch(naxId("sca_research_computation_hatch.transmitter"), true));
+
+        SCH_RESEARCH_COMPUTATION_HATCH_RECEIVER = registerSingleMetaTileEntity(45,
+                new MetaTileEntitySCHResearchComputationHatch(naxId("sch_research_computation_hatch.receiver"), false));
+        SCH_RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(46,
+                new MetaTileEntitySCHResearchComputationHatch(naxId("sch_research_computation_hatch.transmitter"), true));
+
+        SDI_RESEARCH_COMPUTATION_HATCH_RECEIVER = registerSingleMetaTileEntity(47,
+                new MetaTileEntitySDIResearchComputationHatch(naxId("sdi_research_computation_hatch.receiver"), false));
+        SDI_RESEARCH_COMPUTATION_HATCH_TRANSMITTER = registerSingleMetaTileEntity(48,
+                new MetaTileEntitySDIResearchComputationHatch(naxId("sdi_research_computation_hatch.transmitter"), true));
 
 
         //14500

@@ -1453,6 +1453,41 @@ naxtech.machine.research_computation_hatch.receiver.tooltip=为多方块结构�
 naxtech.machine.research_computation_hatch.transmitter.name=科研数据源仓
 naxtech.machine.research_computation_hatch.transmitter.tooltip=从多方块结构输出§f科研数据
 
+naxtech.machine.go_research_computation_hatch.receiver.name=生物-科研数据靶仓
+naxtech.machine.go_research_computation_hatch.receiver.tooltip=为多方块结构输入§f生物-科研数据
+naxtech.machine.go_research_computation_hatch.transmitter.name=生物-科研数据源仓
+naxtech.machine.go_research_computation_hatch.transmitter.tooltip=从多方块结构输出§f生物-科研数据
+
+naxtech.machine.op_research_computation_hatch.receiver.name=光学-科研数据靶仓
+naxtech.machine.op_research_computation_hatch.receiver.tooltip=为多方块结构输入§f光学-科研数据
+naxtech.machine.op_research_computation_hatch.transmitter.name=光学-科研数据源仓
+naxtech.machine.op_research_computation_hatch.transmitter.tooltip=从多方块结构输出§f光学-科研数据
+
+naxtech.machine.sp_research_computation_hatch.receiver.name=自旋电子学-科研数据靶仓
+naxtech.machine.sp_research_computation_hatch.receiver.tooltip=为多方块结构输入§f自旋电子学-科研数据
+naxtech.machine.sp_research_computation_hatch.transmitter.name=自旋电子学-科研数据源仓
+naxtech.machine.sp_research_computation_hatch.transmitter.tooltip=从多方块结构输出§f自旋电子学-科研数据
+
+naxtech.machine.co_research_computation_hatch.receiver.name=寰宇-科研数据靶仓
+naxtech.machine.co_research_computation_hatch.receiver.tooltip=为多方块结构输入§f寰宇-科研数据
+naxtech.machine.co_research_computation_hatch.transmitter.name=寰宇-科研数据源仓
+naxtech.machine.co_research_computation_hatch.transmitter.tooltip=从多方块结构输出§f寰宇-科研数据
+
+naxtech.machine.sca_research_computation_hatch.receiver.name=超因果-科研数据靶仓
+naxtech.machine.sca_research_computation_hatch.receiver.tooltip=为多方块结构输入§f超因果-科研数据
+naxtech.machine.sca_research_computation_hatch.transmitter.name=超因果-科研数据源仓
+naxtech.machine.sca_research_computation_hatch.transmitter.tooltip=从多方块结构输出§f超因果-科研数据
+
+naxtech.machine.sch_research_computation_hatch.receiver.name=超时空-科研数据靶仓
+naxtech.machine.sch_research_computation_hatch.receiver.tooltip=为多方块结构输入§f超时空-科研数据
+naxtech.machine.sch_research_computation_hatch.transmitter.name=超时空-科研数据源仓
+naxtech.machine.sch_research_computation_hatch.transmitter.tooltip=从多方块结构输出§f超时空-科研数据
+
+naxtech.machine.sdi_research_computation_hatch.receiver.name=超维度-科研数据靶仓
+naxtech.machine.sdi_research_computation_hatch.receiver.tooltip=为多方块结构输入§f超维度-科研数据
+naxtech.machine.sdi_research_computation_hatch.transmitter.name=超维度-科研数据源仓
+naxtech.machine.sdi_research_computation_hatch.transmitter.tooltip=从多方块结构输出§f超维度-科研数据
+
 #组件
 
 #HPCA
