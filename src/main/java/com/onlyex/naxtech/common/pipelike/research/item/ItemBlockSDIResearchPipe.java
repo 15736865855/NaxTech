@@ -25,7 +25,7 @@ public class ItemBlockSDIResearchPipe extends ItemBlockPipe<ResearchPipeType, Re
     public void addInformation(@NotNull ItemStack stack, @Nullable World worldIn, @NotNull List<String> tooltip,
                                @NotNull ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        tooltip.add(I18n.format("tile.research_pipe_normal.tooltip1"));
+        tooltip.add(I18n.format("tile.sdi_research_pipe_normal.tooltip1"));
 
         if (TooltipHelper.isShiftDown()) {
             tooltip.add(I18n.format("gregtech.tool_action.wire_cutter.connect"));

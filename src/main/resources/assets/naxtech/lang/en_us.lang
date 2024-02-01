@@ -1417,6 +1417,20 @@ naxtech.machine.supra_dimension.research.sdi_rwut=
 
 tile.research_pipe_normal.name=
 tile.research_pipe_normal.tooltip1=
+tile.go_research_pipe_normal.name=
+tile.go_research_pipe_normal.tooltip1=
+tile.op_research_pipe_normal.name=
+tile.op_research_pipe_normal.tooltip1=
+tile.sp_research_pipe_normal.name=
+tile.sp_research_pipe_normal.tooltip1=
+tile.co_research_pipe_normal.name=
+tile.co_research_pipe_normal.tooltip1=
+tile.sca_research_pipe_normal.name=
+tile.sca_research_pipe_normal.tooltip1=
+tile.sch_research_pipe_normal.name=
+tile.sch_research_pipe_normal.tooltip1=
+tile.sdi_research_pipe_normal.name=
+tile.sdi_research_pipe_normal.tooltip1=
 
 naxtech.machine.research_computation_hatch.receiver.name=
 naxtech.machine.research_computation_hatch.receiver.tooltip=

@@ -1433,6 +1433,20 @@ naxtech.machine.supra_dimension.research.sdi_rwut=§9超维度-科研数据：§
 
 tile.research_pipe_normal.name=数据光缆
 tile.research_pipe_normal.tooltip1=传递§f科研数据§7
+tile.go_research_pipe_normal.name=生物-数据光缆
+tile.go_research_pipe_normal.tooltip1=传递§f生物-科研数据§7
+tile.op_research_pipe_normal.name=光学-数据光缆
+tile.op_research_pipe_normal.tooltip1=传递§f光学-科研数据§7
+tile.sp_research_pipe_normal.name=自旋电子学-数据光缆
+tile.sp_research_pipe_normal.tooltip1=传递§f自旋电子学-科研数据§7
+tile.co_research_pipe_normal.name=寰宇-数据光缆
+tile.co_research_pipe_normal.tooltip1=传递§f寰宇-科研数据§7
+tile.sca_research_pipe_normal.name=超因果-数据光缆
+tile.sca_research_pipe_normal.tooltip1=传递§f超因果-科研数据§7
+tile.sch_research_pipe_normal.name=超时空-数据光缆
+tile.sch_research_pipe_normal.tooltip1=传递§f超时空-科研数据§7
+tile.sdi_research_pipe_normal.name=超维度-数据光缆
+tile.sdi_research_pipe_normal.tooltip1=传递§f超维度-科研数据§7
 
 naxtech.machine.research_computation_hatch.receiver.name=科研数据靶仓
 naxtech.machine.research_computation_hatch.receiver.tooltip=为多方块结构输入§f科研数据
