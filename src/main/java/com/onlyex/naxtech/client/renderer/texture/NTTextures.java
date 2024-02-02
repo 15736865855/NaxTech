@@ -73,6 +73,7 @@ OrientedOverlayRenderer
     public static TextureAtlasSprite MASK_INGOT;
     public static TextureAtlasSprite ETERNAL_SINGULARITY;
     public static TextureAtlasSprite COMBINED_SINGULARITY;
+    public static TextureAtlasSprite SUPRA_DIMENSION_RESEARCH_DATA_CARD_HALO;
 
 
     public static TextureAtlasSprite[] COSMIC;
@@ -101,6 +102,8 @@ OrientedOverlayRenderer
 
         HALO = textureMap.registerSprite(NTUtils.naxId("items/halo"));
         HALO_NOISE = textureMap.registerSprite(NTUtils.naxId("items/halo_noise"));
+
+        SUPRA_DIMENSION_RESEARCH_DATA_CARD_HALO = textureMap.registerSprite(NTUtils.naxId("items/supra_dimension_research_data_card_halo"));
 
         MASK_INGOT = textureMap.registerSprite(NTUtils.naxId( "items/mask_ingot"));
 
