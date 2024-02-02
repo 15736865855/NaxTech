@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.api.recipes.machines.research;
+package com.onlyex.naxtech.api.recipes.research;
 
 import gregtech.api.recipes.Recipe;
 

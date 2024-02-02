@@ -1,7 +1,7 @@
 package com.onlyex.naxtech.common.items.behaviors;
 
-import com.onlyex.naxtech.api.recipes.machines.research.IResearchRecipeMap;
-import com.onlyex.naxtech.api.utils.ResearchManager;
+import com.onlyex.naxtech.api.recipes.research.IResearchRecipeMap;
+import com.onlyex.naxtech.api.utils.ResearchLineManager;
 
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
@@ -36,7 +36,7 @@ public class DataItemResearch implements IItemBehaviour, IDataItem {
 
     @Override
     public void addInformation(@NotNull ItemStack itemStack, List<String> lines) {
-        String researchId = ResearchManager.readResearchId(itemStack);
+        String researchId = ResearchLineManager.readResearchId(itemStack);
         if (researchId == null) return;
         Collection<Recipe> recipes = ((IResearchRecipeMap) RecipeMaps.ASSEMBLY_LINE_RECIPES)
                 .getDataStickEntry(researchId);

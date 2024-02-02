@@ -1,10 +1,11 @@
 package com.onlyex.naxtech.api.recipes;
 
-import com.onlyex.naxtech.api.recipes.builder.*;
-import com.onlyex.naxtech.api.recipes.machines.RecipeMapChemicalPlant;
+import com.onlyex.naxtech.api.recipes.builders.*;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapComponentAssemblyLine;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
-import com.onlyex.naxtech.api.utils.ResearchManager;
+import com.onlyex.naxtech.api.recipes.research.RecipeMapResearchLine;
+import com.onlyex.naxtech.api.recipes.research.ResearchLineRecipeBuilder;
+import com.onlyex.naxtech.api.utils.ResearchLineManager;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
@@ -80,11 +81,13 @@ public final class NTRecipeMaps {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.SCIENCE);
 
+
+
     /////////////////////////////////////////////////////TODO TODO
-/*    @ZenProperty
-    public static final RecipeMap<AssemblyLineRecipeBuilder> RESEARCH_RECIPES = new RecipeMapAssemblyLine<>(
-            "research_line", new AssemblyLineRecipeBuilder(), AssemblyLineUI::new)
-            .onRecipeBuild(ResearchManager::createDefaultResearchRecipe);*/
+    @ZenProperty
+    public static final RecipeMap<ResearchLineRecipeBuilder> RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "research_line",12, 12, 12, 12,new ResearchLineRecipeBuilder(), false/*, AssemblyLineUI::new*/)
+            .onRecipeBuild(ResearchLineManager::createDefaultResearchRecipe);//TODO
 
     public NTRecipeMaps() {}
 }

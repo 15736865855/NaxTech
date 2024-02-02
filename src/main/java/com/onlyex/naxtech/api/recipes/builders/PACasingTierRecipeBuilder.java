@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.api.recipes.builder;
+package com.onlyex.naxtech.api.recipes.builders;
 
 import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
