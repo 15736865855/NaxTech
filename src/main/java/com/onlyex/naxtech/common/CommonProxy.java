@@ -5,6 +5,7 @@ import com.onlyex.naxtech.api.recipes.properties.CACasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.CasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
 import com.onlyex.naxtech.api.utils.NTLog;
+import com.onlyex.naxtech.api.utils.ResearchLineManager;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.common.items.NTToolItems;
 import com.onlyex.naxtech.common.pipelike.research.block.*;
@@ -152,16 +153,21 @@ public class CommonProxy {
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
     {
         NTLog.logger.info("Registering recipes...");
+        ResearchLineManager.registerScannerLogic();
+
         FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
         FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
+
         CasingTierProperty.registerCasingTier(1, I18n.format("naxtech.recipe.casing_tier.1"));
         CasingTierProperty.registerCasingTier(2, I18n.format("naxtech.recipe.casing_tier.2"));
         CasingTierProperty.registerCasingTier(3, I18n.format("naxtech.recipe.casing_tier.3"));
         CasingTierProperty.registerCasingTier(4, I18n.format("naxtech.recipe.casing_tier.4"));
         CasingTierProperty.registerCasingTier(5, I18n.format("naxtech.recipe.casing_tier.5"));
+
         PACasingTierProperty.registerPACasingTier(1, I18n.format("naxtech.machine.precise_assembler.tier.1"));
         PACasingTierProperty.registerPACasingTier(2, I18n.format("naxtech.machine.precise_assembler.tier.2"));
         PACasingTierProperty.registerPACasingTier(3, I18n.format("naxtech.machine.precise_assembler.tier.3"));
+
         CACasingTierProperty.registerCACasingTier(1, I18n.format("naxtech.machine.component_assembly_line.tier.1"));
         CACasingTierProperty.registerCACasingTier(2, I18n.format("naxtech.machine.component_assembly_line.tier.2"));
         CACasingTierProperty.registerCACasingTier(3, I18n.format("naxtech.machine.component_assembly_line.tier.3"));
@@ -176,6 +182,7 @@ public class CommonProxy {
         CACasingTierProperty.registerCACasingTier(12, I18n.format("naxtech.machine.component_assembly_line.tier.12"));
         CACasingTierProperty.registerCACasingTier(13, I18n.format("naxtech.machine.component_assembly_line.tier.13"));
         CACasingTierProperty.registerCACasingTier(14, I18n.format("naxtech.machine.component_assembly_line.tier.14"));
+
         FormulaManager.init();
     }
 

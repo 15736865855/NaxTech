@@ -6,13 +6,16 @@ import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
 import com.onlyex.naxtech.api.recipes.research.RecipeMapResearchLine;
 import com.onlyex.naxtech.api.recipes.research.ResearchLineRecipeBuilder;
 import com.onlyex.naxtech.api.utils.ResearchLineManager;
+
 import crafttweaker.annotations.ZenRegister;
+
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.AssemblerRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
+
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
 @ZenClass("com.onlyex.naxtech.recipe.NTRecipeMaps")
@@ -86,8 +89,9 @@ public final class NTRecipeMaps {
     /////////////////////////////////////////////////////TODO TODO
     @ZenProperty
     public static final RecipeMap<ResearchLineRecipeBuilder> RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "research_line",12, 12, 12, 12,new ResearchLineRecipeBuilder(), false/*, AssemblyLineUI::new*/)
-            .onRecipeBuild(ResearchLineManager::createDefaultResearchRecipe);//TODO
+            "research_line",24, 2, 6, 0,new ResearchLineRecipeBuilder(), false/*, AssemblyLineUI::new*/)
+            //.onRecipeBuild(ResearchLineManager::createDefaultResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);//TODO
 
     public NTRecipeMaps() {}
 }

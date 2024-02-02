@@ -1,33 +1,44 @@
 package com.onlyex.naxtech.api.utils;
 
+import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.research.ResearchLineRecipeBuilder;
+import com.onlyex.naxtech.common.items.NTMetaItems;
+import com.onlyex.naxtech.common.ConfigHolder;
+
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
+import gregtech.api.recipes.Recipe;
+import gregtech.api.recipes.RecipeBuilder;
+import gregtech.api.recipes.ingredients.nbtmatch.NBTCondition;
+import gregtech.api.recipes.ingredients.nbtmatch.NBTMatcher;
 import gregtech.api.recipes.machines.IScannerRecipeMap;
+import gregtech.api.recipes.machines.RecipeMapScanner;
+import gregtech.api.recipes.recipeproperties.ScanProperty;
 
-import com.onlyex.naxtech.common.ConfigHolder;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.Constants;
 
+import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ResearchLineManager {
     public static final String RESEARCH_NBT_TAG = "researchLineResearch";
     public static final String RESEARCH_ID_NBT_TAG = "researchId";
 
-  /**
+  /*
    * getDefaultScannerItem() 方法，返回的是默认的扫描仪物品。
    * 使用了名为 MetaItems.TOOL_DATA_STICK 的工具类，调用了它的 getStackForm() 方法来获取默认扫描仪物品的 ItemStack。
    */
-    @NotNull
+/*    @NotNull
     public static ItemStack getDefaultScannerItem() {
-        //return MetaItems.TOOL_DATA_STICK.getStackForm();
-        return null;
-    }
+        return NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
+    }*/
 
     /**
      * getDefaultResearchStationItem(int rwut) 方法，根据传入的参数 rwut 的值，返回默认的研究站物品。
@@ -46,7 +57,7 @@ public class ResearchLineManager {
 
     @ApiStatus.Internal
     public static void registerScannerLogic() {
-        //RecipeMapScanner.registerCustomScannerLogic(new ResearchLineManager.DataStickCopyScannerLogic());
+        RecipeMapScanner.registerCustomScannerLogic(new ResearchLineManager.DataStickCopyScannerLogic());
     }
 
     /**
@@ -133,7 +144,6 @@ public class ResearchLineManager {
                     entry.getDuration(), entry.getEUt(), entry.getRWUt());
         }
     }
-
     
     public static void createDefaultResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem,
                                                    @NotNull ItemStack dataItem, boolean ignoreNBT, int duration,
@@ -143,13 +153,13 @@ public class ResearchLineManager {
         NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
         writeResearchToNBT(compound, researchId);
 
-       /* if (RWUt > 0) {
-            RecipeBuilder<?> researchBuilder = NTRecipeMaps.RESEARCH_STATION_RECIPES.recipeBuilder()
+        if (RWUt > 0) {
+            RecipeBuilder<?> researchBuilder = NTRecipeMaps.RESEARCH_LINE_RECIPES.recipeBuilder()
                     .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
                     .outputs(dataItem)
-                    .EUt(EUt)
-                    .RWUt(RWUt)
-                    .totalRWU(duration);
+                    .EUt(EUt);
+                    //.RWUt(RWUt)
+                    //.totalRWU(duration)
 
             if (ignoreNBT) {
                 researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
@@ -159,26 +169,10 @@ public class ResearchLineManager {
             }
 
             researchBuilder.buildAndRegister();
-        } else {
-            RecipeBuilder<?> builder = NTRecipeMaps.SCANNER_RECIPES.recipeBuilder()
-                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
-                    .outputs(dataItem)
-                    .duration(duration)
-                    .EUt(EUt);
-
-            if (ignoreNBT) {
-                builder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
-                        NBTCondition.ANY);
-            } else {
-                builder.inputs(researchItem);
-            }
-
-            builder.applyProperty(ScanProperty.getInstance(), true);
-            builder.buildAndRegister();
-        }*/
+        }
     }
 
-    /*public static class DataStickCopyScannerLogic implements IScannerRecipeMap.ICustomScannerLogic {
+    public static class DataStickCopyScannerLogic implements IScannerRecipeMap.ICustomScannerLogic {
 
         private static final int EUT = 2;
         private static final int DURATION = 100;
@@ -187,12 +181,12 @@ public class ResearchLineManager {
          * 在 createCustomRecipe 方法中，根据输入的物品列表的大小判断是否有足够的输入来创建配方。
          * 如果输入物品列表的大小大于 1，则尝试使用 createDataRecipe 方法创建数据配方，并且可以优先选择第一个物品来覆盖第二个物品。
          * 如果创建成功，则返回配方对象。如果没有足够的输入，则返回 null。
-         *
+         */
         @Override
         public Recipe createCustomRecipe(long voltage, List<ItemStack> inputs, List<FluidStack> fluidInputs,
                                          boolean exactVoltage) {
             if (inputs.size() > 1) {
-                // try the data recipe both ways, prioritizing overwriting the first
+                // 双向尝试数据配方，优先覆盖第一个
                 Recipe recipe = createDataRecipe(inputs.get(0), inputs.get(1));
                 if (recipe != null) return recipe;
 
@@ -208,41 +202,43 @@ public class ResearchLineManager {
          * 接下来，它创建一个新的 ItemStack 对象作为输出，将第一个物品的复制和第二个物品的 NBTTagCompound 复制设置到输出中，
          * 并使用 RecipeMaps.SCANNER_RECIPES.recipeBuilder() 创建一个 RecipeBuilder 对象来构建配方，
          * 指定输入、不会被消耗的物品、输出、持续时间和 EUt，最后使用 build() 方法构建配方并返回结果。
-         *
+         */
         @Nullable
         private Recipe createDataRecipe(@NotNull ItemStack first, @NotNull ItemStack second) {
             NBTTagCompound compound = second.getTagCompound();
             if (compound == null) return null;
 
-            // Both must be data items
+            // 两者都必须是数据项
             if (!isStackDataItem(first, true)) return null;
             if (!isStackDataItem(second, true)) return null;
 
             ItemStack output = first.copy();
             output.setTagCompound(compound.copy());
-            return RecipeMaps.SCANNER_RECIPES.recipeBuilder()
+            /*return NTRecipeMaps.SCANNER_RECIPES.recipeBuilder()
                     .inputs(first)
                     .notConsumable(second)
                     .outputs(output)
-                    .duration(DURATION).EUt(EUT).build().getResult();
+                    .duration(DURATION).EUt(EUT).build().getResult();*/
+            return null;
         }
 
         @Nullable
         @Override
         public List<Recipe> getRepresentativeRecipes() {
-            ItemStack copiedStick = MetaItems.TOOL_DATA_STICK.getStackForm();
+            /*ItemStack copiedStick = MetaItems.TOOL_DATA_STICK.getStackForm();
             copiedStick.setTranslatableName("naxtech.scanner.copy_stick_from");
             ItemStack emptyStick = MetaItems.TOOL_DATA_STICK.getStackForm();
             emptyStick.setTranslatableName("naxtech.scanner.copy_stick_empty");
             ItemStack resultStick = MetaItems.TOOL_DATA_STICK.getStackForm();
             resultStick.setTranslatableName("naxtech.scanner.copy_stick_to");
             return Collections.singletonList(
-                    RecipeMaps.SCANNER_RECIPES.recipeBuilder()
+                    NTRecipeMaps.SCANNER_RECIPES.recipeBuilder()
                             .inputs(emptyStick)
                             .notConsumable(copiedStick)
                             .outputs(resultStick)
                             .duration(DURATION).EUt(EUT)
-                            .build().getResult());
+                            .build().getResult());*/
+            return null;
         }
-    }*/
+    }
 }

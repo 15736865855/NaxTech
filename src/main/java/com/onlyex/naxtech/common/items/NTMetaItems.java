@@ -443,6 +443,16 @@ public class NTMetaItems {
     public static MetaItem<?>.MetaValueItem PROSPECTOR_ZPM;
     public static MetaItem<?>.MetaValueItem PROSPECTOR_UV;
     public static MetaItem<?>.MetaValueItem PROSPECTOR_UIV;
+
+    public static MetaItem<?>.MetaValueItem RESEARCH_DATA_CARD;
+    public static MetaItem<?>.MetaValueItem COSMIC_RESEARCH_DATA_CARD;
+    public static MetaItem<?>.MetaValueItem GOOWARE_RESEARCH_DATA_CARD;
+    public static MetaItem<?>.MetaValueItem OPTICAL_RESEARCH_DATA_CARD;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_RESEARCH_DATA_CARD ;
+    public static MetaItem<?>.MetaValueItem SUPRA_CAUSAL_RESEARCH_DATA_CARD;
+    public static MetaItem<?>.MetaValueItem SUPRA_CHRONAL_RESEARCH_DATA_CARD;
+    public static MetaItem<?>.MetaValueItem SUPRA_DIMENSION_RESEARCH_DATA_CARD;
+
     public static MetaItem<?>.MetaValueItem DEBUG_STRUCTURE_WRITER;
     public static MetaItem<?>.MetaValueItem DEBUG_STRUCTURE_BUILDER;
 
