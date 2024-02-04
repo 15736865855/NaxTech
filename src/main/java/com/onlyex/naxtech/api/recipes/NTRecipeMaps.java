@@ -1,37 +1,24 @@
 package com.onlyex.naxtech.api.recipes;
 
-import com.onlyex.naxtech.api.recipes.builders.*;
+import com.onlyex.naxtech.api.recipes.builders.CACasingTierRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.PACasingTierRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.QFTCasingTierRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapComponentAssemblyLine;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
 import com.onlyex.naxtech.api.recipes.research.RecipeMapResearchLine;
 import com.onlyex.naxtech.api.recipes.research.ResearchLineRecipeBuilder;
-import com.onlyex.naxtech.api.utils.ResearchLineManager;
-
 import crafttweaker.annotations.ZenRegister;
-
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
-import gregtech.api.recipes.builders.AssemblerRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
-
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
 @ZenClass("com.onlyex.naxtech.recipe.NTRecipeMaps")
 @ZenRegister
 public final class NTRecipeMaps {
-
-    @ZenProperty
-    public static final RecipeMap<AssemblerRecipeBuilder> PACKAGING_LINE_RECIPES = new RecipeMap<>
-            ("packaging_line_recipes",
-                    9, 1, 1, 0,
-                    new AssemblerRecipeBuilder(), false)
-                .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT, ProgressWidget.MoveType.HORIZONTAL)
-                .setSound(GTSoundEvents.ASSEMBLER);
-
-        //  Component Assembly Line Recipemap
     @ZenProperty
     public static final RecipeMap<CACasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES = new RecipeMapComponentAssemblyLine<>
                 ("component_assembly_line_recipes",
@@ -87,11 +74,18 @@ public final class NTRecipeMaps {
 
 
     /////////////////////////////////////////////////////TODO TODO
+/*    @ZenProperty
+    public static final RecipeMap<ResearchLineRecipeBuilder> RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "research_line",24, 2, 6, 0,new ResearchLineRecipeBuilder(), false*//*, AssemblyLineUI::new*//*)
+            .onRecipeBuild(ResearchLineManager::createDefaultResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);*/
+
     @ZenProperty
     public static final RecipeMap<ResearchLineRecipeBuilder> RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "research_line",24, 2, 6, 0,new ResearchLineRecipeBuilder(), false/*, AssemblyLineUI::new*/)
+            "research_line",24, 2, 6, 0,new ResearchLineRecipeBuilder(), false)
             //.onRecipeBuild(ResearchLineManager::createDefaultResearchRecipe)
-            .setSound(GTSoundEvents.ASSEMBLER);//TODO
+            .setSound(GTSoundEvents.ASSEMBLER);
+
 
     public NTRecipeMaps() {}
 }

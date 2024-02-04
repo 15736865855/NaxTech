@@ -1,14 +1,14 @@
 package com.onlyex.naxtech.common.pipelike.research.net;
 
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.cosmic.ICOResearchComputationProvider;
-import com.onlyex.naxtech.api.capability.hatch.research.gooware.IGOResearchComputationProvider;
-import com.onlyex.naxtech.api.capability.hatch.research.optical.IOPResearchComputationProvider;
-import com.onlyex.naxtech.api.capability.hatch.research.rwu.IResearchComputationProvider;
-import com.onlyex.naxtech.api.capability.hatch.research.spintronic.ISPResearchComputationProvider;
-import com.onlyex.naxtech.api.capability.hatch.research.supracausal.ISCAResearchComputationProvider;
-import com.onlyex.naxtech.api.capability.hatch.research.suprachronal.ISCHResearchComputationProvider;
-import com.onlyex.naxtech.api.capability.hatch.research.supradimension.ISDIResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.cosmic.ICOResearchDataProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.gooware.IGOResearchDataProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.optical.IOPResearchDataProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.rwu.IResearchDataProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.spintronic.ISPResearchDataProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.supracausal.ISCAResearchDataProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.suprachronal.ISCHResearchDataProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.supradimension.ISDIResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
 import gregtech.api.pipenet.IRoutePath;
 import net.minecraft.util.EnumFacing;
@@ -43,35 +43,35 @@ public class ResearchRoutePath implements IRoutePath<TileEntityResearchPipe> {
         return distance;
     }
 
-    public @Nullable IResearchComputationProvider getComputationHatch() {
+    public @Nullable IResearchDataProvider getComputationHatch() {
         return getTargetCapability(NTTileCapabilities.CABABILITY_RESEARCH_PROVIDER);
     }
 
-    public @Nullable IGOResearchComputationProvider getGOComputationHatch() {
+    public @Nullable IGOResearchDataProvider getGOComputationHatch() {
         return getTargetCapability(NTTileCapabilities.GO_CABABILITY_RESEARCH_PROVIDER);
     }
 
-    public @Nullable IOPResearchComputationProvider getOPComputationHatch() {
+    public @Nullable IOPResearchDataProvider getOPComputationHatch() {
         return getTargetCapability(NTTileCapabilities.OP_CABABILITY_RESEARCH_PROVIDER);
     }
 
-    public @Nullable ISPResearchComputationProvider getSPComputationHatch() {
+    public @Nullable ISPResearchDataProvider getSPComputationHatch() {
         return getTargetCapability(NTTileCapabilities.SP_CABABILITY_RESEARCH_PROVIDER);
     }
 
-    public @Nullable ICOResearchComputationProvider getCOComputationHatch() {
+    public @Nullable ICOResearchDataProvider getCOComputationHatch() {
         return getTargetCapability(NTTileCapabilities.CO_CABABILITY_RESEARCH_PROVIDER);
     }
 
-    public @Nullable ISCAResearchComputationProvider getSCAComputationHatch() {
+    public @Nullable ISCAResearchDataProvider getSCAComputationHatch() {
         return getTargetCapability(NTTileCapabilities.SCA_CABABILITY_RESEARCH_PROVIDER);
     }
 
-    public @Nullable ISCHResearchComputationProvider getSCHComputationHatch() {
+    public @Nullable ISCHResearchDataProvider getSCHComputationHatch() {
         return getTargetCapability(NTTileCapabilities.SCH_CABABILITY_RESEARCH_PROVIDER);
     }
 
-    public @Nullable ISDIResearchComputationProvider getSDIComputationHatch() {
+    public @Nullable ISDIResearchDataProvider getSDIComputationHatch() {
         return getTargetCapability(NTTileCapabilities.SDI_CABABILITY_RESEARCH_PROVIDER);
     }
 }

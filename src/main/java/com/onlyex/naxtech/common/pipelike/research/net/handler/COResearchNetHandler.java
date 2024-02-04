@@ -1,6 +1,6 @@
 package com.onlyex.naxtech.common.pipelike.research.net.handler;
 
-import com.onlyex.naxtech.api.capability.hatch.research.cosmic.ICOResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.cosmic.ICOResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchRoutePath;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityCOResearchPipe;
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
-public class COResearchNetHandler implements ICOResearchComputationProvider {
+public class COResearchNetHandler implements ICOResearchDataProvider {
 
     private final TileEntityCOResearchPipe pipe;
     private final World world;
@@ -37,19 +37,19 @@ public class COResearchNetHandler implements ICOResearchComputationProvider {
     }
 
     @Override
-    public int requestCORWUt(int corwut, boolean simulate, @NotNull Collection<ICOResearchComputationProvider> seen) {
+    public int requestCORWUt(int corwut, boolean simulate, @NotNull Collection<ICOResearchDataProvider> seen) {
         int provided = traverseRequestCORWUt(corwut, simulate, seen);
         if (provided > 0) setPipesActive();
         return provided;
     }
 
     @Override
-    public int getMaxCORWUt(@NotNull Collection<ICOResearchComputationProvider> seen) {
+    public int getMaxCORWUt(@NotNull Collection<ICOResearchDataProvider> seen) {
         return traverseMaxCORWUt(seen);
     }
 
     @Override
-    public boolean canBridge(@NotNull Collection<ICOResearchComputationProvider> seen) {
+    public boolean canBridge(@NotNull Collection<ICOResearchDataProvider> seen) {
         return traverseCanBridge(seen);
     }
 
@@ -65,32 +65,32 @@ public class COResearchNetHandler implements ICOResearchComputationProvider {
         return net == null || pipe == null || pipe.isInvalid();
     }
 
-    private int traverseRequestCORWUt(int corwut, boolean simulate, @NotNull Collection<ICOResearchComputationProvider> seen) {
-        ICOResearchComputationProvider provider = getCOComputationProvider(seen);
+    private int traverseRequestCORWUt(int corwut, boolean simulate, @NotNull Collection<ICOResearchDataProvider> seen) {
+        ICOResearchDataProvider provider = getCOComputationProvider(seen);
         if (provider == null) return 0;
         return provider.requestCORWUt(corwut, simulate, seen);
     }
 
-    private int traverseMaxCORWUt(@NotNull Collection<ICOResearchComputationProvider> seen) {
-        ICOResearchComputationProvider provider = getCOComputationProvider(seen);
+    private int traverseMaxCORWUt(@NotNull Collection<ICOResearchDataProvider> seen) {
+        ICOResearchDataProvider provider = getCOComputationProvider(seen);
         if (provider == null) return 0;
         return provider.getMaxCORWUt(seen);
     }
 
-    private boolean traverseCanBridge(@NotNull Collection<ICOResearchComputationProvider> seen) {
-        ICOResearchComputationProvider provider = getCOComputationProvider(seen);
+    private boolean traverseCanBridge(@NotNull Collection<ICOResearchDataProvider> seen) {
+        ICOResearchDataProvider provider = getCOComputationProvider(seen);
         if (provider == null) return true; // nothing found, so don't report a problem, just pass quietly
         return provider.canBridge(seen);
     }
 
     @Nullable
-    private ICOResearchComputationProvider getCOComputationProvider(@NotNull Collection<ICOResearchComputationProvider> seen) {
+    private ICOResearchDataProvider getCOComputationProvider(@NotNull Collection<ICOResearchDataProvider> seen) {
         if (isNetInvalidForTraversal()) return null;
 
         ResearchRoutePath inv = net.getNetData(pipe.getPipePos(), facing);
         if (inv == null) return null;
 
-        ICOResearchComputationProvider hatch = inv.getCOComputationHatch();
+        ICOResearchDataProvider hatch = inv.getCOComputationHatch();
         if (hatch == null || seen.contains(hatch)) return null;
         return hatch;
     }

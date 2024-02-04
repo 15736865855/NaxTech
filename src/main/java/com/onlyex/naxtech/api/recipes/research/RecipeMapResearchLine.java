@@ -1,13 +1,10 @@
 package com.onlyex.naxtech.api.recipes.research;
 
+import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
+import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
-import gregtech.api.recipes.machines.IResearchRecipeMap;
-import gregtech.api.recipes.recipeproperties.ResearchProperty;
-import gregtech.api.recipes.recipeproperties.ResearchPropertyData;
-
-import gregtech.core.sound.GTSoundEvents;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import org.jetbrains.annotations.ApiStatus;
@@ -42,7 +39,7 @@ public class RecipeMapResearchLine<R extends RecipeBuilder<R>> extends RecipeMap
                 ResearchPropertyData data = recipe.getProperty(ResearchProperty.getInstance(), null);
                 if (data != null) {
                     for (ResearchPropertyData.ResearchEntry entry : data) {
-                        addDataStickEntry(entry.getResearchId(), recipe);
+                        addDataStickEntry(entry.researchId(), recipe);
                     }
                     return true;
                 }
@@ -58,7 +55,7 @@ public class RecipeMapResearchLine<R extends RecipeBuilder<R>> extends RecipeMap
                 ResearchPropertyData data = recipe.getProperty(ResearchProperty.getInstance(), null);
                 if (data != null) {
                     for (ResearchPropertyData.ResearchEntry entry : data) {
-                        removeDataStickEntry(entry.getResearchId(), recipe);
+                        removeDataStickEntry(entry.researchId(), recipe);
                     }
                     return true;
                 }

@@ -563,13 +563,13 @@ public class NTMetaItem1 extends StandardMetaItem {
         //2400~
         RESEARCH_DATA_CARD = this.addItem(2400,"research_data_card")
                 .addComponents(new DataItemResearch());
-        COSMIC_RESEARCH_DATA_CARD = this.addItem(2401,"cosmic_research_data_card")
+        GOOWARE_RESEARCH_DATA_CARD = this.addItem(2401,"gooware_research_data_card")
                 .addComponents(new DataItemResearch());
-        GOOWARE_RESEARCH_DATA_CARD = this.addItem(2402,"gooware_research_data_card")
+        OPTICAL_RESEARCH_DATA_CARD = this.addItem(2402,"optical_research_data_card")
                 .addComponents(new DataItemResearch());
-        OPTICAL_RESEARCH_DATA_CARD = this.addItem(2403,"optical_research_data_card")
+        SPINTRONIC_RESEARCH_DATA_CARD  = this.addItem(2403,"spintronic_research_data_card")
                 .addComponents(new DataItemResearch());
-        SPINTRONIC_RESEARCH_DATA_CARD  = this.addItem(2404,"spintronic_research_data_card")
+        COSMIC_RESEARCH_DATA_CARD = this.addItem(2404,"cosmic_research_data_card")
                 .addComponents(new DataItemResearch());
         SUPRA_CAUSAL_RESEARCH_DATA_CARD = this.addItem(2405,"supra_causal_research_data_card")
                 .addComponents(new DataItemResearch());

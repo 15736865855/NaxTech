@@ -14,8 +14,8 @@ import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransform
 import com.onlyex.naxtech.common.block.wood.BlockPineLeaves;
 import com.onlyex.naxtech.common.block.wood.BlockPineLog;
 import com.onlyex.naxtech.common.block.wood.BlockPineSapling;
-import com.onlyex.naxtech.common.pipelike.research.block.*;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
+import com.onlyex.naxtech.common.pipelike.research.block.*;
 import com.onlyex.naxtech.common.pipelike.research.tile.*;
 import gregtech.client.model.SimpleStateMapper;
 import net.minecraft.block.Block;

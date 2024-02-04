@@ -11,7 +11,7 @@ import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.unification.NTMaterials;
 import com.onlyex.naxtech.api.utils.NTUniverUtil;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
-import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
+import com.onlyex.naxtech.common.metatileentities.MetaTileEntities;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -29,7 +29,6 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.Blocks;
@@ -177,13 +176,13 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
                     .aisle("CMMMMMMMC", "C       C", "C       C", "C       C", "CCCCOCCCC")
                     .aisle("CMMMMMMMC", "CGGGGGGGC", "CGGGGGGGC", "CGGGGGGGC", "CCCCCCCCC")
                     .aisle("CCCCSCCCC", "F       F", "F       F", "F       F", "CCCCCCCCC")
-                    .where('S', NTMetaTileEntities.PRECISE_ASSEMBLER, EnumFacing.SOUTH)
-                    .where('X', MetaTileEntities.ITEM_IMPORT_BUS[LuV], EnumFacing.NORTH)
-                    .where('Y', MetaTileEntities.ITEM_EXPORT_BUS[LuV], EnumFacing.NORTH)
-                    .where('Z', MetaTileEntities.FLUID_IMPORT_HATCH[LuV], EnumFacing.NORTH)
-                    .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[LuV], EnumFacing.NORTH)
-                    .where('T', () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : MetaTileEntities.ENERGY_INPUT_HATCH[LuV], EnumFacing.NORTH)
-                    .where('O', MetaTileEntities.MUFFLER_HATCH[LuV], EnumFacing.UP)
+                    .where('S', MetaTileEntities.PRECISE_ASSEMBLER, EnumFacing.SOUTH)
+                    .where('X', gregtech.common.metatileentities.MetaTileEntities.ITEM_IMPORT_BUS[LuV], EnumFacing.NORTH)
+                    .where('Y', gregtech.common.metatileentities.MetaTileEntities.ITEM_EXPORT_BUS[LuV], EnumFacing.NORTH)
+                    .where('Z', gregtech.common.metatileentities.MetaTileEntities.FLUID_IMPORT_HATCH[LuV], EnumFacing.NORTH)
+                    .where('E', gregtech.common.metatileentities.MetaTileEntities.ENERGY_INPUT_HATCH[LuV], EnumFacing.NORTH)
+                    .where('T', () -> ConfigHolder.machines.enableMaintenance ? gregtech.common.metatileentities.MetaTileEntities.MAINTENANCE_HATCH : gregtech.common.metatileentities.MetaTileEntities.ENERGY_INPUT_HATCH[LuV], EnumFacing.NORTH)
+                    .where('O', gregtech.common.metatileentities.MetaTileEntities.MUFFLER_HATCH[LuV], EnumFacing.UP)
                     .where('G', getGlassState())
                     .where('F', getFrameState())
                     .where(' ', Blocks.AIR.getDefaultState());

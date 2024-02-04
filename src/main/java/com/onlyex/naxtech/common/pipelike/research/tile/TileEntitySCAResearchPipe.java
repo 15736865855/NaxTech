@@ -2,7 +2,7 @@ package com.onlyex.naxtech.common.pipelike.research.tile;
 
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.supracausal.ISCAResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.supracausal.ISCAResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
@@ -26,7 +26,7 @@ public class TileEntitySCAResearchPipe extends TileEntityPipeBase<ResearchPipeTy
 
     private final EnumMap<EnumFacing, SCAResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
     // the OpticalNetHandler can only be created on the server, so we have an empty placeholder for the client
-    private final ISCAResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
+    private final ISCAResearchDataProvider clientComputationHandler = new DefaultComputationHandler();
     private WeakReference<ResearchPipeNet> currentPipeNet = new WeakReference<>(null);
     private SCAResearchNetHandler defaultHandler;
     private int ticksActive = 0;
@@ -176,20 +176,20 @@ public class TileEntitySCAResearchPipe extends TileEntityPipeBase<ResearchPipeTy
         }
     }
 
-    private static class DefaultComputationHandler implements ISCAResearchComputationProvider {
+    private static class DefaultComputationHandler implements ISCAResearchDataProvider {
 
         @Override
-        public int requestSCARWUt(int scarwut, boolean simulate, @NotNull Collection<ISCAResearchComputationProvider> seen) {
+        public int requestSCARWUt(int scarwut, boolean simulate, @NotNull Collection<ISCAResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxSCARWUt(@NotNull Collection<ISCAResearchComputationProvider> seen) {
+        public int getMaxSCARWUt(@NotNull Collection<ISCAResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public boolean canBridge(@NotNull Collection<ISCAResearchComputationProvider> seen) {
+        public boolean canBridge(@NotNull Collection<ISCAResearchDataProvider> seen) {
             return false;
         }
     }

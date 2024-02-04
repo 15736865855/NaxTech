@@ -2,7 +2,7 @@ package com.onlyex.naxtech.common.pipelike.research.tile;
 
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.suprachronal.ISCHResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.suprachronal.ISCHResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
@@ -26,7 +26,7 @@ public class TileEntitySCHResearchPipe extends TileEntityPipeBase<ResearchPipeTy
 
     private final EnumMap<EnumFacing, SCHResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
     // the OpticalNetHandler can only be created on the server, so we have an empty placeholder for the client
-    private final ISCHResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
+    private final ISCHResearchDataProvider clientComputationHandler = new DefaultComputationHandler();
     private WeakReference<ResearchPipeNet> currentPipeNet = new WeakReference<>(null);
     private SCHResearchNetHandler defaultHandler;
     private int ticksActive = 0;
@@ -176,20 +176,20 @@ public class TileEntitySCHResearchPipe extends TileEntityPipeBase<ResearchPipeTy
         }
     }
 
-    private static class DefaultComputationHandler implements ISCHResearchComputationProvider {
+    private static class DefaultComputationHandler implements ISCHResearchDataProvider {
 
         @Override
-        public int requestSCHRWUt(int schrwut, boolean simulate, @NotNull Collection<ISCHResearchComputationProvider> seen) {
+        public int requestSCHRWUt(int schrwut, boolean simulate, @NotNull Collection<ISCHResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxSCHRWUt(@NotNull Collection<ISCHResearchComputationProvider> seen) {
+        public int getMaxSCHRWUt(@NotNull Collection<ISCHResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public boolean canBridge(@NotNull Collection<ISCHResearchComputationProvider> seen) {
+        public boolean canBridge(@NotNull Collection<ISCHResearchDataProvider> seen) {
             return false;
         }
     }

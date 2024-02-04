@@ -25,7 +25,7 @@ import javax.annotation.Nonnull;
 public class MetaTileEntityPackagingLine extends RecipeMapMultiblockController {
 
     public MetaTileEntityPackagingLine(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, NTRecipeMaps.PACKAGING_LINE_RECIPES);//8.30%
+        super(metaTileEntityId, NTRecipeMaps.RESEARCH_LINE_RECIPES);//8.30%
     }
 
     @Override

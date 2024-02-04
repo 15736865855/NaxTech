@@ -8,7 +8,7 @@ import com.onlyex.naxtech.api.worldgen.NTWorldGenRegistry;
 import com.onlyex.naxtech.common.CommonProxy;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.items.NTMetaItems;
-import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
+import com.onlyex.naxtech.common.metatileentities.MetaTileEntities;
 import gregtech.api.worldgen.config.WorldGenRegistry;
 import gregtech.common.ConfigHolder;
 import net.minecraftforge.common.capabilities.CapabilityManager;
@@ -50,7 +50,7 @@ public class NaxTech {
         NTMetaItems.init();
         NTMetaBlocks.init();
         NTAPI.APIBlockInit();
-        NTMetaTileEntities.init();
+        MetaTileEntities.init();
         NTWorldGenRegistry.init();
 
         CapabilityManager.INSTANCE.register(IPollution.class, new PollutionProvider.Storage(), PollutionProvider.Impl::new);

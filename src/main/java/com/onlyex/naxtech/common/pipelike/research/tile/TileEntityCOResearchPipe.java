@@ -2,7 +2,7 @@ package com.onlyex.naxtech.common.pipelike.research.tile;
 
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.cosmic.ICOResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.cosmic.ICOResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
@@ -26,7 +26,7 @@ public class TileEntityCOResearchPipe extends TileEntityPipeBase<ResearchPipeTyp
 
     private final EnumMap<EnumFacing, COResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
     // the OpticalNetHandler can only be created on the server, so we have an empty placeholder for the client
-    private final ICOResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
+    private final ICOResearchDataProvider clientComputationHandler = new DefaultComputationHandler();
     private WeakReference<ResearchPipeNet> currentPipeNet = new WeakReference<>(null);
     private COResearchNetHandler defaultHandler;
     private int ticksActive = 0;
@@ -176,20 +176,20 @@ public class TileEntityCOResearchPipe extends TileEntityPipeBase<ResearchPipeTyp
         }
     }
 
-    private static class DefaultComputationHandler implements ICOResearchComputationProvider {
+    private static class DefaultComputationHandler implements ICOResearchDataProvider {
 
         @Override
-        public int requestCORWUt(int corwut, boolean simulate, @NotNull Collection<ICOResearchComputationProvider> seen) {
+        public int requestCORWUt(int corwut, boolean simulate, @NotNull Collection<ICOResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxCORWUt(@NotNull Collection<ICOResearchComputationProvider> seen) {
+        public int getMaxCORWUt(@NotNull Collection<ICOResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public boolean canBridge(@NotNull Collection<ICOResearchComputationProvider> seen) {
+        public boolean canBridge(@NotNull Collection<ICOResearchDataProvider> seen) {
             return false;
         }
     }

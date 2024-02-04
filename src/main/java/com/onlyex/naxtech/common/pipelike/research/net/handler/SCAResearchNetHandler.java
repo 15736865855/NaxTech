@@ -1,6 +1,6 @@
 package com.onlyex.naxtech.common.pipelike.research.net.handler;
 
-import com.onlyex.naxtech.api.capability.hatch.research.supracausal.ISCAResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.supracausal.ISCAResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchRoutePath;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
-public class SCAResearchNetHandler implements ISCAResearchComputationProvider {
+public class SCAResearchNetHandler implements ISCAResearchDataProvider {
 
     private final TileEntitySCAResearchPipe pipe;
     private final World world;
@@ -37,19 +37,19 @@ public class SCAResearchNetHandler implements ISCAResearchComputationProvider {
     }
 
     @Override
-    public int requestSCARWUt(int scarwut, boolean simulate, @NotNull Collection<ISCAResearchComputationProvider> seen) {
+    public int requestSCARWUt(int scarwut, boolean simulate, @NotNull Collection<ISCAResearchDataProvider> seen) {
         int provided = traverseRequestSCARWUt(scarwut, simulate, seen);
         if (provided > 0) setPipesActive();
         return provided;
     }
 
     @Override
-    public int getMaxSCARWUt(@NotNull Collection<ISCAResearchComputationProvider> seen) {
+    public int getMaxSCARWUt(@NotNull Collection<ISCAResearchDataProvider> seen) {
         return traverseMaxSCARWUt(seen);
     }
 
     @Override
-    public boolean canBridge(@NotNull Collection<ISCAResearchComputationProvider> seen) {
+    public boolean canBridge(@NotNull Collection<ISCAResearchDataProvider> seen) {
         return traverseCanBridge(seen);
     }
 
@@ -65,32 +65,32 @@ public class SCAResearchNetHandler implements ISCAResearchComputationProvider {
         return net == null || pipe == null || pipe.isInvalid();
     }
 
-    private int traverseRequestSCARWUt(int scarwut, boolean simulate, @NotNull Collection<ISCAResearchComputationProvider> seen) {
-        ISCAResearchComputationProvider provider = getSCAComputationProvider(seen);
+    private int traverseRequestSCARWUt(int scarwut, boolean simulate, @NotNull Collection<ISCAResearchDataProvider> seen) {
+        ISCAResearchDataProvider provider = getSCAComputationProvider(seen);
         if (provider == null) return 0;
         return provider.requestSCARWUt(scarwut, simulate, seen);
     }
 
-    private int traverseMaxSCARWUt(@NotNull Collection<ISCAResearchComputationProvider> seen) {
-        ISCAResearchComputationProvider provider = getSCAComputationProvider(seen);
+    private int traverseMaxSCARWUt(@NotNull Collection<ISCAResearchDataProvider> seen) {
+        ISCAResearchDataProvider provider = getSCAComputationProvider(seen);
         if (provider == null) return 0;
         return provider.getMaxSCARWUt(seen);
     }
 
-    private boolean traverseCanBridge(@NotNull Collection<ISCAResearchComputationProvider> seen) {
-        ISCAResearchComputationProvider provider = getSCAComputationProvider(seen);
+    private boolean traverseCanBridge(@NotNull Collection<ISCAResearchDataProvider> seen) {
+        ISCAResearchDataProvider provider = getSCAComputationProvider(seen);
         if (provider == null) return true; // nothing found, so don't report a problem, just pass quietly
         return provider.canBridge(seen);
     }
 
     @Nullable
-    private ISCAResearchComputationProvider getSCAComputationProvider(@NotNull Collection<ISCAResearchComputationProvider> seen) {
+    private ISCAResearchDataProvider getSCAComputationProvider(@NotNull Collection<ISCAResearchDataProvider> seen) {
         if (isNetInvalidForTraversal()) return null;
 
         ResearchRoutePath inv = net.getNetData(pipe.getPipePos(), facing);
         if (inv == null) return null;
 
-        ISCAResearchComputationProvider hatch = inv.getSCAComputationHatch();
+        ISCAResearchDataProvider hatch = inv.getSCAComputationHatch();
         if (hatch == null || seen.contains(hatch)) return null;
         return hatch;
     }

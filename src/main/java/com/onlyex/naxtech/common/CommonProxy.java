@@ -10,6 +10,7 @@ import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.common.items.NTToolItems;
 import com.onlyex.naxtech.common.pipelike.research.block.*;
 import com.onlyex.naxtech.common.pipelike.research.item.*;
+import com.onlyex.naxtech.loaders.NTRecipeManager;
 import com.onlyex.naxtech.loaders.NTTRecipes;
 import com.onlyex.naxtech.loaders.formula.FormulaManager;
 import com.onlyex.naxtech.loaders.recipe.handlers.NTRecipeHandlerList;
@@ -152,7 +153,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
     {
-        NTLog.logger.info("Registering recipes...");
+
         ResearchLineManager.registerScannerLogic();
 
         FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
@@ -184,6 +185,10 @@ public class CommonProxy {
         CACasingTierProperty.registerCACasingTier(14, I18n.format("naxtech.machine.component_assembly_line.tier.14"));
 
         FormulaManager.init();
+
+        NTLog.logger.info("Registering recipes...");
+
+        NTRecipeManager.load();
     }
 
     @SubscribeEvent

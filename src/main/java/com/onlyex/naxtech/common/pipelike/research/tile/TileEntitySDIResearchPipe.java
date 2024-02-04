@@ -2,7 +2,7 @@ package com.onlyex.naxtech.common.pipelike.research.tile;
 
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.supradimension.ISDIResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.supradimension.ISDIResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
@@ -26,7 +26,7 @@ public class TileEntitySDIResearchPipe extends TileEntityPipeBase<ResearchPipeTy
 
     private final EnumMap<EnumFacing, SDIResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
     // the OpticalNetHandler can only be created on the server, so we have an empty placeholder for the client
-    private final ISDIResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
+    private final ISDIResearchDataProvider clientComputationHandler = new DefaultComputationHandler();
     private WeakReference<ResearchPipeNet> currentPipeNet = new WeakReference<>(null);
     private SDIResearchNetHandler defaultHandler;
     private int ticksActive = 0;
@@ -176,20 +176,20 @@ public class TileEntitySDIResearchPipe extends TileEntityPipeBase<ResearchPipeTy
         }
     }
 
-    private static class DefaultComputationHandler implements ISDIResearchComputationProvider {
+    private static class DefaultComputationHandler implements ISDIResearchDataProvider {
 
         @Override
-        public int requestSDIRWUt(int sdirwut, boolean simulate, @NotNull Collection<ISDIResearchComputationProvider> seen) {
+        public int requestSDIRWUt(int sdirwut, boolean simulate, @NotNull Collection<ISDIResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxSDIRWUt(@NotNull Collection<ISDIResearchComputationProvider> seen) {
+        public int getMaxSDIRWUt(@NotNull Collection<ISDIResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public boolean canBridge(@NotNull Collection<ISDIResearchComputationProvider> seen) {
+        public boolean canBridge(@NotNull Collection<ISDIResearchDataProvider> seen) {
             return false;
         }
     }

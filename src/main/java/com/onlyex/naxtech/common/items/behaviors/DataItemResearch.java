@@ -1,17 +1,14 @@
 package com.onlyex.naxtech.common.items.behaviors;
 
+import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.research.IResearchRecipeMap;
 import com.onlyex.naxtech.api.utils.ResearchLineManager;
-
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
 import gregtech.api.recipes.Recipe;
-import gregtech.api.recipes.RecipeMaps;
-
+import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-
-import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -38,15 +35,15 @@ public class DataItemResearch implements IItemBehaviour, IDataItem {
     public void addInformation(@NotNull ItemStack itemStack, List<String> lines) {
         String researchId = ResearchLineManager.readResearchId(itemStack);
         if (researchId == null) return;
-        Collection<Recipe> recipes = ((IResearchRecipeMap) RecipeMaps.ASSEMBLY_LINE_RECIPES)
+        Collection<Recipe> recipes = ((IResearchRecipeMap) NTRecipeMaps.RESEARCH_LINE_RECIPES)
                 .getDataStickEntry(researchId);
         if (recipes != null && !recipes.isEmpty()) {
-            lines.add(I18n.format("research.data_item.assemblyline.title"));
+            lines.add(I18n.format("research.data_item.researchline.title"));
             Collection<ItemStack> added = new ObjectOpenHashSet<>();
             for (Recipe recipe : recipes) {
                 ItemStack output = recipe.getOutputs().get(0);
                 if (added.add(output)) {
-                    lines.add(I18n.format("research.data_item.assemblyline.data", output.getDisplayName()));
+                    lines.add(I18n.format("research.data_item.researchline.data", output.getDisplayName()));
                 }
             }
         }

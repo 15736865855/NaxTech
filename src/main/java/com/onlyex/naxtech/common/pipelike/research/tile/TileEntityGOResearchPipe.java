@@ -2,7 +2,7 @@ package com.onlyex.naxtech.common.pipelike.research.tile;
 
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.gooware.IGOResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.gooware.IGOResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
@@ -26,7 +26,7 @@ public class TileEntityGOResearchPipe extends TileEntityPipeBase<ResearchPipeTyp
 
     private final EnumMap<EnumFacing, GOResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
     // the OpticalNetHandler can only be created on the server, so we have an empty placeholder for the client
-    private final IGOResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
+    private final IGOResearchDataProvider clientComputationHandler = new DefaultComputationHandler();
     private WeakReference<ResearchPipeNet> currentPipeNet = new WeakReference<>(null);
     private GOResearchNetHandler defaultHandler;
     private int ticksActive = 0;
@@ -176,20 +176,20 @@ public class TileEntityGOResearchPipe extends TileEntityPipeBase<ResearchPipeTyp
         }
     }
 
-    private static class DefaultComputationHandler implements IGOResearchComputationProvider {
+    private static class DefaultComputationHandler implements IGOResearchDataProvider {
 
         @Override
-        public int requestGORWUt(int gorwut, boolean simulate, @NotNull Collection<IGOResearchComputationProvider> seen) {
+        public int requestGORWUt(int gorwut, boolean simulate, @NotNull Collection<IGOResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxGORWUt(@NotNull Collection<IGOResearchComputationProvider> seen) {
+        public int getMaxGORWUt(@NotNull Collection<IGOResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public boolean canBridge(@NotNull Collection<IGOResearchComputationProvider> seen) {
+        public boolean canBridge(@NotNull Collection<IGOResearchDataProvider> seen) {
             return false;
         }
     }

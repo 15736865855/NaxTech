@@ -3,7 +3,7 @@ package com.onlyex.naxtech.common.metatileentities.multi.part;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasing;
-import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
+import com.onlyex.naxtech.common.metatileentities.MetaTileEntities;
 import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.IHeatingCoilBlockStats;
@@ -28,7 +28,6 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockWireCoil;
-import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.Blocks;
@@ -123,17 +122,17 @@ public class MetaTileEntityBlazingBlastFurnace extends RecipeMapMultiblockContro
                     .aisle("EEM", "CCC", "CCC", "XXX")
                     .aisle("FXD", "C#C", "C#C", "XHX")
                     .aisle("ISO", "CCC", "CCC", "XXX")
-                    .where('S', NTMetaTileEntities.BLAZING_BLAST_FURNACE, EnumFacing.SOUTH)
+                    .where('S', MetaTileEntities.BLAZING_BLAST_FURNACE, EnumFacing.SOUTH)
                     .where('X', getCasingState())
-                    .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[5], EnumFacing.NORTH)
-                    .where('I', MetaTileEntities.ITEM_IMPORT_BUS[4], EnumFacing.SOUTH)
-                    .where('O', MetaTileEntities.ITEM_EXPORT_BUS[4], EnumFacing.SOUTH)
-                    .where('F', MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.WEST)
-                    .where('D', MetaTileEntities.FLUID_EXPORT_HATCH[4], EnumFacing.EAST)
-                    .where('H', MetaTileEntities.MUFFLER_HATCH[1], EnumFacing.UP)
+                    .where('E', gregtech.common.metatileentities.MetaTileEntities.ENERGY_INPUT_HATCH[5], EnumFacing.NORTH)
+                    .where('I', gregtech.common.metatileentities.MetaTileEntities.ITEM_IMPORT_BUS[4], EnumFacing.SOUTH)
+                    .where('O', gregtech.common.metatileentities.MetaTileEntities.ITEM_EXPORT_BUS[4], EnumFacing.SOUTH)
+                    .where('F', gregtech.common.metatileentities.MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.WEST)
+                    .where('D', gregtech.common.metatileentities.MetaTileEntities.FLUID_EXPORT_HATCH[4], EnumFacing.EAST)
+                    .where('H', gregtech.common.metatileentities.MetaTileEntities.MUFFLER_HATCH[1], EnumFacing.UP)
                     .where('#', Blocks.AIR.getDefaultState())
                     .where('M', () -> {
-                        return ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : NTMetaBlocks.MACHINE_CASING.getState(BlockMachinelCasing.CasingType.ADVANCED_INVAR_CASING);
+                        return ConfigHolder.machines.enableMaintenance ? gregtech.common.metatileentities.MetaTileEntities.MAINTENANCE_HATCH : NTMetaBlocks.MACHINE_CASING.getState(BlockMachinelCasing.CasingType.ADVANCED_INVAR_CASING);
                     }, EnumFacing.NORTH);
         }
         MultiblockShapeInfo.Builder finalBuilder = builder;

@@ -1,56 +1,64 @@
 package com.onlyex.naxtech.api.utils;
 
-import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.research.ResearchLineRecipeBuilder;
-import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.common.ConfigHolder;
+import com.onlyex.naxtech.common.items.NTMetaItems;
 
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
+
 import gregtech.api.recipes.Recipe;
-import gregtech.api.recipes.RecipeBuilder;
-import gregtech.api.recipes.ingredients.nbtmatch.NBTCondition;
-import gregtech.api.recipes.ingredients.nbtmatch.NBTMatcher;
+import gregtech.api.recipes.RecipeMaps;
+
 import gregtech.api.recipes.machines.IScannerRecipeMap;
 import gregtech.api.recipes.machines.RecipeMapScanner;
-import gregtech.api.recipes.recipeproperties.ScanProperty;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.Constants;
-
 import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.List;
 
 public class ResearchLineManager {
     public static final String RESEARCH_NBT_TAG = "researchLineResearch";
     public static final String RESEARCH_ID_NBT_TAG = "researchId";
 
-  /*
-   * getDefaultScannerItem() 方法，返回的是默认的扫描仪物品。
-   * 使用了名为 MetaItems.TOOL_DATA_STICK 的工具类，调用了它的 getStackForm() 方法来获取默认扫描仪物品的 ItemStack。
-   */
-/*    @NotNull
-    public static ItemStack getDefaultScannerItem() {
-        return NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
-    }*/
-
     /**
      * getDefaultResearchStationItem(int rwut) 方法，根据传入的参数 rwut 的值，返回默认的研究站物品。
      * 如果 rwut 大于 32，它会返回 MetaItems.TOOL_DATA_MODULE 的 ItemStack；否则，返回 MetaItems.TOOL_DATA_ORB 的 ItemStack。
      */
     @NotNull
-    public static ItemStack getDefaultResearchStationItem(int rwut) {
-        /*if (rwut > 32) {
-            return MetaItems.TOOL_DATA_MODULE.getStackForm();
+    public static ItemStack getDefaultResearchStationItem(
+            int gorwut,int oprwut,int sprwut,int corwut,int scarwut,int schrwut,int sdirwut) {
+        if (gorwut > 32) {
+            return NTMetaItems.GOOWARE_RESEARCH_DATA_CARD.getStackForm();
         }
-        return MetaItems.TOOL_DATA_ORB.getStackForm();*/
-        return null;
+        if (oprwut > 32) {
+            return NTMetaItems.OPTICAL_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (sprwut > 32) {
+            return NTMetaItems.SPINTRONIC_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (corwut > 32) {
+            return NTMetaItems.COSMIC_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (scarwut > 32) {
+            return NTMetaItems.SUPRA_CAUSAL_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (schrwut > 32) {
+            return NTMetaItems.SUPRA_CHRONAL_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (sdirwut > 32) {
+            return NTMetaItems.SUPRA_DIMENSION_RESEARCH_DATA_CARD.getStackForm();
+        }
+
+        return NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
     }
 
     private ResearchLineManager() {}
@@ -95,14 +103,14 @@ public class ResearchLineManager {
     public static boolean isStackDataItem(@NotNull ItemStack stack, boolean isDataBank) {
         if (stack.getItem() instanceof MetaItem<?> metaItem) {
             MetaItem<?>.MetaValueItem valueItem = metaItem.getItem(stack);
-            if (valueItem == null) return false;
+            if (valueItem == null) return true;
             for (IItemBehaviour behaviour : valueItem.getBehaviours()) {
                 if (behaviour instanceof IDataItem dataItem) {
-                    return !dataItem.requireDataBank() || isDataBank;
+                    return dataItem.requireDataBank() && !isDataBank;
                 }
             }
         }
-        return false;
+        return true;
     }
 
     /**
@@ -153,7 +161,7 @@ public class ResearchLineManager {
         NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
         writeResearchToNBT(compound, researchId);
 
-        if (RWUt > 0) {
+/*        if (RWUt > 0) {
             RecipeBuilder<?> researchBuilder = NTRecipeMaps.RESEARCH_LINE_RECIPES.recipeBuilder()
                     .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
                     .outputs(dataItem)
@@ -169,7 +177,7 @@ public class ResearchLineManager {
             }
 
             researchBuilder.buildAndRegister();
-        }
+        }*/
     }
 
     public static class DataStickCopyScannerLogic implements IScannerRecipeMap.ICustomScannerLogic {
@@ -209,36 +217,34 @@ public class ResearchLineManager {
             if (compound == null) return null;
 
             // 两者都必须是数据项
-            if (!isStackDataItem(first, true)) return null;
-            if (!isStackDataItem(second, true)) return null;
+            if (isStackDataItem(first, true)) return null;
+            if (isStackDataItem(second, true)) return null;
 
             ItemStack output = first.copy();
             output.setTagCompound(compound.copy());
-            /*return NTRecipeMaps.SCANNER_RECIPES.recipeBuilder()
+            return RecipeMaps.SCANNER_RECIPES.recipeBuilder()
                     .inputs(first)
                     .notConsumable(second)
                     .outputs(output)
-                    .duration(DURATION).EUt(EUT).build().getResult();*/
-            return null;
+                    .duration(DURATION).EUt(EUT).build().getResult();
         }
 
         @Nullable
         @Override
         public List<Recipe> getRepresentativeRecipes() {
-            /*ItemStack copiedStick = MetaItems.TOOL_DATA_STICK.getStackForm();
+            ItemStack copiedStick = NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
             copiedStick.setTranslatableName("naxtech.scanner.copy_stick_from");
-            ItemStack emptyStick = MetaItems.TOOL_DATA_STICK.getStackForm();
+            ItemStack emptyStick = NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
             emptyStick.setTranslatableName("naxtech.scanner.copy_stick_empty");
-            ItemStack resultStick = MetaItems.TOOL_DATA_STICK.getStackForm();
+            ItemStack resultStick = NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
             resultStick.setTranslatableName("naxtech.scanner.copy_stick_to");
             return Collections.singletonList(
-                    NTRecipeMaps.SCANNER_RECIPES.recipeBuilder()
+                    RecipeMaps.SCANNER_RECIPES.recipeBuilder()
                             .inputs(emptyStick)
                             .notConsumable(copiedStick)
                             .outputs(resultStick)
                             .duration(DURATION).EUt(EUT)
-                            .build().getResult());*/
-            return null;
+                            .build().getResult());/**/
         }
     }
 }

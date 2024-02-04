@@ -9,7 +9,7 @@ import com.onlyex.naxtech.api.utils.NTUniverUtil;
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.block.NTMetaBlocks;
 import com.onlyex.naxtech.common.block.blocks.quantum.BlockQuantumForceTransformerCasing;
-import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
+import com.onlyex.naxtech.common.metatileentities.MetaTileEntities;
 import gregtech.api.metatileentity.IFastRenderMetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -22,7 +22,6 @@ import gregtech.api.pattern.PatternMatchContext;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.shader.postprocessing.BloomEffect;
 import gregtech.client.utils.BloomEffectUtil;
-import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -214,13 +213,13 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
                     .aisle("               ", "               ", "               ", " A           A ", " A           A ", " B           B ", " BA         AB ", "  AA       AA  ", "    AA   AA    ", "      BAB      ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ")
                     .aisle("               ", "               ", "               ", "  A         A  ", "  A         A  ", "  B         B  ", "  BAAAAAAAAAB  ", "   AAABBBAAA   ", "      BAB      ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ")
                     .aisle("    A     A    ", "    A     A    ", "    A     A    ", "   BA     AB   ", "   BABBABBAB   ", "   BAAAAAAAB   ", "   BBBBABBBB   ", "      BAB      ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ")
-                    .where('S', NTMetaTileEntities.QUANTUM_FORCE_TRANSFORMER, EnumFacing.SOUTH)
-                    .where('X', MetaTileEntities.ENERGY_INPUT_HATCH[UHV], EnumFacing.NORTH)
-                    .where('Y', MetaTileEntities.FLUID_IMPORT_HATCH[UHV], EnumFacing.SOUTH)
-                    .where('Z', MetaTileEntities.FLUID_EXPORT_HATCH[UHV], EnumFacing.SOUTH)
-                    .where('U', MetaTileEntities.ITEM_IMPORT_BUS[UHV], EnumFacing.WEST)
-                    .where('V', MetaTileEntities.ITEM_EXPORT_BUS[UHV], EnumFacing.EAST)
-                    .where('W', MetaTileEntities.MAINTENANCE_HATCH, EnumFacing.NORTH)
+                    .where('S', MetaTileEntities.QUANTUM_FORCE_TRANSFORMER, EnumFacing.SOUTH)
+                    .where('X', gregtech.common.metatileentities.MetaTileEntities.ENERGY_INPUT_HATCH[UHV], EnumFacing.NORTH)
+                    .where('Y', gregtech.common.metatileentities.MetaTileEntities.FLUID_IMPORT_HATCH[UHV], EnumFacing.SOUTH)
+                    .where('Z', gregtech.common.metatileentities.MetaTileEntities.FLUID_EXPORT_HATCH[UHV], EnumFacing.SOUTH)
+                    .where('U', gregtech.common.metatileentities.MetaTileEntities.ITEM_IMPORT_BUS[UHV], EnumFacing.WEST)
+                    .where('V', gregtech.common.metatileentities.MetaTileEntities.ITEM_EXPORT_BUS[UHV], EnumFacing.EAST)
+                    .where('W', gregtech.common.metatileentities.MetaTileEntities.MAINTENANCE_HATCH, EnumFacing.NORTH)
                     .where('C', getCoilState())
                     .where('D', getCasingState())
                     .where('H', getCasingState())

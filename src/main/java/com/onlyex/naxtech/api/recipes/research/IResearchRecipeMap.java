@@ -1,7 +1,6 @@
 package com.onlyex.naxtech.api.recipes.research;
 
 import gregtech.api.recipes.Recipe;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

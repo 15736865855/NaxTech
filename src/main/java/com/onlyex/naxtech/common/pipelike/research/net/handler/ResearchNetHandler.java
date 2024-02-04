@@ -1,6 +1,6 @@
 package com.onlyex.naxtech.common.pipelike.research.net.handler;
 
-import com.onlyex.naxtech.api.capability.hatch.research.rwu.IResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.rwu.IResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchRoutePath;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
-public class ResearchNetHandler implements IResearchComputationProvider {
+public class ResearchNetHandler implements IResearchDataProvider {
 
     private final TileEntityResearchPipe pipe;
     private final World world;
@@ -36,19 +36,19 @@ public class ResearchNetHandler implements IResearchComputationProvider {
     }
 
     @Override
-    public int requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
+    public int requestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchDataProvider> seen) {
         int provided = traverseRequestRWUt(rwut, simulate, seen);
         if (provided > 0) setPipesActive();
         return provided;
     }
 
     @Override
-    public int getMaxRWUt(@NotNull Collection<IResearchComputationProvider> seen) {
+    public int getMaxRWUt(@NotNull Collection<IResearchDataProvider> seen) {
         return traverseMaxRWUt(seen);
     }
 
     @Override
-    public boolean canBridge(@NotNull Collection<IResearchComputationProvider> seen) {
+    public boolean canBridge(@NotNull Collection<IResearchDataProvider> seen) {
         return traverseCanBridge(seen);
     }
 
@@ -64,32 +64,32 @@ public class ResearchNetHandler implements IResearchComputationProvider {
         return net == null || pipe == null || pipe.isInvalid();
     }
 
-    private int traverseRequestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchComputationProvider> seen) {
-        IResearchComputationProvider provider = getComputationProvider(seen);
+    private int traverseRequestRWUt(int rwut, boolean simulate, @NotNull Collection<IResearchDataProvider> seen) {
+        IResearchDataProvider provider = getComputationProvider(seen);
         if (provider == null) return 0;
         return provider.requestRWUt(rwut, simulate, seen);
     }
 
-    private int traverseMaxRWUt(@NotNull Collection<IResearchComputationProvider> seen) {
-        IResearchComputationProvider provider = getComputationProvider(seen);
+    private int traverseMaxRWUt(@NotNull Collection<IResearchDataProvider> seen) {
+        IResearchDataProvider provider = getComputationProvider(seen);
         if (provider == null) return 0;
         return provider.getMaxRWUt(seen);
     }
 
-    private boolean traverseCanBridge(@NotNull Collection<IResearchComputationProvider> seen) {
-        IResearchComputationProvider provider = getComputationProvider(seen);
+    private boolean traverseCanBridge(@NotNull Collection<IResearchDataProvider> seen) {
+        IResearchDataProvider provider = getComputationProvider(seen);
         if (provider == null) return true; // nothing found, so don't report a problem, just pass quietly
         return provider.canBridge(seen);
     }
 
     @Nullable
-    private IResearchComputationProvider getComputationProvider(@NotNull Collection<IResearchComputationProvider> seen) {
+    private IResearchDataProvider getComputationProvider(@NotNull Collection<IResearchDataProvider> seen) {
         if (isNetInvalidForTraversal()) return null;
 
         ResearchRoutePath inv = net.getNetData(pipe.getPipePos(), facing);
         if (inv == null) return null;
 
-        IResearchComputationProvider hatch = inv.getComputationHatch();
+        IResearchDataProvider hatch = inv.getComputationHatch();
         if (hatch == null || seen.contains(hatch)) return null;
         return hatch;
     }

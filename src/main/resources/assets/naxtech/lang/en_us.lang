@@ -1476,7 +1476,16 @@ naxtech.machine.sdi_research_computation_hatch.transmitter.tooltip=
 research.data_item.assemblyline.title=
 research.data_item.assemblyline.data=- §a%s
 
+naxtech.recipe.research=
 
+naxtech.recipe.data_per_tick=：%,d RWU/t
+naxtech.recipe.go_data_per_tick=-：%,d GO-RWU/t
+naxtech.recipe.op_data_per_tick=-：%,d OP-RWU/t
+naxtech.recipe.sp_data_per_tick=-：%,d SP-RWU/t
+naxtech.recipe.co_data_per_tick=-：%,d CO-RWU/t
+naxtech.recipe.sca_data_per_tick=-：%,d SCA-RWU/t
+naxtech.recipe.sch_data_per_tick=-：%,d SCH-RWU/t
+naxtech.recipe.sdi_data_per_tick=-：%,d SDI-RWU/t
 
 
 

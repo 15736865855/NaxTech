@@ -2,7 +2,7 @@ package com.onlyex.naxtech.common.pipelike.research.tile;
 
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.spintronic.ISPResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.spintronic.ISPResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
@@ -26,7 +26,7 @@ public class TileEntitySPResearchPipe extends TileEntityPipeBase<ResearchPipeTyp
 
     private final EnumMap<EnumFacing, SPResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
     // the OpticalNetHandler can only be created on the server, so we have an empty placeholder for the client
-    private final ISPResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
+    private final ISPResearchDataProvider clientComputationHandler = new DefaultComputationHandler();
     private WeakReference<ResearchPipeNet> currentPipeNet = new WeakReference<>(null);
     private SPResearchNetHandler defaultHandler;
     private int ticksActive = 0;
@@ -176,20 +176,20 @@ public class TileEntitySPResearchPipe extends TileEntityPipeBase<ResearchPipeTyp
         }
     }
 
-    private static class DefaultComputationHandler implements ISPResearchComputationProvider {
+    private static class DefaultComputationHandler implements ISPResearchDataProvider {
 
         @Override
-        public int requestSPRWUt(int sprwut, boolean simulate, @NotNull Collection<ISPResearchComputationProvider> seen) {
+        public int requestSPRWUt(int sprwut, boolean simulate, @NotNull Collection<ISPResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxSPRWUt(@NotNull Collection<ISPResearchComputationProvider> seen) {
+        public int getMaxSPRWUt(@NotNull Collection<ISPResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public boolean canBridge(@NotNull Collection<ISPResearchComputationProvider> seen) {
+        public boolean canBridge(@NotNull Collection<ISPResearchDataProvider> seen) {
             return false;
         }
     }

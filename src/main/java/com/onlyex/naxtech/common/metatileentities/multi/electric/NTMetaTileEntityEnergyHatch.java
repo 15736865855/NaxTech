@@ -1,6 +1,6 @@
 package com.onlyex.naxtech.common.metatileentities.multi.electric;
 
-import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
+import com.onlyex.naxtech.common.metatileentities.MetaTileEntities;
 import gregtech.api.capability.IEnergyContainer;
 import gregtech.api.metatileentity.multiblock.IMultiblockAbilityPart;
 import net.minecraft.creativetab.CreativeTabs;
@@ -16,19 +16,19 @@ public class NTMetaTileEntityEnergyHatch extends gregtech.common.metatileentitie
 
     @Override
     public void getSubItems(CreativeTabs creativeTab, NonNullList<ItemStack> subItems) {
-        for (gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch hatch : NTMetaTileEntities.INPUT_ENERGY_HATCH_4A) {
+        for (gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch hatch : MetaTileEntities.INPUT_ENERGY_HATCH_4A) {
             if (hatch != null) subItems.add(hatch.getStackForm());
         }
 
-        for (gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch hatch : NTMetaTileEntities.INPUT_ENERGY_HATCH_16A) {
+        for (gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch hatch : MetaTileEntities.INPUT_ENERGY_HATCH_16A) {
             if (hatch != null) subItems.add(hatch.getStackForm());
         }
 
-        for (gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch hatch : NTMetaTileEntities.OUTPUT_ENERGY_HATCH_4A) {
+        for (gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch hatch : MetaTileEntities.OUTPUT_ENERGY_HATCH_4A) {
             if (hatch != null) subItems.add(hatch.getStackForm());
         }
 
-        for (gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch hatch : NTMetaTileEntities.OUTPUT_ENERGY_HATCH_16A) {
+        for (gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityEnergyHatch hatch : MetaTileEntities.OUTPUT_ENERGY_HATCH_16A) {
             if (hatch != null) subItems.add(hatch.getStackForm());
         }
     }

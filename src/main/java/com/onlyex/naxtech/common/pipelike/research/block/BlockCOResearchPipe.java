@@ -7,7 +7,6 @@ import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.item.ItemBlockCOResearchPipe;
 import com.onlyex.naxtech.common.pipelike.research.net.WorldResearchPipeNet;
-
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityCOResearchPipe;
 import gregtech.api.items.toolitem.ToolClasses;
 import gregtech.api.items.toolitem.ToolHelper;

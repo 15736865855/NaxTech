@@ -1,6 +1,6 @@
 package com.onlyex.naxtech.common.pipelike.research.net.handler;
 
-import com.onlyex.naxtech.api.capability.hatch.research.suprachronal.ISCHResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.suprachronal.ISCHResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchRoutePath;
 import com.onlyex.naxtech.common.pipelike.research.tile.TileEntityResearchPipe;
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
-public class SCHResearchNetHandler implements ISCHResearchComputationProvider {
+public class SCHResearchNetHandler implements ISCHResearchDataProvider {
 
     private final TileEntitySCHResearchPipe pipe;
     private final World world;
@@ -37,19 +37,19 @@ public class SCHResearchNetHandler implements ISCHResearchComputationProvider {
     }
 
     @Override
-    public int requestSCHRWUt(int schrwut, boolean simulate, @NotNull Collection<ISCHResearchComputationProvider> seen) {
+    public int requestSCHRWUt(int schrwut, boolean simulate, @NotNull Collection<ISCHResearchDataProvider> seen) {
         int provided = traverseRequestSCHRWUt(schrwut, simulate, seen);
         if (provided > 0) setPipesActive();
         return provided;
     }
 
     @Override
-    public int getMaxSCHRWUt(@NotNull Collection<ISCHResearchComputationProvider> seen) {
+    public int getMaxSCHRWUt(@NotNull Collection<ISCHResearchDataProvider> seen) {
         return traverseMaxSCHRWUt(seen);
     }
 
     @Override
-    public boolean canBridge(@NotNull Collection<ISCHResearchComputationProvider> seen) {
+    public boolean canBridge(@NotNull Collection<ISCHResearchDataProvider> seen) {
         return traverseCanBridge(seen);
     }
 
@@ -65,32 +65,32 @@ public class SCHResearchNetHandler implements ISCHResearchComputationProvider {
         return net == null || pipe == null || pipe.isInvalid();
     }
 
-    private int traverseRequestSCHRWUt(int schrwut, boolean simulate, @NotNull Collection<ISCHResearchComputationProvider> seen) {
-        ISCHResearchComputationProvider provider = getSCHComputationProvider(seen);
+    private int traverseRequestSCHRWUt(int schrwut, boolean simulate, @NotNull Collection<ISCHResearchDataProvider> seen) {
+        ISCHResearchDataProvider provider = getSCHComputationProvider(seen);
         if (provider == null) return 0;
         return provider.requestSCHRWUt(schrwut, simulate, seen);
     }
 
-    private int traverseMaxSCHRWUt(@NotNull Collection<ISCHResearchComputationProvider> seen) {
-        ISCHResearchComputationProvider provider = getSCHComputationProvider(seen);
+    private int traverseMaxSCHRWUt(@NotNull Collection<ISCHResearchDataProvider> seen) {
+        ISCHResearchDataProvider provider = getSCHComputationProvider(seen);
         if (provider == null) return 0;
         return provider.getMaxSCHRWUt(seen);
     }
 
-    private boolean traverseCanBridge(@NotNull Collection<ISCHResearchComputationProvider> seen) {
-        ISCHResearchComputationProvider provider = getSCHComputationProvider(seen);
+    private boolean traverseCanBridge(@NotNull Collection<ISCHResearchDataProvider> seen) {
+        ISCHResearchDataProvider provider = getSCHComputationProvider(seen);
         if (provider == null) return true; // nothing found, so don't report a problem, just pass quietly
         return provider.canBridge(seen);
     }
 
     @Nullable
-    private ISCHResearchComputationProvider getSCHComputationProvider(@NotNull Collection<ISCHResearchComputationProvider> seen) {
+    private ISCHResearchDataProvider getSCHComputationProvider(@NotNull Collection<ISCHResearchDataProvider> seen) {
         if (isNetInvalidForTraversal()) return null;
 
         ResearchRoutePath inv = net.getNetData(pipe.getPipePos(), facing);
         if (inv == null) return null;
 
-        ISCHResearchComputationProvider hatch = inv.getSCHComputationHatch();
+        ISCHResearchDataProvider hatch = inv.getSCHComputationHatch();
         if (hatch == null || seen.contains(hatch)) return null;
         return hatch;
     }

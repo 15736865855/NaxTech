@@ -2,7 +2,7 @@ package com.onlyex.naxtech.common.pipelike.research.tile;
 
 import com.onlyex.naxtech.api.capability.NTDataCodes;
 import com.onlyex.naxtech.api.capability.NTTileCapabilities;
-import com.onlyex.naxtech.api.capability.hatch.research.optical.IOPResearchComputationProvider;
+import com.onlyex.naxtech.api.capability.hatch.research.optical.IOPResearchDataProvider;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.net.ResearchPipeNet;
@@ -26,7 +26,7 @@ public class TileEntityOPResearchPipe extends TileEntityPipeBase<ResearchPipeTyp
 
     private final EnumMap<EnumFacing, OPResearchNetHandler> handlers = new EnumMap<>(EnumFacing.class);
     // the OpticalNetHandler can only be created on the server, so we have an empty placeholder for the client
-    private final IOPResearchComputationProvider clientComputationHandler = new DefaultComputationHandler();
+    private final IOPResearchDataProvider clientComputationHandler = new DefaultComputationHandler();
     private WeakReference<ResearchPipeNet> currentPipeNet = new WeakReference<>(null);
     private OPResearchNetHandler defaultHandler;
     private int ticksActive = 0;
@@ -176,20 +176,20 @@ public class TileEntityOPResearchPipe extends TileEntityPipeBase<ResearchPipeTyp
         }
     }
 
-    private static class DefaultComputationHandler implements IOPResearchComputationProvider {
+    private static class DefaultComputationHandler implements IOPResearchDataProvider {
 
         @Override
-        public int requestOPRWUt(int oprwut, boolean simulate, @NotNull Collection<IOPResearchComputationProvider> seen) {
+        public int requestOPRWUt(int oprwut, boolean simulate, @NotNull Collection<IOPResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public int getMaxOPRWUt(@NotNull Collection<IOPResearchComputationProvider> seen) {
+        public int getMaxOPRWUt(@NotNull Collection<IOPResearchDataProvider> seen) {
             return 0;
         }
 
         @Override
-        public boolean canBridge(@NotNull Collection<IOPResearchComputationProvider> seen) {
+        public boolean canBridge(@NotNull Collection<IOPResearchDataProvider> seen) {
             return false;
         }
     }

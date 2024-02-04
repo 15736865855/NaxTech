@@ -13,7 +13,7 @@ import com.onlyex.naxtech.common.block.blocks.BlockBoronSilicateGlassCasing;
 import com.onlyex.naxtech.common.block.blocks.BlockPipelinelCasing;
 import com.onlyex.naxtech.common.block.blocks.assembly.BlockAdvancedAssemblyLineCasing;
 import com.onlyex.naxtech.common.block.blocks.machinel.BlockMachinelCasing;
-import com.onlyex.naxtech.common.metatileentities.NTMetaTileEntities;
+import com.onlyex.naxtech.common.metatileentities.MetaTileEntities;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -28,7 +28,6 @@ import gregtech.api.unification.material.Materials;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.metatileentities.MetaTileEntities;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
@@ -226,21 +225,21 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
                 .aisle("HHHHHHHHH", "A       A", "A  HHH  A", "A D   D A", "AC     CA", "AC     CA", "HC     CH", "E       E", " EH   HE ", "   HBH   ")
                 .aisle("HHHHHHHHH", "A       A", "A  HHH  A", "A       A", "A       A", "A       A", "H       H", "E       E", " ELHHHLE ", "         ")
                 .aisle("HHHHHHHHH", "H  N N  H", "H  XXX  H", "H  JJJ  H", "H       H", "H       H", "HH HIH HH", " HHH~HHH ", "   HHH   ", "         ")
-                .where('~', NTMetaTileEntities.COMPONENT_ASSEMBLY_LINE, EnumFacing.SOUTH)
+                .where('~', MetaTileEntities.COMPONENT_ASSEMBLY_LINE, EnumFacing.SOUTH)
                 .where('A', getGlassState())
                 .where('H', getCasingState())
                 .where('C', getSecondCasingState())
                 .where('D', getFrameState())
                 .where('G', getPipeCasingState())
                 .where('E', getThirdCasingState())
-                .where('J', MetaTileEntities.ITEM_IMPORT_BUS[4], EnumFacing.SOUTH)
-                .where('X', MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.SOUTH)
+                .where('J', gregtech.common.metatileentities.MetaTileEntities.ITEM_IMPORT_BUS[4], EnumFacing.SOUTH)
+                .where('X', gregtech.common.metatileentities.MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.SOUTH)
                 .where('N', MetaBlocks.FRAMES.get(Materials.TungstenSteel).getBlock(Materials.TungstenSteel))
-                .where('K', MetaTileEntities.ITEM_EXPORT_BUS[4], EnumFacing.NORTH)
-                .where('L', MetaTileEntities.ENERGY_INPUT_HATCH[5], EnumFacing.SOUTH)
-                .where('I', () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : getCasingState(), EnumFacing.SOUTH)
-                .where('Q', MetaTileEntities.ITEM_IMPORT_BUS[4], EnumFacing.WEST)
-                .where('P', MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.EAST);
+                .where('K', gregtech.common.metatileentities.MetaTileEntities.ITEM_EXPORT_BUS[4], EnumFacing.NORTH)
+                .where('L', gregtech.common.metatileentities.MetaTileEntities.ENERGY_INPUT_HATCH[5], EnumFacing.SOUTH)
+                .where('I', () -> ConfigHolder.machines.enableMaintenance ? gregtech.common.metatileentities.MetaTileEntities.MAINTENANCE_HATCH : getCasingState(), EnumFacing.SOUTH)
+                .where('Q', gregtech.common.metatileentities.MetaTileEntities.ITEM_IMPORT_BUS[4], EnumFacing.WEST)
+                .where('P', gregtech.common.metatileentities.MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.EAST);
         NTAPI.MAP_CA_TIRED_CASING.entrySet().stream()
                 .sorted(Comparator.comparingInt(entry -> ((WrappedIntTier) entry.getValue()).getIntTier()))
                 .forEach(entry -> shapeInfo.add(builder.where('B', entry.getKey()).build()));

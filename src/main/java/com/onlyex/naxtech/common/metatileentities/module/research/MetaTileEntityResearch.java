@@ -3,7 +3,7 @@ package com.onlyex.naxtech.common.metatileentities.module.research;
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Matrix4;
-import com.onlyex.naxtech.api.capability.module.research.*;
+import com.onlyex.naxtech.api.capability.module.research.IResearchHatch;
 import com.onlyex.naxtech.api.capability.module.research.rwu.*;
 import gregtech.api.GTValues;
 import gregtech.api.gui.ModularUI;

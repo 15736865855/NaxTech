@@ -1505,8 +1505,16 @@ naxtech.machine.hpca.ultimate_cooler_component.tooltip=
 research.data_item.assemblyline.title=§n科研数据：
 research.data_item.assemblyline.data=- §a%s
 
+naxtech.recipe.research=需要研究
 
-
+naxtech.recipe.data_per_tick=最小科研数据：%,d RWU/t
+naxtech.recipe.go_data_per_tick=最小生物-科研数据：%,d GO-RWU/t
+naxtech.recipe.op_data_per_tick=最小光学-科研数据：%,d OP-RWU/t
+naxtech.recipe.sp_data_per_tick=最小自旋电子学-科研数据：%,d SP-RWU/t
+naxtech.recipe.co_data_per_tick=最小寰宇-科研数据：%,d CO-RWU/t
+naxtech.recipe.sca_data_per_tick=最小超因果-科研数据：%,d SCA-RWU/t
+naxtech.recipe.sch_data_per_tick=最小超时空-科研数据：%,d SCH-RWU/t
+naxtech.recipe.sdi_data_per_tick=最小超维度-科研数据：%,d SDI-RWU/t
 
 
 

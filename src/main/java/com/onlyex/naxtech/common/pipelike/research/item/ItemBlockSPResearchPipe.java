@@ -1,6 +1,5 @@
 package com.onlyex.naxtech.common.pipelike.research.item;
 
-import com.onlyex.naxtech.common.pipelike.research.block.BlockResearchPipe;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
 import com.onlyex.naxtech.common.pipelike.research.block.BlockSPResearchPipe;

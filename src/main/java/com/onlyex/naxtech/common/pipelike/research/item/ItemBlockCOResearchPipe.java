@@ -1,8 +1,8 @@
 package com.onlyex.naxtech.common.pipelike.research.item;
 
-import com.onlyex.naxtech.common.pipelike.research.block.BlockCOResearchPipe;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeProperties;
 import com.onlyex.naxtech.common.pipelike.research.ResearchPipeType;
+import com.onlyex.naxtech.common.pipelike.research.block.BlockCOResearchPipe;
 import gregtech.api.pipenet.block.ItemBlockPipe;
 import gregtech.client.utils.TooltipHelper;
 import net.minecraft.client.resources.I18n;

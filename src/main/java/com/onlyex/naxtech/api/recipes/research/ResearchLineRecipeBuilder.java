@@ -1,20 +1,15 @@
 package com.onlyex.naxtech.api.recipes.research;
 
+import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
+import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
 import com.onlyex.naxtech.api.utils.NTLog;
-import com.onlyex.naxtech.api.utils.ResearchLineManager;
 import com.onlyex.naxtech.common.ConfigHolder;
-import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
-import gregtech.api.recipes.recipeproperties.ResearchProperty;
-import gregtech.api.recipes.recipeproperties.ResearchPropertyData;
 import gregtech.api.util.EnumValidationResult;
-
 import net.minecraft.item.ItemStack;
-
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;

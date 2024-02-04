@@ -1,5 +1,6 @@
 package com.onlyex.naxtech.api.recipes.research;
 
+import com.onlyex.naxtech.api.utils.ResearchLineManager;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
@@ -58,9 +59,9 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             researchId = GTStringUtils.itemStackToString(researchStack);
         }
 
-/*        if (dataStack == null) {
+        if (dataStack == null) {
             dataStack = getDefaultDataItem();
-        }*/
+        }/**/
 
         boolean foundBehavior = false;
         if (dataStack.getItem() instanceof MetaItem<?>metaItem) {
@@ -78,7 +79,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         }
     }
 
-    //protected abstract ItemStack getDefaultDataItem();
+    protected abstract ItemStack getDefaultDataItem();
 
 /*    public static class ScannerRecipeBuilder extends ResearchRecipeBuilder<ScannerRecipeBuilder> {
 
@@ -110,136 +111,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         }
     }*/
 
-    public static final int RESEARCH_EUT = GTValues.VA[GTValues.ZPM];
-    public static final int GO_RESEARCH_EUT = GTValues.VA[GTValues.UV];
-    public static final int OP_RESEARCH_EUT = GTValues.VA[GTValues.UHV];
-    public static final int SP_RESEARCH_EUT = GTValues.VA[GTValues.UEV];
-    public static final int CO_RESEARCH_EUT = GTValues.VA[GTValues.UIV];
-    public static final int SCA_RESEARCH_EUT = GTValues.VA[GTValues.UXV];
-    public static final int SCH_RESEARCH_EUT = GTValues.VA[GTValues.OpV];
-    public static final int SDI_RESEARCH_EUT = GTValues.VA[GTValues.MAX];
 
-    //默认情况下，如果提供了足够的RWU/t，所需的总RWU将为200秒。
-    //提供更多的RWU/t将允许它花费更少的时间。
-    public static final int RESEARCH_TOTAL_RWUT = 4000;
-
-    protected int rwut;
-    protected int gorwut;
-    protected int oprwut;
-    protected int sprwut;
-    protected int corwut;
-    protected int scarwut;
-    protected int schrwut;
-    protected int sdirwut;
-    protected int totalRWU;
-    protected int totalGORWU;
-    protected int totalOPRWU;
-    protected int totalSPRWU;
-    protected int totalCORWU;
-    protected int totalSCARWU;
-    protected int totalSCHRWU;
-    protected int totalSDIRWU;
-    public T RWUt(int rwut) {
-        this.rwut = rwut;
-        this.totalRWU = rwut * RESEARCH_TOTAL_RWUT;
-        return (T) this;
-    }
-    public T  RWUt(int rwut, int totalRWU) {
-        this.rwut = rwut;
-        this.totalRWU = totalRWU;
-        return (T) this;
-    }
-
-    //
-    public T GORWUt(int gorwut) {
-        this.gorwut = gorwut;
-        this.totalGORWU = gorwut * RESEARCH_TOTAL_RWUT;
-        return (T) this;
-    }
-
-    public T GORWUt(int gorwut, int totalGORWU) {
-        this.gorwut = gorwut;
-        this.totalGORWU = totalGORWU;
-        return (T) this;
-    }
-
-    //
-    public T OPRWUt(int oprwut) {
-        this.oprwut = oprwut;
-        this.totalOPRWU = oprwut * RESEARCH_TOTAL_RWUT;
-        return (T) this;
-    }
-
-    public T OPRWUt(int oprwut, int totalOPRWU) {
-        this.oprwut = oprwut;
-        this.totalOPRWU = totalOPRWU;
-        return (T) this;
-    }
-
-    //
-    public T SPRWUt(int sprwut) {
-        this.sprwut = sprwut;
-        this.totalSPRWU = sprwut * RESEARCH_TOTAL_RWUT;
-        return (T) this;
-    }
-
-    public T SPRWUt(int sprwut, int totalSPRWU) {
-        this.sprwut = sprwut;
-        this.totalSPRWU = totalSPRWU;
-        return (T) this;
-    }
-
-    //
-    public T CORWUt(int corwut) {
-        this.corwut = corwut;
-        this.totalCORWU = corwut * RESEARCH_TOTAL_RWUT;
-        return (T) this;
-    }
-
-    public T CORWUt(int corwut, int totalCORWU) {
-        this.corwut = corwut;
-        this.totalCORWU = totalCORWU;
-        return (T) this;
-    }
-
-    //
-    public T SCARWUt(int scarwut) {
-        this.scarwut = scarwut;
-        this.totalSCARWU = scarwut * RESEARCH_TOTAL_RWUT;
-        return (T) this;
-    }
-
-    public T SCARWUt(int scarwut, int totalSCARWU) {
-        this.scarwut = scarwut;
-        this.totalSCARWU = totalSCARWU;
-        return (T) this;
-    }
-
-    //
-    public T SCHRWUt(int schrwut) {
-        this.schrwut = schrwut;
-        this.totalSCHRWU = schrwut * RESEARCH_TOTAL_RWUT;
-        return (T) this;
-    }
-
-    public T SCHRWUt(int schrwut, int totalSCHRWU) {
-        this.schrwut = schrwut;
-        this.totalSCHRWU = totalSCHRWU;
-        return (T) this;
-    }
-
-    //
-    public T SDIRWUt(int sdirwut) {
-        this.sdirwut = sdirwut;
-        this.totalSDIRWU = sdirwut * RESEARCH_TOTAL_RWUT;
-        return (T) this;
-    }
-
-    public T SDIRWUt(int sdirwut, int totalSDIRWU) {
-        this.sdirwut = sdirwut;
-        this.totalSDIRWU = totalSDIRWU;
-        return (T) this;
-    }
 
 
     protected abstract ResearchLineRecipeBuilder.ResearchRecipeEntry research();
@@ -252,8 +124,145 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
     protected abstract ResearchLineRecipeBuilder.SDIResearchRecipeEntry sdiresearch();
 
     public static class StationRecipeBuilder extends ResearchRecipeBuilder<StationRecipeBuilder> {
+
+        public static final int RESEARCH_EUT = GTValues.VA[GTValues.ZPM];
+        public static final int GO_RESEARCH_EUT = GTValues.VA[GTValues.UV];
+        public static final int OP_RESEARCH_EUT = GTValues.VA[GTValues.UHV];
+        public static final int SP_RESEARCH_EUT = GTValues.VA[GTValues.UEV];
+        public static final int CO_RESEARCH_EUT = GTValues.VA[GTValues.UIV];
+        public static final int SCA_RESEARCH_EUT = GTValues.VA[GTValues.UXV];
+        public static final int SCH_RESEARCH_EUT = GTValues.VA[GTValues.OpV];
+        public static final int SDI_RESEARCH_EUT = GTValues.VA[GTValues.MAX];
+
+        //默认情况下，如果提供了足够的RWU/t，所需的总RWU将为200秒。
+        //提供更多的RWU/t将允许它花费更少的时间。
+        public static final int RESEARCH_TOTAL_RWUT = 4000;
+
+        private int rwut;
+        private int gorwut;
+        private int oprwut;
+        private int sprwut;
+        private int corwut;
+        private int scarwut;
+        private int schrwut;
+        private int sdirwut;
+        private int totalRWU;
+        private int totalGORWU;
+        private int totalOPRWU;
+        private int totalSPRWU;
+        private int totalCORWU;
+        private int totalSCARWU;
+        private int totalSCHRWU;
+        private int totalSDIRWU;
+        public StationRecipeBuilder RWUt(int rwut) {
+            this.rwut = rwut;
+            this.totalRWU = rwut * RESEARCH_TOTAL_RWUT;
+            return this;
+        }
+        public StationRecipeBuilder  RWUt(int rwut, int totalRWU) {
+            this.rwut = rwut;
+            this.totalRWU = totalRWU;
+            return this;
+        }
+
+        //
+        public StationRecipeBuilder GORWUt(int gorwut) {
+            this.gorwut = gorwut;
+            this.totalGORWU = gorwut * RESEARCH_TOTAL_RWUT;
+            return this;
+        }
+
+        public StationRecipeBuilder GORWUt(int gorwut, int totalGORWU) {
+            this.gorwut = gorwut;
+            this.totalGORWU = totalGORWU;
+            return this;
+        }
+
+        //
+        public StationRecipeBuilder OPRWUt(int oprwut) {
+            this.oprwut = oprwut;
+            this.totalOPRWU = oprwut * RESEARCH_TOTAL_RWUT;
+            return this;
+        }
+
+        public StationRecipeBuilder OPRWUt(int oprwut, int totalOPRWU) {
+            this.oprwut = oprwut;
+            this.totalOPRWU = totalOPRWU;
+            return this;
+        }
+
+        //
+        public StationRecipeBuilder SPRWUt(int sprwut) {
+            this.sprwut = sprwut;
+            this.totalSPRWU = sprwut * RESEARCH_TOTAL_RWUT;
+            return this;
+        }
+
+        public StationRecipeBuilder SPRWUt(int sprwut, int totalSPRWU) {
+            this.sprwut = sprwut;
+            this.totalSPRWU = totalSPRWU;
+            return this;
+        }
+
+        //
+        public StationRecipeBuilder CORWUt(int corwut) {
+            this.corwut = corwut;
+            this.totalCORWU = corwut * RESEARCH_TOTAL_RWUT;
+            return this;
+        }
+
+        public StationRecipeBuilder CORWUt(int corwut, int totalCORWU) {
+            this.corwut = corwut;
+            this.totalCORWU = totalCORWU;
+            return this;
+        }
+
+        //
+        public StationRecipeBuilder SCARWUt(int scarwut) {
+            this.scarwut = scarwut;
+            this.totalSCARWU = scarwut * RESEARCH_TOTAL_RWUT;
+            return this;
+        }
+
+        public StationRecipeBuilder SCARWUt(int scarwut, int totalSCARWU) {
+            this.scarwut = scarwut;
+            this.totalSCARWU = totalSCARWU;
+            return this;
+        }
+
+        //
+        public StationRecipeBuilder SCHRWUt(int schrwut) {
+            this.schrwut = schrwut;
+            this.totalSCHRWU = schrwut * RESEARCH_TOTAL_RWUT;
+            return this;
+        }
+
+        public StationRecipeBuilder SCHRWUt(int schrwut, int totalSCHRWU) {
+            this.schrwut = schrwut;
+            this.totalSCHRWU = totalSCHRWU;
+            return this;
+        }
+
+        //
+        public StationRecipeBuilder SDIRWUt(int sdirwut) {
+            this.sdirwut = sdirwut;
+            this.totalSDIRWU = sdirwut * RESEARCH_TOTAL_RWUT;
+            return this;
+        }
+
+        public StationRecipeBuilder SDIRWUt(int sdirwut, int totalSDIRWU) {
+            this.sdirwut = sdirwut;
+            this.totalSDIRWU = totalSDIRWU;
+            return this;
+        }
+
         StationRecipeBuilder() {/**/}
         //
+
+        @Override
+        protected ItemStack getDefaultDataItem() {
+            return ResearchLineManager.getDefaultResearchStationItem(gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
+        }
         @Override
         protected ResearchLineRecipeBuilder.ResearchRecipeEntry research() {
             validateResearchItem();
