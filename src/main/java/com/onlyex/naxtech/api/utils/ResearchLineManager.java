@@ -1,6 +1,7 @@
 package com.onlyex.naxtech.api.utils;
 
-import com.onlyex.naxtech.api.recipes.research.ResearchLineRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
+import com.onlyex.naxtech.api.recipes.research.builder.*;
 import com.onlyex.naxtech.common.ConfigHolder;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 
@@ -9,8 +10,12 @@ import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
 
 import gregtech.api.recipes.Recipe;
+import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMaps;
 
+import gregtech.api.recipes.builders.ComputationRecipeBuilder;
+import gregtech.api.recipes.ingredients.nbtmatch.NBTCondition;
+import gregtech.api.recipes.ingredients.nbtmatch.NBTMatcher;
 import gregtech.api.recipes.machines.IScannerRecipeMap;
 import gregtech.api.recipes.machines.RecipeMapScanner;
 
@@ -24,6 +29,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.List;
+
+import static com.onlyex.naxtech.api.recipes.NTRecipeMaps.*;
 
 public class ResearchLineManager {
     public static final String RESEARCH_NBT_TAG = "researchLineResearch";
@@ -143,31 +150,35 @@ public class ResearchLineManager {
      * 这段代码的作用是通过Builder模式创建默认的研究配方。
      * 根据配置文件中的设置，如果启用了研究功能，并且存在配方条目，就依次创建对应的默认研究配方。
      */
-    public static void createDefaultResearchRecipe(@NotNull ResearchLineRecipeBuilder builder) {
+    public static void createResearchRecipe(@NotNull ResearchLineRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (ResearchLineRecipeBuilder.ResearchRecipeEntry entry : builder.getRecipeEntries()) {
-            createDefaultResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
                     entry.getIgnoreNBT(),
-                    entry.getDuration(), entry.getEUt(), entry.getRWUt());
+                    entry.getDuration(),
+                    entry.getEUt(),
+                    entry.getCWUt(),
+                    entry.getRWUt());
         }
     }
-    
-    public static void createDefaultResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem,
-                                                   @NotNull ItemStack dataItem, boolean ignoreNBT, int duration,
-                                                   int EUt, int RWUt) {
+
+    public static void createResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+                                            boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
 
         NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
         writeResearchToNBT(compound, researchId);
 
-/*        if (RWUt > 0) {
-            RecipeBuilder<?> researchBuilder = NTRecipeMaps.RESEARCH_LINE_RECIPES.recipeBuilder()
+        if (RWUt > 0) {
+            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
                     .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
                     .outputs(dataItem)
-                    .EUt(EUt);
-                    //.RWUt(RWUt)
-                    //.totalRWU(duration)
+                    .EUt(EUt)
+                    .CWUt(CWUt)
+                    .totalCWU(duration)
+                    .RWUt(RWUt)
+                    .totalRWU(duration);
 
             if (ignoreNBT) {
                 researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
@@ -177,8 +188,392 @@ public class ResearchLineManager {
             }
 
             researchBuilder.buildAndRegister();
-        }*/
+        }
     }
+
+    public static void createGOResearchRecipe(@NotNull GOResearchLineRecipeBuilder builder) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        for (GOResearchLineRecipeBuilder.GOResearchRecipeEntry entry : builder.getGORecipeEntries()) {
+            createGOResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+                    entry.getIgnoreNBT(),
+                    entry.getDuration(),
+                    entry.getEUt(),
+                    entry.getCWUt(),
+                    entry.getRWUt(),
+                    entry.getGORWUt()
+            );
+        }
+    }
+
+    public static void createGOResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+                                              boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
+        writeResearchToNBT(compound, researchId);
+
+        if (GORWUt > 0) {
+            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
+                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                    .outputs(dataItem)
+                    .EUt(EUt)
+                    .CWUt(CWUt)
+                    .totalCWU(duration)
+                    .RWUt(RWUt)
+                    .totalRWU(duration)
+                    .GORWUt(GORWUt)
+                    .totalGORWU(duration);
+
+            if (ignoreNBT) {
+                researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
+                        NBTCondition.ANY);
+            } else {
+                researchBuilder.inputs(researchItem);
+            }
+
+            researchBuilder.buildAndRegister();
+        }
+    }
+
+    public static void createOPResearchRecipe(@NotNull OPResearchLineRecipeBuilder builder) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        for (OPResearchLineRecipeBuilder.OPResearchRecipeEntry entry : builder.getOPRecipeEntries()) {
+            createOPResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+                    entry.getIgnoreNBT(),
+                    entry.getDuration(),
+                    entry.getEUt(),
+                    entry.getCWUt(),
+                    entry.getRWUt(),
+                    entry.getGORWUt(),
+                    entry.getOPRWUt()
+            );
+        }
+    }
+
+    public static void createOPResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+                                              boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
+        writeResearchToNBT(compound, researchId);
+
+        if (OPRWUt > 0) {
+            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
+                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                    .outputs(dataItem)
+                    .EUt(EUt)
+                    .CWUt(CWUt)
+                    .totalCWU(duration)
+                    .RWUt(RWUt)
+                    .totalRWU(duration)
+                    .GORWUt(GORWUt)
+                    .totalGORWU(duration)
+                    .OPRWUt(OPRWUt)
+                    .totalOPRWU(duration);
+
+            if (ignoreNBT) {
+                researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
+                        NBTCondition.ANY);
+            } else {
+                researchBuilder.inputs(researchItem);
+            }
+
+            researchBuilder.buildAndRegister();
+        }
+    }
+
+    public static void createSPResearchRecipe(@NotNull SPResearchLineRecipeBuilder builder) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        for (SPResearchLineRecipeBuilder.SPResearchRecipeEntry entry : builder.getSPRecipeEntries()) {
+            createSPResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+                    entry.getIgnoreNBT(),
+                    entry.getDuration(),
+                    entry.getEUt(),
+                    entry.getCWUt(),
+                    entry.getRWUt(),
+                    entry.getGORWUt(),
+                    entry.getOPRWUt(),
+                    entry.getSPRWUt()
+            );
+        }
+    }
+
+    public static void createSPResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+                                              boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
+                                              int SPRWUt) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
+        writeResearchToNBT(compound, researchId);
+
+        if (SPRWUt > 0) {
+            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
+                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                    .outputs(dataItem)
+                    .EUt(EUt)
+                    .CWUt(CWUt)
+                    .totalCWU(duration)
+                    .RWUt(RWUt)
+                    .totalRWU(duration)
+                    .GORWUt(GORWUt)
+                    .totalGORWU(duration)
+                    .OPRWUt(OPRWUt)
+                    .totalOPRWU(duration)
+                    .SPRWUt(SPRWUt)
+                    .totalSPRWU(duration);
+
+            if (ignoreNBT) {
+                researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
+                        NBTCondition.ANY);
+            } else {
+                researchBuilder.inputs(researchItem);
+            }
+
+            researchBuilder.buildAndRegister();
+        }
+    }
+
+    public static void createCOResearchRecipe(@NotNull COResearchLineRecipeBuilder builder) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        for (COResearchLineRecipeBuilder.COResearchRecipeEntry entry : builder.getCORecipeEntries()) {
+            createCOResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+                    entry.getIgnoreNBT(),
+                    entry.getDuration(),
+                    entry.getEUt(),
+                    entry.getCWUt(),
+                    entry.getRWUt(),
+                    entry.getGORWUt(),
+                    entry.getOPRWUt(),
+                    entry.getSPRWUt(),
+                    entry.getCORWUt()
+            );
+        }
+    }
+
+    public static void createCOResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+                                              boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
+                                              int SPRWUt, int CORWUt) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
+        writeResearchToNBT(compound, researchId);
+
+        if (CORWUt > 0) {
+            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
+                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                    .outputs(dataItem)
+                    .EUt(EUt)
+                    .CWUt(CWUt)
+                    .totalCWU(duration)
+                    .RWUt(RWUt)
+                    .totalRWU(duration)
+                    .GORWUt(GORWUt)
+                    .totalGORWU(duration)
+                    .OPRWUt(OPRWUt)
+                    .totalOPRWU(duration)
+                    .SPRWUt(SPRWUt)
+                    .totalSPRWU(duration)
+                    .CORWUt(CORWUt)
+                    .totalCORWU(duration);
+
+            if (ignoreNBT) {
+                researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
+                        NBTCondition.ANY);
+            } else {
+                researchBuilder.inputs(researchItem);
+            }
+
+            researchBuilder.buildAndRegister();
+        }
+    }
+
+    public static void createSCAResearchRecipe(@NotNull SCAResearchLineRecipeBuilder builder) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        for (SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry entry : builder.getSCARecipeEntries()) {
+            createSCAResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+                    entry.getIgnoreNBT(),
+                    entry.getDuration(),
+                    entry.getEUt(),
+                    entry.getCWUt(),
+                    entry.getRWUt(),
+                    entry.getGORWUt(),
+                    entry.getOPRWUt(),
+                    entry.getSPRWUt(),
+                    entry.getCORWUt(),
+                    entry.getSCARWUt()
+            );
+        }
+    }
+
+    public static void createSCAResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+                                               boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
+                                               int SPRWUt, int CORWUt, int SCARWUt) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
+        writeResearchToNBT(compound, researchId);
+
+        if (SCARWUt > 0) {
+            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
+                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                    .outputs(dataItem)
+                    .EUt(EUt)
+                    .CWUt(CWUt)
+                    .totalCWU(duration)
+                    .RWUt(RWUt)
+                    .totalRWU(duration)
+                    .GORWUt(GORWUt)
+                    .totalGORWU(duration)
+                    .OPRWUt(OPRWUt)
+                    .totalOPRWU(duration)
+                    .SPRWUt(SPRWUt)
+                    .totalSPRWU(duration)
+                    .CORWUt(CORWUt)
+                    .totalCORWU(duration)
+                    .SCARWUt(SCARWUt)
+                    .totalSCARWU(duration);
+
+            if (ignoreNBT) {
+                researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
+                        NBTCondition.ANY);
+            } else {
+                researchBuilder.inputs(researchItem);
+            }
+
+            researchBuilder.buildAndRegister();
+        }
+    }
+
+    public static void createSCHResearchRecipe(@NotNull SCHResearchLineRecipeBuilder builder) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        for (SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry entry : builder.getSCHRecipeEntries()) {
+            createSCHResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+                    entry.getIgnoreNBT(),
+                    entry.getDuration(),
+                    entry.getEUt(),
+                    entry.getCWUt(),
+                    entry.getRWUt(),
+                    entry.getGORWUt(),
+                    entry.getOPRWUt(),
+                    entry.getSPRWUt(),
+                    entry.getCORWUt(),
+                    entry.getSCARWUt(),
+                    entry.getSCHRWUt()
+            );
+        }
+    }
+
+    public static void createSCHResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+                                               boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
+                                               int SPRWUt, int CORWUt, int SCARWUt, int SCHRWUt) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
+        writeResearchToNBT(compound, researchId);
+
+        if (SCHRWUt > 0) {
+            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
+                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                    .outputs(dataItem)
+                    .EUt(EUt)
+                    .CWUt(CWUt)
+                    .totalCWU(duration)
+                    .RWUt(RWUt)
+                    .totalRWU(duration)
+                    .GORWUt(GORWUt)
+                    .totalGORWU(duration)
+                    .OPRWUt(OPRWUt)
+                    .totalOPRWU(duration)
+                    .SPRWUt(SPRWUt)
+                    .totalSPRWU(duration)
+                    .CORWUt(CORWUt)
+                    .totalCORWU(duration)
+                    .SCARWUt(SCARWUt)
+                    .totalSCARWU(duration)
+                    .SCHRWUt(SCHRWUt)
+                    .totalSCHRWU(duration);
+
+            if (ignoreNBT) {
+                researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
+                        NBTCondition.ANY);
+            } else {
+                researchBuilder.inputs(researchItem);
+            }
+
+            researchBuilder.buildAndRegister();
+        }
+    }
+
+    public static void createSDIResearchRecipe(@NotNull SDIResearchLineRecipeBuilder builder) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        for (SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry entry : builder.getSDIRecipeEntries()) {
+            createSDIResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+                    entry.getIgnoreNBT(),
+                    entry.getDuration(),
+                    entry.getEUt(),
+                    entry.getCWUt(),
+                    entry.getRWUt(),
+                    entry.getGORWUt(),
+                    entry.getOPRWUt(),
+                    entry.getSPRWUt(),
+                    entry.getCORWUt(),
+                    entry.getSCARWUt(),
+                    entry.getSCHRWUt(),
+                    entry.getSDIRWUt()
+            );
+        }
+    }
+
+    public static void createSDIResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+                                               boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
+                                               int SPRWUt, int CORWUt, int SCARWUt, int SCHRWUt, int SDIRWUt) {
+        if (!ConfigHolder.machines.enableResearch) return;
+
+        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
+        writeResearchToNBT(compound, researchId);
+
+        if (SDIRWUt > 0) {
+            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
+                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                    .outputs(dataItem)
+                    .EUt(EUt)
+                    .CWUt(CWUt)
+                    .totalCWU(duration)
+                    .RWUt(RWUt)
+                    .totalRWU(duration)
+                    .GORWUt(GORWUt)
+                    .totalGORWU(duration)
+                    .OPRWUt(OPRWUt)
+                    .totalOPRWU(duration)
+                    .SPRWUt(SPRWUt)
+                    .totalSPRWU(duration)
+                    .CORWUt(CORWUt)
+                    .totalCORWU(duration)
+                    .SCARWUt(SCARWUt)
+                    .totalSCARWU(duration)
+                    .SCHRWUt(SCHRWUt)
+                    .totalSCHRWU(duration)
+                    .SDIRWUt(SDIRWUt)
+                    .totalSDIRWU(duration);
+
+            if (ignoreNBT) {
+                researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
+                        NBTCondition.ANY);
+            } else {
+                researchBuilder.inputs(researchItem);
+            }
+
+            researchBuilder.buildAndRegister();
+        }
+    }
+
 
     public static class DataStickCopyScannerLogic implements IScannerRecipeMap.ICustomScannerLogic {
 

@@ -1,5 +1,6 @@
 package com.onlyex.naxtech.api.recipes.research;
 
+import com.onlyex.naxtech.api.recipes.research.builder.*;
 import com.onlyex.naxtech.api.utils.ResearchLineManager;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
@@ -115,13 +116,13 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
 
 
     protected abstract ResearchLineRecipeBuilder.ResearchRecipeEntry research();
-    protected abstract ResearchLineRecipeBuilder.GOResearchRecipeEntry goresearch();
-    protected abstract ResearchLineRecipeBuilder.OPResearchRecipeEntry opresearch();
-    protected abstract ResearchLineRecipeBuilder.SPResearchRecipeEntry spresearch();
-    protected abstract ResearchLineRecipeBuilder.COResearchRecipeEntry coresearch();
-    protected abstract ResearchLineRecipeBuilder.SCAResearchRecipeEntry scaresearch();
-    protected abstract ResearchLineRecipeBuilder.SCHResearchRecipeEntry schresearch();
-    protected abstract ResearchLineRecipeBuilder.SDIResearchRecipeEntry sdiresearch();
+    protected abstract GOResearchLineRecipeBuilder.GOResearchRecipeEntry goresearch();
+    protected abstract OPResearchLineRecipeBuilder.OPResearchRecipeEntry opresearch();
+    protected abstract SPResearchLineRecipeBuilder.SPResearchRecipeEntry spresearch();
+    protected abstract COResearchLineRecipeBuilder.COResearchRecipeEntry coresearch();
+    protected abstract SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry scaresearch();
+    protected abstract SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry schresearch();
+    protected abstract SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry sdiresearch();
 
     public static class StationRecipeBuilder extends ResearchRecipeBuilder<StationRecipeBuilder> {
 
@@ -138,6 +139,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         //提供更多的RWU/t将允许它花费更少的时间。
         public static final int RESEARCH_TOTAL_RWUT = 4000;
 
+        private int cwut;
         private int rwut;
         private int gorwut;
         private int oprwut;
@@ -146,6 +148,8 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         private int scarwut;
         private int schrwut;
         private int sdirwut;
+
+        private int totalCWU;
         private int totalRWU;
         private int totalGORWU;
         private int totalOPRWU;
@@ -154,6 +158,18 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         private int totalSCARWU;
         private int totalSCHRWU;
         private int totalSDIRWU;
+
+        public StationRecipeBuilder CWUt(int cwut) {
+            this.cwut = cwut;
+            this.totalCWU = cwut * RESEARCH_TOTAL_RWUT * totalRWU;
+            return this;
+        }
+
+        public StationRecipeBuilder CWUt(int cwut, int totalCWU) {
+            this.cwut = cwut;
+            this.totalCWU = totalCWU;
+            return this;
+        }
         public StationRecipeBuilder RWUt(int rwut) {
             this.rwut = rwut;
             this.totalRWU = rwut * RESEARCH_TOTAL_RWUT;
@@ -256,7 +272,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        StationRecipeBuilder() {/**/}
+        public StationRecipeBuilder() {/**/}
         //
 
         @Override
@@ -264,7 +280,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return ResearchLineManager.getDefaultResearchStationItem(gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
         }
         @Override
-        protected ResearchLineRecipeBuilder.ResearchRecipeEntry research() {
+        public ResearchLineRecipeBuilder.ResearchRecipeEntry research() {
             validateResearchItem();
             if (rwut <= 0 || totalRWU <= 0) {
                 throw new IllegalArgumentException("RWU/t和总RWU都必须设置为非零！");
@@ -278,11 +294,11 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             int duration = totalRWU;
             if (eut <= 0) eut = RESEARCH_EUT;
             return new ResearchLineRecipeBuilder.ResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, rwut);
+                    duration, eut, cwut, rwut);
         }
 
         @Override
-        protected ResearchLineRecipeBuilder.GOResearchRecipeEntry goresearch() {
+        public GOResearchLineRecipeBuilder.GOResearchRecipeEntry goresearch() {
             validateResearchItem();
             if (gorwut <= 0 || totalGORWU <= 0) {
                 throw new IllegalArgumentException("GO-RWU/t和总GO-RWU都必须设置为非零！");
@@ -295,12 +311,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalGORWU;
             if (eut <= 0) eut = GO_RESEARCH_EUT;
-            return new ResearchLineRecipeBuilder.GOResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, rwut, gorwut);
+            return new GOResearchLineRecipeBuilder.GOResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+                    duration, eut, cwut, rwut, gorwut);
         }
 
         @Override
-        protected ResearchLineRecipeBuilder.OPResearchRecipeEntry opresearch() {
+        public OPResearchLineRecipeBuilder.OPResearchRecipeEntry opresearch() {
             validateResearchItem();
             if (oprwut <= 0 || totalOPRWU <= 0) {
                 throw new IllegalArgumentException("OP-RWU/t和总OP-RWU都必须设置为非零！");
@@ -313,12 +329,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalOPRWU;
             if (eut <= 0) eut = OP_RESEARCH_EUT;
-            return new ResearchLineRecipeBuilder.OPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, rwut, gorwut, oprwut);
+            return new OPResearchLineRecipeBuilder.OPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+                    duration, eut, cwut, rwut, gorwut, oprwut);
         }
 
         @Override
-        protected ResearchLineRecipeBuilder.SPResearchRecipeEntry spresearch() {
+        public SPResearchLineRecipeBuilder.SPResearchRecipeEntry spresearch() {
             validateResearchItem();
 
             if (sprwut <= 0 || totalSPRWU <= 0) {
@@ -332,12 +348,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSPRWU;
             if (eut <= 0) eut = SP_RESEARCH_EUT;
-            return new ResearchLineRecipeBuilder.SPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, rwut, gorwut, oprwut, sprwut);
+            return new SPResearchLineRecipeBuilder.SPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut);
         }
 
         @Override
-        protected ResearchLineRecipeBuilder.COResearchRecipeEntry coresearch() {
+        public COResearchLineRecipeBuilder.COResearchRecipeEntry coresearch() {
             validateResearchItem();
             if (corwut <= 0 || totalCORWU <= 0) {
                 throw new IllegalArgumentException("CO-RWU/t和总CO-RWU都必须设置为非零！");
@@ -350,12 +366,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalCORWU;
             if (eut <= 0) eut = CO_RESEARCH_EUT;
-            return new ResearchLineRecipeBuilder.COResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, rwut, gorwut, oprwut, sprwut, corwut);
+            return new COResearchLineRecipeBuilder.COResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut);
         }
 
         @Override
-        protected ResearchLineRecipeBuilder.SCAResearchRecipeEntry scaresearch() {
+        public SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry scaresearch() {
             validateResearchItem();
             if (scarwut <= 0 || totalSCARWU <= 0) {
                 throw new IllegalArgumentException("SCA-RWU/t和总SCA-RWU都必须设置为非零！");
@@ -368,12 +384,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSCARWU;
             if (eut <= 0) eut = SCA_RESEARCH_EUT;
-            return new ResearchLineRecipeBuilder.SCAResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, rwut, gorwut, oprwut, sprwut, corwut, scarwut);
+            return new SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut);
         }
 
         @Override
-        protected ResearchLineRecipeBuilder.SCHResearchRecipeEntry schresearch() {
+        public SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry schresearch() {
             validateResearchItem();
             if (schrwut <= 0 || totalSCHRWU <= 0) {
                 throw new IllegalArgumentException("SCH-RWU/t和总SCH-RWU都必须设置为非零！");
@@ -386,12 +402,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSCHRWU;
             if (eut <= 0) eut = SCH_RESEARCH_EUT;
-            return new ResearchLineRecipeBuilder.SCHResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut);
+            return new SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut);
         }
 
         @Override
-        protected ResearchLineRecipeBuilder.SDIResearchRecipeEntry sdiresearch() {
+        public SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry sdiresearch() {
             validateResearchItem();
             if (sdirwut <= 0 || totalSDIRWU <= 0) {
                 throw new IllegalArgumentException("SDI-RWU/t和总SDI-RWU都必须设置为非零！");
@@ -404,8 +420,8 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSDIRWU;
             if (eut <= 0) eut = SDI_RESEARCH_EUT;
-            return new ResearchLineRecipeBuilder.SDIResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
+            return new SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
         }
     }
 }

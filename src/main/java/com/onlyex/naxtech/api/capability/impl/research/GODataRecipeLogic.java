@@ -3,10 +3,10 @@ package com.onlyex.naxtech.api.capability.impl.research;
 import com.onlyex.naxtech.api.capability.hatch.research.IResearchDataReceiver;
 import com.onlyex.naxtech.api.capability.hatch.research.gooware.IGOResearchDataProvider;
 import com.onlyex.naxtech.api.recipes.recipeproperties.data.GODataProperty;
+import com.onlyex.naxtech.api.recipes.recipeproperties.total.TotalGODataProperty;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.Recipe;
-import gregtech.api.recipes.recipeproperties.TotalComputationProperty;
 import net.minecraft.nbt.NBTTagCompound;
 import org.jetbrains.annotations.NotNull;
 
@@ -61,7 +61,7 @@ public class GODataRecipeLogic extends MultiblockRecipeLogic {
     protected void setupRecipe(Recipe recipe) {
         super.setupRecipe(recipe);
         this.recipeGORWUt = recipe.getProperty(GODataProperty.getInstance(), 0);
-        this.isDurationTotalGORWU = recipe.hasProperty(TotalComputationProperty.getInstance());
+        this.isDurationTotalGORWU = recipe.hasProperty(TotalGODataProperty.getInstance());
     }
 
     @Override

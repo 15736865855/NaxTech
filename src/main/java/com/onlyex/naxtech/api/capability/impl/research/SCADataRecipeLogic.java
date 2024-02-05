@@ -3,10 +3,10 @@ package com.onlyex.naxtech.api.capability.impl.research;
 import com.onlyex.naxtech.api.capability.hatch.research.IResearchDataReceiver;
 import com.onlyex.naxtech.api.capability.hatch.research.supracausal.ISCAResearchDataProvider;
 import com.onlyex.naxtech.api.recipes.recipeproperties.data.SCADataProperty;
+import com.onlyex.naxtech.api.recipes.recipeproperties.total.TotalSCADataProperty;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.Recipe;
-import gregtech.api.recipes.recipeproperties.TotalComputationProperty;
 import net.minecraft.nbt.NBTTagCompound;
 import org.jetbrains.annotations.NotNull;
 
@@ -61,7 +61,7 @@ public class SCADataRecipeLogic extends MultiblockRecipeLogic {
     protected void setupRecipe(Recipe recipe) {
         super.setupRecipe(recipe);
         this.recipeSCARWUt = recipe.getProperty(SCADataProperty.getInstance(), 0);
-        this.isDurationTotalSCARWU = recipe.hasProperty(TotalComputationProperty.getInstance());
+        this.isDurationTotalSCARWU = recipe.hasProperty(TotalSCADataProperty.getInstance());
     }
 
     @Override

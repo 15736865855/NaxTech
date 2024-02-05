@@ -1,13 +1,11 @@
 package com.onlyex.naxtech.api.recipes;
 
-import com.onlyex.naxtech.api.recipes.builders.CACasingTierRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.builders.PACasingTierRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.builders.QFTCasingTierRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.machines.RecipeMapComponentAssemblyLine;
-import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
-import com.onlyex.naxtech.api.recipes.research.RecipeMapResearchLine;
-import com.onlyex.naxtech.api.recipes.research.ResearchLineRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.*;
+import com.onlyex.naxtech.api.recipes.builders.research.*;
+import com.onlyex.naxtech.api.recipes.machines.*;
+import com.onlyex.naxtech.api.recipes.research.*;
+import com.onlyex.naxtech.api.recipes.research.builder.*;
+import com.onlyex.naxtech.api.utils.ResearchLineManager;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
@@ -82,10 +80,56 @@ public final class NTRecipeMaps {
 
     @ZenProperty
     public static final RecipeMap<ResearchLineRecipeBuilder> RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "research_line",24, 2, 6, 0,new ResearchLineRecipeBuilder(), false)
-            //.onRecipeBuild(ResearchLineManager::createDefaultResearchRecipe)
+            "research_line",48, 4, 12, 0,new ResearchLineRecipeBuilder(), false)
+            .onRecipeBuild(ResearchLineManager::createResearchRecipe)
             .setSound(GTSoundEvents.ASSEMBLER);
 
+    @ZenProperty
+    public static final RecipeMap<GOResearchLineRecipeBuilder> GO_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "go_research_line",48, 4, 12, 0,new GOResearchLineRecipeBuilder(), false)
+            .onRecipeBuild(ResearchLineManager::createGOResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);
+
+    @ZenProperty
+    public static final RecipeMap<OPResearchLineRecipeBuilder> OP_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "op_research_line",48, 4, 12, 0,new OPResearchLineRecipeBuilder(), false)
+            .onRecipeBuild(ResearchLineManager::createOPResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);
+
+    @ZenProperty
+    public static final RecipeMap<SPResearchLineRecipeBuilder> SP_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "sp_research_line",48, 4, 12, 0,new SPResearchLineRecipeBuilder(), false)
+            .onRecipeBuild(ResearchLineManager::createSPResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);
+
+    @ZenProperty
+    public static final RecipeMap<COResearchLineRecipeBuilder> CO_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "co_research_line",48, 4, 12, 0,new COResearchLineRecipeBuilder(), false)
+            .onRecipeBuild(ResearchLineManager::createCOResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);
+
+    @ZenProperty
+    public static final RecipeMap<SCAResearchLineRecipeBuilder> SCA_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "sca_research_line",48, 4, 12, 0,new SCAResearchLineRecipeBuilder(), false)
+            .onRecipeBuild(ResearchLineManager::createSCAResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);
+
+    @ZenProperty
+    public static final RecipeMap<SCHResearchLineRecipeBuilder> SCH_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "sch_research_line",48, 4, 12, 0,new SCHResearchLineRecipeBuilder(), false)
+            .onRecipeBuild(ResearchLineManager::createSCHResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);
+
+    @ZenProperty
+    public static final RecipeMap<SDIResearchLineRecipeBuilder> SDI_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
+            "sdi_research_line",48, 4, 12, 0,new SDIResearchLineRecipeBuilder(), false)
+            .onRecipeBuild(ResearchLineManager::createSDIResearchRecipe)
+            .setSound(GTSoundEvents.ASSEMBLER);
+
+    @ZenProperty
+    public static final RecipeMap<DataRecipeBuilder> RESEARCH_RECIPES = new RecipeMapResearchLine<>(
+            "research",24, 2, 6, 0,new DataRecipeBuilder(), false)
+            .setSound(GTSoundEvents.ASSEMBLER);
 
     public NTRecipeMaps() {}
 }

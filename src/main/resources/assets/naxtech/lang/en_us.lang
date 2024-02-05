@@ -1473,8 +1473,8 @@ naxtech.machine.sdi_research_computation_hatch.receiver.tooltip=
 naxtech.machine.sdi_research_computation_hatch.transmitter.name=
 naxtech.machine.sdi_research_computation_hatch.transmitter.tooltip=
 
-research.data_item.assemblyline.title=
-research.data_item.assemblyline.data=- §a%s
+research.data_item.researchline.title=
+research.data_item.researchline.data=- §a%s
 
 naxtech.recipe.research=
 
@@ -1486,11 +1486,33 @@ naxtech.recipe.co_data_per_tick=-：%,d CO-RWU/t
 naxtech.recipe.sca_data_per_tick=-：%,d SCA-RWU/t
 naxtech.recipe.sch_data_per_tick=-：%,d SCH-RWU/t
 naxtech.recipe.sdi_data_per_tick=-：%,d SDI-RWU/t
+naxtech.recipe.total_data=
+naxtech.recipe.go_total_data=
+naxtech.recipe.op_total_data=
+naxtech.recipe.sp_total_data=
+naxtech.recipe.co_total_data=
+naxtech.recipe.sca_total_data=
+naxtech.recipe.sah_total_data=
+naxtech.recipe.sdi_total_data=
 
+recipemap.research_line.name=
+recipemap.go_research_line.name=
+recipemap.op_research_line.name=
+recipemap.sp_research_line.name=
+recipemap.co_research_line.name=
+recipemap.sca_research_line.name=
+recipemap.sch_research_line.name=
+recipemap.sdi_research_line.name=
+recipemap.research.name=
 
-
-
-
+metaitem.research_data_card.name=
+metaitem.gooware_research_data_card.name=
+metaitem.optical_research_data_card.name=
+metaitem.spintronic_research_data_card.name=
+metaitem.cosmic_research_data_card.name=
+metaitem.supra_causal_research_data_card.name=
+metaitem.supra_chronal_research_data_card.name=
+metaitem.supra_dimension_research_data_card.name=
 
 
 

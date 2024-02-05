@@ -3,10 +3,10 @@ package com.onlyex.naxtech.api.capability.impl.research;
 import com.onlyex.naxtech.api.capability.hatch.research.IResearchDataReceiver;
 import com.onlyex.naxtech.api.capability.hatch.research.supradimension.ISDIResearchDataProvider;
 import com.onlyex.naxtech.api.recipes.recipeproperties.data.SDIDataProperty;
+import com.onlyex.naxtech.api.recipes.recipeproperties.total.TotalSDIDataProperty;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.Recipe;
-import gregtech.api.recipes.recipeproperties.TotalComputationProperty;
 import net.minecraft.nbt.NBTTagCompound;
 import org.jetbrains.annotations.NotNull;
 
@@ -61,7 +61,7 @@ public class SDIDataRecipeLogic extends MultiblockRecipeLogic {
     protected void setupRecipe(Recipe recipe) {
         super.setupRecipe(recipe);
         this.recipeSDIRWUt = recipe.getProperty(SDIDataProperty.getInstance(), 0);
-        this.isDurationTotalSDIRWU = recipe.hasProperty(TotalComputationProperty.getInstance());
+        this.isDurationTotalSDIRWU = recipe.hasProperty(TotalSDIDataProperty.getInstance());
     }
 
     @Override

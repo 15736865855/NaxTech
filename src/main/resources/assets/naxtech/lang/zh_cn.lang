@@ -1492,32 +1492,56 @@ naxtech.machine.sdi_research_computation_hatch.transmitter.tooltip=从多方块�
 
 #HPCA
 naxtech.machine.hpca.super_computation_component.name=HPCA超级计算组件
-naxtech.machine.hpca.super_computation_component.tooltip=
+naxtech.machine.hpca.super_computation_component.tooltip=//
 naxtech.machine.hpca.ultimate_computation_component.name=HPCA终级计算组件
-naxtech.machine.hpca.ultimate_computation_component.tooltip=
+naxtech.machine.hpca.ultimate_computation_component.tooltip=//
 naxtech.machine.hpca.advanced_cooler_component.name=HPCA高级主动冷却组件
-naxtech.machine.hpca.advanced_cooler_component.tooltip=
+naxtech.machine.hpca.advanced_cooler_component.tooltip=//
 naxtech.machine.hpca.super_cooler_component.name=HPCA超级主动冷却组件
-naxtech.machine.hpca.super_cooler_component.tooltip=
+naxtech.machine.hpca.super_cooler_component.tooltip=//
 naxtech.machine.hpca.ultimate_cooler_component.name=HPCA终级主动冷却组件
-naxtech.machine.hpca.ultimate_cooler_component.tooltip=
+naxtech.machine.hpca.ultimate_cooler_component.tooltip=//
 
-research.data_item.assemblyline.title=§n科研数据：
-research.data_item.assemblyline.data=- §a%s
+research.data_item.researchline.title=§n科研数据：
+research.data_item.researchline.data=- §a%s
 
 naxtech.recipe.research=需要研究
 
 naxtech.recipe.data_per_tick=最小科研数据：%,d RWU/t
+naxtech.recipe.total_data=研数据总计：%,d RWU
 naxtech.recipe.go_data_per_tick=最小生物-科研数据：%,d GO-RWU/t
+naxtech.recipe.go_total_data=生物-科研数据总计：%,d GO-RWU
 naxtech.recipe.op_data_per_tick=最小光学-科研数据：%,d OP-RWU/t
+naxtech.recipe.op_total_data=光学-科研数据总计：%,d OP-RWU
 naxtech.recipe.sp_data_per_tick=最小自旋电子学-科研数据：%,d SP-RWU/t
+naxtech.recipe.sp_total_data=自旋电子学-科研数据总计：%,d SP-RWU
 naxtech.recipe.co_data_per_tick=最小寰宇-科研数据：%,d CO-RWU/t
+naxtech.recipe.co_total_data=寰宇-科研数据总计：%,d CO-RWU
 naxtech.recipe.sca_data_per_tick=最小超因果-科研数据：%,d SCA-RWU/t
+naxtech.recipe.sca_total_data=超因果-科研数据总计：%,d SCA-RWU
 naxtech.recipe.sch_data_per_tick=最小超时空-科研数据：%,d SCH-RWU/t
+naxtech.recipe.sah_total_data=超时空-科研数据总计：%,d SCH-RWU
 naxtech.recipe.sdi_data_per_tick=最小超维度-科研数据：%,d SDI-RWU/t
+naxtech.recipe.sdi_total_data=超维度-科研数据总计：%,d SDI-RWU
 
+recipemap.research_line.name=//
+recipemap.go_research_line.name=//
+recipemap.op_research_line.name=//
+recipemap.sp_research_line.name=//
+recipemap.co_research_line.name=//
+recipemap.sca_research_line.name=//
+recipemap.sch_research_line.name=//
+recipemap.sdi_research_line.name=//
+recipemap.research.name=科研//
 
-
+metaitem.research_data_card.name=科研数据卡
+metaitem.gooware_research_data_card.name=生物-科研数据卡
+metaitem.optical_research_data_card.name=光学-科研数据卡
+metaitem.spintronic_research_data_card.name=自旋电子学-科研数据卡
+metaitem.cosmic_research_data_card.name=寰宇-科研数据卡
+metaitem.supra_causal_research_data_card.name=超因果-科研数据卡
+metaitem.supra_chronal_research_data_card.name=超时空-科研数据卡
+metaitem.supra_dimension_research_data_card.name=超维度-科研数据卡
 
 
 
