@@ -8,15 +8,26 @@ import static gregtech.common.items.MetaItems.*;
 public class ResearchLineMachineRecipeLoader {
     public static void init() {
         RESEARCH_LINE_RECIPES.recipeBuilder()
-                .input(HIGH_POWER_INTEGRATED_CIRCUIT, 2)
+                .input(HIGH_POWER_INTEGRATED_CIRCUIT, 60)
                 .output(NULL)
                 .stationResearch(b -> b
                         .researchStack(SUPRACAUSAL_MEMORY_CHIP.getStackForm())
                         .CWUt(600000)
                         .RWUt(60000)
-                        //.GORWUt(6000)
                         .EUt(VA[8]))
-                .duration(400).EUt(VA[8]).buildAndRegister();
+                .duration(40000).EUt(VA[8]).buildAndRegister();
+
+        GO_RESEARCH_LINE_RECIPES.recipeBuilder()
+                .input(HIGH_POWER_INTEGRATED_CIRCUIT, 128)
+                .input(ZEPTO_PIC_WAFER, 12)
+                .output(NANO_PIC_WAFER)
+                .stationGOResearch(b -> b
+                        .researchStack(SUPRACAUSAL_MEMORY_CHIP.getStackForm())
+                        .CWUt(600000)
+                        .RWUt(60000)
+                        .GORWUt(6000)
+                        .EUt(VA[12]))
+                .duration(400000).EUt(VA[13]).buildAndRegister();
     }
 
 }

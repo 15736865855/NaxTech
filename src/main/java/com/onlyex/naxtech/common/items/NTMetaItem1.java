@@ -3,7 +3,7 @@ package com.onlyex.naxtech.common.items;
 
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.CommonProxy;
-import com.onlyex.naxtech.common.items.behaviors.DataItemResearch;
+import com.onlyex.naxtech.common.items.behaviors.research.*;
 import com.onlyex.naxtech.common.items.behaviors.IntBcircuitBehavior;
 import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;
 import com.onlyex.naxtech.common.items.behaviors.StructureWriteBehavior;
@@ -564,19 +564,19 @@ public class NTMetaItem1 extends StandardMetaItem {
         RESEARCH_DATA_CARD = this.addItem(2400,"research_data_card")
                 .addComponents(new DataItemResearch());
         GOOWARE_RESEARCH_DATA_CARD = this.addItem(2401,"gooware_research_data_card")
-                .addComponents(new DataItemResearch());
+                .addComponents(new DataItemGOResearch());
         OPTICAL_RESEARCH_DATA_CARD = this.addItem(2402,"optical_research_data_card")
-                .addComponents(new DataItemResearch());
+                .addComponents(new DataItemOPResearch());
         SPINTRONIC_RESEARCH_DATA_CARD  = this.addItem(2403,"spintronic_research_data_card")
-                .addComponents(new DataItemResearch());
+                .addComponents(new DataItemSPResearch());
         COSMIC_RESEARCH_DATA_CARD = this.addItem(2404,"cosmic_research_data_card")
-                .addComponents(new DataItemResearch());
+                .addComponents(new DataItemCOResearch());
         SUPRA_CAUSAL_RESEARCH_DATA_CARD = this.addItem(2405,"supra_causal_research_data_card")
-                .addComponents(new DataItemResearch());
+                .addComponents(new DataItemSCAResearch());
         SUPRA_CHRONAL_RESEARCH_DATA_CARD = this.addItem(2406,"supra_chronal_research_data_card")
-                .addComponents(new DataItemResearch());
+                .addComponents(new DataItemSCHResearch());
         SUPRA_DIMENSION_RESEARCH_DATA_CARD = this.addItem(2407,"supra_dimension_research_data_card")
-                .addComponents(new DataItemResearch(), new CosmicRenderItemBehavior(() -> NTTextures.SUPRA_DIMENSION_RESEARCH_DATA_CARD_HALO, 1));
+                .addComponents(new DataItemSDIResearch(), new CosmicRenderItemBehavior(() -> NTTextures.SUPRA_DIMENSION_RESEARCH_DATA_CARD_HALO, 1));
 
 
 

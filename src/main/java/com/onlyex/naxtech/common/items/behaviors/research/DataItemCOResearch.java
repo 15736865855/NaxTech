@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.common.items.behaviors;
+package com.onlyex.naxtech.common.items.behaviors.research;
 
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.research.IResearchRecipeMap;
@@ -14,15 +14,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.List;
 
-public class DataItemResearch implements IItemBehaviour, IDataItem {
+public class DataItemCOResearch implements IItemBehaviour, IDataItem {
 
     private final boolean requireDataBank;
 
-    public DataItemResearch() {
-        this.requireDataBank = false;
+    public DataItemCOResearch() {
+        this.requireDataBank = true;
     }
 
-    public DataItemResearch(boolean requireDataBank) {
+    public DataItemCOResearch(boolean requireDataBank) {
         this.requireDataBank = requireDataBank;
     }
 
@@ -33,16 +33,16 @@ public class DataItemResearch implements IItemBehaviour, IDataItem {
 
     @Override
     public void addInformation(@NotNull ItemStack itemStack, List<String> lines) {
-        String researchId = ResearchLineManager.readResearchId(itemStack);
-        if (researchId == null) return;
-        Collection<Recipe> recipes = ((IResearchRecipeMap) NTRecipeMaps.RESEARCH_LINE_RECIPES).getDataStickEntry(researchId);
+        String coresearchId = ResearchLineManager.readCOResearchId(itemStack);
+        if (coresearchId == null) return;
+        Collection<Recipe> recipes = ((IResearchRecipeMap) NTRecipeMaps.CO_RESEARCH_LINE_RECIPES).getDataStickEntry(coresearchId);
         if (recipes != null && !recipes.isEmpty()) {
-            lines.add(I18n.format("research.data_item.researchline.title"));
+            lines.add(I18n.format("research.co_data_item.researchline.title"));
             Collection<ItemStack> added = new ObjectOpenHashSet<>();
             for (Recipe recipe : recipes) {
                 ItemStack output = recipe.getOutputs().get(0);
                 if (added.add(output)) {
-                    lines.add(I18n.format("research.data_item.researchline.data", output.getDisplayName()));
+                    lines.add(I18n.format("research.co_data_item.researchline.data", output.getDisplayName()));
                 }
             }
         }

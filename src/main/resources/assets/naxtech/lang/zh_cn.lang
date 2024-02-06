@@ -1504,11 +1504,25 @@ naxtech.machine.hpca.ultimate_cooler_component.tooltip=//
 
 research.data_item.researchline.title=§n科研数据：
 research.data_item.researchline.data=- §a%s
+research.go_data_item.researchline.title=§n生物-科研数据：
+research.go_data_item.researchline.data=- §a%s
+research.op_data_item.researchline.title=§n光学-科研数据：
+research.op_data_item.researchline.data=- §a%s
+research.sp_data_item.researchline.title=§n自旋电子学-科研数据：
+research.sp_data_item.researchline.data=- §a%s
+research.co_data_item.researchline.title=§n寰宇-科研数据：
+research.co_data_item.researchline.data=- §a%s
+research.sca_data_item.researchline.title=§n超因果-科研数据：
+research.sca_data_item.researchline.data=- §a%s
+research.sah_data_item.researchline.title=§n超时空-科研数据：
+research.sah_data_item.researchline.data=- §a%s
+research.sdi_data_item.researchline.title=§n超维度-科研数据：
+research.sdi_data_item.researchline.data=- §a%s
 
 naxtech.recipe.research=需要研究
 
 naxtech.recipe.data_per_tick=最小科研数据：%,d RWU/t
-naxtech.recipe.total_data=研数据总计：%,d RWU
+naxtech.recipe.total_data=科研数据总计：%,d RWU
 naxtech.recipe.go_data_per_tick=最小生物-科研数据：%,d GO-RWU/t
 naxtech.recipe.go_total_data=生物-科研数据总计：%,d GO-RWU
 naxtech.recipe.op_data_per_tick=最小光学-科研数据：%,d OP-RWU/t

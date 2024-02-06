@@ -1473,8 +1473,22 @@ naxtech.machine.sdi_research_computation_hatch.receiver.tooltip=
 naxtech.machine.sdi_research_computation_hatch.transmitter.name=
 naxtech.machine.sdi_research_computation_hatch.transmitter.tooltip=
 
-research.data_item.researchline.title=
+research.data_item.researchline.title=§n：
 research.data_item.researchline.data=- §a%s
+research.go_data_item.researchline.title=§n：
+research.go_data_item.researchline.data=- §a%s
+research.op_data_item.researchline.title=§n：
+research.op_data_item.researchline.data=- §a%s
+research.sp_data_item.researchline.title=§n：
+research.sp_data_item.researchline.data=- §a%s
+research.co_data_item.researchline.title=§n：
+research.co_data_item.researchline.data=- §a%s
+research.sca_data_item.researchline.title=§n：
+research.sca_data_item.researchline.data=- §a%s
+research.sah_data_item.researchline.title=§n：
+research.sah_data_item.researchline.data=- §a%s
+research.sdi_data_item.researchline.title=§n：
+research.sdi_data_item.researchline.data=- §a%s
 
 naxtech.recipe.research=
 
