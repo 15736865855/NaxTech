@@ -6,17 +6,29 @@ import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
+import gregtech.api.recipes.ingredients.GTRecipeItemInput;
 import gregtech.api.util.GTStringUtils;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> {
+import java.util.List;
 
+public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> {
     protected ItemStack researchStack;
+    protected ItemStack outputs;
     protected ItemStack dataStack;
     protected boolean ignoreNBT;
     protected String researchId;
     protected int eut;
+    private T outputs(ItemStack itemStack) {
+        this.outputs = itemStack;
+        return (T) this;
+    }
+    public T output(MetaItem<?>.MetaValueItem item, int count) {
+        return outputs(item.getStackForm(count));
+    }
+
 
     public T researchStack(@NotNull ItemStack researchStack) {
         if (!researchStack.isEmpty()) {
@@ -33,6 +45,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         }
         return (T) this;
     }
+
 
     public T dataStack(@NotNull ItemStack dataStack) {
         if (!dataStack.isEmpty()) {

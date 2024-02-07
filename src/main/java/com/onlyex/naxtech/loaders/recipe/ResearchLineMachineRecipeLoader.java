@@ -23,6 +23,8 @@ public class ResearchLineMachineRecipeLoader {
                 .output(NANO_PIC_WAFER)
                 .stationGOResearch(b -> b
                         .researchStack(SUPRACAUSAL_MEMORY_CHIP.getStackForm())
+                        .output(NULL,1)
+                        .output(ZEPTO_PIC,12)
                         .CWUt(600000)
                         .RWUt(60000)
                         .GORWUt(6000)

@@ -5,6 +5,7 @@ import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.core.sound.GTSoundEvents;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import org.jetbrains.annotations.ApiStatus;
@@ -23,7 +24,8 @@ public class RecipeMapResearchLine<R extends RecipeBuilder<R>> extends RecipeMap
     public RecipeMapResearchLine(@NotNull String unlocalizedName, int maxInputs, int maxOutputs, int maxFluidInputs, int maxFluidOutputs,
                                  @NotNull R defaultRecipeBuilder, boolean isHidden) {
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipeBuilder, isHidden);
-    }//TODO
+        setSound(GTSoundEvents.ASSEMBLER);
+    }//TODO MUI
 
 
 
