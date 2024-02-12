@@ -14,7 +14,8 @@ public class RecipeMapResearchStation<R extends RecipeBuilder<R>> extends Recipe
     public RecipeMapResearchStation(@NotNull String unlocalizedName,int maxInputs, int maxOutputs, int maxFluidInputs,
 int maxFluidOutputs, @NotNull R defaultRecipeBuilder, boolean isHidden) {
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipeBuilder, isHidden);
-        setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : GTSoundEvents.COMPUTATION);
+        setSound(GTSoundEvents.ASSEMBLER);
+        //setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : GTSoundEvents.COMPUTATION);
     }//TODO MUI
 
 /*    public RecipeMapResearchStation(@NotNull String unlocalizedName, @NotNull R defaultRecipeBuilder,

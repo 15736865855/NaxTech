@@ -1,32 +1,50 @@
 package com.onlyex.naxtech.api.recipes.research;
 
 import com.onlyex.naxtech.api.recipes.research.builder.*;
+import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.ResearchLineManager;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.recipes.ingredients.GTRecipeItemInput;
 import gregtech.api.util.GTStringUtils;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> {
     protected ItemStack researchStack;
-    protected ItemStack outputs;
+    protected final List<GTRecipeInput> inputs;
     protected ItemStack dataStack;
     protected boolean ignoreNBT;
     protected String researchId;
     protected int eut;
-    private T outputs(ItemStack itemStack) {
-        this.outputs = itemStack;
+
+    protected ResearchRecipeBuilder() {
+        this.inputs = NonNullList.create();;
+    }
+
+    public T input(GTRecipeInput input) {
+        if (input.getAmount() < 0) {
+            NTLog.logger.error("Count cannot be less than 0. Actual: {}.", input.getAmount());
+            NTLog.logger.error("Stacktrace:", new IllegalArgumentException());
+        } else {
+            this.inputs.add(input);
+        }
         return (T) this;
     }
-    public T output(MetaItem<?>.MetaValueItem item, int count) {
-        return outputs(item.getStackForm(count));
+
+    public T input(MetaItem<?>.MetaValueItem item, int count) {
+        return input(new GTRecipeItemInput(item.getStackForm(count)));
+    }
+
+    public T input(MetaItem<?>.MetaValueItem item) {
+        return input(new GTRecipeItemInput(item.getStackForm()));
     }
 
 
@@ -324,7 +342,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalGORWU;
             if (eut <= 0) eut = GO_RESEARCH_EUT;
-            return new GOResearchLineRecipeBuilder.GOResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+            return new GOResearchLineRecipeBuilder.GOResearchRecipeEntry(researchId, inputs, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut);
         }
 

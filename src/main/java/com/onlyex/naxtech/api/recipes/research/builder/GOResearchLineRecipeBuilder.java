@@ -8,12 +8,14 @@ import com.onlyex.naxtech.common.ConfigHolder;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.util.EnumValidationResult;
 import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.function.UnaryOperator;
 
 public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRecipeBuilder> {
@@ -94,6 +96,7 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
     public static class GOResearchRecipeEntry {
 
         private final String researchId;
+        private final List<GTRecipeInput> inputs;
         private final ItemStack researchStack;
         private final ItemStack dataStack;
         private final boolean ignoreNBT;
@@ -112,12 +115,13 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
          * @param RWUt          如果在研究站，这个配方每tick需要多少RWUt
          *                      <p>
          *                      默认情况下，将在Research chStack输入上忽略NBT。如果需要NBT匹配，请参阅
-         *                      {@link #GOResearchRecipeEntry(String, ItemStack, ItemStack, boolean, int, int, int, int, int)}
+         *
          */
-        public GOResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
+        public GOResearchRecipeEntry(@NotNull String researchId, @NotNull List<GTRecipeInput> inputs, @NotNull ItemStack researchStack,
                                    @NotNull ItemStack dataStack, int duration, int EUt,
                                      int CWUt,int RWUt, int GORWUt) {
             this.researchId = researchId;
+            this.inputs = inputs;
             this.researchStack = researchStack;
             this.dataStack = dataStack;
             this.duration = duration;
@@ -136,10 +140,11 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
          * @param EUt           配方的EUt
          * @param RWUt          如果在研究站，这个配方每tick需要多少RWUt
          */
-        public GOResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
-                                   @NotNull ItemStack dataStack, boolean ignoreNBT, int duration, int EUt,
-                                     int CWUt,int RWUt, int GORWUt) {
+        public GOResearchRecipeEntry(@NotNull String researchId, @NotNull List<GTRecipeInput> inputs, @NotNull ItemStack researchStack,
+                                     @NotNull ItemStack dataStack, boolean ignoreNBT, int duration, int EUt,
+                                     int CWUt, int RWUt, int GORWUt) {
             this.researchId = researchId;
+            this.inputs = inputs;
             this.researchStack = researchStack;
             this.dataStack = dataStack;
             this.ignoreNBT = ignoreNBT;
@@ -155,7 +160,10 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
         public String getResearchId() {
             return this.researchId;
         }
-
+        @NotNull
+        public List<GTRecipeInput> getInputs() {
+            return inputs;
+        }
         @NotNull
         public ItemStack getResearchStack() {
             return researchStack;

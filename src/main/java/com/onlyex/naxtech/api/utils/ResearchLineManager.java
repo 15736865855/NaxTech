@@ -1,5 +1,7 @@
 package com.onlyex.naxtech.api.utils;
 
+import com.cleanroommc.groovyscript.api.IIngredient;
+import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.research.builder.*;
 import com.onlyex.naxtech.common.ConfigHolder;
 import com.onlyex.naxtech.common.items.NTMetaItems;
@@ -9,6 +11,7 @@ import gregtech.api.items.metaitem.stats.IItemBehaviour;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.recipes.ingredients.nbtmatch.NBTCondition;
 import gregtech.api.recipes.ingredients.nbtmatch.NBTMatcher;
 import gregtech.api.recipes.machines.IScannerRecipeMap;
@@ -253,16 +256,21 @@ public class ResearchLineManager {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (ResearchLineRecipeBuilder.ResearchRecipeEntry entry : builder.getRecipeEntries()) {
-            createResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createResearchRecipe(
+                    entry.getResearchId(),
+                    entry.getResearchStack(),
+                    entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
                     entry.getEUt(),
                     entry.getCWUt(),
-                    entry.getRWUt());
+                    entry.getRWUt()
+            );
         }
     }
 
-    public static void createResearchRecipe(@NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+    public static void createResearchRecipe(
+            @NotNull String researchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
                                             boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
 
@@ -294,7 +302,11 @@ public class ResearchLineManager {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (GOResearchLineRecipeBuilder.GOResearchRecipeEntry entry : builder.getGORecipeEntries()) {
-            createGOResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createGOResearchRecipe(
+                    entry.getResearchId(),
+                    entry.getResearchStack(),
+                    entry.getInputs(),
+                    entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
                     entry.getEUt(),
@@ -305,8 +317,9 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createGOResearchRecipe(@NotNull String goresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
-                                              boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt) {
+    public static void createGOResearchRecipe(
+            @NotNull String goresearchId, @NotNull ItemStack researchItem, @NotNull List<GTRecipeInput> input, @NotNull ItemStack dataItem,
+            boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
 
         NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
@@ -315,6 +328,7 @@ public class ResearchLineManager {
         if (GORWUt > 0) {
             RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
                     .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                    .input(input.toString())
                     .outputs(dataItem)
                     .EUt(EUt)
                     .CWUt(CWUt)
@@ -339,7 +353,10 @@ public class ResearchLineManager {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (OPResearchLineRecipeBuilder.OPResearchRecipeEntry entry : builder.getOPRecipeEntries()) {
-            createOPResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createOPResearchRecipe(
+                    entry.getResearchId(),
+                    entry.getResearchStack(),
+                    entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
                     entry.getEUt(),
@@ -351,7 +368,8 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createOPResearchRecipe(@NotNull String opresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+    public static void createOPResearchRecipe(
+            @NotNull String opresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
                                               boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
 
@@ -387,7 +405,10 @@ public class ResearchLineManager {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (SPResearchLineRecipeBuilder.SPResearchRecipeEntry entry : builder.getSPRecipeEntries()) {
-            createSPResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createSPResearchRecipe(
+                    entry.getResearchId(),
+                    entry.getResearchStack(),
+                    entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
                     entry.getEUt(),
@@ -400,7 +421,8 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createSPResearchRecipe(@NotNull String spresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+    public static void createSPResearchRecipe(
+            @NotNull String spresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
                                               boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
                                               int SPRWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
@@ -439,7 +461,10 @@ public class ResearchLineManager {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (COResearchLineRecipeBuilder.COResearchRecipeEntry entry : builder.getCORecipeEntries()) {
-            createCOResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createCOResearchRecipe(
+                    entry.getResearchId(),
+                    entry.getResearchStack(),
+                    entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
                     entry.getEUt(),
@@ -453,7 +478,8 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createCOResearchRecipe(@NotNull String coresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+    public static void createCOResearchRecipe(
+            @NotNull String coresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
                                               boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
                                               int SPRWUt, int CORWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
@@ -494,7 +520,10 @@ public class ResearchLineManager {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry entry : builder.getSCARecipeEntries()) {
-            createSCAResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createSCAResearchRecipe(
+                    entry.getResearchId(),
+                    entry.getResearchStack(),
+                    entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
                     entry.getEUt(),
@@ -509,7 +538,8 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createSCAResearchRecipe(@NotNull String scaresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+    public static void createSCAResearchRecipe(
+            @NotNull String scaresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
                                                boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
                                                int SPRWUt, int CORWUt, int SCARWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
@@ -552,7 +582,10 @@ public class ResearchLineManager {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry entry : builder.getSCHRecipeEntries()) {
-            createSCHResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createSCHResearchRecipe(
+                    entry.getResearchId(),
+                    entry.getResearchStack(),
+                    entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
                     entry.getEUt(),
@@ -568,7 +601,8 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createSCHResearchRecipe(@NotNull String schresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+    public static void createSCHResearchRecipe(
+            @NotNull String schresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
                                                boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
                                                int SPRWUt, int CORWUt, int SCARWUt, int SCHRWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
@@ -613,7 +647,10 @@ public class ResearchLineManager {
         if (!ConfigHolder.machines.enableResearch) return;
 
         for (SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry entry : builder.getSDIRecipeEntries()) {
-            createSDIResearchRecipe(entry.getResearchId(), entry.getResearchStack(), entry.getDataStack(),
+            createSDIResearchRecipe(
+                    entry.getResearchId(),
+                    entry.getResearchStack(),
+                    entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
                     entry.getEUt(),
@@ -630,7 +667,8 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createSDIResearchRecipe(@NotNull String sdiresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
+    public static void createSDIResearchRecipe(
+            @NotNull String sdiresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
                                                boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
                                                int SPRWUt, int CORWUt, int SCARWUt, int SCHRWUt, int SDIRWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
@@ -674,16 +712,16 @@ public class ResearchLineManager {
     }
 
 
-    public static class DataStickCopyScannerLogic implements IScannerRecipeMap.ICustomScannerLogic {
+    /*public static class DataStickCopyScannerLogic implements IScannerRecipeMap.ICustomScannerLogic {
 
         private static final int EUT = 2;
         private static final int DURATION = 100;
 
-        /**
+        *//**
          * 在 createCustomRecipe 方法中，根据输入的物品列表的大小判断是否有足够的输入来创建配方。
          * 如果输入物品列表的大小大于 1，则尝试使用 createDataRecipe 方法创建数据配方，并且可以优先选择第一个物品来覆盖第二个物品。
          * 如果创建成功，则返回配方对象。如果没有足够的输入，则返回 null。
-         */
+         *//*
         @Override
         public Recipe createCustomRecipe(long voltage, List<ItemStack> inputs, List<FluidStack> fluidInputs,
                                          boolean exactVoltage) {
@@ -697,14 +735,14 @@ public class ResearchLineManager {
             return null;
         }
 
-        /**
+        *//**
          *createDataRecipe 方法用于创建数据配方。
          * 它首先检查第二个物品是否有 NBTTagCompound，如果没有则返回 null。
          * 然后，它检查第一个和第二个物品是否均为数据物品，如果不是则返回 null。
          * 接下来，它创建一个新的 ItemStack 对象作为输出，将第一个物品的复制和第二个物品的 NBTTagCompound 复制设置到输出中，
          * 并使用 RecipeMaps.SCANNER_RECIPES.recipeBuilder() 创建一个 RecipeBuilder 对象来构建配方，
          * 指定输入、不会被消耗的物品、输出、持续时间和 EUt，最后使用 build() 方法构建配方并返回结果。
-         */
+         *//*
         @Nullable
         private Recipe createDataRecipe(@NotNull ItemStack first, @NotNull ItemStack second) {
             NBTTagCompound compound = second.getTagCompound();
@@ -740,5 +778,5 @@ public class ResearchLineManager {
                             .duration(DURATION).EUt(EUT)
                             .build().getResult());
         }
-    }
+    }*/
 }

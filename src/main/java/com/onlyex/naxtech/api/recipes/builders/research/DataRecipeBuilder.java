@@ -6,10 +6,13 @@ import com.onlyex.naxtech.api.utils.NTLog;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.recipes.recipeproperties.ComputationProperty;
 import gregtech.api.recipes.recipeproperties.TotalComputationProperty;
 import gregtech.api.util.EnumValidationResult;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
 
@@ -292,4 +295,5 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(TotalSDIDataProperty.getInstance(), totalSDIRWU);
         return duration(totalSDIRWU);
     }
+
 }

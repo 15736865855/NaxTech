@@ -11,7 +11,7 @@ public class ResearchLineMachineRecipeLoader {
                 .input(HIGH_POWER_INTEGRATED_CIRCUIT, 60)
                 .output(NULL)
                 .stationResearch(b -> b
-                        .researchStack(SUPRACAUSAL_MEMORY_CHIP.getStackForm())
+                        .researchStack(SUPRACAUSAL_MEMORY_CHIP.getStackForm(10))
                         .CWUt(600000)
                         .RWUt(60000)
                         .EUt(VA[8]))
@@ -22,14 +22,16 @@ public class ResearchLineMachineRecipeLoader {
                 .input(ZEPTO_PIC_WAFER, 12)
                 .output(NANO_PIC_WAFER)
                 .stationGOResearch(b -> b
-                        .researchStack(SUPRACAUSAL_MEMORY_CHIP.getStackForm())
-                        .output(NULL,1)
-                        .output(ZEPTO_PIC,12)
+                        .input(NULL,1)
+                        .input(ZEPTO_PIC_WAFER,2)
+                        .input(ZEPTO_PIC_WAFER,1)
+                        .researchStack(ZEPTO_PIC.getStackForm())
                         .CWUt(600000)
                         .RWUt(60000)
                         .GORWUt(6000)
                         .EUt(VA[12]))
                 .duration(400000).EUt(VA[13]).buildAndRegister();
+
     }
 
 }
