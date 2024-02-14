@@ -1,12 +1,10 @@
 package com.onlyex.naxtech.api.recipes.builders.research;
 
 import com.onlyex.naxtech.api.recipes.research.builder.*;
-import com.onlyex.naxtech.api.utils.AALManager;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
-import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.util.GTStringUtils;
 import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -67,12 +65,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             dataStack = getDefaultDataItem();
         }
 
-        /*
-         * 初始化了一个布尔变量 foundBehavior，用于标记是否找到了指定的行为。
-         * 使用 instanceof 来检查 dataStack.getItem() 是否是 MetaItem 的实例，并将结果赋值给变量 metaItem。
-         * 如果是，就进入 for 循环遍历 metaItem 的所有行为。在循环中，它通过 instanceof 来检查当前行为是否是 IDataItem 的实例。
-         * 如果是，就将 foundBehavior 设置为 true，然后对 dataStack 进行一些处理（复制并设置数量为1），并使用 break 跳出循环。
-         */
         boolean foundBehavior = false;
         if (dataStack.getItem() instanceof MetaItem<?> metaItem) {
             for (IItemBehaviour behaviour : metaItem.getBehaviours(dataStack)) {
@@ -111,8 +103,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         public static final int SCH_RESEARCH_EUT = GTValues.VA[GTValues.OpV];
         public static final int SDI_RESEARCH_EUT = GTValues.VA[GTValues.MAX];
 
-        //默认情况下，如果提供了足够的RWU/t，所需的总RWU将为200秒。
-        //提供更多的RWU/t将允许它花费更少的时间。
         public static final int RESEARCH_TOTAL_RWUT = 4000;
 
         private int cwut;
@@ -157,7 +147,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        //
         public StationRecipeBuilder GORWUt(int gorwut) {
             this.gorwut = gorwut;
             this.totalGORWU = gorwut * RESEARCH_TOTAL_RWUT;
@@ -170,7 +159,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        //
         public StationRecipeBuilder OPRWUt(int oprwut) {
             this.oprwut = oprwut;
             this.totalOPRWU = oprwut * RESEARCH_TOTAL_RWUT;
@@ -183,7 +171,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        //
         public StationRecipeBuilder SPRWUt(int sprwut) {
             this.sprwut = sprwut;
             this.totalSPRWU = sprwut * RESEARCH_TOTAL_RWUT;
@@ -196,7 +183,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        //
         public StationRecipeBuilder CORWUt(int corwut) {
             this.corwut = corwut;
             this.totalCORWU = corwut * RESEARCH_TOTAL_RWUT;
@@ -209,7 +195,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        //
         public StationRecipeBuilder SCARWUt(int scarwut) {
             this.scarwut = scarwut;
             this.totalSCARWU = scarwut * RESEARCH_TOTAL_RWUT;
@@ -222,7 +207,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        //
         public StationRecipeBuilder SCHRWUt(int schrwut) {
             this.schrwut = schrwut;
             this.totalSCHRWU = schrwut * RESEARCH_TOTAL_RWUT;
@@ -235,7 +219,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        //
         public StationRecipeBuilder SDIRWUt(int sdirwut) {
             this.sdirwut = sdirwut;
             this.totalSDIRWU = sdirwut * RESEARCH_TOTAL_RWUT;
@@ -248,8 +231,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             return this;
         }
 
-        public StationRecipeBuilder() {/**/}
-        //
+        public StationRecipeBuilder() {}
 
         @Override
         protected ItemStack getDefaultDataItem() {
@@ -265,8 +247,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
                 throw new IllegalArgumentException("总RWU不能大于RWU/t!");
             }
 
-            //“持续时间”是总RWU/t。
-            //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalRWU;
             if (eut <= 0) eut = RESEARCH_EUT;
             return new AALRecipeBuilder.ResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
@@ -283,8 +263,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
                 throw new IllegalArgumentException("总GO-RWU不能大于GO-RWU/t!");
             }
 
-            //“持续时间”是总RWU/t。
-            //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalGORWU;
             if (eut <= 0) eut = GO_RESEARCH_EUT;
             return new GOAALRecipeBuilder.GOResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
@@ -301,8 +279,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
                 throw new IllegalArgumentException("总OP-RWU不能大于OP-RWU/t!");
             }
 
-            //“持续时间”是总RWU/t。
-            //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalOPRWU;
             if (eut <= 0) eut = OP_RESEARCH_EUT;
             return new OPAALRecipeBuilder.OPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
@@ -320,8 +296,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
                 throw new IllegalArgumentException("总SP-RWU不能大于SP-RWU/t!");
             }
 
-            //“持续时间”是总RWU/t。
-            //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSPRWU;
             if (eut <= 0) eut = SP_RESEARCH_EUT;
             return new SPAALRecipeBuilder.SPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
@@ -338,8 +312,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
                 throw new IllegalArgumentException("总CO-RWU不能大于CO-RWU/t!");
             }
 
-            //“持续时间”是总RWU/t。
-            //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalCORWU;
             if (eut <= 0) eut = CO_RESEARCH_EUT;
             return new COAALRecipeBuilder.COResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
@@ -356,8 +328,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
                 throw new IllegalArgumentException("总SCA-RWU不能大于SCA-RWU/t!");
             }
 
-            //“持续时间”是总RWU/t。
-            //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
+
             int duration = totalSCARWU;
             if (eut <= 0) eut = SCA_RESEARCH_EUT;
             return new SCAAALRecipeBuilder.SCAResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
@@ -374,8 +345,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
                 throw new IllegalArgumentException("总SCH-RWU不能大于SCH-RWU/t!");
             }
 
-            //“持续时间”是总RWU/t。
-            //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSCHRWU;
             if (eut <= 0) eut = SCH_RESEARCH_EUT;
             return new SCHAALRecipeBuilder.SCHResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
@@ -392,12 +361,11 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
                 throw new IllegalArgumentException("总SDI-RWU不能大于SDI-RWU/t!");
             }
 
-            //“持续时间”是总RWU/t。
-            //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSDIRWU;
             if (eut <= 0) eut = SDI_RESEARCH_EUT;
             return new SDIAALRecipeBuilder.SDIResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
         }
+
     }
 }

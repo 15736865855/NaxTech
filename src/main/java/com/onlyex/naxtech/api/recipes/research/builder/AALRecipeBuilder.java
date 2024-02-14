@@ -5,23 +5,20 @@ import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.ConfigHolder;
-import gregtech.api.recipes.GTRecipeInputCache;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
-import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.util.EnumValidationResult;
 import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.function.UnaryOperator;
 
 public class AALRecipeBuilder extends RecipeBuilder<AALRecipeBuilder> {
 
-    private final Collection<ResearchRecipeEntry> recipeEntries = new ArrayList<>();
+    private Collection<ResearchRecipeEntry> recipeEntries = new ArrayList<>();
 
     private boolean generatingRecipes = true;
 
@@ -34,7 +31,7 @@ public class AALRecipeBuilder extends RecipeBuilder<AALRecipeBuilder> {
 
     public AALRecipeBuilder(@NotNull AALRecipeBuilder builder) {
         super(builder);
-        this.recipeEntries.addAll(builder.getRecipeEntries());
+        this.recipeEntries = builder.getRecipeEntries();
         this.generatingRecipes = builder.generatingRecipes;
     }
 
