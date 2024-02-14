@@ -2,7 +2,6 @@ package com.onlyex.naxtech.common.items.behaviors.research;
 
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.research.IResearchRecipeMap;
-import com.onlyex.naxtech.api.utils.AALManager;
 import com.onlyex.naxtech.api.utils.ResearchId;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;

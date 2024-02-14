@@ -237,7 +237,8 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
                 .where('N', MetaBlocks.FRAMES.get(Materials.TungstenSteel).getBlock(Materials.TungstenSteel))
                 .where('K', gregtech.common.metatileentities.MetaTileEntities.ITEM_EXPORT_BUS[4], EnumFacing.NORTH)
                 .where('L', gregtech.common.metatileentities.MetaTileEntities.ENERGY_INPUT_HATCH[5], EnumFacing.SOUTH)
-                .where('I', () -> ConfigHolder.machines.enableMaintenance ? gregtech.common.metatileentities.MetaTileEntities.MAINTENANCE_HATCH : getCasingState(), EnumFacing.SOUTH)
+                .where('I', () -> ConfigHolder.machines.enableMaintenance ?
+                        gregtech.common.metatileentities.MetaTileEntities.MAINTENANCE_HATCH : getCasingState(), EnumFacing.SOUTH)
                 .where('Q', gregtech.common.metatileentities.MetaTileEntities.ITEM_IMPORT_BUS[4], EnumFacing.WEST)
                 .where('P', gregtech.common.metatileentities.MetaTileEntities.FLUID_IMPORT_HATCH[4], EnumFacing.EAST);
         NTAPI.MAP_CA_TIRED_CASING.entrySet().stream()
@@ -250,7 +251,8 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
     protected void addDisplayText(List<ITextComponent> textList) {
         super.addDisplayText(textList);
         if (this.isStructureFormed() && casingTier > 0) {
-            textList.add(0, new TextComponentTranslation("naxtech.machine.component_assembly_line.casing_tier", I18n.format("naxtech.machine.component_assembly_line.tier." + casingTier)));
+            textList.add(0, new TextComponentTranslation("naxtech.machine.component_assembly_line.casing_tier",
+                    I18n.format("naxtech.machine.component_assembly_line.tier." + casingTier)));
         }
     }
 

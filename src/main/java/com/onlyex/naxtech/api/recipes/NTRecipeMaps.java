@@ -5,12 +5,12 @@ import com.onlyex.naxtech.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.builders.PACasingTierRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.builders.QFTCasingTierRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.builders.research.DataRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapComponentAssemblyLine;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
 import com.onlyex.naxtech.api.recipes.research.RecipeMapAAL;
 import com.onlyex.naxtech.api.recipes.research.RecipeMapResearchStation;
-import com.onlyex.naxtech.api.recipes.research.builder.*;
+import com.onlyex.naxtech.api.recipes.research.builder.AALRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.research.builder.SDIAALRecipeBuilder;
 import com.onlyex.naxtech.api.utils.AALManager;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
@@ -90,48 +90,6 @@ public final class NTRecipeMaps {
             48, 4, 12, 0,
             new AALRecipeBuilder(), false)
             .onRecipeBuild(AALManager::createResearchRecipe);
-
-    @ZenProperty
-    public static final RecipeMap<GOAALRecipeBuilder> GO_AAL_RECIPES = new RecipeMapAAL<>(
-            "go_research_line",
-            48, 4, 12, 0,
-            new GOAALRecipeBuilder(), false)
-            .onRecipeBuild(AALManager::createGOResearchRecipe);
-
-    @ZenProperty
-    public static final RecipeMap<OPAALRecipeBuilder> OP_AAL_RECIPES = new RecipeMapAAL<>(
-            "op_research_line",
-            48, 4, 12, 0,
-            new OPAALRecipeBuilder(), false)
-            .onRecipeBuild(AALManager::createOPResearchRecipe);
-
-    @ZenProperty
-    public static final RecipeMap<SPAALRecipeBuilder> SP_AAL_RECIPES = new RecipeMapAAL<>(
-            "sp_research_line",
-            48, 4, 12, 0,
-            new SPAALRecipeBuilder(), false)
-            .onRecipeBuild(AALManager::createSPResearchRecipe);
-
-    @ZenProperty
-    public static final RecipeMap<COAALRecipeBuilder> CO_AAL_RECIPES = new RecipeMapAAL<>(
-            "co_research_line",
-            48, 4, 12, 0,
-            new COAALRecipeBuilder(), false)
-            .onRecipeBuild(AALManager::createCOResearchRecipe);
-
-    @ZenProperty
-    public static final RecipeMap<SCAAALRecipeBuilder> SCA_AAL_RECIPES = new RecipeMapAAL<>(
-            "sca_research_line",
-            48, 4, 12, 0,
-            new SCAAALRecipeBuilder(), false)
-            .onRecipeBuild(AALManager::createSCAResearchRecipe);
-
-    @ZenProperty
-    public static final RecipeMap<SCHAALRecipeBuilder> SCH_AAL_RECIPES = new RecipeMapAAL<>(
-            "sch_research_line",
-            48, 4, 12, 0,
-            new SCHAALRecipeBuilder(), false)
-            .onRecipeBuild(AALManager::createSCHResearchRecipe);
 
     @ZenProperty
     public static final RecipeMap<SDIAALRecipeBuilder> SDI_AAL_RECIPES = new RecipeMapAAL<>(

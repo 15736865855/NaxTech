@@ -1,6 +1,7 @@
 package com.onlyex.naxtech.api.recipes.builders.research;
 
-import com.onlyex.naxtech.api.recipes.research.builder.*;
+import com.onlyex.naxtech.api.recipes.research.builder.AALRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.research.builder.SDIAALRecipeBuilder;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
@@ -81,15 +82,29 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         }
     }
 
+    @NotNull
+    public String getResearchId() {
+        return this.researchId;
+    }
+
+    @NotNull
+    public ItemStack getResearchStack() {
+        return researchStack;
+    }
+
+    @NotNull
+    public ItemStack getDataStack() {
+        return dataStack;
+    }
+
+    public boolean getIgnoreNBT() {
+        return ignoreNBT;
+    }
+
+
     protected abstract ItemStack getDefaultDataItem();
 
     protected abstract AALRecipeBuilder.ResearchRecipeEntry research();
-    protected abstract GOAALRecipeBuilder.GOResearchRecipeEntry goresearch();
-    protected abstract OPAALRecipeBuilder.OPResearchRecipeEntry opresearch();
-    protected abstract SPAALRecipeBuilder.SPResearchRecipeEntry spresearch();
-    protected abstract COAALRecipeBuilder.COResearchRecipeEntry coresearch();
-    protected abstract SCAAALRecipeBuilder.SCAResearchRecipeEntry scaresearch();
-    protected abstract SCHAALRecipeBuilder.SCHResearchRecipeEntry schresearch();
     protected abstract SDIAALRecipeBuilder.SDIResearchRecipeEntry sdiresearch();
 
     public static class StationRecipeBuilder extends ResearchRecipeBuilder<ResearchRecipeBuilder.StationRecipeBuilder> {
@@ -251,104 +266,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             if (eut <= 0) eut = RESEARCH_EUT;
             return new AALRecipeBuilder.ResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut);
-        }
-
-        @Override
-        public GOAALRecipeBuilder.GOResearchRecipeEntry goresearch() {
-            validateResearchItem();
-            if (gorwut <= 0 || totalGORWU <= 0) {
-                throw new IllegalArgumentException("GO-RWU/t和总GO-RWU都必须设置为非零！");
-            }
-            if (gorwut > totalGORWU) {
-                throw new IllegalArgumentException("总GO-RWU不能大于GO-RWU/t!");
-            }
-
-            int duration = totalGORWU;
-            if (eut <= 0) eut = GO_RESEARCH_EUT;
-            return new GOAALRecipeBuilder.GOResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, cwut, rwut, gorwut);
-        }
-
-        @Override
-        public OPAALRecipeBuilder.OPResearchRecipeEntry opresearch() {
-            validateResearchItem();
-            if (oprwut <= 0 || totalOPRWU <= 0) {
-                throw new IllegalArgumentException("OP-RWU/t和总OP-RWU都必须设置为非零！");
-            }
-            if (oprwut > totalOPRWU) {
-                throw new IllegalArgumentException("总OP-RWU不能大于OP-RWU/t!");
-            }
-
-            int duration = totalOPRWU;
-            if (eut <= 0) eut = OP_RESEARCH_EUT;
-            return new OPAALRecipeBuilder.OPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, cwut, rwut, gorwut, oprwut);
-        }
-
-        @Override
-        public SPAALRecipeBuilder.SPResearchRecipeEntry spresearch() {
-            validateResearchItem();
-
-            if (sprwut <= 0 || totalSPRWU <= 0) {
-                throw new IllegalArgumentException("SP-RWU/t和总SP-RWU都必须设置为非零！");
-            }
-            if (sprwut > totalSPRWU) {
-                throw new IllegalArgumentException("总SP-RWU不能大于SP-RWU/t!");
-            }
-
-            int duration = totalSPRWU;
-            if (eut <= 0) eut = SP_RESEARCH_EUT;
-            return new SPAALRecipeBuilder.SPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut);
-        }
-
-        @Override
-        public COAALRecipeBuilder.COResearchRecipeEntry coresearch() {
-            validateResearchItem();
-            if (corwut <= 0 || totalCORWU <= 0) {
-                throw new IllegalArgumentException("CO-RWU/t和总CO-RWU都必须设置为非零！");
-            }
-            if (corwut > totalCORWU) {
-                throw new IllegalArgumentException("总CO-RWU不能大于CO-RWU/t!");
-            }
-
-            int duration = totalCORWU;
-            if (eut <= 0) eut = CO_RESEARCH_EUT;
-            return new COAALRecipeBuilder.COResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut);
-        }
-
-        @Override
-        public SCAAALRecipeBuilder.SCAResearchRecipeEntry scaresearch() {
-            validateResearchItem();
-            if (scarwut <= 0 || totalSCARWU <= 0) {
-                throw new IllegalArgumentException("SCA-RWU/t和总SCA-RWU都必须设置为非零！");
-            }
-            if (scarwut > totalSCARWU) {
-                throw new IllegalArgumentException("总SCA-RWU不能大于SCA-RWU/t!");
-            }
-
-
-            int duration = totalSCARWU;
-            if (eut <= 0) eut = SCA_RESEARCH_EUT;
-            return new SCAAALRecipeBuilder.SCAResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut);
-        }
-
-        @Override
-        public SCHAALRecipeBuilder.SCHResearchRecipeEntry schresearch() {
-            validateResearchItem();
-            if (schrwut <= 0 || totalSCHRWU <= 0) {
-                throw new IllegalArgumentException("SCH-RWU/t和总SCH-RWU都必须设置为非零！");
-            }
-            if (schrwut > totalSCHRWU) {
-                throw new IllegalArgumentException("总SCH-RWU不能大于SCH-RWU/t!");
-            }
-
-            int duration = totalSCHRWU;
-            if (eut <= 0) eut = SCH_RESEARCH_EUT;
-            return new SCHAALRecipeBuilder.SCHResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut);
         }
 
         @Override

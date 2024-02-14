@@ -1,9 +1,10 @@
 package com.onlyex.naxtech.loaders.recipe;
 
-import static com.onlyex.naxtech.api.recipes.NTRecipeMaps.*;
+import static com.onlyex.naxtech.api.recipes.NTRecipeMaps.AAL_RECIPES;
+import static com.onlyex.naxtech.api.recipes.NTRecipeMaps.RESEARCH_RECIPES;
 import static com.onlyex.naxtech.common.items.NTMetaItems.*;
 import static gregtech.api.GTValues.VA;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.MetaItems.HIGH_POWER_INTEGRATED_CIRCUIT;
 
 public class AALMachineRecipeLoader {
     public static void init() {
