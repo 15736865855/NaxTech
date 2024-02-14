@@ -2,7 +2,7 @@ package com.onlyex.naxtech.common.items.behaviors.research;
 
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.research.IResearchRecipeMap;
-import com.onlyex.naxtech.api.utils.ResearchLineManager;
+import com.onlyex.naxtech.api.utils.AALManager;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
 import gregtech.api.recipes.Recipe;
@@ -33,9 +33,9 @@ public class DataItemSPResearch implements IItemBehaviour, IDataItem {
 
     @Override
     public void addInformation(@NotNull ItemStack itemStack, List<String> lines) {
-        String spresearchId = ResearchLineManager.readSPResearchId(itemStack);
+        String spresearchId = AALManager.readSPResearchId(itemStack);
         if (spresearchId == null) return;
-        Collection<Recipe> recipes = ((IResearchRecipeMap) NTRecipeMaps.SP_RESEARCH_LINE_RECIPES).getDataStickEntry(spresearchId);
+        Collection<Recipe> recipes = ((IResearchRecipeMap) NTRecipeMaps.SP_AAL_RECIPES).getDataStickEntry(spresearchId);
         if (recipes != null && !recipes.isEmpty()) {
             lines.add(I18n.format("research.sp_data_item.researchline.title"));
             Collection<ItemStack> added = new ObjectOpenHashSet<>();

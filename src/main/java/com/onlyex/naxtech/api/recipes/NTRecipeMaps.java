@@ -1,11 +1,17 @@
 package com.onlyex.naxtech.api.recipes;
 
-import com.onlyex.naxtech.api.recipes.builders.*;
-import com.onlyex.naxtech.api.recipes.builders.research.*;
-import com.onlyex.naxtech.api.recipes.machines.*;
-import com.onlyex.naxtech.api.recipes.research.*;
+import com.onlyex.naxtech.api.recipes.builders.CACasingTierRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.PACasingTierRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.QFTCasingTierRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.research.DataRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.machines.RecipeMapComponentAssemblyLine;
+import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
+import com.onlyex.naxtech.api.recipes.research.RecipeMapAAL;
+import com.onlyex.naxtech.api.recipes.research.RecipeMapResearchStation;
 import com.onlyex.naxtech.api.recipes.research.builder.*;
-import com.onlyex.naxtech.api.utils.ResearchLineManager;
+import com.onlyex.naxtech.api.utils.AALManager;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
@@ -18,15 +24,15 @@ import stanhebben.zenscript.annotations.ZenProperty;
 @ZenRegister
 public final class NTRecipeMaps {
     @ZenProperty
-    public static final RecipeMap<CACasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES = new RecipeMapComponentAssemblyLine<>
-                ("component_assembly_line_recipes",
+    public static final RecipeMap<CACasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES = new RecipeMapComponentAssemblyLine<>(
+            "component_assembly_line_recipes",
                         12, 1,  12, 0,
                         new CACasingTierRecipeBuilder(), false)
                 .setSound(GTSoundEvents.ASSEMBLER);
 
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> COMPONENT_ASSEMBLER_RECIPES = new RecipeMap<>
-            ("component_assembler_recipes",
+    public static final RecipeMap<SimpleRecipeBuilder> COMPONENT_ASSEMBLER_RECIPES = new RecipeMap<>(
+            "component_assembler_recipes",
                     6, 1, 1, 0,
                     new SimpleRecipeBuilder(), false)
                 .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
@@ -34,8 +40,8 @@ public final class NTRecipeMaps {
                 .setSound(GTSoundEvents.ASSEMBLER);
 
     @ZenProperty
-    public static final RecipeMap<PACasingTierRecipeBuilder> PRECISE_ASSEMBLER_RECIPES = new RecipeMapPreciseAssembler<>
-            ("precise_assembler_recipes",
+    public static final RecipeMap<PACasingTierRecipeBuilder> PRECISE_ASSEMBLER_RECIPES = new RecipeMapPreciseAssembler<>(
+            "precise_assembler_recipes",
                     4, 1, 4, 0,
                     new PACasingTierRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
@@ -44,8 +50,8 @@ public final class NTRecipeMaps {
                 .setSound(GTSoundEvents.ASSEMBLER);
 
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>
-            ("cryogenic_reactor_recipes",
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>(
+            "cryogenic_reactor_recipes",
                     3,  2,  2,  2,
                     new NoCoilTemperatureRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
@@ -53,8 +59,8 @@ public final class NTRecipeMaps {
 
         //  Flotation Factory Recipemap
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_FACTORY_RECIPES = new RecipeMap<>
-                ("flotation_factory_recipes",
+    public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_FACTORY_RECIPES = new RecipeMap<>(
+            "flotation_factory_recipes",
                         3, 3, 3, 3,
                         new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.CIRCULAR)
@@ -62,8 +68,8 @@ public final class NTRecipeMaps {
 
         //  Quantum Force Transformer RecipeMap
     @ZenProperty
-    public static final RecipeMap<QFTCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>
-                ("quantum_force_transformer_recipes",
+    public static final RecipeMap<QFTCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>(
+            "quantum_force_transformer_recipes",
                         6,  6,  6,  6,
                         new QFTCasingTierRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
@@ -73,54 +79,72 @@ public final class NTRecipeMaps {
 
     /////////////////////////////////////////////////////TODO MUI
 /*    @ZenProperty
-    public static final RecipeMap<ResearchLineRecipeBuilder> RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "research_line",24, 2, 6, 0,new ResearchLineRecipeBuilder(), false*//*, AssemblyLineUI::new*//*)
-            .onRecipeBuild(ResearchLineManager::createDefaultResearchRecipe)
+    public static final RecipeMap<AALRecipeBuilder> AAL_RECIPES = new RecipeMapAAL<>(
+            "research_line",new AALRecipeBuilder(), false, AssemblyLineUI::new)
+            .onRecipeBuild(AALManager::createDefaultResearchRecipe)
             .setSound(GTSoundEvents.ASSEMBLER);*/
 
     @ZenProperty
-    public static final RecipeMap<ResearchLineRecipeBuilder> RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "research_line",48, 4, 12, 0,new ResearchLineRecipeBuilder(), false)
-            .onRecipeBuild(ResearchLineManager::createResearchRecipe);
+    public static final RecipeMap<AALRecipeBuilder> AAL_RECIPES = new RecipeMapAAL<>(
+            "research_line",
+            48, 4, 12, 0,
+            new AALRecipeBuilder(), false)
+            .onRecipeBuild(AALManager::createResearchRecipe);
 
     @ZenProperty
-    public static final RecipeMap<GOResearchLineRecipeBuilder> GO_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "go_research_line",48, 4, 12, 0,new GOResearchLineRecipeBuilder(), false)
-            .onRecipeBuild(ResearchLineManager::createGOResearchRecipe);
+    public static final RecipeMap<GOAALRecipeBuilder> GO_AAL_RECIPES = new RecipeMapAAL<>(
+            "go_research_line",
+            48, 4, 12, 0,
+            new GOAALRecipeBuilder(), false)
+            .onRecipeBuild(AALManager::createGOResearchRecipe);
 
     @ZenProperty
-    public static final RecipeMap<OPResearchLineRecipeBuilder> OP_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "op_research_line",48, 4, 12, 0,new OPResearchLineRecipeBuilder(), false)
-            .onRecipeBuild(ResearchLineManager::createOPResearchRecipe);
+    public static final RecipeMap<OPAALRecipeBuilder> OP_AAL_RECIPES = new RecipeMapAAL<>(
+            "op_research_line",
+            48, 4, 12, 0,
+            new OPAALRecipeBuilder(), false)
+            .onRecipeBuild(AALManager::createOPResearchRecipe);
 
     @ZenProperty
-    public static final RecipeMap<SPResearchLineRecipeBuilder> SP_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "sp_research_line",48, 4, 12, 0,new SPResearchLineRecipeBuilder(), false)
-            .onRecipeBuild(ResearchLineManager::createSPResearchRecipe);
+    public static final RecipeMap<SPAALRecipeBuilder> SP_AAL_RECIPES = new RecipeMapAAL<>(
+            "sp_research_line",
+            48, 4, 12, 0,
+            new SPAALRecipeBuilder(), false)
+            .onRecipeBuild(AALManager::createSPResearchRecipe);
 
     @ZenProperty
-    public static final RecipeMap<COResearchLineRecipeBuilder> CO_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "co_research_line",48, 4, 12, 0,new COResearchLineRecipeBuilder(), false)
-            .onRecipeBuild(ResearchLineManager::createCOResearchRecipe);
+    public static final RecipeMap<COAALRecipeBuilder> CO_AAL_RECIPES = new RecipeMapAAL<>(
+            "co_research_line",
+            48, 4, 12, 0,
+            new COAALRecipeBuilder(), false)
+            .onRecipeBuild(AALManager::createCOResearchRecipe);
 
     @ZenProperty
-    public static final RecipeMap<SCAResearchLineRecipeBuilder> SCA_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "sca_research_line",48, 4, 12, 0,new SCAResearchLineRecipeBuilder(), false)
-            .onRecipeBuild(ResearchLineManager::createSCAResearchRecipe);
+    public static final RecipeMap<SCAAALRecipeBuilder> SCA_AAL_RECIPES = new RecipeMapAAL<>(
+            "sca_research_line",
+            48, 4, 12, 0,
+            new SCAAALRecipeBuilder(), false)
+            .onRecipeBuild(AALManager::createSCAResearchRecipe);
 
     @ZenProperty
-    public static final RecipeMap<SCHResearchLineRecipeBuilder> SCH_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "sch_research_line",48, 4, 12, 0,new SCHResearchLineRecipeBuilder(), false)
-            .onRecipeBuild(ResearchLineManager::createSCHResearchRecipe);
+    public static final RecipeMap<SCHAALRecipeBuilder> SCH_AAL_RECIPES = new RecipeMapAAL<>(
+            "sch_research_line",
+            48, 4, 12, 0,
+            new SCHAALRecipeBuilder(), false)
+            .onRecipeBuild(AALManager::createSCHResearchRecipe);
 
     @ZenProperty
-    public static final RecipeMap<SDIResearchLineRecipeBuilder> SDI_RESEARCH_LINE_RECIPES = new RecipeMapResearchLine<>(
-            "sdi_research_line",48, 4, 12, 0,new SDIResearchLineRecipeBuilder(), false)
-            .onRecipeBuild(ResearchLineManager::createSDIResearchRecipe);
+    public static final RecipeMap<SDIAALRecipeBuilder> SDI_AAL_RECIPES = new RecipeMapAAL<>(
+            "sdi_research_line",
+            48, 4, 12, 0,
+            new SDIAALRecipeBuilder(), false)
+            .onRecipeBuild(AALManager::createSDIResearchRecipe);
 
     @ZenProperty
     public static final RecipeMap<DataRecipeBuilder> RESEARCH_RECIPES = new RecipeMapResearchStation<>(
-            "research",24, 2, 6, 0,new DataRecipeBuilder(), false);
+            "research",
+            24, 2, 6, 0,
+            new DataRecipeBuilder(), false);
 
     public NTRecipeMaps() {}
 }

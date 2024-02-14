@@ -4,8 +4,8 @@ import com.onlyex.naxtech.api.NTValues;
 import com.onlyex.naxtech.api.recipes.properties.CACasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.CasingTierProperty;
 import com.onlyex.naxtech.api.recipes.properties.PACasingTierProperty;
+import com.onlyex.naxtech.api.utils.AALManager;
 import com.onlyex.naxtech.api.utils.NTLog;
-import com.onlyex.naxtech.api.utils.ResearchLineManager;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import com.onlyex.naxtech.common.items.NTToolItems;
 import com.onlyex.naxtech.common.pipelike.research.block.*;
@@ -153,9 +153,6 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event)
     {
-
-        ResearchLineManager.registerScannerLogic();
-
         FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
         FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
 

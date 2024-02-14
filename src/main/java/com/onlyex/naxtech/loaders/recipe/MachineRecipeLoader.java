@@ -4,7 +4,7 @@ public class MachineRecipeLoader {
     private MachineRecipeLoader() {}
 
     public static void init() {
-        //ResearchLineLoader.init();
-        ResearchLineMachineRecipeLoader.init();
+        //AALLoader.init();
+        AALMachineRecipeLoader.init();
     }
 }

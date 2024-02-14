@@ -1,8 +1,8 @@
 package com.onlyex.naxtech.api.recipes.research.builder;
 
+import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
-import com.onlyex.naxtech.api.recipes.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.ConfigHolder;
 import gregtech.api.recipes.Recipe;
@@ -16,26 +16,26 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.UnaryOperator;
 
-public class SCAResearchLineRecipeBuilder extends RecipeBuilder<SCAResearchLineRecipeBuilder> {
+public class SCAAALRecipeBuilder extends RecipeBuilder<SCAAALRecipeBuilder> {
     private final Collection<SCAResearchRecipeEntry> recipeSCAEntries = new ArrayList<>();
     private boolean generatingRecipes = true;
 
-    public SCAResearchLineRecipeBuilder() {}
+    public SCAAALRecipeBuilder() {}
 
     @SuppressWarnings("unused")
-    public SCAResearchLineRecipeBuilder(Recipe recipe, RecipeMap<SCAResearchLineRecipeBuilder> recipeMap) {
+    public SCAAALRecipeBuilder(Recipe recipe, RecipeMap<SCAAALRecipeBuilder> recipeMap) {
         super(recipe, recipeMap);
     }
 
-    public SCAResearchLineRecipeBuilder(@NotNull SCAResearchLineRecipeBuilder builder) {
+    public SCAAALRecipeBuilder(@NotNull SCAAALRecipeBuilder builder) {
         super(builder);
         this.recipeSCAEntries.addAll(builder.getSCARecipeEntries());
         this.generatingRecipes = builder.generatingRecipes;
     }
 
     @Override
-    public SCAResearchLineRecipeBuilder copy() {
-        return new SCAResearchLineRecipeBuilder(this);
+    public SCAAALRecipeBuilder copy() {
+        return new SCAAALRecipeBuilder(this);
     }
 
     private boolean applyResearchProperty(ResearchPropertyData.ResearchEntry researchEntry) {
@@ -74,7 +74,7 @@ public class SCAResearchLineRecipeBuilder extends RecipeBuilder<SCAResearchLineR
      * 为研究站生成研究配方。
      */
     //
-    public SCAResearchLineRecipeBuilder stationSCAResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> scaresearch) {
+    public SCAAALRecipeBuilder stationSCAResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> scaresearch) {
         SCAResearchRecipeEntry entry = scaresearch.apply(new ResearchRecipeBuilder.StationRecipeBuilder()).scaresearch();
         if (applyResearchProperty(new ResearchPropertyData.ResearchEntry(entry.researchId, entry.dataStack))) {
             this.recipeSCAEntries.add(entry);

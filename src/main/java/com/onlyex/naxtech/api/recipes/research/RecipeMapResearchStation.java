@@ -1,11 +1,9 @@
 package com.onlyex.naxtech.api.recipes.research;
 
-import gregtech.api.GTValues;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.machines.IScannerRecipeMap;
 import gregtech.core.sound.GTSoundEvents;
-
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 

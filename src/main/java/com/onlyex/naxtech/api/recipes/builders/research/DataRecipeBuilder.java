@@ -3,18 +3,45 @@ package com.onlyex.naxtech.api.recipes.builders.research;
 import com.onlyex.naxtech.api.recipes.recipeproperties.data.*;
 import com.onlyex.naxtech.api.recipes.recipeproperties.total.*;
 import com.onlyex.naxtech.api.utils.NTLog;
+import com.onlyex.naxtech.common.items.NTMetaItems;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
-import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.recipes.recipeproperties.ComputationProperty;
 import gregtech.api.recipes.recipeproperties.TotalComputationProperty;
 import gregtech.api.util.EnumValidationResult;
+import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-
 public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
+
+    @NotNull
+    public static ItemStack getDefaultResearchStationItem(
+            int gorwut,int oprwut,int sprwut,int corwut,int scarwut,int schrwut,int sdirwut) {
+        if (gorwut > 32) {
+            return NTMetaItems.GOOWARE_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (oprwut > 32) {
+            return NTMetaItems.OPTICAL_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (sprwut > 32) {
+            return NTMetaItems.SPINTRONIC_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (corwut > 32) {
+            return NTMetaItems.COSMIC_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (scarwut > 32) {
+            return NTMetaItems.SUPRA_CAUSAL_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (schrwut > 32) {
+            return NTMetaItems.SUPRA_CHRONAL_RESEARCH_DATA_CARD.getStackForm();
+        }
+        if (sdirwut > 32) {
+            return NTMetaItems.SUPRA_DIMENSION_RESEARCH_DATA_CARD.getStackForm();
+        }
+
+        return NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
+    }
 
     public DataRecipeBuilder() {/**/}
 

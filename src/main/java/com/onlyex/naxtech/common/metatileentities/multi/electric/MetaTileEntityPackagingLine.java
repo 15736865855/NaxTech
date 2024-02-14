@@ -1,8 +1,11 @@
 package com.onlyex.naxtech.common.metatileentities.multi.electric;
 
+import codechicken.lib.render.CCRenderState;
+import codechicken.lib.render.pipeline.IVertexOperation;
+import codechicken.lib.vec.Matrix4;
+import codechicken.lib.vec.Vector3;
 import com.onlyex.naxtech.api.metatileentity.multiblock.NTMultiblockAbility;
 import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
-
 import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.capability.IDataAccessHatch;
@@ -31,7 +34,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiFluidHatch;
 import gregtech.core.sound.GTSoundEvents;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
@@ -45,11 +47,6 @@ import net.minecraftforge.fluids.IFluidTank;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
-
-import codechicken.lib.render.CCRenderState;
-import codechicken.lib.render.pipeline.IVertexOperation;
-import codechicken.lib.vec.Matrix4;
-import codechicken.lib.vec.Vector3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -69,7 +66,7 @@ public class MetaTileEntityPackagingLine extends RecipeMapMultiblockController {
     private int beamCount;
 
     public MetaTileEntityPackagingLine(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, NTRecipeMaps.RESEARCH_LINE_RECIPES);
+        super(metaTileEntityId, NTRecipeMaps.AAL_RECIPES);
     }
 
     @Override

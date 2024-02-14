@@ -16,20 +16,20 @@ import java.util.Collection;
 import java.util.Map;
 
 @ApiStatus.Internal
-public class RecipeMapResearchLine<R extends RecipeBuilder<R>> extends RecipeMap<R> implements IResearchRecipeMap {
+public class RecipeMapAAL<R extends RecipeBuilder<R>> extends RecipeMap<R> implements IResearchRecipeMap {
 
     /** 包含每个研究关键的配方 */
     private final Map<String, Collection<Recipe>> researchEntries = new Object2ObjectOpenHashMap<>();
 
-    public RecipeMapResearchLine(@NotNull String unlocalizedName, int maxInputs, int maxOutputs, int maxFluidInputs, int maxFluidOutputs,
-                                 @NotNull R defaultRecipeBuilder, boolean isHidden) {
+    public RecipeMapAAL(@NotNull String unlocalizedName, int maxInputs, int maxOutputs, int maxFluidInputs, int maxFluidOutputs,
+                        @NotNull R defaultRecipeBuilder, boolean isHidden) {
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipeBuilder, isHidden);
         setSound(GTSoundEvents.ASSEMBLER);
     }//TODO MUI
 
 
 
-/*    public RecipeMapResearchLine(@NotNull String unlocalizedName, @NotNull R defaultRecipeBuilder,
+/*    public RecipeMapAAL(@NotNull String unlocalizedName, @NotNull R defaultRecipeBuilder,
                                  @NotNull RecipeMapUIFunction recipeMapUI) {
         super(unlocalizedName, defaultRecipeBuilder, recipeMapUI, 16, 1, 4, 0);
         setSound(GTSoundEvents.ASSEMBLER);

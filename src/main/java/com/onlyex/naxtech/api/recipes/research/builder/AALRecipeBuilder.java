@@ -1,10 +1,11 @@
 package com.onlyex.naxtech.api.recipes.research.builder;
 
+import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
-import com.onlyex.naxtech.api.recipes.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.ConfigHolder;
+import gregtech.api.recipes.GTRecipeInputCache;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
@@ -18,26 +19,28 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.UnaryOperator;
 
-public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRecipeBuilder> {
-    private final Collection<GOResearchRecipeEntry> recipeGOEntries = new ArrayList<>();
+public class AALRecipeBuilder extends RecipeBuilder<AALRecipeBuilder> {
+
+    private final Collection<ResearchRecipeEntry> recipeEntries = new ArrayList<>();
+
     private boolean generatingRecipes = true;
 
-    public GOResearchLineRecipeBuilder() {}
+    public AALRecipeBuilder() {}
 
     @SuppressWarnings("unused")
-    public GOResearchLineRecipeBuilder(Recipe recipe, RecipeMap<GOResearchLineRecipeBuilder> recipeMap) {
+    public AALRecipeBuilder(Recipe recipe, RecipeMap<AALRecipeBuilder> recipeMap) {
         super(recipe, recipeMap);
     }
 
-    public GOResearchLineRecipeBuilder(@NotNull GOResearchLineRecipeBuilder builder) {
+    public AALRecipeBuilder(@NotNull AALRecipeBuilder builder) {
         super(builder);
-        this.recipeGOEntries.addAll(builder.getGORecipeEntries());
+        this.recipeEntries.addAll(builder.getRecipeEntries());
         this.generatingRecipes = builder.generatingRecipes;
     }
 
     @Override
-    public GOResearchLineRecipeBuilder copy() {
-        return new GOResearchLineRecipeBuilder(this);
+    public AALRecipeBuilder copy() {
+        return new AALRecipeBuilder(this);
     }
 
     private boolean applyResearchProperty(ResearchPropertyData.ResearchEntry researchEntry) {
@@ -75,28 +78,29 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
     /**
      * 为研究站生成研究配方。
      */
+
     //
-    public GOResearchLineRecipeBuilder stationGOResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> goresearch) {
-        GOResearchRecipeEntry entry = goresearch.apply(new ResearchRecipeBuilder.StationRecipeBuilder()).goresearch();
+    public AALRecipeBuilder stationResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> research) {
+        ResearchRecipeEntry entry = research.apply(new ResearchRecipeBuilder.StationRecipeBuilder()).research();
         if (applyResearchProperty(new ResearchPropertyData.ResearchEntry(entry.researchId, entry.dataStack))) {
-            this.recipeGOEntries.add(entry);
+            this.recipeEntries.add(entry);
         }
         return this;
     }
 
     @NotNull
-    public Collection<GOResearchRecipeEntry> getGORecipeEntries() {
-        return this.recipeGOEntries;
+    public Collection<ResearchRecipeEntry> getRecipeEntries() {
+        return this.recipeEntries;
     }
+
 
     /**
      * 用于生成包含研究数据的数据项的自动生成研究配方的条目。
      */
 
-    public static class GOResearchRecipeEntry {
+    public static class ResearchRecipeEntry {
 
         private final String researchId;
-        private final List<GTRecipeInput> inputs;
         private final ItemStack researchStack;
         private final ItemStack dataStack;
         private final boolean ignoreNBT;
@@ -104,33 +108,6 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
         private final int EUt;
         private final int CWUt;
         private final int RWUt;
-        private final int GORWUt;
-
-        /**
-         * @param researchId    要存储的研究的id
-         * @param researchStack 要扫描以进行研究的堆栈
-         * @param dataStack     包含数据的堆栈
-         * @param duration      配方的持续时间
-         * @param EUt           配方的EUt
-         * @param RWUt          如果在研究站，这个配方每tick需要多少RWUt
-         *                      <p>
-         *                      默认情况下，将在Research chStack输入上忽略NBT。如果需要NBT匹配，请参阅
-         *
-         */
-        public GOResearchRecipeEntry(@NotNull String researchId, @NotNull List<GTRecipeInput> inputs, @NotNull ItemStack researchStack,
-                                   @NotNull ItemStack dataStack, int duration, int EUt,
-                                     int CWUt,int RWUt, int GORWUt) {
-            this.researchId = researchId;
-            this.inputs = inputs;
-            this.researchStack = researchStack;
-            this.dataStack = dataStack;
-            this.duration = duration;
-            this.EUt = EUt;
-            this.CWUt = CWUt;
-            this.RWUt = RWUt;
-            this.GORWUt = GORWUt;
-            this.ignoreNBT = true;
-        }
 
         /**
          * @param researchId    要存储的研究的id
@@ -140,11 +117,10 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
          * @param EUt           配方的EUt
          * @param RWUt          如果在研究站，这个配方每tick需要多少RWUt
          */
-        public GOResearchRecipeEntry(@NotNull String researchId, @NotNull List<GTRecipeInput> inputs, @NotNull ItemStack researchStack,
-                                     @NotNull ItemStack dataStack, boolean ignoreNBT, int duration, int EUt,
-                                     int CWUt, int RWUt, int GORWUt) {
+        public ResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
+                                   @NotNull ItemStack dataStack, boolean ignoreNBT, int duration, int EUt,
+                                   int CWUt, int RWUt) {
             this.researchId = researchId;
-            this.inputs = inputs;
             this.researchStack = researchStack;
             this.dataStack = dataStack;
             this.ignoreNBT = ignoreNBT;
@@ -152,18 +128,13 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
             this.EUt = EUt;
             this.CWUt = CWUt;
             this.RWUt = RWUt;
-            this.GORWUt = GORWUt;
-
         }
 
         @NotNull
         public String getResearchId() {
             return this.researchId;
         }
-        @NotNull
-        public List<GTRecipeInput> getInputs() {
-            return inputs;
-        }
+
         @NotNull
         public ItemStack getResearchStack() {
             return researchStack;
@@ -185,12 +156,13 @@ public class GOResearchLineRecipeBuilder extends RecipeBuilder<GOResearchLineRec
         public int getEUt() {
             return EUt;
         }
+
         public int getCWUt() {
             return CWUt;
         }
-        public int getRWUt() {return RWUt;}
-        public int getGORWUt() {
-            return GORWUt;
+
+        public int getRWUt() {
+            return RWUt;
         }
     }
 }

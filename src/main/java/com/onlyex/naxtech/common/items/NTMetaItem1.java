@@ -3,12 +3,12 @@ package com.onlyex.naxtech.common.items;
 
 import com.onlyex.naxtech.client.renderer.texture.NTTextures;
 import com.onlyex.naxtech.common.CommonProxy;
-import com.onlyex.naxtech.common.items.behaviors.research.*;
 import com.onlyex.naxtech.common.items.behaviors.IntBcircuitBehavior;
 import com.onlyex.naxtech.common.items.behaviors.MillBallBehavior;
 import com.onlyex.naxtech.common.items.behaviors.StructureWriteBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.HaloRenderItemBehavior;
+import com.onlyex.naxtech.common.items.behaviors.research.*;
 import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;

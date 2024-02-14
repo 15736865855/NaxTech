@@ -1,8 +1,8 @@
 package com.onlyex.naxtech.api.recipes.research.builder;
 
+import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
-import com.onlyex.naxtech.api.recipes.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.ConfigHolder;
 import gregtech.api.recipes.Recipe;
@@ -16,26 +16,26 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.UnaryOperator;
 
-public class SDIResearchLineRecipeBuilder extends RecipeBuilder<SDIResearchLineRecipeBuilder> {
-    private final Collection<SDIResearchRecipeEntry> recipeSDIEntries = new ArrayList<>();
+public class COAALRecipeBuilder extends RecipeBuilder<COAALRecipeBuilder> {
+    private final Collection<COResearchRecipeEntry> recipeCOEntries = new ArrayList<>();
     private boolean generatingRecipes = true;
 
-    public SDIResearchLineRecipeBuilder() {}
+    public COAALRecipeBuilder() {}
 
     @SuppressWarnings("unused")
-    public SDIResearchLineRecipeBuilder(Recipe recipe, RecipeMap<SDIResearchLineRecipeBuilder> recipeMap) {
+    public COAALRecipeBuilder(Recipe recipe, RecipeMap<COAALRecipeBuilder> recipeMap) {
         super(recipe, recipeMap);
     }
 
-    public SDIResearchLineRecipeBuilder(@NotNull SDIResearchLineRecipeBuilder builder) {
+    public COAALRecipeBuilder(@NotNull COAALRecipeBuilder builder) {
         super(builder);
-        this.recipeSDIEntries.addAll(builder.getSDIRecipeEntries());
+        this.recipeCOEntries.addAll(builder.getCORecipeEntries());
         this.generatingRecipes = builder.generatingRecipes;
     }
 
     @Override
-    public SDIResearchLineRecipeBuilder copy() {
-        return new SDIResearchLineRecipeBuilder(this);
+    public COAALRecipeBuilder copy() {
+        return new COAALRecipeBuilder(this);
     }
 
     private boolean applyResearchProperty(ResearchPropertyData.ResearchEntry researchEntry) {
@@ -74,24 +74,24 @@ public class SDIResearchLineRecipeBuilder extends RecipeBuilder<SDIResearchLineR
      * 为研究站生成研究配方。
      */
     //
-    public SDIResearchLineRecipeBuilder stationSDIResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> sdiresearch) {
-        SDIResearchRecipeEntry entry = sdiresearch.apply(new ResearchRecipeBuilder.StationRecipeBuilder()).sdiresearch();
+    public COAALRecipeBuilder stationCOResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> coresearch) {
+        COResearchRecipeEntry entry = coresearch.apply(new ResearchRecipeBuilder.StationRecipeBuilder()).coresearch();
         if (applyResearchProperty(new ResearchPropertyData.ResearchEntry(entry.researchId, entry.dataStack))) {
-            this.recipeSDIEntries.add(entry);
+            this.recipeCOEntries.add(entry);
         }
         return this;
     }
 
     @NotNull
-    public Collection<SDIResearchRecipeEntry> getSDIRecipeEntries() {
-        return this.recipeSDIEntries;
+    public Collection<COResearchRecipeEntry> getCORecipeEntries() {
+        return this.recipeCOEntries;
     }
 
     /**
      * 用于生成包含研究数据的数据项的自动生成研究配方的条目。
      */
 
-    public static class SDIResearchRecipeEntry {
+    public static class COResearchRecipeEntry {
 
         private final String researchId;
         private final ItemStack researchStack;
@@ -99,15 +99,12 @@ public class SDIResearchLineRecipeBuilder extends RecipeBuilder<SDIResearchLineR
         private final boolean ignoreNBT;
         private final int duration;
         private final int EUt;
-        private final int CWUt;
         private final int RWUt;
+        private final int CWUt;
         private final int GORWUt;
         private final int OPRWUt;
         private final int SPRWUt;
         private final int CORWUt;
-        private final int SCARWUt;
-        private final int SCHRWUt;
-        private final int SDIRWUt;
 
         /**
          * @param researchId    要存储的研究的id
@@ -118,12 +115,12 @@ public class SDIResearchLineRecipeBuilder extends RecipeBuilder<SDIResearchLineR
          * @param RWUt          如果在研究站，这个配方每tick需要多少RWUt
          *                      <p>
          *                      默认情况下，将在Research chStack输入上忽略NBT。如果需要NBT匹配，请参阅
-         *                      {@link #SDIResearchRecipeEntry(String, ItemStack, ItemStack, boolean, int
-         *                      , int, int, int, int, int, int, int, int, int, int)}
+         *                      {@link #COResearchRecipeEntry(String, ItemStack, ItemStack, boolean, int, int
+         *                      , int, int, int, int, int, int)}
          */
-        public SDIResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
-                                   @NotNull ItemStack dataStack, int duration, int EUt, int CWUt
-                ,int RWUt, int GORWUt, int OPRWUt, int SPRWUt, int CORWUt, int SCARWUt, int SCHRWUt, int SDIRWUt) {
+        public COResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
+                                   @NotNull ItemStack dataStack, int duration, int EUt,
+                                     int CWUt,int RWUt, int GORWUt, int OPRWUt, int SPRWUt, int CORWUt) {
             this.researchId = researchId;
             this.researchStack = researchStack;
             this.dataStack = dataStack;
@@ -135,9 +132,6 @@ public class SDIResearchLineRecipeBuilder extends RecipeBuilder<SDIResearchLineR
             this.OPRWUt = OPRWUt;
             this.SPRWUt = SPRWUt;
             this.CORWUt = CORWUt;
-            this.SCARWUt = SCARWUt;
-            this.SCHRWUt = SCHRWUt;
-            this.SDIRWUt = SDIRWUt;
             this.ignoreNBT = true;
         }
 
@@ -149,9 +143,9 @@ public class SDIResearchLineRecipeBuilder extends RecipeBuilder<SDIResearchLineR
          * @param EUt           配方的EUt
          * @param RWUt          如果在研究站，这个配方每tick需要多少RWUt
          */
-        public SDIResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
+        public COResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
                                    @NotNull ItemStack dataStack, boolean ignoreNBT, int duration, int EUt,
-                                      int CWUt,int RWUt, int GORWUt, int OPRWUt, int SPRWUt, int CORWUt, int SCARWUt, int SCHRWUt, int SDIRWUt) {
+                                     int CWUt,int RWUt, int GORWUt, int OPRWUt, int SPRWUt, int CORWUt) {
             this.researchId = researchId;
             this.researchStack = researchStack;
             this.dataStack = dataStack;
@@ -164,9 +158,6 @@ public class SDIResearchLineRecipeBuilder extends RecipeBuilder<SDIResearchLineR
             this.OPRWUt = OPRWUt;
             this.SPRWUt = SPRWUt;
             this.CORWUt = CORWUt;
-            this.SCARWUt = SCARWUt;
-            this.SCHRWUt = SCHRWUt;
-            this.SDIRWUt = SDIRWUt;
         }
 
         @NotNull
@@ -214,15 +205,5 @@ public class SDIResearchLineRecipeBuilder extends RecipeBuilder<SDIResearchLineR
         public int getCORWUt() {
             return CORWUt;
         }
-        public int getSCARWUt() {
-            return SCARWUt;
-        }
-        public int getSCHRWUt() {
-            return SCHRWUt;
-        }
-        public int getSDIRWUt() {
-            return SDIRWUt;
-        }
     }
-
 }

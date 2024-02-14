@@ -1,8 +1,8 @@
 package com.onlyex.naxtech.api.recipes.research.builder;
 
+import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
-import com.onlyex.naxtech.api.recipes.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.ConfigHolder;
 import gregtech.api.recipes.Recipe;
@@ -16,26 +16,26 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.UnaryOperator;
 
-public class SCHResearchLineRecipeBuilder extends RecipeBuilder<SCHResearchLineRecipeBuilder> {
+public class SCHAALRecipeBuilder extends RecipeBuilder<SCHAALRecipeBuilder> {
     private final Collection<SCHResearchRecipeEntry> recipeSCHEntries = new ArrayList<>();
     private boolean generatingRecipes = true;
 
-    public SCHResearchLineRecipeBuilder() {}
+    public SCHAALRecipeBuilder() {}
 
     @SuppressWarnings("unused")
-    public SCHResearchLineRecipeBuilder(Recipe recipe, RecipeMap<SCHResearchLineRecipeBuilder> recipeMap) {
+    public SCHAALRecipeBuilder(Recipe recipe, RecipeMap<SCHAALRecipeBuilder> recipeMap) {
         super(recipe, recipeMap);
     }
 
-    public SCHResearchLineRecipeBuilder(@NotNull SCHResearchLineRecipeBuilder builder) {
+    public SCHAALRecipeBuilder(@NotNull SCHAALRecipeBuilder builder) {
         super(builder);
         this.recipeSCHEntries.addAll(builder.getSCHRecipeEntries());
         this.generatingRecipes = builder.generatingRecipes;
     }
 
     @Override
-    public SCHResearchLineRecipeBuilder copy() {
-        return new SCHResearchLineRecipeBuilder(this);
+    public SCHAALRecipeBuilder copy() {
+        return new SCHAALRecipeBuilder(this);
     }
 
     private boolean applyResearchProperty(ResearchPropertyData.ResearchEntry researchEntry) {
@@ -74,7 +74,7 @@ public class SCHResearchLineRecipeBuilder extends RecipeBuilder<SCHResearchLineR
      * 为研究站生成研究配方。
      */
     //
-    public SCHResearchLineRecipeBuilder stationSCHResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> schresearch) {
+    public SCHAALRecipeBuilder stationSCHResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> schresearch) {
         SCHResearchRecipeEntry entry = schresearch.apply(new ResearchRecipeBuilder.StationRecipeBuilder()).schresearch();
         if (applyResearchProperty(new ResearchPropertyData.ResearchEntry(entry.researchId, entry.dataStack))) {
             this.recipeSCHEntries.add(entry);

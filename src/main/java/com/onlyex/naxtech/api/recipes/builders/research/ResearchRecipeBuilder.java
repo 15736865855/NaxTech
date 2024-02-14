@@ -1,52 +1,24 @@
-package com.onlyex.naxtech.api.recipes.research;
+package com.onlyex.naxtech.api.recipes.builders.research;
 
 import com.onlyex.naxtech.api.recipes.research.builder.*;
-import com.onlyex.naxtech.api.utils.NTLog;
-import com.onlyex.naxtech.api.utils.ResearchLineManager;
+import com.onlyex.naxtech.api.utils.AALManager;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
-import gregtech.api.recipes.ingredients.GTRecipeInput;
-import gregtech.api.recipes.ingredients.GTRecipeItemInput;
+import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.util.GTStringUtils;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> {
     protected ItemStack researchStack;
-    protected final List<GTRecipeInput> inputs;
     protected ItemStack dataStack;
     protected boolean ignoreNBT;
     protected String researchId;
     protected int eut;
 
-    protected ResearchRecipeBuilder() {
-        this.inputs = NonNullList.create();;
-    }
-
-    public T input(GTRecipeInput input) {
-        if (input.getAmount() < 0) {
-            NTLog.logger.error("Count cannot be less than 0. Actual: {}.", input.getAmount());
-            NTLog.logger.error("Stacktrace:", new IllegalArgumentException());
-        } else {
-            this.inputs.add(input);
-        }
-        return (T) this;
-    }
-
-    public T input(MetaItem<?>.MetaValueItem item, int count) {
-        return input(new GTRecipeItemInput(item.getStackForm(count)));
-    }
-
-    public T input(MetaItem<?>.MetaValueItem item) {
-        return input(new GTRecipeItemInput(item.getStackForm()));
-    }
-
+    protected ResearchRecipeBuilder(){}
 
     public T researchStack(@NotNull ItemStack researchStack) {
         if (!researchStack.isEmpty()) {
@@ -93,10 +65,16 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
 
         if (dataStack == null) {
             dataStack = getDefaultDataItem();
-        }/**/
+        }
 
+        /*
+         * 初始化了一个布尔变量 foundBehavior，用于标记是否找到了指定的行为。
+         * 使用 instanceof 来检查 dataStack.getItem() 是否是 MetaItem 的实例，并将结果赋值给变量 metaItem。
+         * 如果是，就进入 for 循环遍历 metaItem 的所有行为。在循环中，它通过 instanceof 来检查当前行为是否是 IDataItem 的实例。
+         * 如果是，就将 foundBehavior 设置为 true，然后对 dataStack 进行一些处理（复制并设置数量为1），并使用 break 跳出循环。
+         */
         boolean foundBehavior = false;
-        if (dataStack.getItem() instanceof MetaItem<?>metaItem) {
+        if (dataStack.getItem() instanceof MetaItem<?> metaItem) {
             for (IItemBehaviour behaviour : metaItem.getBehaviours(dataStack)) {
                 if (behaviour instanceof IDataItem) {
                     foundBehavior = true;
@@ -113,49 +91,16 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
 
     protected abstract ItemStack getDefaultDataItem();
 
-/*    public static class ScannerRecipeBuilder extends ResearchRecipeBuilder<ScannerRecipeBuilder> {
+    protected abstract AALRecipeBuilder.ResearchRecipeEntry research();
+    protected abstract GOAALRecipeBuilder.GOResearchRecipeEntry goresearch();
+    protected abstract OPAALRecipeBuilder.OPResearchRecipeEntry opresearch();
+    protected abstract SPAALRecipeBuilder.SPResearchRecipeEntry spresearch();
+    protected abstract COAALRecipeBuilder.COResearchRecipeEntry coresearch();
+    protected abstract SCAAALRecipeBuilder.SCAResearchRecipeEntry scaresearch();
+    protected abstract SCHAALRecipeBuilder.SCHResearchRecipeEntry schresearch();
+    protected abstract SDIAALRecipeBuilder.SDIResearchRecipeEntry sdiresearch();
 
-        public static final int DEFAULT_SCANNER_DURATION = 1200; // 60s
-        public static final int DEFAULT_SCANNER_EUT = GTValues.VA[GTValues.UV];
-
-        private int duration;
-
-        ScannerRecipeBuilder() {}
-
-        public ScannerRecipeBuilder duration(int duration) {
-            this.duration = duration;
-            return this;
-        }
-
-        @Override
-        protected ItemStack getDefaultDataItem() {
-            return ResearchLineManager.getDefaultScannerItem();
-        }
-
-        @Override
-        protected ResearchLineRecipeBuilder.ResearchRecipeEntry build() {
-            validateResearchItem();
-            if (duration <= 0) duration = DEFAULT_SCANNER_DURATION;
-            if (eut <= 0) eut = DEFAULT_SCANNER_EUT;
-            return new ResearchLineRecipeBuilder.ResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration,
-                    eut, 0);
-        }
-    }*/
-
-
-
-
-    protected abstract ResearchLineRecipeBuilder.ResearchRecipeEntry research();
-    protected abstract GOResearchLineRecipeBuilder.GOResearchRecipeEntry goresearch();
-    protected abstract OPResearchLineRecipeBuilder.OPResearchRecipeEntry opresearch();
-    protected abstract SPResearchLineRecipeBuilder.SPResearchRecipeEntry spresearch();
-    protected abstract COResearchLineRecipeBuilder.COResearchRecipeEntry coresearch();
-    protected abstract SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry scaresearch();
-    protected abstract SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry schresearch();
-    protected abstract SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry sdiresearch();
-
-    public static class StationRecipeBuilder extends ResearchRecipeBuilder<StationRecipeBuilder> {
+    public static class StationRecipeBuilder extends ResearchRecipeBuilder<ResearchRecipeBuilder.StationRecipeBuilder> {
 
         public static final int RESEARCH_EUT = GTValues.VA[GTValues.ZPM];
         public static final int GO_RESEARCH_EUT = GTValues.VA[GTValues.UV];
@@ -308,10 +253,10 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
 
         @Override
         protected ItemStack getDefaultDataItem() {
-            return ResearchLineManager.getDefaultResearchStationItem(gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
+            return DataRecipeBuilder.getDefaultResearchStationItem(gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
         }
         @Override
-        public ResearchLineRecipeBuilder.ResearchRecipeEntry research() {
+        public AALRecipeBuilder.ResearchRecipeEntry research() {
             validateResearchItem();
             if (rwut <= 0 || totalRWU <= 0) {
                 throw new IllegalArgumentException("RWU/t和总RWU都必须设置为非零！");
@@ -324,12 +269,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalRWU;
             if (eut <= 0) eut = RESEARCH_EUT;
-            return new ResearchLineRecipeBuilder.ResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+            return new AALRecipeBuilder.ResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut);
         }
 
         @Override
-        public GOResearchLineRecipeBuilder.GOResearchRecipeEntry goresearch() {
+        public GOAALRecipeBuilder.GOResearchRecipeEntry goresearch() {
             validateResearchItem();
             if (gorwut <= 0 || totalGORWU <= 0) {
                 throw new IllegalArgumentException("GO-RWU/t和总GO-RWU都必须设置为非零！");
@@ -342,12 +287,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalGORWU;
             if (eut <= 0) eut = GO_RESEARCH_EUT;
-            return new GOResearchLineRecipeBuilder.GOResearchRecipeEntry(researchId, inputs, researchStack, dataStack, ignoreNBT,
+            return new GOAALRecipeBuilder.GOResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut);
         }
 
         @Override
-        public OPResearchLineRecipeBuilder.OPResearchRecipeEntry opresearch() {
+        public OPAALRecipeBuilder.OPResearchRecipeEntry opresearch() {
             validateResearchItem();
             if (oprwut <= 0 || totalOPRWU <= 0) {
                 throw new IllegalArgumentException("OP-RWU/t和总OP-RWU都必须设置为非零！");
@@ -360,12 +305,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalOPRWU;
             if (eut <= 0) eut = OP_RESEARCH_EUT;
-            return new OPResearchLineRecipeBuilder.OPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+            return new OPAALRecipeBuilder.OPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut, oprwut);
         }
 
         @Override
-        public SPResearchLineRecipeBuilder.SPResearchRecipeEntry spresearch() {
+        public SPAALRecipeBuilder.SPResearchRecipeEntry spresearch() {
             validateResearchItem();
 
             if (sprwut <= 0 || totalSPRWU <= 0) {
@@ -379,12 +324,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSPRWU;
             if (eut <= 0) eut = SP_RESEARCH_EUT;
-            return new SPResearchLineRecipeBuilder.SPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+            return new SPAALRecipeBuilder.SPResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut, oprwut, sprwut);
         }
 
         @Override
-        public COResearchLineRecipeBuilder.COResearchRecipeEntry coresearch() {
+        public COAALRecipeBuilder.COResearchRecipeEntry coresearch() {
             validateResearchItem();
             if (corwut <= 0 || totalCORWU <= 0) {
                 throw new IllegalArgumentException("CO-RWU/t和总CO-RWU都必须设置为非零！");
@@ -397,12 +342,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalCORWU;
             if (eut <= 0) eut = CO_RESEARCH_EUT;
-            return new COResearchLineRecipeBuilder.COResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+            return new COAALRecipeBuilder.COResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut);
         }
 
         @Override
-        public SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry scaresearch() {
+        public SCAAALRecipeBuilder.SCAResearchRecipeEntry scaresearch() {
             validateResearchItem();
             if (scarwut <= 0 || totalSCARWU <= 0) {
                 throw new IllegalArgumentException("SCA-RWU/t和总SCA-RWU都必须设置为非零！");
@@ -415,12 +360,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSCARWU;
             if (eut <= 0) eut = SCA_RESEARCH_EUT;
-            return new SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+            return new SCAAALRecipeBuilder.SCAResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut);
         }
 
         @Override
-        public SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry schresearch() {
+        public SCHAALRecipeBuilder.SCHResearchRecipeEntry schresearch() {
             validateResearchItem();
             if (schrwut <= 0 || totalSCHRWU <= 0) {
                 throw new IllegalArgumentException("SCH-RWU/t和总SCH-RWU都必须设置为非零！");
@@ -433,12 +378,12 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSCHRWU;
             if (eut <= 0) eut = SCH_RESEARCH_EUT;
-            return new SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+            return new SCHAALRecipeBuilder.SCHResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut);
         }
 
         @Override
-        public SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry sdiresearch() {
+        public SDIAALRecipeBuilder.SDIResearchRecipeEntry sdiresearch() {
             validateResearchItem();
             if (sdirwut <= 0 || totalSDIRWU <= 0) {
                 throw new IllegalArgumentException("SDI-RWU/t和总SDI-RWU都必须设置为非零！");
@@ -451,7 +396,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             //在API中未调用持续时间，因为逻辑不会将其视为正常持续时间。
             int duration = totalSDIRWU;
             if (eut <= 0) eut = SDI_RESEARCH_EUT;
-            return new SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
+            return new SDIAALRecipeBuilder.SDIResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
         }
     }

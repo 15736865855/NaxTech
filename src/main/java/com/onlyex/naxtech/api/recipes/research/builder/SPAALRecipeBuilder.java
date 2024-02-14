@@ -1,8 +1,8 @@
 package com.onlyex.naxtech.api.recipes.research.builder;
 
+import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
-import com.onlyex.naxtech.api.recipes.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.common.ConfigHolder;
 import gregtech.api.recipes.Recipe;
@@ -16,26 +16,26 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.UnaryOperator;
 
-public class OPResearchLineRecipeBuilder extends RecipeBuilder<OPResearchLineRecipeBuilder> {
-    private final Collection<OPResearchRecipeEntry> recipeOPEntries = new ArrayList<>();
+public class SPAALRecipeBuilder extends RecipeBuilder<SPAALRecipeBuilder> {
+    private final Collection<SPResearchRecipeEntry> recipeSPEntries = new ArrayList<>();
     private boolean generatingRecipes = true;
 
-    public OPResearchLineRecipeBuilder() {}
+    public SPAALRecipeBuilder() {}
 
     @SuppressWarnings("unused")
-    public OPResearchLineRecipeBuilder(Recipe recipe, RecipeMap<OPResearchLineRecipeBuilder> recipeMap) {
+    public SPAALRecipeBuilder(Recipe recipe, RecipeMap<SPAALRecipeBuilder> recipeMap) {
         super(recipe, recipeMap);
     }
 
-    public OPResearchLineRecipeBuilder(@NotNull OPResearchLineRecipeBuilder builder) {
+    public SPAALRecipeBuilder(@NotNull SPAALRecipeBuilder builder) {
         super(builder);
-        this.recipeOPEntries.addAll(builder.getOPRecipeEntries());
+        this.recipeSPEntries.addAll(builder.getSPRecipeEntries());
         this.generatingRecipes = builder.generatingRecipes;
     }
 
     @Override
-    public OPResearchLineRecipeBuilder copy() {
-        return new OPResearchLineRecipeBuilder(this);
+    public SPAALRecipeBuilder copy() {
+        return new SPAALRecipeBuilder(this);
     }
 
     private boolean applyResearchProperty(ResearchPropertyData.ResearchEntry researchEntry) {
@@ -74,24 +74,24 @@ public class OPResearchLineRecipeBuilder extends RecipeBuilder<OPResearchLineRec
      * 为研究站生成研究配方。
      */
     //
-    public OPResearchLineRecipeBuilder stationOPResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> opresearch) {
-        OPResearchRecipeEntry entry = opresearch.apply(new ResearchRecipeBuilder.StationRecipeBuilder()).opresearch();
+    public SPAALRecipeBuilder stationSPResearch(UnaryOperator<ResearchRecipeBuilder.StationRecipeBuilder> spresearch) {
+        SPResearchRecipeEntry entry = spresearch.apply(new ResearchRecipeBuilder.StationRecipeBuilder()).spresearch();
         if (applyResearchProperty(new ResearchPropertyData.ResearchEntry(entry.researchId, entry.dataStack))) {
-            this.recipeOPEntries.add(entry);
+            this.recipeSPEntries.add(entry);
         }
         return this;
     }
 
     @NotNull
-    public Collection<OPResearchRecipeEntry> getOPRecipeEntries() {
-        return this.recipeOPEntries;
+    public Collection<SPResearchRecipeEntry> getSPRecipeEntries() {
+        return this.recipeSPEntries;
     }
 
     /**
      * 用于生成包含研究数据的数据项的自动生成研究配方的条目。
      */
 
-    public static class OPResearchRecipeEntry {
+    public static class SPResearchRecipeEntry {
 
         private final String researchId;
         private final ItemStack researchStack;
@@ -103,6 +103,7 @@ public class OPResearchLineRecipeBuilder extends RecipeBuilder<OPResearchLineRec
         private final int RWUt;
         private final int GORWUt;
         private final int OPRWUt;
+        private final int SPRWUt;
 
         /**
          * @param researchId    要存储的研究的id
@@ -113,11 +114,12 @@ public class OPResearchLineRecipeBuilder extends RecipeBuilder<OPResearchLineRec
          * @param RWUt          如果在研究站，这个配方每tick需要多少RWUt
          *                      <p>
          *                      默认情况下，将在Research chStack输入上忽略NBT。如果需要NBT匹配，请参阅
-         *                      {@link #OPResearchRecipeEntry(String, ItemStack, ItemStack, boolean, int, int, int, int, int, int)}
+         *                      {@link #SPResearchRecipeEntry(String, ItemStack, ItemStack, boolean, int
+         *                      , int, int, int, int, int, int)}
          */
-        public OPResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
+        public SPResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
                                    @NotNull ItemStack dataStack, int duration, int EUt,
-                                     int CWUt,int RWUt, int GORWUt, int OPRWUt) {
+                                     int CWUt,int RWUt, int GORWUt, int OPRWUt, int SPRWUt) {
             this.researchId = researchId;
             this.researchStack = researchStack;
             this.dataStack = dataStack;
@@ -127,6 +129,7 @@ public class OPResearchLineRecipeBuilder extends RecipeBuilder<OPResearchLineRec
             this.RWUt = RWUt;
             this.GORWUt = GORWUt;
             this.OPRWUt = OPRWUt;
+            this.SPRWUt = SPRWUt;
             this.ignoreNBT = true;
         }
 
@@ -138,9 +141,9 @@ public class OPResearchLineRecipeBuilder extends RecipeBuilder<OPResearchLineRec
          * @param EUt           配方的EUt
          * @param RWUt          如果在研究站，这个配方每tick需要多少RWUt
          */
-        public OPResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
+        public SPResearchRecipeEntry(@NotNull String researchId, @NotNull ItemStack researchStack,
                                    @NotNull ItemStack dataStack, boolean ignoreNBT, int duration, int EUt,
-                                     int CWUt,int RWUt, int GORWUt, int OPRWUt) {
+                                     int CWUt,int RWUt, int GORWUt, int OPRWUt, int SPRWUt) {
             this.researchId = researchId;
             this.researchStack = researchStack;
             this.dataStack = dataStack;
@@ -151,6 +154,7 @@ public class OPResearchLineRecipeBuilder extends RecipeBuilder<OPResearchLineRec
             this.RWUt = RWUt;
             this.GORWUt = GORWUt;
             this.OPRWUt = OPRWUt;
+            this.SPRWUt = SPRWUt;
         }
 
         @NotNull
@@ -191,6 +195,9 @@ public class OPResearchLineRecipeBuilder extends RecipeBuilder<OPResearchLineRec
         }
         public int getOPRWUt() {
             return OPRWUt;
+        }
+        public int getSPRWUt() {
+            return SPRWUt;
         }
     }
 }

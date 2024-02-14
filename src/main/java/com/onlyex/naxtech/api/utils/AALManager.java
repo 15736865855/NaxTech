@@ -1,35 +1,27 @@
 package com.onlyex.naxtech.api.utils;
 
-import com.cleanroommc.groovyscript.api.IIngredient;
-import com.onlyex.naxtech.api.recipes.NTRecipeMaps;
 import com.onlyex.naxtech.api.recipes.research.builder.*;
 import com.onlyex.naxtech.common.ConfigHolder;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
-import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
-import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.recipes.ingredients.nbtmatch.NBTCondition;
 import gregtech.api.recipes.ingredients.nbtmatch.NBTMatcher;
-import gregtech.api.recipes.machines.IScannerRecipeMap;
-import gregtech.api.recipes.machines.RecipeMapScanner;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.Constants;
-import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collections;
 import java.util.List;
 
 import static com.onlyex.naxtech.api.recipes.NTRecipeMaps.RESEARCH_RECIPES;
 
-public class ResearchLineManager {
+public class AALManager {
     public static final String RESEARCH_NBT_TAG = "researchLineResearch";
     public static final String RESEARCH_ID_NBT_TAG = "researchId";
     public static final String GO_RESEARCH_ID_NBT_TAG = "goresearchId";
@@ -40,44 +32,7 @@ public class ResearchLineManager {
     public static final String SCH_RESEARCH_ID_NBT_TAG = "schresearchId";
     public static final String SDI_RESEARCH_ID_NBT_TAG = "sdiresearchId";
 
-    /**
-     * getDefaultResearchStationItem(int rwut) 方法，根据传入的参数 rwut 的值，返回默认的研究站物品。
-     * 如果 rwut 大于 32，它会返回 MetaItems.TOOL_DATA_MODULE 的 ItemStack；否则，返回 MetaItems.TOOL_DATA_ORB 的 ItemStack。
-     */
-    @NotNull
-    public static ItemStack getDefaultResearchStationItem(
-            int gorwut,int oprwut,int sprwut,int corwut,int scarwut,int schrwut,int sdirwut) {
-        if (gorwut > 32) {
-            return NTMetaItems.GOOWARE_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (oprwut > 32) {
-            return NTMetaItems.OPTICAL_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (sprwut > 32) {
-            return NTMetaItems.SPINTRONIC_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (corwut > 32) {
-            return NTMetaItems.COSMIC_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (scarwut > 32) {
-            return NTMetaItems.SUPRA_CAUSAL_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (schrwut > 32) {
-            return NTMetaItems.SUPRA_CHRONAL_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (sdirwut > 32) {
-            return NTMetaItems.SUPRA_DIMENSION_RESEARCH_DATA_CARD.getStackForm();
-        }
-
-        return NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
-    }
-
-    private ResearchLineManager() {}
-
-    @ApiStatus.Internal
-    public static void registerScannerLogic() {
-        //RecipeMapScanner.registerCustomScannerLogic(new ResearchLineManager.DataStickCopyScannerLogic());//todo
-    }
+    private AALManager() {}
 
     /**
      * 将给定的研究ID写入到传入的NBTTagCompound中
@@ -252,10 +207,10 @@ public class ResearchLineManager {
      * 这段代码的作用是通过Builder模式创建默认的研究配方。
      * 根据配置文件中的设置，如果启用了研究功能，并且存在配方条目，就依次创建对应的默认研究配方。
      */
-    public static void createResearchRecipe(@NotNull ResearchLineRecipeBuilder builder) {
+    public static void createResearchRecipe(@NotNull AALRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
-        for (ResearchLineRecipeBuilder.ResearchRecipeEntry entry : builder.getRecipeEntries()) {
+        for (AALRecipeBuilder.ResearchRecipeEntry entry : builder.getRecipeEntries()) {
             createResearchRecipe(
                     entry.getResearchId(),
                     entry.getResearchStack(),
@@ -298,14 +253,13 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createGOResearchRecipe(@NotNull GOResearchLineRecipeBuilder builder) {
+    public static void createGOResearchRecipe(@NotNull GOAALRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
-        for (GOResearchLineRecipeBuilder.GOResearchRecipeEntry entry : builder.getGORecipeEntries()) {
+        for (GOAALRecipeBuilder.GOResearchRecipeEntry entry : builder.getGORecipeEntries()) {
             createGOResearchRecipe(
                     entry.getResearchId(),
                     entry.getResearchStack(),
-                    entry.getInputs(),
                     entry.getDataStack(),
                     entry.getIgnoreNBT(),
                     entry.getDuration(),
@@ -318,7 +272,7 @@ public class ResearchLineManager {
     }
 
     public static void createGOResearchRecipe(
-            @NotNull String goresearchId, @NotNull ItemStack researchItem, @NotNull List<GTRecipeInput> input, @NotNull ItemStack dataItem,
+            @NotNull String goresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
             boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt) {
         if (!ConfigHolder.machines.enableResearch) return;
 
@@ -328,7 +282,6 @@ public class ResearchLineManager {
         if (GORWUt > 0) {
             RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
                     .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
-                    .input(input.toString())
                     .outputs(dataItem)
                     .EUt(EUt)
                     .CWUt(CWUt)
@@ -349,10 +302,10 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createOPResearchRecipe(@NotNull OPResearchLineRecipeBuilder builder) {
+    public static void createOPResearchRecipe(@NotNull OPAALRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
-        for (OPResearchLineRecipeBuilder.OPResearchRecipeEntry entry : builder.getOPRecipeEntries()) {
+        for (OPAALRecipeBuilder.OPResearchRecipeEntry entry : builder.getOPRecipeEntries()) {
             createOPResearchRecipe(
                     entry.getResearchId(),
                     entry.getResearchStack(),
@@ -401,10 +354,10 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createSPResearchRecipe(@NotNull SPResearchLineRecipeBuilder builder) {
+    public static void createSPResearchRecipe(@NotNull SPAALRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
-        for (SPResearchLineRecipeBuilder.SPResearchRecipeEntry entry : builder.getSPRecipeEntries()) {
+        for (SPAALRecipeBuilder.SPResearchRecipeEntry entry : builder.getSPRecipeEntries()) {
             createSPResearchRecipe(
                     entry.getResearchId(),
                     entry.getResearchStack(),
@@ -457,10 +410,10 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createCOResearchRecipe(@NotNull COResearchLineRecipeBuilder builder) {
+    public static void createCOResearchRecipe(@NotNull COAALRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
-        for (COResearchLineRecipeBuilder.COResearchRecipeEntry entry : builder.getCORecipeEntries()) {
+        for (COAALRecipeBuilder.COResearchRecipeEntry entry : builder.getCORecipeEntries()) {
             createCOResearchRecipe(
                     entry.getResearchId(),
                     entry.getResearchStack(),
@@ -516,10 +469,10 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createSCAResearchRecipe(@NotNull SCAResearchLineRecipeBuilder builder) {
+    public static void createSCAResearchRecipe(@NotNull SCAAALRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
-        for (SCAResearchLineRecipeBuilder.SCAResearchRecipeEntry entry : builder.getSCARecipeEntries()) {
+        for (SCAAALRecipeBuilder.SCAResearchRecipeEntry entry : builder.getSCARecipeEntries()) {
             createSCAResearchRecipe(
                     entry.getResearchId(),
                     entry.getResearchStack(),
@@ -578,10 +531,10 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createSCHResearchRecipe(@NotNull SCHResearchLineRecipeBuilder builder) {
+    public static void createSCHResearchRecipe(@NotNull SCHAALRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
-        for (SCHResearchLineRecipeBuilder.SCHResearchRecipeEntry entry : builder.getSCHRecipeEntries()) {
+        for (SCHAALRecipeBuilder.SCHResearchRecipeEntry entry : builder.getSCHRecipeEntries()) {
             createSCHResearchRecipe(
                     entry.getResearchId(),
                     entry.getResearchStack(),
@@ -643,10 +596,10 @@ public class ResearchLineManager {
         }
     }
 
-    public static void createSDIResearchRecipe(@NotNull SDIResearchLineRecipeBuilder builder) {
+    public static void createSDIResearchRecipe(@NotNull SDIAALRecipeBuilder builder) {
         if (!ConfigHolder.machines.enableResearch) return;
 
-        for (SDIResearchLineRecipeBuilder.SDIResearchRecipeEntry entry : builder.getSDIRecipeEntries()) {
+        for (SDIAALRecipeBuilder.SDIResearchRecipeEntry entry : builder.getSDIRecipeEntries()) {
             createSDIResearchRecipe(
                     entry.getResearchId(),
                     entry.getResearchStack(),
