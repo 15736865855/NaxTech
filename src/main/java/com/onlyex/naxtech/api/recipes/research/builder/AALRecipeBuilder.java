@@ -1,6 +1,6 @@
 package com.onlyex.naxtech.api.recipes.research.builder;
 
-import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
 import com.onlyex.naxtech.api.utils.NTLog;
@@ -16,9 +16,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.function.UnaryOperator;
 
+import static java.util.Collections.addAll;
+
 public class AALRecipeBuilder extends RecipeBuilder<AALRecipeBuilder> {
 
-    private Collection<ResearchRecipeEntry> recipeEntries = new ArrayList<>();
+    private final Collection<ResearchRecipeEntry> recipeEntries = new ArrayList<>();
 
     private boolean generatingRecipes = true;
 
@@ -31,7 +33,7 @@ public class AALRecipeBuilder extends RecipeBuilder<AALRecipeBuilder> {
 
     public AALRecipeBuilder(@NotNull AALRecipeBuilder builder) {
         super(builder);
-        this.recipeEntries = builder.getRecipeEntries();
+        this.recipeEntries.addAll(builder.getRecipeEntries());
         this.generatingRecipes = builder.generatingRecipes;
     }
 

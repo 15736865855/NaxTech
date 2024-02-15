@@ -1,17 +1,30 @@
-package com.onlyex.naxtech.api.recipes.builders.research;
+package com.onlyex.naxtech.api.recipes.research;
 
 import com.onlyex.naxtech.api.recipes.recipeproperties.data.*;
+import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
+import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
 import com.onlyex.naxtech.api.recipes.recipeproperties.total.*;
 import com.onlyex.naxtech.api.utils.NTLog;
+import com.onlyex.naxtech.api.utils.NTUtility;
+import com.onlyex.naxtech.common.ConfigHolder;
 import com.onlyex.naxtech.common.items.NTMetaItems;
+import gregtech.api.items.metaitem.MetaItem;
+import gregtech.api.items.metaitem.stats.IDataItem;
+import gregtech.api.items.metaitem.stats.IItemBehaviour;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.ingredients.nbtmatch.NBTCondition;
+import gregtech.api.recipes.ingredients.nbtmatch.NBTMatcher;
 import gregtech.api.recipes.recipeproperties.ComputationProperty;
 import gregtech.api.recipes.recipeproperties.TotalComputationProperty;
 import gregtech.api.util.EnumValidationResult;
+import gregtech.api.util.GTStringUtils;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import org.jetbrains.annotations.NotNull;
+
+import static com.onlyex.naxtech.api.utils.ResearchId.writeResearchToNBT;
 
 public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
 
@@ -56,6 +69,94 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
     @Override
     public DataRecipeBuilder copy() {
         return new DataRecipeBuilder(this);
+    }
+
+    protected ItemStack researchStack;
+    protected ItemStack dataStack;
+    protected boolean ignoreNBT;
+    protected String researchId;
+
+    public DataRecipeBuilder researchStack(@NotNull ItemStack researchStack) {
+        if (!researchStack.isEmpty()) {
+            this.researchStack = researchStack;
+            this.ignoreNBT = true;
+        }
+        return this;
+    }
+
+    public DataRecipeBuilder researchStack(@NotNull ItemStack researchStack, boolean ignoreNBT) {
+        if (!researchStack.isEmpty()) {
+            this.researchStack = researchStack;
+            this.ignoreNBT = ignoreNBT;
+        }
+        return this;
+    }
+
+    public DataRecipeBuilder dataStack(@NotNull ItemStack dataStack) {
+        if (!dataStack.isEmpty()) {
+            this.dataStack = dataStack;
+        }
+
+        boolean foundBehavior = false;
+        if (dataStack.getItem() instanceof MetaItem<?> metaItem) {
+            for (IItemBehaviour behaviour : metaItem.getBehaviours(dataStack)) {
+                if (behaviour instanceof IDataItem) {
+                    foundBehavior = true;
+                    dataStack = dataStack.copy();
+                    dataStack.setCount(1);
+                    break;
+                }
+            }
+        }
+        if (!foundBehavior) {
+            throw new IllegalArgumentException("Data ItemStack必须具有IDataItem行为");
+        }
+        return this;
+    }
+
+    public DataRecipeBuilder researchId(String researchId) {
+        this.researchId = researchId;
+        return this;
+    }
+
+    public DataRecipeBuilder writeToNBT(@NotNull ItemStack researchStack, @NotNull ItemStack dataStack) {
+        //this.researchId = getResearchId();
+        if (researchId == null) {
+            researchId = GTStringUtils.itemStackToString(researchStack);
+        }
+        this.researchStack = getResearchStack();
+        this.dataStack = getDataStack();
+
+        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataStack);
+        writeResearchToNBT(compound, researchId);
+        inputNBT(dataStack.getItem(), 1, dataStack.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
+                .outputs(dataStack);
+
+        if (ignoreNBT) {
+            inputNBT(researchStack.getItem(), 1, researchStack.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY);
+        } else {
+            inputs(researchStack);
+        }
+        return this;
+    }
+
+    @NotNull
+    public String getResearchId() {
+        return this.researchId;
+    }
+
+    @NotNull
+    public ItemStack getResearchStack() {
+        return researchStack;
+    }
+
+    @NotNull
+    public ItemStack getDataStack() {
+        return dataStack;
+    }
+
+    public boolean getIgnoreNBT() {
+        return ignoreNBT;
     }
 
     @Override
@@ -143,10 +244,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(ComputationProperty.getInstance(), cwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalCWU(int totalCWU) {
         if (totalCWU < 0) {
             NTLog.logger.error("总CWU不能小于0", new IllegalArgumentException());
@@ -164,10 +261,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(DataProperty.getInstance(), rwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalRWU(int totalRWU) {
         if (totalRWU < 0) {
             NTLog.logger.error("总RWU不能小于0", new IllegalArgumentException());
@@ -185,10 +278,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(GODataProperty.getInstance(), gorwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalGORWU(int totalGORWU) {
         if (totalGORWU < 0) {
             NTLog.logger.error("总GO-RWU不能小于0", new IllegalArgumentException());
@@ -206,10 +295,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(OPDataProperty.getInstance(), oprwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalOPRWU(int totalOPRWU) {
         if (totalOPRWU < 0) {
             NTLog.logger.error("总OP-RWU不能小于0", new IllegalArgumentException());
@@ -227,10 +312,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(SPDataProperty.getInstance(), sprwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalSPRWU(int totalSPRWU) {
         if (totalSPRWU < 0) {
             NTLog.logger.error("总SP-RWU不能小于0", new IllegalArgumentException());
@@ -248,10 +329,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(CODataProperty.getInstance(), corwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalCORWU(int totalCORWU) {
         if (totalCORWU < 0) {
             NTLog.logger.error("总CO-RWU不能小于0", new IllegalArgumentException());
@@ -260,6 +337,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(TotalCODataProperty.getInstance(), totalCORWU);
         return duration(totalCORWU);
     }
+
     public DataRecipeBuilder SCARWUt(int scarwut) {
         if (scarwut < 0) {
             NTLog.logger.error("SCA-RWU/t不能小于0", new IllegalArgumentException());
@@ -268,10 +346,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(SCADataProperty.getInstance(), scarwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalSCARWU(int totalSCARWU) {
         if (totalSCARWU < 0) {
             NTLog.logger.error("总SCA-RWU不能小于0", new IllegalArgumentException());
@@ -289,10 +363,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(SCHDataProperty.getInstance(), schrwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalSCHRWU(int totalSCHRWU) {
         if (totalSCHRWU < 0) {
             NTLog.logger.error("总SCH-RWU不能小于0", new IllegalArgumentException());
@@ -310,10 +380,6 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         this.applyProperty(SDIDataProperty.getInstance(), sdirwut);
         return this;
     }
-
-    /**
-     * 此配方的总计算量。如果需要，应该使用this而不是调用持续时间（）。
-     */
     public DataRecipeBuilder totalSDIRWU(int totalSDIRWU) {
         if (totalSDIRWU < 0) {
             NTLog.logger.error("总SDI-RWU不能小于0", new IllegalArgumentException());

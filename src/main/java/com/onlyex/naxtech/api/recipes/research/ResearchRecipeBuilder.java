@@ -1,4 +1,4 @@
-package com.onlyex.naxtech.api.recipes.builders.research;
+package com.onlyex.naxtech.api.recipes.research;
 
 import com.onlyex.naxtech.api.recipes.research.builder.AALRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.research.builder.SDIAALRecipeBuilder;
@@ -81,26 +81,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             throw new IllegalArgumentException("Data ItemStack必须具有IDataItem行为");
         }
     }
-
-    @NotNull
-    public String getResearchId() {
-        return this.researchId;
-    }
-
-    @NotNull
-    public ItemStack getResearchStack() {
-        return researchStack;
-    }
-
-    @NotNull
-    public ItemStack getDataStack() {
-        return dataStack;
-    }
-
-    public boolean getIgnoreNBT() {
-        return ignoreNBT;
-    }
-
 
     protected abstract ItemStack getDefaultDataItem();
 
@@ -252,6 +232,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
         protected ItemStack getDefaultDataItem() {
             return DataRecipeBuilder.getDefaultResearchStationItem(gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
         }
+
         @Override
         public AALRecipeBuilder.ResearchRecipeEntry research() {
             validateResearchItem();

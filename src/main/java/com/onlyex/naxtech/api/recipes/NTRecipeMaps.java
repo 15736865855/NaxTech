@@ -4,7 +4,7 @@ import com.onlyex.naxtech.api.recipes.builders.CACasingTierRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.builders.NoCoilTemperatureRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.builders.PACasingTierRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.builders.QFTCasingTierRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.builders.research.DataRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.research.DataRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapComponentAssemblyLine;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
 import com.onlyex.naxtech.api.recipes.research.RecipeMapAAL;

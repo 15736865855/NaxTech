@@ -1,6 +1,6 @@
 package com.onlyex.naxtech.api.recipes.research.builder;
 
-import com.onlyex.naxtech.api.recipes.builders.research.ResearchRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.research.ResearchRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
 import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
 import com.onlyex.naxtech.api.utils.NTLog;
