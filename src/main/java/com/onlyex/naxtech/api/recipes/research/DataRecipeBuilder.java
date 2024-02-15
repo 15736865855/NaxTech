@@ -1,12 +1,9 @@
 package com.onlyex.naxtech.api.recipes.research;
 
 import com.onlyex.naxtech.api.recipes.recipeproperties.data.*;
-import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty;
-import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchPropertyData;
 import com.onlyex.naxtech.api.recipes.recipeproperties.total.*;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtility;
-import com.onlyex.naxtech.common.ConfigHolder;
 import com.onlyex.naxtech.common.items.NTMetaItems;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;

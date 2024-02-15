@@ -1,7 +1,6 @@
 package com.onlyex.naxtech.api.recipes.research;
 
 import com.onlyex.naxtech.api.recipes.research.builder.AALRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.research.builder.SDIAALRecipeBuilder;
 import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
@@ -85,7 +84,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
     protected abstract ItemStack getDefaultDataItem();
 
     protected abstract AALRecipeBuilder.ResearchRecipeEntry research();
-    protected abstract SDIAALRecipeBuilder.SDIResearchRecipeEntry sdiresearch();
 
     public static class StationRecipeBuilder extends ResearchRecipeBuilder<ResearchRecipeBuilder.StationRecipeBuilder> {
 
@@ -247,22 +245,6 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
             if (eut <= 0) eut = RESEARCH_EUT;
             return new AALRecipeBuilder.ResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
                     duration, eut, cwut, rwut);
-        }
-
-        @Override
-        public SDIAALRecipeBuilder.SDIResearchRecipeEntry sdiresearch() {
-            validateResearchItem();
-            if (sdirwut <= 0 || totalSDIRWU <= 0) {
-                throw new IllegalArgumentException("SDI-RWU/t和总SDI-RWU都必须设置为非零！");
-            }
-            if (sdirwut > totalSDIRWU) {
-                throw new IllegalArgumentException("总SDI-RWU不能大于SDI-RWU/t!");
-            }
-
-            int duration = totalSDIRWU;
-            if (eut <= 0) eut = SDI_RESEARCH_EUT;
-            return new SDIAALRecipeBuilder.SDIResearchRecipeEntry(researchId, researchStack, dataStack, ignoreNBT,
-                    duration, eut, cwut, rwut, gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
         }
 
     }

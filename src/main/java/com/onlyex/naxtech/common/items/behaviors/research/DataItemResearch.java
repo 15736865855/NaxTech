@@ -35,7 +35,7 @@ public class DataItemResearch implements IItemBehaviour, IDataItem {
     public void addInformation(@NotNull ItemStack itemStack, List<String> lines) {
         String researchId = ResearchId.readResearchId(itemStack);
         if (researchId == null) return;
-        Collection<Recipe> recipes = ((IResearchRecipeMap) NTRecipeMaps.AAL_RECIPES).getDataStickEntry(researchId);
+        Collection<Recipe> recipes = ((IResearchRecipeMap) NTRecipeMaps.RESEARCH_RECIPES).getDataStickEntry(researchId);
         if (recipes != null && !recipes.isEmpty()) {
             lines.add(I18n.format("research.data_item.researchline.title"));
             Collection<ItemStack> added = new ObjectOpenHashSet<>();

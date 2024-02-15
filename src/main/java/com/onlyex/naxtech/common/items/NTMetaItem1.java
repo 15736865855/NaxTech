@@ -9,7 +9,6 @@ import com.onlyex.naxtech.common.items.behaviors.StructureWriteBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import com.onlyex.naxtech.common.items.behaviors.renderer.HaloRenderItemBehavior;
 import com.onlyex.naxtech.common.items.behaviors.research.DataItemResearch;
-import com.onlyex.naxtech.common.items.behaviors.research.DataItemSDIResearch;
 import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;
@@ -577,7 +576,7 @@ public class NTMetaItem1 extends StandardMetaItem {
         SUPRA_CHRONAL_RESEARCH_DATA_CARD = this.addItem(2406,"supra_chronal_research_data_card")
                 .addComponents(new DataItemResearch());
         SUPRA_DIMENSION_RESEARCH_DATA_CARD = this.addItem(2407,"supra_dimension_research_data_card")
-                .addComponents(new DataItemSDIResearch(), new CosmicRenderItemBehavior(() -> NTTextures.SUPRA_DIMENSION_RESEARCH_DATA_CARD_HALO, 1));
+                .addComponents(new DataItemResearch(), new CosmicRenderItemBehavior(() -> NTTextures.SUPRA_DIMENSION_RESEARCH_DATA_CARD_HALO, 1));
 
 
 

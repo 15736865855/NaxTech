@@ -66,7 +66,7 @@ public class MetaTileEntityPackagingLine extends RecipeMapMultiblockController {
     private int beamCount;
 
     public MetaTileEntityPackagingLine(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, NTRecipeMaps.AAL_RECIPES);
+        super(metaTileEntityId, NTRecipeMaps.RESEARCH_RECIPES);
     }
 
     @Override

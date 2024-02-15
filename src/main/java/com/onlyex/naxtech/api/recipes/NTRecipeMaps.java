@@ -10,7 +10,6 @@ import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
 import com.onlyex.naxtech.api.recipes.research.RecipeMapAAL;
 import com.onlyex.naxtech.api.recipes.research.RecipeMapResearchStation;
 import com.onlyex.naxtech.api.recipes.research.builder.AALRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.research.builder.SDIAALRecipeBuilder;
 import com.onlyex.naxtech.api.utils.AALManager;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
@@ -83,20 +82,6 @@ public final class NTRecipeMaps {
             "research_line",new AALRecipeBuilder(), false, AssemblyLineUI::new)
             .onRecipeBuild(AALManager::createDefaultResearchRecipe)
             .setSound(GTSoundEvents.ASSEMBLER);*/
-
-    @ZenProperty
-    public static final RecipeMap<AALRecipeBuilder> AAL_RECIPES = new RecipeMapAAL<>(
-            "research_line",
-            48, 4, 12, 0,
-            new AALRecipeBuilder(), false)
-            .onRecipeBuild(AALManager::createResearchRecipe);
-
-    @ZenProperty
-    public static final RecipeMap<SDIAALRecipeBuilder> SDI_AAL_RECIPES = new RecipeMapAAL<>(
-            "sdi_research_line",
-            48, 4, 12, 0,
-            new SDIAALRecipeBuilder(), false)
-            .onRecipeBuild(AALManager::createSDIResearchRecipe);
 
     @ZenProperty
     public static final RecipeMap<DataRecipeBuilder> RESEARCH_RECIPES = new RecipeMapResearchStation<>(

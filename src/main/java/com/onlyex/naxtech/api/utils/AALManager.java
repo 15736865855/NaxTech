@@ -1,7 +1,6 @@
 package com.onlyex.naxtech.api.utils;
 
 import com.onlyex.naxtech.api.recipes.research.builder.AALRecipeBuilder;
-import com.onlyex.naxtech.api.recipes.research.builder.SDIAALRecipeBuilder;
 import com.onlyex.naxtech.common.ConfigHolder;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
@@ -15,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 
 import static com.onlyex.naxtech.api.recipes.NTRecipeMaps.RESEARCH_RECIPES;
 import static com.onlyex.naxtech.api.utils.ResearchId.writeResearchToNBT;
-import static com.onlyex.naxtech.api.utils.ResearchId.writeSDIResearchToNBT;
 
 public class AALManager {
 
@@ -99,75 +97,6 @@ public class AALManager {
             researchBuilder.buildAndRegister();
         }
     }
-
-    public static void createSDIResearchRecipe(@NotNull SDIAALRecipeBuilder builder) {
-        if (!ConfigHolder.machines.enableResearch) return;
-
-        for (SDIAALRecipeBuilder.SDIResearchRecipeEntry entry : builder.getSDIRecipeEntries()) {
-            createSDIResearchRecipe(
-                    entry.getResearchId(),
-                    entry.getResearchStack(),
-                    entry.getDataStack(),
-                    entry.getIgnoreNBT(),
-                    entry.getDuration(),
-                    entry.getEUt(),
-                    entry.getCWUt(),
-                    entry.getRWUt(),
-                    entry.getGORWUt(),
-                    entry.getOPRWUt(),
-                    entry.getSPRWUt(),
-                    entry.getCORWUt(),
-                    entry.getSCARWUt(),
-                    entry.getSCHRWUt(),
-                    entry.getSDIRWUt()
-            );
-        }
-    }
-
-    public static void createSDIResearchRecipe(
-            @NotNull String sdiresearchId, @NotNull ItemStack researchItem, @NotNull ItemStack dataItem,
-                                               boolean ignoreNBT, int duration, int EUt, int CWUt, int RWUt, int GORWUt, int OPRWUt,
-                                               int SPRWUt, int CORWUt, int SCARWUt, int SCHRWUt, int SDIRWUt) {
-        if (!ConfigHolder.machines.enableResearch) return;
-
-        NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataItem);
-        writeSDIResearchToNBT(compound, sdiresearchId);
-
-        if (SDIRWUt > 0) {
-            RecipeBuilder<?> researchBuilder = RESEARCH_RECIPES.recipeBuilder()
-                    .inputNBT(dataItem.getItem(), 1, dataItem.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY)
-                    .outputs(dataItem)
-                    .EUt(EUt)
-                    .CWUt(CWUt)
-                    .totalCWU(duration)
-                    .RWUt(RWUt)
-                    .totalRWU(duration)
-                    .GORWUt(GORWUt)
-                    .totalGORWU(duration)
-                    .OPRWUt(OPRWUt)
-                    .totalOPRWU(duration)
-                    .SPRWUt(SPRWUt)
-                    .totalSPRWU(duration)
-                    .CORWUt(CORWUt)
-                    .totalCORWU(duration)
-                    .SCARWUt(SCARWUt)
-                    .totalSCARWU(duration)
-                    .SCHRWUt(SCHRWUt)
-                    .totalSCHRWU(duration)
-                    .SDIRWUt(SDIRWUt)
-                    .totalSDIRWU(duration);
-
-            if (ignoreNBT) {
-                researchBuilder.inputNBT(researchItem.getItem(), 1, researchItem.getMetadata(), NBTMatcher.ANY,
-                        NBTCondition.ANY);
-            } else {
-                researchBuilder.inputs(researchItem);
-            }
-
-            researchBuilder.buildAndRegister();
-        }
-    }
-
 
     /*public static class DataStickCopyScannerLogic implements IScannerRecipeMap.ICustomScannerLogic {
 
