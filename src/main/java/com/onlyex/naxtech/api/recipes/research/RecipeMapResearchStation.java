@@ -5,7 +5,6 @@ import com.onlyex.naxtech.api.recipes.recipeproperties.research.ResearchProperty
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
-import gregtech.api.recipes.machines.IScannerRecipeMap;
 import gregtech.core.sound.GTSoundEvents;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
@@ -17,7 +16,7 @@ import java.util.Collection;
 import java.util.Map;
 
 @ApiStatus.Internal
-public class RecipeMapResearchStation<R extends RecipeBuilder<R>> extends RecipeMap<R> implements IResearchRecipeMap {
+public class RecipeMapResearchStation<R extends RecipeBuilder<R>> extends RecipeMap<R> implements IScannerRecipeMap {
     private final Map<String, Collection<Recipe>> researchEntries = new Object2ObjectOpenHashMap<>();
 
     public RecipeMapResearchStation(@NotNull String unlocalizedName,int maxInputs, int maxOutputs, int maxFluidInputs,

@@ -27,7 +27,7 @@ public class BlockQuantumForceTransformerCasing extends VariantBlock<BlockQuantu
         return false;
     }
 
-    public static enum CasingType implements IStringSerializable {
+    public enum CasingType implements IStringSerializable {
         QUANTUM_CONSTRAINT_CASING("quantum_constraint_casing"),
         NEUTRON_PULSE_MANIPULATOR_CASING("neutron_pulse_manipulator_casing"),
         NEUTRON_SHIELDING_CORE_CASING("neutron_shielding_core_casing"),

@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 
 public class MaterialIconSetWithRenderer extends MaterialIconSet implements IRenderer, IItemRendererManager {
 
-    private IItemRendererManager rendererManager;
+    private final IItemRendererManager rendererManager;
 
     public MaterialIconSetWithRenderer(@Nonnull String name, IItemRendererManager rendererManager) {
         super(name);

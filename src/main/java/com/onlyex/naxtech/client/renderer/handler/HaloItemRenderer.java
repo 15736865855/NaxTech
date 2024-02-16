@@ -18,7 +18,7 @@ import java.util.Random;
 
 public class HaloItemRenderer extends WrappedItemRenderer{
 
-    private Random randy = new Random();
+    private final Random randy = new Random();
 
     public HaloItemRenderer(IModelState state, IBakedModel model) {
         super(state, model);

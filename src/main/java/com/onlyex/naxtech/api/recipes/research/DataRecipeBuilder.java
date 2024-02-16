@@ -4,7 +4,7 @@ import com.onlyex.naxtech.api.recipes.recipeproperties.data.*;
 import com.onlyex.naxtech.api.recipes.recipeproperties.total.*;
 import com.onlyex.naxtech.api.utils.NTLog;
 import com.onlyex.naxtech.api.utils.NTUtility;
-import com.onlyex.naxtech.common.items.NTMetaItems;
+
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IDataItem;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
@@ -17,6 +17,7 @@ import gregtech.api.recipes.recipeproperties.ComputationProperty;
 import gregtech.api.recipes.recipeproperties.TotalComputationProperty;
 import gregtech.api.util.EnumValidationResult;
 import gregtech.api.util.GTStringUtils;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import org.jetbrains.annotations.NotNull;
@@ -24,34 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import static com.onlyex.naxtech.api.utils.ResearchId.writeResearchToNBT;
 
 public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
-
-    @NotNull
-    public static ItemStack getDefaultResearchStationItem(
-            int gorwut,int oprwut,int sprwut,int corwut,int scarwut,int schrwut,int sdirwut) {
-        if (gorwut > 32) {
-            return NTMetaItems.GOOWARE_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (oprwut > 32) {
-            return NTMetaItems.OPTICAL_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (sprwut > 32) {
-            return NTMetaItems.SPINTRONIC_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (corwut > 32) {
-            return NTMetaItems.COSMIC_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (scarwut > 32) {
-            return NTMetaItems.SUPRA_CAUSAL_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (schrwut > 32) {
-            return NTMetaItems.SUPRA_CHRONAL_RESEARCH_DATA_CARD.getStackForm();
-        }
-        if (sdirwut > 32) {
-            return NTMetaItems.SUPRA_DIMENSION_RESEARCH_DATA_CARD.getStackForm();
-        }
-
-        return NTMetaItems.RESEARCH_DATA_CARD.getStackForm();
-    }
 
     public DataRecipeBuilder() {/**/}
 
@@ -72,6 +45,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
     protected ItemStack dataStack;
     protected boolean ignoreNBT;
     protected String researchId;
+    //protected int duration;
 
     public DataRecipeBuilder researchStack(@NotNull ItemStack researchStack) {
         if (!researchStack.isEmpty()) {
@@ -121,7 +95,9 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
         if (researchId == null) {
             researchId = GTStringUtils.itemStackToString(researchStack);
         }
+        this.researchStack = researchStack;
         this.researchStack = getResearchStack();
+        this.dataStack = dataStack;
         this.dataStack = getDataStack();
 
         NBTTagCompound compound = NTUtility.getOrCreateNbtCompound(dataStack);
@@ -131,9 +107,9 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
 
         if (ignoreNBT) {
             inputNBT(researchStack.getItem(), 1, researchStack.getMetadata(), NBTMatcher.ANY, NBTCondition.ANY);
-        } else {
+        } /*else {
             inputs(researchStack);
-        }
+        }*/
         return this;
     }
 
@@ -155,6 +131,10 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
     public boolean getIgnoreNBT() {
         return ignoreNBT;
     }
+
+/*    public int getDuration() {
+        return duration;
+    }*/
 
     @Override
     public boolean applyProperty(@NotNull String key, Object value) {
@@ -239,6 +219,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(ComputationProperty.getInstance(), cwut);
+        totalCWU(cwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalCWU(int totalCWU) {
@@ -256,6 +237,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(DataProperty.getInstance(), rwut);
+        totalRWU(rwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalRWU(int totalRWU) {
@@ -273,6 +255,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(GODataProperty.getInstance(), gorwut);
+        totalGORWU(gorwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalGORWU(int totalGORWU) {
@@ -290,6 +273,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(OPDataProperty.getInstance(), oprwut);
+        totalOPRWU(oprwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalOPRWU(int totalOPRWU) {
@@ -307,6 +291,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(SPDataProperty.getInstance(), sprwut);
+        totalSPRWU(sprwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalSPRWU(int totalSPRWU) {
@@ -324,6 +309,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(CODataProperty.getInstance(), corwut);
+        totalCORWU(corwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalCORWU(int totalCORWU) {
@@ -341,6 +327,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(SCADataProperty.getInstance(), scarwut);
+        totalSCARWU(scarwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalSCARWU(int totalSCARWU) {
@@ -358,6 +345,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(SCHDataProperty.getInstance(), schrwut);
+        totalSCHRWU(schrwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalSCHRWU(int totalSCHRWU) {
@@ -375,6 +363,7 @@ public class DataRecipeBuilder extends RecipeBuilder<DataRecipeBuilder> {
             recipeStatus = EnumValidationResult.INVALID;
         }
         this.applyProperty(SDIDataProperty.getInstance(), sdirwut);
+        totalSDIRWU(sdirwut * 4096);
         return this;
     }
     public DataRecipeBuilder totalSDIRWU(int totalSDIRWU) {

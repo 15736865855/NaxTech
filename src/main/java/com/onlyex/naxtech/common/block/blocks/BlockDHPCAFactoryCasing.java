@@ -30,7 +30,7 @@ public class BlockDHPCAFactoryCasing extends VariantBlock<BlockDHPCAFactoryCasin
         return false;
     }
 
-    public static enum CasingType implements IStringSerializable {
+    public enum CasingType implements IStringSerializable {
         BIOWARE_COMPUTER_CASING("bioware_computer_casing"),
         BIOWARE_COMPUTER_HEAT_VENT("bioware_computer_heat_vent"),
         BIOWARE_ADVANCED_COMPUTER_CASING("bioware_advanced_computer_casing");

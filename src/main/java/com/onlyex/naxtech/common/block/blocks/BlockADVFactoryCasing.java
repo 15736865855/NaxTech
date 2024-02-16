@@ -30,7 +30,7 @@ public class BlockADVFactoryCasing extends VariantBlock<BlockADVFactoryCasing.Ca
         return false;
     }
 
-    public static enum CasingType implements IStringSerializable {
+    public enum CasingType implements IStringSerializable {
         MACHINE_TECH("machine_tech"),
         MACHINE_BASIC("machine_basic"),
         DIMENSIONAL_CASING_B("machine_dimensional_cover_blue"),

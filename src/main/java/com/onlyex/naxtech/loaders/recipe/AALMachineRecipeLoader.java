@@ -13,8 +13,8 @@ public class AALMachineRecipeLoader {
                 .input(HIGH_POWER_INTEGRATED_CIRCUIT, 60)
                 .writeToNBT(NANO_PIC.getStackForm(), RESEARCH_DATA_CARD.getStackForm())
                 .output(NULL)
-                .CWUt(600000)
-                .RWUt(60000)
+                .CWUt(96)
+                .RWUt(36)
                 .duration(40000)
                 .EUt(VA[8])
                 .buildAndRegister();

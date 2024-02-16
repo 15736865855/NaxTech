@@ -30,7 +30,7 @@ public class BlockPCBFactoryCasing extends VariantBlock<BlockPCBFactoryCasing.Ca
         return false;
     }
 
-    public static enum CasingType implements IStringSerializable {
+    public enum CasingType implements IStringSerializable {
         BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING("basic_photolithographic_framework_casing"),
         MOLD_PRINTING_ASSEMBLY_FRAMEWORK_CASING("mold_printing_assembly_framework_casing"),
         RADIATION_PROOF_SCAN_FRAMEWORK_CASING("radiation_proof_scan_framework_casing"),

@@ -228,7 +228,7 @@ public abstract class ResearchRecipeBuilder<T extends ResearchRecipeBuilder<T>> 
 
         @Override
         protected ItemStack getDefaultDataItem() {
-            return DataRecipeBuilder.getDefaultResearchStationItem(gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
+            return ResearchStationItem.getDefaultResearchStationItem(gorwut, oprwut, sprwut, corwut, scarwut, schrwut, sdirwut);
         }
 
         @Override

@@ -67,7 +67,7 @@ public abstract class PerspectiveAwareItemRenderer implements IItemRenderer, IEn
     //This simply represents the entity "holding" the item as such.
     private static class EntityCachingOverrideList extends ItemOverrideList {
 
-        private IEntityCallback callback;
+        private final IEntityCallback callback;
 
         public EntityCachingOverrideList(IEntityCallback callback) {
             super(ImmutableList.of());
