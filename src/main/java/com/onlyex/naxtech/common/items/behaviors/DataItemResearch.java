@@ -32,7 +32,7 @@ public class DataItemResearch implements IItemBehaviour, IDataItem {
     }
 
     @Override
-    public void addInformation(@NotNull ItemStack itemStack, List<String> lines) {
+    public void addInformation(@NotNull ItemStack itemStack, List<String> lines) {//todo
         String researchId = ResearchId.readResearchId(itemStack);
         if (researchId == null) return;
         Collection<Recipe> recipes = ((IScannerRecipeMap) NTRecipeMaps.RESEARCH_RECIPES).getDataStickEntry(researchId);

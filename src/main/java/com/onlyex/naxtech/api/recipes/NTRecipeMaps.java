@@ -6,7 +6,9 @@ import com.onlyex.naxtech.api.recipes.builders.PACasingTierRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.builders.QFTCasingTierRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapComponentAssemblyLine;
 import com.onlyex.naxtech.api.recipes.machines.RecipeMapPreciseAssembler;
+import com.onlyex.naxtech.api.recipes.research.AALRecipeBuilder;
 import com.onlyex.naxtech.api.recipes.research.DataRecipeBuilder;
+import com.onlyex.naxtech.api.recipes.research.RecipeMapAAL;
 import com.onlyex.naxtech.api.recipes.research.RecipeMapResearchStation;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
@@ -79,6 +81,12 @@ public final class NTRecipeMaps {
             "research_line",new AALRecipeBuilder(), false, AssemblyLineUI::new)
             .onRecipeBuild(AALManager::createDefaultResearchRecipe)
             .setSound(GTSoundEvents.ASSEMBLER);*/
+
+    @ZenProperty
+    public static final RecipeMap<AALRecipeBuilder> AAL_RECIPES = new RecipeMapAAL<>(
+            "research",
+            48, 4, 12, 0,
+            new AALRecipeBuilder(), false);
 
     @ZenProperty
     public static final RecipeMap<DataRecipeBuilder> RESEARCH_RECIPES = new RecipeMapResearchStation<>(
